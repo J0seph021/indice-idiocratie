@@ -449,3 +449,17 @@ section.block { padding: clamp(28px, 5vw, 48px) 0; }
 .share-btn.fb:hover { border-color: #1877f2; }
 .share-btn.wa:hover { border-color: #25d366; }
 .share-btn.rd:hover { border-color: #ff4500; }
+
+/* country flag picker (hero "share your country") */
+.cp-backdrop { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(4,4,8,0.72); backdrop-filter: blur(4px); }
+.cp-backdrop.open { display: flex; }
+.cp-panel { position: relative; width: min(560px, 96vw); max-height: 86vh; overflow: auto; background: var(--bg-1); border: 1px solid var(--line); border-radius: 18px; padding: 24px 22px 26px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+.cp-title { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.03em; font-size: 1.4rem; color: var(--ink); margin-bottom: 16px; padding-right: 30px; }
+.cp-close { position: absolute; top: 12px; right: 16px; background: none; border: 0; color: var(--ink-dim); font-size: 1.7rem; line-height: 1; cursor: pointer; }
+.cp-close:hover { color: var(--ink); }
+.cp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.cp-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg-2); color: var(--ink); cursor: pointer; text-align: left; transition: border-color 0.15s, transform 0.15s var(--ease), background 0.15s; }
+.cp-item:hover { border-color: var(--hazard); transform: translateY(-2px); background: var(--bg-3); }
+.cp-flag { font-size: 1.5rem; line-height: 1; }
+.cp-name { flex: 1; min-width: 0; font-size: 0.9rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cp-score { font-family: var(--font-display); font-size: 1.1rem; font-variant-numeric: tabular-nums; }

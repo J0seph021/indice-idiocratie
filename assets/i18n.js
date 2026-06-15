@@ -78,10 +78,10 @@ Object.assign(I18N.fr, { footLinkMethod: 'Méthodologie & disclaimer', footLinkS
 Object.assign(I18N.es, { footLinkMethod: 'Metodología y aviso', footLinkShop: 'Tienda satírica', footLinkSources: 'Fuentes de datos' });
 Object.assign(I18N.de, { footLinkMethod: 'Methodik & Haftungsausschluss', footLinkShop: 'Satire-Shop', footLinkSources: 'Datenquellen' });
 
-Object.assign(I18N.en, { shareScore: 'Share', shareHero: "📤 Share your country's score", footLinkPrivacy: 'Privacy & cookies' });
-Object.assign(I18N.fr, { shareScore: 'Partager', shareHero: '📤 Partage le score de ton pays', footLinkPrivacy: 'Confidentialité & cookies' });
-Object.assign(I18N.es, { shareScore: 'Compartir', shareHero: '📤 Comparte la puntuación de tu país', footLinkPrivacy: 'Privacidad y cookies' });
-Object.assign(I18N.de, { shareScore: 'Teilen', shareHero: '📤 Teile die Bewertung deines Landes', footLinkPrivacy: 'Datenschutz & Cookies' });
+Object.assign(I18N.en, { shareScore: 'Share', shareHero: "📤 Share your country's score", footLinkPrivacy: 'Privacy & cookies', pickCountry: 'Pick your country' });
+Object.assign(I18N.fr, { shareScore: 'Partager', shareHero: '📤 Partage le score de ton pays', footLinkPrivacy: 'Confidentialité & cookies', pickCountry: 'Choisis ton pays' });
+Object.assign(I18N.es, { shareScore: 'Compartir', shareHero: '📤 Comparte la puntuación de tu país', footLinkPrivacy: 'Privacidad y cookies', pickCountry: 'Elige tu país' });
+Object.assign(I18N.de, { shareScore: 'Teilen', shareHero: '📤 Teile die Bewertung deines Landes', footLinkPrivacy: 'Datenschutz & Cookies', pickCountry: 'Wähle dein Land' });
 
 function detectLang() {
   const saved = localStorage.getItem('ii_lang');

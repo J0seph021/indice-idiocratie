@@ -27,6 +27,33 @@ function shareCountry(code, name, score) {
   else window.open(url, '_blank', 'noopener');
 }
 
+// Flag picker: pick your country, then open its share page.
+function openCountryPicker() {
+  if (!DATA || !DATA.countries) return;
+  let bd = document.getElementById('cp-backdrop');
+  if (!bd) { bd = document.createElement('div'); bd.id = 'cp-backdrop'; bd.className = 'cp-backdrop'; document.body.appendChild(bd); }
+  const list = [...DATA.countries].sort((a, b) => b.score - a.score);
+  bd.innerHTML = `
+    <div class="cp-panel" role="dialog" aria-modal="true" aria-label="${esc(window.t('pickCountry'))}">
+      <button class="cp-close" type="button" aria-label="Close">×</button>
+      <div class="cp-title">${esc(window.t('pickCountry'))}</div>
+      <div class="cp-grid">
+        ${list.map(c => `<button class="cp-item" type="button" data-code="${esc((c.code || '').toLowerCase())}">
+          <span class="cp-flag">${c.flag || '🏳️'}</span>
+          <span class="cp-name">${esc(c.name)}</span>
+          <span class="cp-score ${scoreClass(c.score)}">${c.score}</span>
+        </button>`).join('')}
+      </div>
+    </div>`;
+  bd.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCountryPicker() {
+  const bd = document.getElementById('cp-backdrop');
+  if (bd) bd.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 let DATA = null;
 
 async function load() {
@@ -233,15 +260,15 @@ document.addEventListener('change', (e) => {
 document.addEventListener('click', (e) => {
   const share = e.target.closest('.country-share');
   if (share) { e.stopPropagation(); shareCountry(share.dataset.code, share.dataset.name, share.dataset.score); return; }
-  if (e.target.closest('#share-hero')) {
-    document.getElementById('rankings')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    const s = $('#search'); if (s) setTimeout(() => s.focus(), 450);
-    return;
-  }
+  if (e.target.closest('#share-hero')) { openCountryPicker(); return; }
+  const cpItem = e.target.closest('.cp-item');
+  if (cpItem && cpItem.dataset.code) { location.href = '/c/' + cpItem.dataset.code + '.html'; return; }
+  if (e.target.closest('.cp-close') || e.target.id === 'cp-backdrop') { closeCountryPicker(); return; }
   const row = e.target.closest('.country-row');
   if (row) toggleCountry(row);
 });
 document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeCountryPicker();
   if ((e.key === 'Enter' || e.key === ' ') && e.target.classList?.contains('country-row')) {
     e.preventDefault();
     toggleCountry(e.target);
