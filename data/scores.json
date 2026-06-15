@@ -1,0 +1,232 @@
+{
+  "updated": "2026-06-15",
+  "scale_note": "Échelle 0–100. 69 = la « ligne critique de connerie ». Plus c'est haut, plus c'est Idiocratie.",
+  "world": {
+    "score": 71,
+    "trend": 2,
+    "label": "On a franchi la ligne des 69. Brawndo a gagné.",
+    "headline": "La planète bat son record : combats de cage, complots viraux et dirigeants qui gouvernent par mèmes."
+  },
+  "spotlight": {
+    "country": "États-Unis",
+    "flag": "🇺🇸",
+    "headline": "UFC sur la pelouse de la Maison-Blanche pour les 80 ans du président.",
+    "why": "Gouvernance par spectacle, science remplacée par des posts, et un culte de la force brute digne du président Camacho.",
+    "score": 93
+  },
+  "continents": [
+    {
+      "name": "Amérique du Nord",
+      "emoji": "🌎",
+      "score": 72,
+      "trend": -6
+    },
+    {
+      "name": "Europe",
+      "emoji": "🌍",
+      "score": 59,
+      "trend": -2
+    },
+    {
+      "name": "Asie",
+      "emoji": "🌏",
+      "score": 62,
+      "trend": -4
+    },
+    {
+      "name": "Amérique du Sud",
+      "emoji": "🌎",
+      "score": 75,
+      "trend": 11
+    },
+    {
+      "name": "Afrique",
+      "emoji": "🌍",
+      "score": 63,
+      "trend": 1
+    },
+    {
+      "name": "Océanie",
+      "emoji": "🌏",
+      "score": 60,
+      "trend": 3
+    }
+  ],
+  "countries": [
+    {
+      "code": "US",
+      "name": "États-Unis",
+      "flag": "🇺🇸",
+      "continent": "Amérique du Nord",
+      "score": 93,
+      "trend": -1,
+      "gdp_adjusted": 88,
+      "headline": "UFC sur la pelouse de la Maison-Blanche pour les 80 ans du président.",
+      "why": "Gouvernance par spectacle, science remplacée par des posts, et un culte de la force brute digne du président Camacho."
+    },
+    {
+      "code": "RU",
+      "name": "Russie",
+      "flag": "🇷🇺",
+      "continent": "Europe",
+      "score": 85,
+      "trend": -3,
+      "gdp_adjusted": 81,
+      "headline": "Nouvelle loi punissant le fait de « chercher » de l'info en ligne.",
+      "why": "Quand consulter une page web devient un délit, on a quitté la réalité."
+    },
+    {
+      "code": "SV",
+      "name": "Salvador",
+      "flag": "🇸🇻",
+      "continent": "Amérique du Sud",
+      "score": 79,
+      "trend": 0,
+      "gdp_adjusted": 75,
+      "headline": "Tout le budget national rejoué sur une cryptomonnaie.",
+      "why": "Le trésor public traité comme un jeton de casino."
+    },
+    {
+      "code": "GB",
+      "name": "Royaume-Uni",
+      "flag": "🇬🇧",
+      "continent": "Europe",
+      "score": 69,
+      "trend": -1,
+      "gdp_adjusted": 66,
+      "headline": "Énième débat parlementaire sur la forme des bananes.",
+      "why": "L'art de transformer une non-question en crise nationale."
+    },
+    {
+      "code": "BR",
+      "name": "Brésil",
+      "flag": "🇧🇷",
+      "continent": "Amérique du Sud",
+      "score": 71,
+      "trend": 3,
+      "gdp_adjusted": 67,
+      "headline": "Députés se battent à coups de chaise en pleine séance.",
+      "why": "Le « Extreme Court » d'Idiocracy, mais en vrai."
+    },
+    {
+      "code": "IN",
+      "name": "Inde",
+      "flag": "🇮🇳",
+      "continent": "Asie",
+      "score": 65,
+      "trend": -2,
+      "gdp_adjusted": 62,
+      "headline": "Ministre recommande la bouse comme antivirus.",
+      "why": "La pseudoscience promue au rang de politique de santé."
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "flag": "🇫🇷",
+      "continent": "Europe",
+      "score": 59,
+      "trend": -3,
+      "gdp_adjusted": 56,
+      "headline": "Grève contre une réforme, puis grève contre son annulation.",
+      "why": "Le réflexe d'opposition avant la lecture du texte."
+    },
+    {
+      "code": "CN",
+      "name": "Chine",
+      "flag": "🇨🇳",
+      "continent": "Asie",
+      "score": 67,
+      "trend": 2,
+      "gdp_adjusted": 64,
+      "headline": "La Chine se lance à fond dans l'IA pour préparer ses plaidoiries.",
+      "why": "En confiant la justice à des algorithmes, la Chine prouve qu'elle préfère les robots aux avocats, le spectacle n'a jamais été aussi fumeux !"
+    },
+    {
+      "code": "IT",
+      "name": "Italie",
+      "flag": "🇮🇹",
+      "continent": "Europe",
+      "score": 61,
+      "trend": 1,
+      "gdp_adjusted": 58,
+      "headline": "Influenceur élu maire sur la promesse d'un parc d'attractions.",
+      "why": "Le programme tient sur une story."
+    },
+    {
+      "code": "AU",
+      "name": "Australie",
+      "flag": "🇦🇺",
+      "continent": "Océanie",
+      "score": 60,
+      "trend": 3,
+      "gdp_adjusted": 57,
+      "headline": "Débat national : les émeus ont-ils encore gagné une guerre ?",
+      "why": "Spoiler : oui."
+    },
+    {
+      "code": "DE",
+      "name": "Allemagne",
+      "flag": "🇩🇪",
+      "continent": "Europe",
+      "score": 53,
+      "trend": -1,
+      "gdp_adjusted": 50,
+      "headline": "Formulaire de 14 pages pour signaler un formulaire en trop.",
+      "why": "La bureaucratie qui se mord la queue."
+    },
+    {
+      "code": "JP",
+      "name": "Japon",
+      "flag": "🇯🇵",
+      "continent": "Asie",
+      "score": 53,
+      "trend": 1,
+      "gdp_adjusted": 50,
+      "headline": "Robot démissionne, jugé surmené par ses collègues humains.",
+      "why": "Au moins quelqu'un fait attention au bien-être."
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "continent": "Amérique du Nord",
+      "score": 51,
+      "trend": 0,
+      "gdp_adjusted": 48,
+      "headline": "Excuses officielles présentées à un orignal.",
+      "why": "La politesse poussée au niveau diplomatique."
+    },
+    {
+      "code": "SE",
+      "name": "Suède",
+      "flag": "🇸🇪",
+      "continent": "Europe",
+      "score": 46,
+      "trend": 2,
+      "gdp_adjusted": 44,
+      "headline": "Pause-café inscrite dans la constitution (presque).",
+      "why": "Le fika comme rempart contre la bêtise."
+    },
+    {
+      "code": "FI",
+      "name": "Finlande",
+      "flag": "🇫🇮",
+      "continent": "Europe",
+      "score": 43,
+      "trend": 2,
+      "gdp_adjusted": 41,
+      "headline": "Cours obligatoire pour repérer les fausses nouvelles dès l'école primaire.",
+      "why": "Championne mondiale de résistance à la désinformation. Bravo."
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-06-08",
+      "world": 69
+    },
+    {
+      "date": "2026-06-15",
+      "world": 71
+    }
+  ]
+}
