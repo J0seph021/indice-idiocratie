@@ -98,7 +98,7 @@ function renderCountries() {
 }
 
 function formatDate(iso) {
-  if (!iso) return '—';
+  if (!iso) return '…';
   try {
     return new Date(iso + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   } catch { return iso; }
