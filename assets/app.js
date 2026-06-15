@@ -160,7 +160,7 @@ function articleHTML(a) {
   return `<a class="article" href="${esc(a.url || '#')}" target="_blank" rel="noopener">
     <span class="impact ${up ? 'up' : 'down'}">${val}</span>
     <span class="article-body">
-      <span class="article-title">${esc(window.pick(a.title))}</span>
+      <span class="article-title">${esc(window.pick(a.title))}${a.axis ? ` <span class="article-axis">${esc(window.axisLabel(a.axis))}</span>` : ''}</span>
       <span class="article-meta">${esc(a.source || '')}${a.date ? ' · ' + esc(a.date) : ''}${window.pick(a.note) ? ' — ' + esc(window.pick(a.note)) : ''}</span>
     </span>
     <span class="article-go">↗</span>

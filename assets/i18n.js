@@ -103,6 +103,17 @@ window.tHL = function (key) {
   return window.t(key).replace(/\*([^*]+)\*/g, '<span class="hl ref-69">$1</span>');
 };
 
+// The 6 grid axes — short labels per language for the article badges.
+window.AXIS_LABELS = {
+  SCI:       { icon: '🧪', en: 'Science', fr: 'Science', es: 'Ciencia', de: 'Wissenschaft' },
+  SPECTACLE: { icon: '🎪', en: 'Spectacle', fr: 'Spectacle', es: 'Espectáculo', de: 'Spektakel' },
+  PUBLIC:    { icon: '🏛️', en: 'Public good', fr: 'Bien public', es: 'Bien público', de: 'Gemeinwohl' },
+  KNOW:      { icon: '📚', en: 'Knowledge', fr: 'Savoir', es: 'Saber', de: 'Wissen' },
+  CRIT:      { icon: '🧠', en: 'Critical thinking', fr: 'Esprit critique', es: 'Pensamiento crítico', de: 'Kritisches Denken' },
+  FUTURE:    { icon: '⏳', en: 'Long-term', fr: 'Long terme', es: 'Largo plazo', de: 'Langfristig' },
+};
+window.axisLabel = function (key) { const a = window.AXIS_LABELS[key]; return a ? (a.icon + ' ' + (a[window.LANG] || a.en)) : ''; };
+
 // Apply static UI strings to elements carrying data-i18n / data-i18n-html / data-i18n-ph.
 window.applyI18n = function () {
   document.documentElement.lang = window.LANG;

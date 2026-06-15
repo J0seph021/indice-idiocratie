@@ -2,13 +2,13 @@
   "updated": "2026-06-15",
   "scale_note": "Scale 0-100. 69 = the critical stupidity line. The higher, the more Idiocracy.",
   "world": {
-    "score": 71,
+    "score": 60,
     "trend": 2,
     "label": {
-      "en": "We crossed the 69 line. Brawndo won.",
-      "fr": "Nous avons franchi la barre des 69. Brawndo a gagné.",
-      "es": "Cruzamos la línea 69. Brawndo ganó.",
-      "de": "Wir haben die 69er-Grenze überschritten. Brawndo hat gewonnen."
+      "en": "Still under the 69 line — but the year is young.",
+      "fr": "Encore sous la ligne des 69 — mais l'année est jeune.",
+      "es": "Aún bajo la línea de 69 — pero el año es joven.",
+      "de": "Noch unter der 69er-Linie — aber das Jahr ist jung."
     },
     "headline": {
       "en": "The planet sets a new record: cage fights, viral conspiracies, and leaders governing by meme.",
@@ -32,31 +32,31 @@
       "es": "Un octágono frente a la Oficina Oval, gritos de '¡EE.UU.! ¡EE.UU.!', y un presidente animando la pelea. El presidente Camacho no lo podría haber hecho mejor.",
       "de": "Ein Oktagon vor dem Oval Office, 'USA! USA!' Rufe und ein Präsident, der den Kampf anheizt. Präsident Camacho hätte es nicht besser machen können."
     },
-    "score": 94
+    "score": 92
   },
   "continents": [
     {
       "name": "North America",
       "emoji": "🌎",
-      "score": 78,
+      "score": 73,
       "trend": 3
     },
     {
       "name": "Europe",
       "emoji": "🌍",
-      "score": 61,
+      "score": 54,
       "trend": 1
     },
     {
       "name": "Asia",
       "emoji": "🌏",
-      "score": 66,
+      "score": 62,
       "trend": 0
     },
     {
       "name": "South America",
       "emoji": "🌎",
-      "score": 64,
+      "score": 66,
       "trend": -1
     },
     {
@@ -78,7 +78,7 @@
       "name": "United States",
       "flag": "🇺🇸",
       "continent": "North America",
-      "score": 94,
+      "score": 92,
       "trend": 4,
       "gdp_adjusted": 91,
       "headline": {
@@ -110,7 +110,8 @@
             "fr": "Moins de portes, plus de chaos.",
             "es": "Menos puertas, más caos.",
             "de": "Weniger Türen, mehr Chaos."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -128,7 +129,8 @@
             "fr": "Politique par le chaos et l'inversion.",
             "es": "Política por caos y reversión.",
             "de": "Politik durch Chaos und Umkehr."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -146,7 +148,8 @@
             "fr": "Agissez vite, soyez poursuivi.",
             "es": "Muévete rápido, te demandan.",
             "de": "Schnell handeln, verklagt werden."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -164,7 +167,8 @@
             "fr": "Un rare recul.",
             "es": "Un raro retroceso.",
             "de": "Ein seltener Rückzieher."
-          }
+          },
+          "axis": "FUTURE"
         },
         {
           "title": {
@@ -182,16 +186,25 @@
             "fr": "Les gens qui se rebellent = signes de vie.",
             "es": "La gente que responde = signos de vida.",
             "de": "Menschen wehren sich = Lebenszeichen."
-          }
+          },
+          "axis": "SPECTACLE"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 92,
+        "SPECTACLE": 95,
+        "PUBLIC": 90,
+        "KNOW": 88,
+        "CRIT": 93,
+        "FUTURE": 96
+      }
     },
     {
       "code": "RU",
       "name": "Russia",
       "flag": "🇷🇺",
       "continent": "Europe",
-      "score": 88,
+      "score": 85,
       "trend": 1,
       "gdp_adjusted": 84,
       "headline": {
@@ -223,7 +236,8 @@
             "fr": "La curiosité est désormais un délit.",
             "es": "La curiosidad ahora es un delito.",
             "de": "Neugier ist jetzt ein Verbrechen."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -241,7 +255,8 @@
             "fr": "Un interrupteur pour tout internet.",
             "es": "Un interruptor para toda la internet.",
             "de": "Ein Ausschalter für das gesamte Internet."
-          }
+          },
+          "axis": "SPECTACLE"
         },
         {
           "title": {
@@ -259,7 +274,8 @@
             "fr": "Débrancher une nation.",
             "es": "Desenchufando una nación.",
             "de": "Eine Nation vom Stromnetz trennen."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -277,16 +293,25 @@
             "fr": "Plus de fer, moins de rideau.",
             "es": "Más hierro, menos cortina.",
             "de": "Mehr Eisen, weniger Vorhang."
-          }
+          },
+          "axis": "SPECTACLE"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 80,
+        "SPECTACLE": 90,
+        "PUBLIC": 85,
+        "KNOW": 75,
+        "CRIT": 90,
+        "FUTURE": 95
+      }
     },
     {
       "code": "SV",
       "name": "El Salvador",
       "flag": "🇸🇻",
       "continent": "South America",
-      "score": 79,
+      "score": 72,
       "trend": 2,
       "gdp_adjusted": 71,
       "headline": {
@@ -318,7 +343,8 @@
             "fr": "L'utopie a reçu un appel de marge.",
             "es": "La utopía recibió una llamada de margen.",
             "de": "Die Utopie erhielt einen Margin Call."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -336,7 +362,8 @@
             "fr": "Les marchés obligataires ne sont pas amusés.",
             "es": "Los mercados de bonos no están divertidos.",
             "de": "Die Anleihemärkte sind nicht amüsiert."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -354,7 +381,8 @@
             "fr": "Même la frénésie d'achat est fictive.",
             "es": "Incluso la locura de compras es ficticia.",
             "de": "Sogar die Kaufrausch ist fiktiv."
-          }
+          },
+          "axis": "KNOW"
         },
         {
           "title": {
@@ -372,16 +400,25 @@
             "fr": "Étrangement populaire quand même.",
             "es": "Igualmente popular de forma salvaje.",
             "de": "Trotzdem irgendwie extrem beliebt."
-          }
+          },
+          "axis": "SPECTACLE"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 60,
+        "SPECTACLE": 85,
+        "PUBLIC": 75,
+        "KNOW": 70,
+        "CRIT": 65,
+        "FUTURE": 80
+      }
     },
     {
       "code": "GB",
       "name": "United Kingdom",
       "flag": "🇬🇧",
       "continent": "Europe",
-      "score": 70,
+      "score": 69,
       "trend": 2,
       "gdp_adjusted": 73,
       "headline": {
@@ -413,7 +450,8 @@
             "fr": "Un exode ministériel.",
             "es": "Un éxodo de ministros.",
             "de": "Ein Ministerexodus."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -431,7 +469,8 @@
             "fr": "Secoue-le, Chancelier.",
             "es": "Sacúdelo, Canciller.",
             "de": "Schüttel es ab, Kanzler."
-          }
+          },
+          "axis": "SPECTACLE"
         },
         {
           "title": {
@@ -449,7 +488,8 @@
             "fr": "Tout ce qui est vieux est de nouveau chaotique.",
             "es": "Todo lo viejo es caótico de nuevo.",
             "de": "Alles Alte ist wieder chaotisch."
-          }
+          },
+          "axis": "FUTURE"
         },
         {
           "title": {
@@ -467,16 +507,25 @@
             "fr": "Reverser une mauvaise loi — crédit où il est dû.",
             "es": "Revirtiendo una mala ley — crédito donde se debe.",
             "de": "Eine schlechte Gesetzgebung rückgängig machen — Credit, wo es fällig ist."
-          }
+          },
+          "axis": "PUBLIC"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 75,
+        "SPECTACLE": 80,
+        "PUBLIC": 70,
+        "KNOW": 60,
+        "CRIT": 65,
+        "FUTURE": 50
+      }
     },
     {
       "code": "BR",
       "name": "Brazil",
       "flag": "🇧🇷",
       "continent": "South America",
-      "score": 68,
+      "score": 59,
       "trend": -2,
       "gdp_adjusted": 64,
       "headline": {
@@ -508,7 +557,8 @@
             "fr": "Responsabilité, optionnelle.",
             "es": "Responsabilidad, opcional.",
             "de": "Rechenschaft, optional."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -526,7 +576,8 @@
             "fr": "La Cour Extrême est en session.",
             "es": "La Corte Extrema está en sesión.",
             "de": "Das Extrem Gericht ist in Sitzung."
-          }
+          },
+          "axis": "SPECTACLE"
         },
         {
           "title": {
@@ -544,7 +595,8 @@
             "fr": "Un peu de responsabilité, enfin.",
             "es": "Un poco de responsabilidad, por fin.",
             "de": "Ein wenig Rechenschaft, endlich."
-          }
+          },
+          "axis": "CRIT"
         },
         {
           "title": {
@@ -562,16 +614,25 @@
             "fr": "La démocratie survit à la bataille alimentaire.",
             "es": "La democracia sobrevive a la pelea de comida.",
             "de": "Die Demokratie überlebt die Essensschlacht."
-          }
+          },
+          "axis": "FUTURE"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 50,
+        "SPECTACLE": 75,
+        "PUBLIC": 65,
+        "KNOW": 60,
+        "CRIT": 50,
+        "FUTURE": 40
+      }
     },
     {
       "code": "IN",
       "name": "India",
       "flag": "🇮🇳",
       "continent": "Asia",
-      "score": 67,
+      "score": 66,
       "trend": 1,
       "gdp_adjusted": 58,
       "headline": {
@@ -603,7 +664,8 @@
             "fr": "2,27 millions d'étudiants, une feuille de réponse fuitée.",
             "es": "2,27 millones de estudiantes, un papel filtrado.",
             "de": "2,27 Millionen Schüler, ein geleaktes Papier."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -621,7 +683,8 @@
             "fr": "Mythologie contre preuves dans le programme.",
             "es": "Mitología vs. evidencia en el plan de estudios.",
             "de": "Mythologie gegen Beweise im Lehrplan."
-          }
+          },
+          "axis": "SCI"
         },
         {
           "title": {
@@ -639,7 +702,8 @@
             "fr": "Manuels réécrits à la volée.",
             "es": "Libros de texto reescritos sobre la marcha.",
             "de": "Lehrbücher werden im Handumdrehen umgeschrieben."
-          }
+          },
+          "axis": "KNOW"
         },
         {
           "title": {
@@ -657,16 +721,25 @@
             "fr": "La résistance est réelle et en pleine expansion.",
             "es": "La resistencia es real y va en aumento.",
             "de": "Der Widerstand ist real und wächst."
-          }
+          },
+          "axis": "CRIT"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 70,
+        "SPECTACLE": 60,
+        "PUBLIC": 65,
+        "KNOW": 75,
+        "CRIT": 65,
+        "FUTURE": 60
+      }
     },
     {
       "code": "FR",
       "name": "France",
       "flag": "🇫🇷",
       "continent": "Europe",
-      "score": 62,
+      "score": 56,
       "trend": 0,
       "gdp_adjusted": 64,
       "headline": {
@@ -698,7 +771,8 @@
             "fr": "Budget en mode survie.",
             "es": "Presupuesto en modo supervivencia.",
             "de": "Haushalt im Überlebensmodus."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -716,7 +790,8 @@
             "fr": "Originalité non incluse.",
             "es": "Originalidad no incluida.",
             "de": "Originalität nicht inklusive."
-          }
+          },
+          "axis": "SPECTACLE"
         },
         {
           "title": {
@@ -734,16 +809,25 @@
             "fr": "Compromis à l'ancienne.",
             "es": "Compromiso, a la antigua.",
             "de": "Kompromiss, old-school."
-          }
+          },
+          "axis": "SPECTACLE"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 40,
+        "SPECTACLE": 70,
+        "PUBLIC": 60,
+        "KNOW": 50,
+        "CRIT": 55,
+        "FUTURE": 65
+      }
     },
     {
       "code": "CN",
       "name": "China",
       "flag": "🇨🇳",
       "continent": "Asia",
-      "score": 65,
+      "score": 68,
       "trend": 0,
       "gdp_adjusted": 60,
       "headline": {
@@ -775,7 +859,8 @@
             "fr": "68 articles, zéro vie privée.",
             "es": "68 artículos, cero privacidad.",
             "de": "68 Artikel, null Privatsphäre."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -793,7 +878,8 @@
             "fr": "La liste noire, professionnalisée.",
             "es": "La lista negra, profesionalizada.",
             "de": "Die schwarze Liste, professionalisiert."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -811,16 +897,25 @@
             "fr": "Moins Black Mirror que redouté.",
             "es": "Menos Black Mirror de lo temido.",
             "de": "Weniger Black Mirror als befürchtet."
-          }
+          },
+          "axis": "SPECTACLE"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 70,
+        "SPECTACLE": 60,
+        "PUBLIC": 75,
+        "KNOW": 80,
+        "CRIT": 65,
+        "FUTURE": 50
+      }
     },
     {
       "code": "IT",
       "name": "Italy",
       "flag": "🇮🇹",
       "continent": "Europe",
-      "score": 60,
+      "score": 59,
       "trend": 1,
       "gdp_adjusted": 62,
       "headline": {
@@ -852,7 +947,8 @@
             "fr": "Dépourvue de soutien à droite.",
             "es": "Superada por la derecha.",
             "de": "Rechts überflügelt."
-          }
+          },
+          "axis": "SPECTACLE"
         },
         {
           "title": {
@@ -870,7 +966,8 @@
             "fr": "La comédie en guise de victime.",
             "es": "La comedia como víctima colateral.",
             "de": "Die Komödie als collateral damage."
-          }
+          },
+          "axis": "SPECTACLE"
         },
         {
           "title": {
@@ -888,9 +985,18 @@
             "fr": "Un petit coup de pouce vers le bon sens.",
             "es": "Un empujoncito hacia el sentido común.",
             "de": "Ein kleiner Stupser in Richtung Vernunft."
-          }
+          },
+          "axis": "PUBLIC"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 55,
+        "SPECTACLE": 65,
+        "PUBLIC": 70,
+        "KNOW": 50,
+        "CRIT": 60,
+        "FUTURE": 40
+      }
     },
     {
       "code": "AU",
@@ -929,7 +1035,8 @@
             "fr": "L'hypocrisie du voyageur fréquent.",
             "es": "La hipocresía del viajero frecuente.",
             "de": "Die Heuchelei des Vielfliegers."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -947,7 +1054,8 @@
             "fr": "Retour à exactement où cela a commencé.",
             "es": "De vuelta a exactamente donde comenzó.",
             "de": "Zurück genau dorthin, wo es angefangen hat."
-          }
+          },
+          "axis": "SPECTACLE"
         },
         {
           "title": {
@@ -965,16 +1073,25 @@
             "fr": "Un compromis bordélique qui laisse quand même des traces.",
             "es": "Un compromiso desastroso que todavía deja huella.",
             "de": "Ein chaotischer Kompromiss, der dennoch wirkt."
-          }
+          },
+          "axis": "PUBLIC"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 60,
+        "SPECTACLE": 55,
+        "PUBLIC": 65,
+        "KNOW": 50,
+        "CRIT": 55,
+        "FUTURE": 50
+      }
     },
     {
       "code": "DE",
       "name": "Germany",
       "flag": "🇩🇪",
       "continent": "Europe",
-      "score": 54,
+      "score": 50,
       "trend": -1,
       "gdp_adjusted": 56,
       "headline": {
@@ -1006,7 +1123,8 @@
             "fr": "Consensus par épuisement.",
             "es": "Consenso por agotamiento.",
             "de": "Konsens durch Erschöpfung."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -1024,7 +1142,8 @@
             "fr": "Réforme, un jour.",
             "es": "Reforma, eventualmente.",
             "de": "Reform, irgendwann."
-          }
+          },
+          "axis": "FUTURE"
         },
         {
           "title": {
@@ -1042,16 +1161,25 @@
             "fr": "Stabilité, la superpuissance ennuyeuse.",
             "es": "Estabilidad, la superpotencia aburrida.",
             "de": "Stabilität, die langweilige Supermacht."
-          }
+          },
+          "axis": "SPECTACLE"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 40,
+        "SPECTACLE": 55,
+        "PUBLIC": 50,
+        "KNOW": 60,
+        "CRIT": 45,
+        "FUTURE": 50
+      }
     },
     {
       "code": "JP",
       "name": "Japan",
       "flag": "🇯🇵",
       "continent": "Asia",
-      "score": 52,
+      "score": 53,
       "trend": 0,
       "gdp_adjusted": 53,
       "headline": {
@@ -1083,7 +1211,8 @@
             "fr": "L'audio a fuité.",
             "es": "El audio se filtró.",
             "de": "Das Audio ist durchgesickert."
-          }
+          },
+          "axis": "SPECTACLE"
         },
         {
           "title": {
@@ -1101,7 +1230,8 @@
             "fr": "Gouverner sur le fil du rasoir.",
             "es": "Gobernar al borde del abismo.",
             "de": "Regieren auf der Klinge eines Messers."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -1119,16 +1249,25 @@
             "fr": "Politique d'adulte, tentative.",
             "es": "Política de adultos, intentada.",
             "de": "Erwachsene Politik, versucht."
-          }
+          },
+          "axis": "SPECTACLE"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 40,
+        "SPECTACLE": 65,
+        "PUBLIC": 55,
+        "KNOW": 50,
+        "CRIT": 60,
+        "FUTURE": 45
+      }
     },
     {
       "code": "CA",
       "name": "Canada",
       "flag": "🇨🇦",
       "continent": "North America",
-      "score": 51,
+      "score": 54,
       "trend": 0,
       "gdp_adjusted": 52,
       "headline": {
@@ -1160,7 +1299,8 @@
             "fr": "Hors de vue, hors de mandat.",
             "es": "Fuera de la vista, fuera de la competencia.",
             "de": "Aus den Augen, aus dem Sinn."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -1178,7 +1318,8 @@
             "fr": "Une protestation très canadienne.",
             "es": "Una protesta muy canadiense.",
             "de": "Eine sehr kanadische Protestaktion."
-          }
+          },
+          "axis": "CRIT"
         },
         {
           "title": {
@@ -1196,16 +1337,25 @@
             "fr": "Faire du commerce de manière pragmatique.",
             "es": "Comercio pragmático.",
             "de": "Pragmatischer Handel."
-          }
+          },
+          "axis": "PUBLIC"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 40,
+        "SPECTACLE": 65,
+        "PUBLIC": 70,
+        "KNOW": 50,
+        "CRIT": 55,
+        "FUTURE": 30
+      }
     },
     {
       "code": "SE",
       "name": "Sweden",
       "flag": "🇸🇪",
       "continent": "Europe",
-      "score": 44,
+      "score": 40,
       "trend": -1,
       "gdp_adjusted": 45,
       "headline": {
@@ -1237,7 +1387,8 @@
             "fr": "Annulé sous l'examen.",
             "es": "Revertido bajo escrutinio.",
             "de": "Unter Prüfen zurückgezogen."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -1255,7 +1406,8 @@
             "fr": "Un petit pas en arrière.",
             "es": "Un medio paso atrás.",
             "de": "Ein halber Schritt zurück."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -1273,16 +1425,25 @@
             "fr": "Bricolage avec les tribunaux.",
             "es": "Trasteando con los tribunales.",
             "de": "Herumbasteln an den Gerichten."
-          }
+          },
+          "axis": "SPECTACLE"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 35,
+        "SPECTACLE": 45,
+        "PUBLIC": 55,
+        "KNOW": 40,
+        "CRIT": 30,
+        "FUTURE": 25
+      }
     },
     {
       "code": "FI",
       "name": "Finland",
       "flag": "🇫🇮",
       "continent": "Europe",
-      "score": 41,
+      "score": 20,
       "trend": 0,
       "gdp_adjusted": 42,
       "headline": {
@@ -1314,7 +1475,8 @@
             "fr": "Vacciner les tout-petits contre les conneries.",
             "es": "Inmunizando a los más pequeños contra tonterías.",
             "de": "Kleinkinder gegen Quatsch immunisieren."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -1332,7 +1494,8 @@
             "fr": "Encore en tête de la classe.",
             "es": "De nuevo en la cima de la clase.",
             "de": "Wieder an der Spitze der Klasse."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -1350,7 +1513,8 @@
             "fr": "Rester en avance sur les bots.",
             "es": "Manteniéndose un paso adelante de los bots.",
             "de": "Den Bots immer einen Schritt voraus."
-          }
+          },
+          "axis": "PUBLIC"
         },
         {
           "title": {
@@ -1368,9 +1532,18 @@
             "fr": "Personne n'est parfait.",
             "es": "Nadie es perfecto.",
             "de": "Niemand ist perfekt."
-          }
+          },
+          "axis": "SPECTACLE"
         }
-      ]
+      ],
+      "axes": {
+        "SCI": 20,
+        "SPECTACLE": 30,
+        "PUBLIC": 20,
+        "KNOW": 20,
+        "CRIT": 15,
+        "FUTURE": 10
+      }
     }
   ],
   "history": [
