@@ -39,23 +39,28 @@ const today = new Date().toISOString().slice(0, 10);
 // ---------------------------------------------------------------------------
 // 1. ACTUALITÉS — GDELT (gratuit, pas de clé)
 // ---------------------------------------------------------------------------
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
 async function fetchHeadlines(countryName, maxRecords = 15) {
   // GDELT DOC 2.0 — vraies actus politiques récentes (titre + URL + source).
-  const query = encodeURIComponent(`"${countryName}" (government OR president OR law OR minister OR policy)`);
+  // GDELT rate-limite les requêtes rapprochées → on réessaie avec backoff.
+  const query = encodeURIComponent(`"${countryName}" (government OR president OR parliament OR law OR minister OR policy OR election) sourcelang:eng`);
   const url = `https://api.gdeltproject.org/api/v2/doc/doc?query=${query}` +
     `&mode=ArtList&format=json&timespan=3d&maxrecords=${maxRecords}&sort=DateDesc`;
-  try {
-    const res = await fetch(url, { headers: { 'User-Agent': 'IdiocracyIndex/1.0' } });
-    if (!res.ok) return [];
-    const json = await res.json();
-    const seen = new Set();
-    return (json.articles || [])
-      .filter(a => a.title && a.url && !seen.has(a.title) && seen.add(a.title))
-      .map(a => ({ title: a.title, url: a.url, source: a.domain || '', date: (a.seendate || '').slice(0, 8) }))
-      .slice(0, maxRecords);
-  } catch {
-    return [];
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch(url, { headers: { 'User-Agent': 'IdiocracyIndex/1.0' } });
+      if (res.status === 429 || res.status >= 500) { await sleep(5000 * (attempt + 1)); continue; }
+      if (!res.ok) return [];
+      const json = await res.json();
+      const seen = new Set();
+      return (json.articles || [])
+        .filter(a => a.title && a.url && !seen.has(a.title) && seen.add(a.title))
+        .map(a => ({ title: a.title, url: a.url, source: a.domain || '', date: (a.seendate || '').slice(0, 8) }))
+        .slice(0, maxRecords);
+    } catch { await sleep(3000); }
   }
+  return [];
 }
 
 function fmtGdeltDate(d) { // "20260615" -> "Jun 15, 2026"
@@ -102,7 +107,8 @@ Previous score: ${prevScore}
 Recent REAL news headlines (index. title [source]):
 ${list}
 
-Pick the 4-5 most relevant headlines. For EACH, give "i" (its index above), "impact" (signed int, + raises the stupidity score / - lowers it, range -6..+6) and "note" (one short biting sentence). Then an overall "score", a 1-sentence "headline" and a 1-sentence "why".
+Pick ONLY headlines genuinely about ${country.name}'s OWN government/politics/society, written in clear English. SKIP anything tangential, foreign, duplicated, clickbait, or non-English — quality over quantity. Aim for 4-5, but return fewer if fewer are genuinely relevant (better 3 good ones than 5 with junk).
+For EACH kept headline, give "i" (its index above), "impact" (signed int, + raises the stupidity score / - lowers it, range -6..+6) and "note" (one short biting sentence). Then an overall "score", a 1-sentence "headline" and a 1-sentence "why".
 
 Return JSON: {"score": <0-100 int>, "headline": "<1 sentence>", "why": "<1 biting sentence>", "articles": [{"i": <index>, "impact": <int>, "note": "<short>"}]}`;
 
@@ -191,16 +197,19 @@ async function main() {
   const data = JSON.parse(await readFile(DATA_PATH, 'utf8'));
   const prevWorld = data.world.score;
 
-  // Score chaque pays
-  for (const c of data.countries) {
+  // Score chaque pays (avec pause anti-rate-limit GDELT entre chaque)
+  for (let i = 0; i < data.countries.length; i++) {
+    const c = data.countries[i];
+    if (i > 0) await sleep(4000);
     const arts = await fetchHeadlines(c.name);
     const r = await scoreCountry(c, arts, c.score);
-    console.log(`  ${c.flag} ${c.name} — ${arts.length} articles GDELT → ${r.articles.length} retenus, score ${r.score}`);
+    const fresh = r.articles !== (c.articles) && arts.length > 0;
+    console.log(`  ${c.flag} ${c.name} — ${arts.length} articles GDELT → ${r.articles.length} retenus ${fresh ? '(frais)' : '(curés)'}, score ${r.score}`);
     c.score = r.score;
     c.trend = r.trend;
     c.headline = r.headline;
     c.why = r.why;
-    if (r.articles.length) c.articles = r.articles; // garde les anciens si GDELT/LLM n'a rien donné
+    if (r.articles.length >= 3 && arts.length > 0) c.articles = r.articles; // garde les curés si < 3 articles frais pertinents
     c.gdp_adjusted = clamp(Math.round(r.score * 0.95), 5, 99); // placeholder d'ajustement
   }
 
@@ -243,6 +252,16 @@ async function main() {
   console.log(`🏆 Connerie du jour : ${top.name} (${top.score})`);
 
   if (DRY_RUN) {
+    // Aperçu : montre les articles générés pour les 2 premiers pays ayant des liens GDELT frais
+    const sample = data.countries.filter(c => (c.articles || []).some(a => a.url && a.url.startsWith('http') && !a.url.includes('wikipedia'))).slice(0, 2);
+    for (const c of sample.length ? sample : data.countries.slice(0, 1)) {
+      console.log(`\n── ${c.flag} ${c.name} (score ${c.score}) ──`);
+      for (const a of c.articles || []) {
+        console.log(`  ${a.impact >= 0 ? '+' : ''}${a.impact}  ${a.title.slice(0, 70)}`);
+        console.log(`        ${a.source} · ${a.url}`);
+        console.log(`        ↳ ${a.note}`);
+      }
+    }
     console.log('\n(DRY_RUN) — fichier non écrit.');
     return;
   }
