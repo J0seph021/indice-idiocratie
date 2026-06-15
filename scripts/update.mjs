@@ -59,25 +59,25 @@ async function fetchHeadlines(countryName, maxRecords = 12) {
 // ---------------------------------------------------------------------------
 // 2. SCORING — LLM
 // ---------------------------------------------------------------------------
-const RUBRIC = `Tu es l'éditeur en chef de "L'Indice d'Idiocratie", un site SATIRIQUE
-qui note la connerie civilisationnelle des pays sur une échelle de 0 à 100,
-dans l'esprit du film Idiocracy (2006).
+const RUBRIC = `You are the editor-in-chief of "The Idiocracy Index", a SATIRE site
+that rates each country's civilizational stupidity on a 0-100 scale,
+in the spirit of the film Idiocracy (2006).
 
-Grille (humoristique, jamais raciste) — un score MONTE quand l'actualité montre :
-- des décisions politiques absurdes ou anti-science
-- de la gouvernance par spectacle / mème / culte de la force brute
-- de la corruption, des atteintes à la presse, de la désinformation érigée en norme
-- du divertissement crétin valorisé au-dessus du savoir
+Rubric (humorous, never racist) — a score GOES UP when the news shows:
+- absurd or anti-science political decisions
+- governance by spectacle / meme / cult of brute force
+- corruption, attacks on the press, disinformation made the norm
+- moronic entertainment valued above knowledge
 
-RÈGLES :
-- Vise les DÉCISIONS et les COMPORTEMENTS, jamais les peuples/ethnies/religions.
-- Sois plus DUR avec les pays riches (surtout les USA) qu'avec les pays pauvres.
-- N'utilise JAMAIS de "QI national" (pseudoscience raciste).
-- Ton : mordant, drôle, hyperbolique, mais sans haine.
-- Reste autour de la "ligne des 69" : 40 = sage, 69 = seuil critique, 90+ = Brawndo a gagné.
-- Écris le titre et la justification en FRANÇAIS, courts et percutants.
+RULES:
+- Target DECISIONS and BEHAVIORS, never peoples/ethnicities/religions.
+- Be HARDER on wealthy countries (especially the USA) than on poor ones.
+- NEVER use "national IQ" (racist pseudoscience).
+- Tone: biting, funny, hyperbolic, but never hateful.
+- Stay around the "69 line": 40 = sensible, 69 = critical threshold, 90+ = Brawndo won.
+- Write the headline and justification in ENGLISH, short and punchy.
 
-Réponds STRICTEMENT en JSON valide, sans texte autour.`;
+Respond STRICTLY in valid JSON, with no surrounding text.`;
 
 async function scoreCountry(country, headlines, prevScore) {
   if (PROVIDER === 'none' || headlines.length === 0) {
@@ -87,12 +87,12 @@ async function scoreCountry(country, headlines, prevScore) {
     return { score, trend: score - (prevScore ?? score), headline: country.headline, why: country.why };
   }
 
-  const user = `PAYS : ${country.name}
-Score précédent : ${prevScore}
-Titres d'actualité récents :
+  const user = `COUNTRY: ${country.name}
+Previous score: ${prevScore}
+Recent news headlines:
 ${headlines.map((h, i) => `${i + 1}. ${h}`).join('\n')}
 
-Donne un objet JSON : {"score": <0-100 entier>, "headline": "<le fait le plus con, 1 phrase>", "why": "<pourquoi c'est de l'idiocratie, 1 phrase mordante>"}`;
+Return a JSON object: {"score": <0-100 integer>, "headline": "<the dumbest fact, 1 sentence>", "why": "<why it's idiocracy, 1 biting sentence>"}`;
 
   try {
     const out = PROVIDER === 'anthropic'
@@ -196,8 +196,8 @@ async function main() {
   data.world.trend = worldScore - prevWorld;
   data.world.score = worldScore;
   data.world.label = worldScore >= 69
-    ? "On a franchi la ligne des 69. Brawndo a gagné."
-    : "Encore sous la ligne des 69. Profitez-en.";
+    ? "We crossed the 69 line. Brawndo won."
+    : "Still under the 69 line. Enjoy it while it lasts.";
 
   // Connerie du jour = plus gros score (ou plus forte hausse)
   const top = [...data.countries].sort((a, b) =>
@@ -206,7 +206,7 @@ async function main() {
     country: top.name, flag: top.flag,
     headline: top.headline, why: top.why, score: top.score,
   };
-  data.world.headline = `Champion du jour : ${top.name}. ${top.headline}`;
+  data.world.headline = `Today's champion: ${top.name}. ${top.headline}`;
 
   // Historique
   data.updated = today;

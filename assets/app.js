@@ -26,7 +26,7 @@ async function load() {
     const res = await fetch('data/scores.json?_=' + Date.now());
     DATA = await res.json();
   } catch (e) {
-    $('#world-headline').textContent = "Impossible de charger les conneries du jour. (data/scores.json introuvable)";
+    $('#world-headline').textContent = "Couldn't load today's stupidity. (data/scores.json not found)";
     return;
   }
   render();
@@ -63,7 +63,7 @@ function render() {
       <div class="continent-name">${c.emoji || '🌐'} ${c.name}</div>
       <div class="continent-score ${scoreClass(c.score)}">${c.score}</div>
       <div class="continent-bar"><i style="width:${c.score}%;background:${barColor(c.score)}"></i></div>
-      <div style="font-size:.8rem;color:var(--text-dim);margin-top:6px">${trendHTML(c.trend)} sur 7 jours</div>
+      <div style="font-size:.8rem;color:var(--text-dim);margin-top:6px">${trendHTML(c.trend)} over 7 days</div>
     </div>`).join('');
 
   renderCountries();
@@ -100,7 +100,7 @@ function renderCountries() {
 function formatDate(iso) {
   if (!iso) return '—';
   try {
-    return new Date(iso + 'T00:00:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+    return new Date(iso + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   } catch { return iso; }
 }
 function escapeHTML(s) {

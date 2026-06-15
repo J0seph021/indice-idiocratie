@@ -1,43 +1,43 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>L'Indice d'Idiocratie — Le palmarès mondial de la connerie</title>
-  <meta name="description" content="L'Indice d'Idiocratie note chaque pays, continent et la planète entière sur une échelle de connerie civilisationnelle. Satirique. Mis à jour chaque jour à partir des nouvelles du monde entier." />
-  <meta property="og:title" content="L'Indice d'Idiocratie 🧠💀" />
-  <meta property="og:description" content="Le palmarès mondial de la connerie. Mis à jour quotidiennement. 100% satirique." />
+  <title>The Idiocracy Index — The World's Stupidity Scoreboard</title>
+  <meta name="description" content="The Idiocracy Index rates every country, continent, and the whole planet on a civilizational stupidity scale. Satire. Updated daily from news around the world." />
+  <meta property="og:title" content="The Idiocracy Index 🧠💀" />
+  <meta property="og:description" content="The world's stupidity scoreboard. Updated daily. 100% satire." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <!-- Bandeau satire (obligatoire juridiquement) -->
+  <!-- Satire banner (legally required) -->
   <div class="satire-bar">
-    ⚠️ SITE SATIRIQUE — Aucun score n'est une affirmation de fait. C'est de l'humour. <a href="about.html#disclaimer">Pourquoi&nbsp;?</a>
+    ⚠️ SATIRE SITE — No score is a statement of fact. It's a joke. <a href="about.html#disclaimer">Why?</a>
   </div>
 
   <header class="site-header">
     <a class="brand" href="index.html">
       <span class="brand-logo">🧠💀</span>
-      <span class="brand-text">L'Indice<br><strong>d'Idiocratie</strong></span>
+      <span class="brand-text">The<br><strong>Idiocracy Index</strong></span>
     </a>
     <nav class="nav">
-      <a href="index.html" class="active">Palmarès</a>
-      <a href="about.html">Méthodologie</a>
-      <a href="merch.html">Boutique</a>
+      <a href="index.html" class="active">Scoreboard</a>
+      <a href="about.html">Methodology</a>
+      <a href="merch.html">Shop</a>
     </nav>
   </header>
 
-  <!-- Emplacement publicitaire (leaderboard) -->
+  <!-- Ad slot (leaderboard) -->
   <div class="ad-slot ad-leaderboard" data-ad="top">
-    <span>Emplacement publicitaire — 728×90</span>
+    <span>Ad space — 728×90</span>
   </div>
 
   <main>
-    <!-- SCORE MONDIAL -->
+    <!-- WORLD SCORE -->
     <section class="hero">
-      <p class="hero-kicker">Niveau d'idiocratie de la planète aujourd'hui</p>
+      <p class="hero-kicker">The planet's idiocracy level today</p>
       <div class="world-gauge">
         <div class="world-score" id="world-score">--</div>
         <div class="world-meta">
@@ -45,38 +45,38 @@
           <div class="world-label" id="world-label"></div>
         </div>
       </div>
-      <p class="hero-headline" id="world-headline">Chargement des conneries planétaires…</p>
-      <p class="hero-updated">Dernière mise à jour : <span id="updated-date">—</span> · Échelle 0–100 · <span class="ref-69">la « ligne des 69 » = seuil critique de connerie</span></p>
+      <p class="hero-headline" id="world-headline">Loading the planet's finest stupidity…</p>
+      <p class="hero-updated">Last updated: <span id="updated-date">—</span> · Scale 0–100 · <span class="ref-69">the "69 line" = critical stupidity threshold</span></p>
     </section>
 
-    <!-- CONNERIE DU JOUR -->
+    <!-- DUMBEST OF THE DAY -->
     <section class="spotlight" id="spotlight">
-      <h2>🏆 La Connerie du jour</h2>
+      <h2>🏆 Dumbest Move of the Day</h2>
       <div class="spotlight-card" id="spotlight-card"></div>
     </section>
 
     <!-- CONTINENTS -->
     <section class="continents">
-      <h2>Par continent</h2>
+      <h2>By continent</h2>
       <div class="continent-grid" id="continent-grid"></div>
     </section>
 
-    <!-- Emplacement publicitaire (in-content) -->
+    <!-- Ad slot (in-content) -->
     <div class="ad-slot ad-rectangle" data-ad="mid">
-      <span>Emplacement publicitaire — 300×250</span>
+      <span>Ad space — 300×250</span>
     </div>
 
-    <!-- PALMARÈS PAYS -->
+    <!-- COUNTRY RANKING -->
     <section class="ranking">
       <div class="ranking-head">
-        <h2>Palmarès des pays</h2>
+        <h2>Country rankings</h2>
         <div class="ranking-controls">
-          <input type="search" id="search" placeholder="Chercher un pays…" />
+          <input type="search" id="search" placeholder="Search a country…" />
           <select id="sort">
-            <option value="score-desc">Plus cons d'abord</option>
-            <option value="score-asc">Moins cons d'abord</option>
-            <option value="trend-desc">Ça empire</option>
-            <option value="adj-desc">Ajusté à la richesse</option>
+            <option value="score-desc">Dumbest first</option>
+            <option value="score-asc">Smartest first</option>
+            <option value="trend-desc">Getting worse</option>
+            <option value="adj-desc">Wealth-adjusted</option>
           </select>
         </div>
       </div>
@@ -87,22 +87,22 @@
   <footer class="site-footer">
     <div class="footer-cols">
       <div>
-        <h3>🧠💀 L'Indice d'Idiocratie</h3>
-        <p>Un baromètre satirique de la connerie civilisationnelle. Nous notons des <em>décisions</em> et des <em>comportements</em>, pas des peuples. Aucun « QI national » pseudo-scientifique n'est utilisé — <a href="about.html#iq">voici pourquoi</a>.</p>
+        <h3>🧠💀 The Idiocracy Index</h3>
+        <p>A satirical barometer of civilizational stupidity. We rate <em>decisions</em> and <em>behaviors</em>, not peoples. No pseudo-scientific "national IQ" is ever used — <a href="about.html#iq">here's why</a>.</p>
       </div>
       <div>
-        <h3>Liens</h3>
-        <a href="about.html">Méthodologie & disclaimer</a>
-        <a href="merch.html">Boutique satirique</a>
-        <a href="about.html#sources">Sources de données</a>
+        <h3>Links</h3>
+        <a href="about.html">Methodology & disclaimer</a>
+        <a href="merch.html">Satirical shop</a>
+        <a href="about.html#sources">Data sources</a>
       </div>
       <div>
-        <h3>Le mot de la fin</h3>
-        <p class="footer-quote">« Je ne suis pas un prophète, je me suis juste trompé de 490 ans. »</p>
+        <h3>Famous last words</h3>
+        <p class="footer-quote">"I'm not a prophet — I was just off by 490 years."</p>
       </div>
     </div>
     <p class="footer-legal">
-      ⚠️ <strong>Œuvre de satire.</strong> Les scores sont une exagération humoristique et hyperbolique, et ne constituent en aucun cas une assertion de fait vérifiable. Ce site ne vise aucune ethnie, religion ni personne nommée. © <span id="year"></span> — Tous droits de rire réservés.
+      ⚠️ <strong>Work of satire.</strong> Scores are humorous, hyperbolic exaggerations and are in no way verifiable statements of fact. This site targets no ethnicity, religion, or named person. © <span id="year"></span> — All rights to laugh reserved.
     </p>
   </footer>
 

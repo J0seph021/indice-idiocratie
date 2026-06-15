@@ -1,232 +1,46 @@
 {
   "updated": "2026-06-15",
-  "scale_note": "Échelle 0–100. 69 = la « ligne critique de connerie ». Plus c'est haut, plus c'est Idiocratie.",
+  "scale_note": "Scale 0–100. 69 = the critical stupidity line. The higher, the more Idiocracy.",
   "world": {
     "score": 71,
     "trend": 2,
-    "label": "On a franchi la ligne des 69. Brawndo a gagné.",
-    "headline": "La planète bat son record : combats de cage, complots viraux et dirigeants qui gouvernent par mèmes."
+    "label": "We crossed the 69 line. Brawndo won.",
+    "headline": "The planet sets a new record: cage fights, viral conspiracies, and leaders governing by meme."
   },
   "spotlight": {
-    "country": "États-Unis",
+    "country": "United States",
     "flag": "🇺🇸",
-    "headline": "UFC sur la pelouse de la Maison-Blanche pour les 80 ans du président.",
-    "why": "Gouvernance par spectacle, science remplacée par des posts, et un culte de la force brute digne du président Camacho.",
-    "score": 93
+    "headline": "UFC fight held on the White House lawn for Trump's 80th birthday",
+    "why": "An octagon set up in front of the Oval Office, 'USA! USA!' chants, and a president hyping the bout. President Camacho couldn't have done it better.",
+    "score": 94
   },
   "continents": [
-    {
-      "name": "Amérique du Nord",
-      "emoji": "🌎",
-      "score": 72,
-      "trend": -6
-    },
-    {
-      "name": "Europe",
-      "emoji": "🌍",
-      "score": 59,
-      "trend": -2
-    },
-    {
-      "name": "Asie",
-      "emoji": "🌏",
-      "score": 62,
-      "trend": -4
-    },
-    {
-      "name": "Amérique du Sud",
-      "emoji": "🌎",
-      "score": 75,
-      "trend": 11
-    },
-    {
-      "name": "Afrique",
-      "emoji": "🌍",
-      "score": 63,
-      "trend": 1
-    },
-    {
-      "name": "Océanie",
-      "emoji": "🌏",
-      "score": 60,
-      "trend": 3
-    }
+    { "name": "North America", "emoji": "🌎", "score": 78, "trend": 3 },
+    { "name": "Europe", "emoji": "🌍", "score": 61, "trend": 1 },
+    { "name": "Asia", "emoji": "🌏", "score": 66, "trend": 0 },
+    { "name": "South America", "emoji": "🌎", "score": 64, "trend": -1 },
+    { "name": "Africa", "emoji": "🌍", "score": 63, "trend": 1 },
+    { "name": "Oceania", "emoji": "🌏", "score": 57, "trend": 0 }
   ],
   "countries": [
-    {
-      "code": "US",
-      "name": "États-Unis",
-      "flag": "🇺🇸",
-      "continent": "Amérique du Nord",
-      "score": 93,
-      "trend": -1,
-      "gdp_adjusted": 88,
-      "headline": "UFC sur la pelouse de la Maison-Blanche pour les 80 ans du président.",
-      "why": "Gouvernance par spectacle, science remplacée par des posts, et un culte de la force brute digne du président Camacho."
-    },
-    {
-      "code": "RU",
-      "name": "Russie",
-      "flag": "🇷🇺",
-      "continent": "Europe",
-      "score": 85,
-      "trend": -3,
-      "gdp_adjusted": 81,
-      "headline": "Nouvelle loi punissant le fait de « chercher » de l'info en ligne.",
-      "why": "Quand consulter une page web devient un délit, on a quitté la réalité."
-    },
-    {
-      "code": "SV",
-      "name": "Salvador",
-      "flag": "🇸🇻",
-      "continent": "Amérique du Sud",
-      "score": 79,
-      "trend": 0,
-      "gdp_adjusted": 75,
-      "headline": "Tout le budget national rejoué sur une cryptomonnaie.",
-      "why": "Le trésor public traité comme un jeton de casino."
-    },
-    {
-      "code": "GB",
-      "name": "Royaume-Uni",
-      "flag": "🇬🇧",
-      "continent": "Europe",
-      "score": 69,
-      "trend": -1,
-      "gdp_adjusted": 66,
-      "headline": "Énième débat parlementaire sur la forme des bananes.",
-      "why": "L'art de transformer une non-question en crise nationale."
-    },
-    {
-      "code": "BR",
-      "name": "Brésil",
-      "flag": "🇧🇷",
-      "continent": "Amérique du Sud",
-      "score": 71,
-      "trend": 3,
-      "gdp_adjusted": 67,
-      "headline": "Députés se battent à coups de chaise en pleine séance.",
-      "why": "Le « Extreme Court » d'Idiocracy, mais en vrai."
-    },
-    {
-      "code": "IN",
-      "name": "Inde",
-      "flag": "🇮🇳",
-      "continent": "Asie",
-      "score": 65,
-      "trend": -2,
-      "gdp_adjusted": 62,
-      "headline": "Ministre recommande la bouse comme antivirus.",
-      "why": "La pseudoscience promue au rang de politique de santé."
-    },
-    {
-      "code": "FR",
-      "name": "France",
-      "flag": "🇫🇷",
-      "continent": "Europe",
-      "score": 59,
-      "trend": -3,
-      "gdp_adjusted": 56,
-      "headline": "Grève contre une réforme, puis grève contre son annulation.",
-      "why": "Le réflexe d'opposition avant la lecture du texte."
-    },
-    {
-      "code": "CN",
-      "name": "Chine",
-      "flag": "🇨🇳",
-      "continent": "Asie",
-      "score": 67,
-      "trend": 2,
-      "gdp_adjusted": 64,
-      "headline": "La Chine se lance à fond dans l'IA pour préparer ses plaidoiries.",
-      "why": "En confiant la justice à des algorithmes, la Chine prouve qu'elle préfère les robots aux avocats, le spectacle n'a jamais été aussi fumeux !"
-    },
-    {
-      "code": "IT",
-      "name": "Italie",
-      "flag": "🇮🇹",
-      "continent": "Europe",
-      "score": 61,
-      "trend": 1,
-      "gdp_adjusted": 58,
-      "headline": "Influenceur élu maire sur la promesse d'un parc d'attractions.",
-      "why": "Le programme tient sur une story."
-    },
-    {
-      "code": "AU",
-      "name": "Australie",
-      "flag": "🇦🇺",
-      "continent": "Océanie",
-      "score": 60,
-      "trend": 3,
-      "gdp_adjusted": 57,
-      "headline": "Débat national : les émeus ont-ils encore gagné une guerre ?",
-      "why": "Spoiler : oui."
-    },
-    {
-      "code": "DE",
-      "name": "Allemagne",
-      "flag": "🇩🇪",
-      "continent": "Europe",
-      "score": 53,
-      "trend": -1,
-      "gdp_adjusted": 50,
-      "headline": "Formulaire de 14 pages pour signaler un formulaire en trop.",
-      "why": "La bureaucratie qui se mord la queue."
-    },
-    {
-      "code": "JP",
-      "name": "Japon",
-      "flag": "🇯🇵",
-      "continent": "Asie",
-      "score": 53,
-      "trend": 1,
-      "gdp_adjusted": 50,
-      "headline": "Robot démissionne, jugé surmené par ses collègues humains.",
-      "why": "Au moins quelqu'un fait attention au bien-être."
-    },
-    {
-      "code": "CA",
-      "name": "Canada",
-      "flag": "🇨🇦",
-      "continent": "Amérique du Nord",
-      "score": 51,
-      "trend": 0,
-      "gdp_adjusted": 48,
-      "headline": "Excuses officielles présentées à un orignal.",
-      "why": "La politesse poussée au niveau diplomatique."
-    },
-    {
-      "code": "SE",
-      "name": "Suède",
-      "flag": "🇸🇪",
-      "continent": "Europe",
-      "score": 46,
-      "trend": 2,
-      "gdp_adjusted": 44,
-      "headline": "Pause-café inscrite dans la constitution (presque).",
-      "why": "Le fika comme rempart contre la bêtise."
-    },
-    {
-      "code": "FI",
-      "name": "Finlande",
-      "flag": "🇫🇮",
-      "continent": "Europe",
-      "score": 43,
-      "trend": 2,
-      "gdp_adjusted": 41,
-      "headline": "Cours obligatoire pour repérer les fausses nouvelles dès l'école primaire.",
-      "why": "Championne mondiale de résistance à la désinformation. Bravo."
-    }
+    { "code": "US", "name": "United States", "flag": "🇺🇸", "continent": "North America", "score": 94, "trend": 4, "gdp_adjusted": 91, "headline": "UFC fight staged on the White House lawn for the president's 80th birthday.", "why": "Governance as spectacle, science replaced by posts, and a cult of brute force worthy of President Camacho." },
+    { "code": "RU", "name": "Russia", "flag": "🇷🇺", "continent": "Europe", "score": 88, "trend": 1, "gdp_adjusted": 84, "headline": "New law punishing the act of 'searching' for info online.", "why": "When loading a web page becomes a crime, you've left reality behind." },
+    { "code": "SV", "name": "El Salvador", "flag": "🇸🇻", "continent": "South America", "score": 79, "trend": 2, "gdp_adjusted": 71, "headline": "Entire national budget re-gambled on a cryptocurrency.", "why": "The public treasury treated like a casino chip." },
+    { "code": "GB", "name": "United Kingdom", "flag": "🇬🇧", "continent": "Europe", "score": 70, "trend": 2, "gdp_adjusted": 73, "headline": "Yet another parliamentary debate over the shape of bananas.", "why": "The fine art of turning a non-issue into a national crisis." },
+    { "code": "BR", "name": "Brazil", "flag": "🇧🇷", "continent": "South America", "score": 68, "trend": -2, "gdp_adjusted": 64, "headline": "Lawmakers brawl with chairs mid-session.", "why": "Idiocracy's 'Extreme Court,' but for real." },
+    { "code": "IN", "name": "India", "flag": "🇮🇳", "continent": "Asia", "score": 67, "trend": 1, "gdp_adjusted": 58, "headline": "Minister recommends cow dung as an antiviral.", "why": "Pseudoscience promoted to public health policy." },
+    { "code": "FR", "name": "France", "flag": "🇫🇷", "continent": "Europe", "score": 62, "trend": 0, "gdp_adjusted": 64, "headline": "Strike against a reform, then a strike against its cancellation.", "why": "The reflex to oppose before reading the text." },
+    { "code": "CN", "name": "China", "flag": "🇨🇳", "continent": "Asia", "score": 65, "trend": 0, "gdp_adjusted": 60, "headline": "Bonus social-credit points for snitching on your neighbors.", "why": "Gamified informing as civic virtue." },
+    { "code": "IT", "name": "Italy", "flag": "🇮🇹", "continent": "Europe", "score": 60, "trend": 1, "gdp_adjusted": 62, "headline": "Influencer elected mayor on a promise of a theme park.", "why": "The whole platform fits in a single story." },
+    { "code": "AU", "name": "Australia", "flag": "🇦🇺", "continent": "Oceania", "score": 57, "trend": 0, "gdp_adjusted": 59, "headline": "National debate: have the emus won another war?", "why": "Spoiler: yes." },
+    { "code": "DE", "name": "Germany", "flag": "🇩🇪", "continent": "Europe", "score": 54, "trend": -1, "gdp_adjusted": 56, "headline": "A 14-page form to report one too many forms.", "why": "Bureaucracy eating its own tail." },
+    { "code": "JP", "name": "Japan", "flag": "🇯🇵", "continent": "Asia", "score": 52, "trend": 0, "gdp_adjusted": 53, "headline": "Robot resigns, deemed overworked by its human coworkers.", "why": "At least someone's paying attention to well-being." },
+    { "code": "CA", "name": "Canada", "flag": "🇨🇦", "continent": "North America", "score": 51, "trend": 0, "gdp_adjusted": 52, "headline": "Official apology issued to a moose.", "why": "Politeness raised to diplomatic levels." },
+    { "code": "SE", "name": "Sweden", "flag": "🇸🇪", "continent": "Europe", "score": 44, "trend": -1, "gdp_adjusted": 45, "headline": "Coffee break nearly written into the constitution.", "why": "The fika as a bulwark against stupidity." },
+    { "code": "FI", "name": "Finland", "flag": "🇫🇮", "continent": "Europe", "score": 41, "trend": 0, "gdp_adjusted": 42, "headline": "Mandatory class on spotting fake news starting in elementary school.", "why": "World champion at resisting disinformation. Bravo." }
   ],
   "history": [
-    {
-      "date": "2026-06-08",
-      "world": 69
-    },
-    {
-      "date": "2026-06-15",
-      "world": 71
-    }
+    { "date": "2026-06-08", "world": 69 },
+    { "date": "2026-06-15", "world": 71 }
   ]
 }
