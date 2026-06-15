@@ -102,9 +102,22 @@
     <div class="wrap"><p class="footer-legal">⚠ WORK OF SATIRE. Original designs. © 2026. All rights to laugh reserved.</p></div>
   </footer>
   <script>
+    /* ────────────────────────────────────────────────────────────────
+       SHOP WIRING — Printify Pop-Up Store
+       1. Once your Printify Pop-Up store is live, paste its URL below.
+       2. (Optional) Give any "Buy" link a data-url="..." pointing to that
+          exact product page; it overrides STORE_URL for that button.
+       ──────────────────────────────────────────────────────────────── */
+    const STORE_URL = "https://YOUR-STORE.printify.me"; // ← replace with your store URL
+
     document.querySelectorAll('[data-buy]').forEach(b => b.addEventListener('click', e => {
       e.preventDefault();
-      alert("🛒 Demo: wire your Printful/Printify/Shopify product URL here.");
+      const url = b.dataset.url || STORE_URL;
+      if (url.includes("YOUR-STORE")) {
+        alert("🛒 Almost there! Open merch.html and replace STORE_URL with your Printify Pop-Up store link (see SHOP-SETUP.md).");
+        return;
+      }
+      window.open(url, "_blank", "noopener");
     }));
   </script>
 </body>
