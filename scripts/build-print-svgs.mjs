@@ -7,37 +7,63 @@ import { dirname, join } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
-const loadFont = (file) => {
-  const buf = readFileSync(join(__dirname, 'fonts', file));
-  return opentype.parse(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength));
-};
-const fonts = { anton: loadFont('Anton-Regular.ttf'), mono: loadFont('SpaceMono-Bold.ttf') };
-
-function renderLine(line, cxDefault) {
-  const { y, size, font = 'anton', ls = 0, anchor = 'middle', x, segments } = line;
-  const f = fonts[font];
-  const scale = size / f.unitsPerEm;
-  const glyphsOf = (text) => [...text].map((ch) => f.charToGlyph(ch));
-  const widthOf = (text) => glyphsOf(text).reduce((w, g) => w + g.advanceWidth * scale + ls, 0);
-  let total = segments.reduce((w, s) => w + widthOf(s.text), 0) - ls;
-  let px = anchor === 'start' ? x : cxDefault - total / 2;
-  let out = '';
-  for (const s of segments) {
-    let d = '';
-    for (const g of glyphsOf(s.text)) {
-      const gp = g.getPath(px, y, size);
-      d += gp.toPathData(2) + ' ';
-      px += g.advanceWidth * scale + ls;
-    }
-    const stroke = s.stroke ? ` stroke="${s.stroke}" stroke-width="${s.strokeWidth || 10}" stroke-linejoin="round"` : '';
-    out += `  <path d="${d.trim()}" fill="${s.fill}"${stroke}/>\n`;
+// Re-parse the fonts fresh for every design — opentype.js caches glyph state on
+// the Font object, which corrupts later designs if the same instance is reused.
+const FONT_FILES = { anton: 'Anton-Regular.ttf', mono: 'SpaceMono-Bold.ttf' };
+function loadFonts() {
+  const out = {};
+  for (const [key, file] of Object.entries(FONT_FILES)) {
+    const buf = readFileSync(join(__dirname, 'fonts', file));
+    out[key] = opentype.parse(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength));
   }
   return out;
 }
 
+// Lay out the line's glyphs at baseline y=0, pen starting at x=0.
+// Returns one opentype Path per segment plus the combined ink bounding box.
+function layoutLine(f, segments, size, ls) {
+  const scale = size / f.unitsPerEm;
+  let px = 0;
+  const all = new opentype.Path();
+  const segPaths = segments.map((s) => {
+    const p = new opentype.Path();
+    for (const ch of [...s.text]) {
+      const g = f.charToGlyph(ch);
+      const gp = g.getPath(px, 0, size);
+      p.commands.push(...gp.commands);
+      all.commands.push(...gp.commands);
+      px += g.advanceWidth * scale + ls;
+    }
+    return { ...s, path: p };
+  });
+  return { segPaths, bbox: all.getBoundingBox() };
+}
+
+function renderLine(fonts, line, cxDefault, maxW) {
+  const { y, font = 'anton', ls = 0, anchor = 'middle', x, segments } = line;
+  const f = fonts[font];
+  let size = line.size;
+  let { segPaths, bbox } = layoutLine(f, segments, size, ls);
+  let width = bbox.x2 - bbox.x1;
+  if (maxW && width > maxW) { // auto-fit using real ink width
+    size = size * (maxW / width);
+    ({ segPaths, bbox } = layoutLine(f, segments, size, ls));
+    width = bbox.x2 - bbox.x1;
+  }
+  const dx = anchor === 'start' ? (x - bbox.x1) : (cxDefault - (bbox.x1 + bbox.x2) / 2);
+  let out = `  <g transform="translate(${dx.toFixed(2)}, ${y})">\n`;
+  for (const s of segPaths) {
+    const stroke = s.stroke ? ` stroke="${s.stroke}" stroke-width="${s.strokeWidth || 10}" stroke-linejoin="round"` : '';
+    out += `    <path d="${s.path.toPathData(2)}" fill="${s.fill}"${stroke}/>\n`;
+  }
+  return out + '  </g>\n';
+}
+
 function build({ file, w, h, cx, shapes = [], lines }) {
+  const fonts = loadFonts();
+  const maxW = w * 0.92;
   let body = shapes.map(s => '  ' + s).join('\n') + (shapes.length ? '\n' : '');
-  body += lines.map(l => renderLine(l, cx)).join('');
+  body += lines.map(l => renderLine(fonts, l, cx, maxW)).join('');
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}">\n${body}</svg>\n`;
   const dir = join(root, 'shop-designs', 'print');
   mkdirSync(dir, { recursive: true });
@@ -51,7 +77,7 @@ const W = '#ffffff', BLK = '#0a0a0f', YEL = '#ffd60a', PINK = '#ff2e63', ACID = 
 build({ file: '69-line.svg', w: 3000, h: 3600, cx: 1500,
   shapes: ['<rect x="900" y="2330" width="1200" height="14" fill="#ffd60a"/>'],
   lines: [
-    { y: 650,  size: 120, font: 'mono', ls: 30, segments: [{ text: 'THE IDIOCRACY INDEX', fill: W }] },
+    { y: 700,  size: 150, ls: 24, segments: [{ text: 'THE IDIOCRACY INDEX', fill: W }] },
     { y: 1450, size: 640, ls: 10, segments: [{ text: 'SURVIVED', fill: W }] },
     { y: 2150, size: 640, ls: 10, segments: [{ text: 'THE ', fill: W }, { text: '69', fill: YEL }] },
     { y: 2820, size: 320, ls: 6, segments: [{ text: 'BRAWNDO WON.', fill: PINK }] },
@@ -73,7 +99,7 @@ build({ file: 'voters-crave.svg', w: 3000, h: 3600, cx: 1500, lines: [
   { y: 1620, size: 720, ls: 8, segments: [{ text: 'WHAT', fill: ACID }] },
   { y: 2280, size: 560, ls: 6, segments: [{ text: 'VOTERS', fill: W }] },
   { y: 2900, size: 560, ls: 6, segments: [{ text: 'CRAVE', fill: W }] },
-  { y: 3180, size: 120, font: 'mono', ls: 24, segments: [{ text: '/ THE IDIOCRACY INDEX /', fill: DIM }] },
+  { y: 3300, size: 130, ls: 18, segments: [{ text: 'THE IDIOCRACY INDEX', fill: DIM }] },
 ] });
 
 // 4. ELECTROLYTES MUG — transparent, white mug
@@ -102,7 +128,7 @@ build({ file: 'annual-report-poster.svg', w: 3000, h: 4000, cx: 1500,
     '<rect x="0" y="3960" width="3000" height="40" fill="#ff2e63"/>',
   ],
   lines: [
-    { y: 560, size: 120, font: 'mono', ls: 36, segments: [{ text: 'THE IDIOCRACY INDEX', fill: DIM }] },
+    { y: 620, size: 170, ls: 20, segments: [{ text: 'THE IDIOCRACY INDEX', fill: DIM }] },
     { y: 1180, size: 300, ls: 6, segments: [{ text: 'ANNUAL REPORT', fill: W }] },
     { y: 2000, size: 720, ls: 8, segments: [{ text: 'GLOBAL', fill: YEL }] },
     { y: 2760, size: 720, ls: 8, segments: [{ text: 'STUPIDITY', fill: PINK }] },
