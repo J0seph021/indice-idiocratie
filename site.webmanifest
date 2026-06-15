@@ -1,0 +1,13 @@
+{
+  "name": "The Idiocracy Index",
+  "short_name": "Idiocracy Index",
+  "description": "The world's stupidity scoreboard. Every country rated 0-100, updated daily. 100% satire.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07070b",
+  "theme_color": "#07070b",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
