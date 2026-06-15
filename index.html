@@ -18,25 +18,26 @@
 </head>
 <body>
   <div class="satire-bar">
-    <span class="tape-txt">⚠ SATIRE</span> &nbsp; No score is a statement of fact. It's a joke. <a href="about.html#disclaimer">Why?</a>
+    <span class="tape-txt">⚠ <span data-i18n="satireTag">SATIRE</span></span> &nbsp; <span data-i18n="satireText">No score is a statement of fact. It's a joke.</span> <a href="about.html#disclaimer" data-i18n="why">Why?</a>
   </div>
 
   <header class="site-header">
     <a class="brand" href="index.html">
       <span class="brand-logo">🧠💀</span>
       <span class="brand-text">The<strong>Idiocracy Index</strong></span>
-      <span class="live-dot">LIVE</span>
+      <span class="live-dot" data-i18n="live">LIVE</span>
     </a>
     <nav class="nav">
-      <a href="index.html" class="active">Scoreboard</a>
-      <a href="about.html">Methodology</a>
-      <a href="merch.html">Shop</a>
+      <a href="index.html" class="active" data-i18n="navScoreboard">Scoreboard</a>
+      <a href="about.html" data-i18n="navMethodology">Methodology</a>
+      <a href="merch.html" data-i18n="navShop">Shop</a>
+      <select class="lang-switch" id="lang-switch" aria-label="Language"></select>
     </nav>
   </header>
 
   <!-- BREAKING TICKER -->
   <div class="ticker">
-    <div class="ticker-label">⚡ BREAKING</div>
+    <div class="ticker-label">⚡ <span data-i18n="breaking">BREAKING</span></div>
     <div class="ticker-track-wrap">
       <div class="ticker-track" id="ticker"></div>
     </div>
@@ -47,13 +48,13 @@
     <section class="hero wrap">
       <div class="hero-grid">
         <div>
-          <p class="hero-kicker">Global Civilizational Stupidity Index</p>
-          <h1 class="hero-title">How dumb is<br>the <span class="hl">planet</span><br>today?</h1>
-          <p class="hero-headline" id="world-headline">Booting up the global stupidity monitor…</p>
+          <p class="hero-kicker" data-i18n="heroKicker">Global Civilizational Stupidity Index</p>
+          <h1 class="hero-title" data-i18n-html="heroTitle">How dumb is the planet today?</h1>
+          <p class="hero-headline" id="world-headline" data-i18n="loadingWorld">Booting up the global stupidity monitor…</p>
           <div class="hero-meta">
-            <span class="chip">Updated <b id="updated-date">…</b></span>
-            <span class="chip">Scale <b>0-100</b></span>
-            <span class="chip">The <b>69 line</b> = critical threshold</span>
+            <span class="chip"><span data-i18n="updated">Updated</span> <b id="updated-date">…</b></span>
+            <span class="chip"><span data-i18n="scale">Scale</span> <b>0-100</b></span>
+            <span class="chip" data-i18n-html="line69">the 69 line = critical threshold</span>
           </div>
         </div>
         <div class="gauge-wrap" id="gauge-wrap">
@@ -70,27 +71,27 @@
 
     <!-- SPOTLIGHT -->
     <section class="block wrap reveal">
-      <div class="sec-label">Dumbest Move of the Day</div>
+      <div class="sec-label" data-i18n="secDumbest">Dumbest Move of the Day</div>
       <div class="spotlight-card" id="spotlight-card"></div>
     </section>
 
     <!-- CONTINENTS -->
     <section class="block wrap reveal">
-      <div class="sec-label">Global Breakdown by Continent</div>
+      <div class="sec-label" data-i18n="secContinents">Global Breakdown by Continent</div>
       <div class="continent-grid" id="continent-grid"></div>
     </section>
 
     <!-- RANKING -->
     <section class="block wrap reveal">
       <div class="ranking-head">
-        <div class="sec-label" style="margin:0">National Stupidity Rankings</div>
+        <div class="sec-label" style="margin:0" data-i18n="secRankings">National Stupidity Rankings</div>
         <div class="ranking-controls">
-          <input type="search" id="search" placeholder="Search a country…" aria-label="Search a country" />
+          <input type="search" id="search" data-i18n-ph="searchPlaceholder" placeholder="Search a country…" aria-label="Search a country" />
           <select id="sort" aria-label="Sort rankings">
-            <option value="score-desc">Dumbest first</option>
-            <option value="score-asc">Smartest first</option>
-            <option value="trend-desc">Getting worse</option>
-            <option value="adj-desc">Wealth-adjusted</option>
+            <option value="score-desc" data-i18n="sortDumbest">Dumbest first</option>
+            <option value="score-asc" data-i18n="sortSmartest">Smartest first</option>
+            <option value="trend-desc" data-i18n="sortWorse">Getting worse</option>
+            <option value="adj-desc" data-i18n="sortAdjusted">Wealth-adjusted</option>
           </select>
         </div>
       </div>
@@ -102,26 +103,27 @@
     <div class="wrap">
       <div class="footer-cols">
         <div>
-          <h3>🧠💀 The Idiocracy Index</h3>
-          <p>A satirical barometer of civilizational stupidity. We rate <em>decisions</em> and <em>behaviors</em>, not peoples. No pseudo-scientific "national IQ" is ever used. <a href="about.html#iq">Here's why</a>.</p>
+          <h3>🧠💀 <span data-i18n="footAboutT">The Idiocracy Index</span></h3>
+          <p data-i18n-html="footAbout"></p>
         </div>
         <div>
-          <h3>Links</h3>
-          <a href="about.html">Methodology & disclaimer</a>
-          <a href="merch.html">Satirical shop</a>
-          <a href="about.html#sources">Data sources</a>
+          <h3 data-i18n="footLinksT">Links</h3>
+          <a href="about.html" data-i18n="footLinkMethod">Methodology & disclaimer</a>
+          <a href="merch.html" data-i18n="footLinkShop">Satirical shop</a>
+          <a href="about.html#sources" data-i18n="footLinkSources">Data sources</a>
         </div>
         <div>
-          <h3>Famous last words</h3>
-          <p class="footer-quote">"I'm not a prophet. I was just off by 490 years."</p>
+          <h3 data-i18n="footWordsT">Famous last words</h3>
+          <p class="footer-quote" data-i18n="footQuote">"I'm not a prophet. I was just off by 490 years."</p>
         </div>
       </div>
       <p class="footer-legal">
-        ⚠ WORK OF SATIRE. Scores are humorous, hyperbolic exaggerations and are in no way verifiable statements of fact. This site targets no ethnicity, religion, or named person. © <span id="year"></span>. All rights to laugh reserved.
+        ⚠ <span data-i18n="footLegal">WORK OF SATIRE. Scores are humorous, hyperbolic exaggerations and are in no way verifiable statements of fact. This site targets no ethnicity, religion, or named person.</span> © <span id="year"></span>.
       </p>
     </div>
   </footer>
 
+  <script src="assets/i18n.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>

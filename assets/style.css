@@ -133,6 +133,13 @@ a:hover { text-decoration: underline; }
 }
 .nav a:hover { color: var(--ink); border-color: var(--line); background: var(--bg-1); text-decoration: none; }
 .nav a.active { color: #0a0a0f; background: var(--hazard); }
+.lang-switch {
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--ink-dim); background: var(--bg-1); border: 1px solid var(--line);
+  border-radius: 999px; padding: 7px 10px; cursor: pointer; margin-left: 4px;
+}
+.lang-switch:hover { color: var(--ink); border-color: var(--hazard); }
+.lang-switch:focus { outline: 2px solid var(--hazard); }
 
 /* ---------- BREAKING TICKER ---------- */
 .ticker {

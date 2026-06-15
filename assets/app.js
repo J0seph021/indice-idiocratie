@@ -69,7 +69,7 @@ function countUp(el, target, dur = 1500) {
 function buildTicker(countries) {
   const items = countries
     .slice().sort((a, b) => b.score - a.score)
-    .map(c => `<span class="ticker-item">${c.flag} <b>${esc(c.name)} ${c.score}</b> — ${esc(c.headline)}</span>`)
+    .map(c => `<span class="ticker-item">${c.flag} <b>${esc(c.name)} ${c.score}</b> — ${esc(window.pick(c.headline))}</span>`)
     .join('');
   // duplicate for seamless loop
   $('#ticker').innerHTML = items + items;
@@ -83,8 +83,9 @@ function render() {
   buildGauge(w.score);
   countUp(ws, w.score);
   $('#world-trend').innerHTML = trendHTML(w.trend);
-  $('#world-label').textContent = w.label || '';
-  $('#world-headline').innerHTML = `<b>${esc((w.headline || '').split('.')[0])}.</b> ${esc((w.headline || '').split('.').slice(1).join('.').trim())}`;
+  $('#world-label').textContent = window.pick(w.label);
+  const wh = window.pick(w.headline);
+  $('#world-headline').innerHTML = `<b>${esc(wh.split('.')[0])}.</b> ${esc(wh.split('.').slice(1).join('.').trim())}`;
   $('#updated-date').textContent = fmtDate(DATA.updated);
   $('#year').textContent = (DATA.updated || '2026').slice(0, 4);
 
@@ -96,8 +97,8 @@ function render() {
       <div class="spotlight-flag">${sp.flag || '🌐'}</div>
       <div class="spotlight-body">
         <div class="spotlight-country">${esc(sp.country || '')}</div>
-        <div class="spotlight-headline">${esc(sp.headline || '')}</div>
-        <div class="spotlight-why">${esc(sp.why || '')}</div>
+        <div class="spotlight-headline">${esc(window.pick(sp.headline))}</div>
+        <div class="spotlight-why">${esc(window.pick(sp.why))}</div>
       </div>
       <div class="spotlight-score ${scoreClass(sp.score)}">${sp.score}<small>/ 100</small></div>`;
   }
@@ -108,7 +109,7 @@ function render() {
       <div class="continent-name">${c.emoji || '🌐'} ${esc(c.name)}</div>
       <div class="continent-score ${scoreClass(c.score)}">${c.score}</div>
       <div class="bar has69"><i data-w="${c.score}" style="background:${scoreColor(c.score)}"></i></div>
-      <div class="continent-trend">${trendHTML(c.trend)} over 7 days</div>
+      <div class="continent-trend">${trendHTML(c.trend)} ${window.t('over7days')}</div>
     </div>`).join('');
 
   renderCountries();
@@ -139,15 +140,15 @@ function renderCountries() {
         <span class="country-flag">${c.flag || '🏳️'}</span>
         <span class="country-info">
           <div class="country-name">${esc(c.name)} <span class="country-chevron">▾</span></div>
-          <div class="country-headline">${esc(c.headline || '')}</div>
+          <div class="country-headline">${esc(window.pick(c.headline))}</div>
         </span>
         <span class="country-bar"><span class="bar has69"><i data-w="${c.score}" style="background:${scoreColor(c.score)}"></i></span></span>
         <span class="country-trend">${trendHTML(c.trend)}</span>
         <span class="country-score ${scoreClass(c.score)}">${c.score}</span>
       </div>
       <div class="country-articles"><div class="articles-inner"><div class="articles-pad">
-        <div class="articles-legend">Articles driving the score · <span class="up">+ raises</span> · <span class="down">− lowers</span></div>
-        ${arts.length ? arts.map(articleHTML).join('') : '<p class="no-articles">No articles logged yet — check back after the daily update.</p>'}
+        <div class="articles-legend">${esc(window.t('artLegend'))} · <span class="up">${esc(window.t('artRaises'))}</span> · <span class="down">${esc(window.t('artLowers'))}</span></div>
+        ${arts.length ? arts.map(articleHTML).join('') : `<p class="no-articles">${esc(window.t('noArticles'))}</p>`}
       </div></div></div>
     </li>`; }).join('');
   animateBars();
@@ -159,8 +160,8 @@ function articleHTML(a) {
   return `<a class="article" href="${esc(a.url || '#')}" target="_blank" rel="noopener">
     <span class="impact ${up ? 'up' : 'down'}">${val}</span>
     <span class="article-body">
-      <span class="article-title">${esc(a.title || '')}</span>
-      <span class="article-meta">${esc(a.source || '')}${a.date ? ' · ' + esc(a.date) : ''}${a.note ? ' — ' + esc(a.note) : ''}</span>
+      <span class="article-title">${esc(window.pick(a.title))}</span>
+      <span class="article-meta">${esc(a.source || '')}${a.date ? ' · ' + esc(a.date) : ''}${window.pick(a.note) ? ' — ' + esc(window.pick(a.note)) : ''}</span>
     </span>
     <span class="article-go">↗</span>
   </a>`;
@@ -195,12 +196,31 @@ function setupReveal() {
 
 function fmtDate(iso) {
   if (!iso) return '…';
-  try { return new Date(iso + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); }
+  const loc = { en: 'en-US', fr: 'fr-FR', es: 'es-ES', de: 'de-DE' }[window.LANG] || 'en-US';
+  try { return new Date(iso + 'T00:00:00').toLocaleDateString(loc, { month: 'short', day: 'numeric', year: 'numeric' }); }
   catch { return iso; }
 }
 
+/* ---------- LANGUAGE ---------- */
+function buildLangSwitch() {
+  const sel = $('#lang-switch');
+  if (!sel) return;
+  sel.innerHTML = window.LANGS.map(l => `<option value="${l}">${window.LANG_NAMES[l]}</option>`).join('');
+  sel.value = window.LANG;
+}
+function setLang(l) {
+  if (!window.LANGS.includes(l) || l === window.LANG) return;
+  window.LANG = l;
+  try { localStorage.setItem('ii_lang', l); } catch {}
+  window.applyI18n();
+  if (DATA) render(); // re-render data-driven content in the new language
+}
+
 document.addEventListener('input', (e) => { if (e.target.id === 'search') renderCountries(); });
-document.addEventListener('change', (e) => { if (e.target.id === 'sort') renderCountries(); });
+document.addEventListener('change', (e) => {
+  if (e.target.id === 'sort') renderCountries();
+  if (e.target.id === 'lang-switch') setLang(e.target.value);
+});
 document.addEventListener('click', (e) => {
   const row = e.target.closest('.country-row');
   if (row) toggleCountry(row);
@@ -212,4 +232,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+window.applyI18n();
+buildLangSwitch();
 load();
