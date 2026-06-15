@@ -30,6 +30,15 @@ import { translateData } from './translate.mjs';
 // Résout un champ potentiellement multilingue ({en,fr,...}) en anglais.
 const pickEn = (v) => (v && typeof v === 'object' && !Array.isArray(v)) ? (v.en || Object.values(v)[0] || '') : (v == null ? '' : v);
 
+// Retire les em-dash/en-dash du texte généré par le LLM (tell "écrit par IA").
+const deDash = (s) => s.replace(/\s*—\s*/g, ', ').replace(/\s+–\s+/g, ', ').replace(/–/g, '-');
+function sanitizeDashes(o) {
+  if (typeof o === 'string') return deDash(o);
+  if (Array.isArray(o)) return o.map(sanitizeDashes);
+  if (o && typeof o === 'object') { for (const k of Object.keys(o)) o[k] = sanitizeDashes(o[k]); return o; }
+  return o;
+}
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = join(__dirname, '..', 'data', 'scores.json');
 
@@ -295,6 +304,7 @@ async function main() {
     console.log('\n🌐 Traduction des nouveaux textes (en → fr/es/de)…');
     await translateData(data); // les champs rafraîchis (chaînes EN) deviennent {en,fr,es,de}
   }
+  sanitizeDashes(data); // pas d'em-dash/en-dash dans le contenu publié
   await writeFile(DATA_PATH, JSON.stringify(data, null, 2) + '\n', 'utf8');
   console.log(`\n✅ ${DATA_PATH} mis à jour.`);
 

@@ -1,4 +1,4 @@
-// The Idiocracy Index — internationalization (fr / en / es / de)
+// The Idiocracy Index, internationalization (fr / en / es / de)
 // Detects the browser language, lets the user override, and translates the UI.
 // Content fields in data/scores.json are stored as {en,fr,es,de} objects and
 // resolved via pick(); UI strings live in the I18N dictionary below.
@@ -17,7 +17,7 @@ const I18N = {
     sortDumbest: 'Dumbest first', sortSmartest: 'Smartest first', sortWorse: 'Getting worse', sortAdjusted: 'Wealth-adjusted',
     over7days: 'over 7 days',
     artLegend: 'Articles driving the score', artRaises: '+ raises', artLowers: '− lowers',
-    noArticles: 'No articles logged yet — check back after the daily update.',
+    noArticles: 'No articles logged yet, check back after the daily update.',
     loadingWorld: 'Booting up the global stupidity monitor…',
     footAboutT: 'The Idiocracy Index', footAbout: 'A satirical barometer of civilizational stupidity. We rate <em>decisions</em> and <em>behaviors</em>, not peoples. No pseudo-scientific "national IQ" is ever used.',
     footLinksT: 'Links', footWordsT: 'Famous last words', footQuote: '"I\'m not a prophet. I was just off by 490 years."',
@@ -33,7 +33,7 @@ const I18N = {
     sortDumbest: 'Plus cons d\'abord', sortSmartest: 'Moins cons d\'abord', sortWorse: 'Ça empire', sortAdjusted: 'Ajusté à la richesse',
     over7days: 'sur 7 jours',
     artLegend: 'Articles qui pèsent sur le score', artRaises: '+ fait monter', artLowers: '− fait baisser',
-    noArticles: 'Aucun article pour l\'instant — reviens après la mise à jour quotidienne.',
+    noArticles: 'Aucun article pour l\'instant, reviens après la mise à jour quotidienne.',
     loadingWorld: 'Démarrage du moniteur mondial de connerie…',
     footAboutT: "L'Indice d'Idiocratie", footAbout: 'Un baromètre satirique de la connerie civilisationnelle. On note des <em>décisions</em> et des <em>comportements</em>, pas des peuples. Aucun « QI national » pseudo-scientifique n\'est utilisé.',
     footLinksT: 'Liens', footWordsT: 'Le mot de la fin', footQuote: '« Je ne suis pas un prophète. Je me suis juste trompé de 490 ans. »',
@@ -49,7 +49,7 @@ const I18N = {
     sortDumbest: 'Más tontos primero', sortSmartest: 'Menos tontos primero', sortWorse: 'Va a peor', sortAdjusted: 'Ajustado por riqueza',
     over7days: 'en 7 días',
     artLegend: 'Artículos que mueven la puntuación', artRaises: '+ sube', artLowers: '− baja',
-    noArticles: 'Aún no hay artículos — vuelve tras la actualización diaria.',
+    noArticles: 'Aún no hay artículos, vuelve tras la actualización diaria.',
     loadingWorld: 'Arrancando el monitor mundial de estupidez…',
     footAboutT: 'El Índice de Idiocracia', footAbout: 'Un barómetro satírico de la estupidez civilizatoria. Calificamos <em>decisiones</em> y <em>comportamientos</em>, no a los pueblos. Nunca se usa ningún "CI nacional" pseudocientífico.',
     footLinksT: 'Enlaces', footWordsT: 'Últimas palabras', footQuote: '«No soy un profeta. Solo me equivoqué por 490 años.»',
@@ -65,7 +65,7 @@ const I18N = {
     sortDumbest: 'Dümmste zuerst', sortSmartest: 'Klügste zuerst', sortWorse: 'Wird schlimmer', sortAdjusted: 'Nach Wohlstand bereinigt',
     over7days: 'über 7 Tage',
     artLegend: 'Artikel, die die Wertung treiben', artRaises: '+ erhöht', artLowers: '− senkt',
-    noArticles: 'Noch keine Artikel — schau nach dem täglichen Update wieder vorbei.',
+    noArticles: 'Noch keine Artikel, schau nach dem täglichen Update wieder vorbei.',
     loadingWorld: 'Globaler Dummheits-Monitor startet…',
     footAboutT: 'Der Idiocracy-Index', footAbout: 'Ein satirisches Barometer zivilisatorischer Dummheit. Wir bewerten <em>Entscheidungen</em> und <em>Verhalten</em>, keine Völker. Es wird nie ein pseudowissenschaftlicher „nationaler IQ" verwendet.',
     footLinksT: 'Links', footWordsT: 'Letzte Worte', footQuote: '„Ich bin kein Prophet. Ich lag nur um 490 Jahre daneben."',
@@ -108,7 +108,7 @@ window.tHL = function (key) {
   return window.t(key).replace(/\*([^*]+)\*/g, '<span class="hl ref-69">$1</span>');
 };
 
-// The 6 grid axes — short labels per language for the article badges.
+// The 6 grid axes, short labels per language for the article badges.
 window.AXIS_LABELS = {
   SCI:       { icon: '🧪', en: 'Science', fr: 'Science', es: 'Ciencia', de: 'Wissenschaft' },
   SPECTACLE: { icon: '🎪', en: 'Spectacle', fr: 'Spectacle', es: 'Espectáculo', de: 'Spektakel' },

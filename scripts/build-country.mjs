@@ -3,8 +3,8 @@
  * Moteur viral « Partage le score de TON pays ».
  *
  * Pour CHAQUE pays, génère :
- *   1. assets/og/<code>.png  — une carte image 1200×630 (score + rang + connerie du jour)
- *   2. c/<code>.html         — une page de partage statique dont les balises Open Graph
+ *   1. assets/og/<code>.png, une carte image 1200×630 (score + rang + connerie du jour)
+ *   2. c/<code>.html, une page de partage statique dont les balises Open Graph
  *      pointent vers cette carte → quand on partage le lien, l'aperçu social montre
  *      LE score de CE pays.  C'est le mécanisme de croissance auto-alimentée.
  *
@@ -92,7 +92,7 @@ function page(country, rank, total) {
   const imgUrl = `https://idiocracies.com/assets/og/${s}.png`;
   const title = `${name} scores ${score}/100 on The Idiocracy Index`;
   const desc = `${flag} ${name} ranks #${rank} of ${total} on the world's daily stupidity scoreboard. ${headline} 100% satire.`;
-  const shareText = `${name} scores ${score}/100 on The Idiocracy Index 🧠💀 — rank #${rank} of ${total} dumbest. 100% satire.`;
+  const shareText = `${name} scores ${score}/100 on The Idiocracy Index 🧠💀, rank #${rank} of ${total} dumbest. 100% satire.`;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -129,7 +129,7 @@ function page(country, rank, total) {
   </header>
 
   <main class="page" style="max-width:920px;text-align:center">
-    <h1 style="font-size:1.5rem;margin-bottom:6px">${flag} ${esc(name)} — ${score}/100</h1>
+    <h1 style="font-size:1.5rem;margin-bottom:6px">${flag} ${esc(name)}, ${score}/100</h1>
     <p style="color:var(--ink-dim);margin-top:0">Rank #${rank} of ${total} on today's global stupidity scoreboard.</p>
     <img class="country-card-img" src="/assets/og/${s}.png" alt="${esc(title)}" width="1200" height="630" />
     <div class="share-cta-row">

@@ -1,4 +1,4 @@
-// The Idiocracy Index — display engine (gauge, count-up, ticker, animated bars)
+// The Idiocracy Index, display engine (gauge, count-up, ticker, animated bars)
 const $ = (s) => document.querySelector(s);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -77,7 +77,7 @@ function countUp(el, target, dur = 1500) {
 function buildTicker(countries) {
   const items = countries
     .slice().sort((a, b) => b.score - a.score)
-    .map(c => `<span class="ticker-item">${c.flag} <b>${esc(c.name)} ${c.score}</b> — ${esc(window.pick(c.headline))}</span>`)
+    .map(c => `<span class="ticker-item">${c.flag} <b>${esc(c.name)} ${c.score}</b>, ${esc(window.pick(c.headline))}</span>`)
     .join('');
   // duplicate for seamless loop
   $('#ticker').innerHTML = items + items;
@@ -170,7 +170,7 @@ function articleHTML(a) {
     <span class="impact ${up ? 'up' : 'down'}">${val}</span>
     <span class="article-body">
       <span class="article-title">${esc(window.pick(a.title))}${a.axis ? ` <span class="article-axis">${esc(window.axisLabel(a.axis))}</span>` : ''}</span>
-      <span class="article-meta">${esc(a.source || '')}${a.date ? ' · ' + esc(a.date) : ''}${window.pick(a.note) ? ' — ' + esc(window.pick(a.note)) : ''}</span>
+      <span class="article-meta">${esc(a.source || '')}${a.date ? ' · ' + esc(a.date) : ''}${window.pick(a.note) ? ', ' + esc(window.pick(a.note)) : ''}</span>
     </span>
     <span class="article-go">↗</span>
   </a>`;
