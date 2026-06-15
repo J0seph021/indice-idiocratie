@@ -27,7 +27,9 @@ Pour chaque design (`shop-designs/`) :
 | `shop-designs/documentary.svg` | T-shirt | **Rose vif** ou blanc | 29,99 $ |
 | `shop-designs/voters-crave.svg` | T-shirt | **Noir / charbon** | 29,99 $ |
 
-> 💡 **Format de fichier** : Printify accepte le PNG (idéal) et souvent le SVG. Si l'upload SVG est refusé, ouvre le `.svg` dans Chrome → clic droit → ou utilise un convertisseur (ex. *cloudconvert.com*) en **PNG ~4500 px**, fond transparent. Les designs utilisent la police gratuite **Anton** (Google Fonts) — déjà intégrée si tu convertis via un outil qui charge les polices web, sinon recrée le texte directement dans l'éditeur Printify (texte pur, très simple) avec la police « Anton » ou une grasse condensée équivalente.
+> ✅ **Fichiers prêts à téléverser : `shop-designs/print/`** — Printify refuse les SVG contenant des calques de texte. Les versions du dossier **`print/`** ont le texte **converti en tracés vectoriels** (la police Anton est intégrée en chemins) : Printify les accepte directement, qualité parfaite, aucune dépendance de police. *(Le dossier `shop-designs/` racine garde les versions avec texte, éditables, comme référence.)*
+>
+> Pour régénérer les fichiers `print/` après une modif : `node scripts/build-print-svgs.mjs`.
 
 ## Étape 3 — Relier au site
 1. Copie l'URL de ta boutique (`https://ton-nom.printify.me`).
