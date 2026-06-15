@@ -78,6 +78,11 @@ Object.assign(I18N.fr, { footLinkMethod: 'Méthodologie & disclaimer', footLinkS
 Object.assign(I18N.es, { footLinkMethod: 'Metodología y aviso', footLinkShop: 'Tienda satírica', footLinkSources: 'Fuentes de datos' });
 Object.assign(I18N.de, { footLinkMethod: 'Methodik & Haftungsausschluss', footLinkShop: 'Satire-Shop', footLinkSources: 'Datenquellen' });
 
+Object.assign(I18N.en, { shareScore: 'Share', shareHero: "📤 Share your country's score" });
+Object.assign(I18N.fr, { shareScore: 'Partager', shareHero: '📤 Partage le score de ton pays' });
+Object.assign(I18N.es, { shareScore: 'Compartir', shareHero: '📤 Comparte la puntuación de tu país' });
+Object.assign(I18N.de, { shareScore: 'Teilen', shareHero: '📤 Teile die Bewertung deines Landes' });
+
 function detectLang() {
   const saved = localStorage.getItem('ii_lang');
   if (saved && window.LANGS.includes(saved)) return saved;

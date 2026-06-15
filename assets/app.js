@@ -19,6 +19,14 @@ function trendHTML(t) {
 }
 const esc = (s) => String(s).replace(/[&<>"]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
 
+// Share a country's score: native share sheet on mobile, else open its share page.
+function shareCountry(code, name, score) {
+  const url = location.origin + '/c/' + String(code).toLowerCase() + '.html';
+  const text = `${name} scores ${score}/100 on The Idiocracy Index 🧠💀 (100% satire)`;
+  if (navigator.share) navigator.share({ title: 'The Idiocracy Index', text, url }).catch(() => {});
+  else window.open(url, '_blank', 'noopener');
+}
+
 let DATA = null;
 
 async function load() {
@@ -149,6 +157,7 @@ function renderCountries() {
       <div class="country-articles"><div class="articles-inner"><div class="articles-pad">
         <div class="articles-legend">${esc(window.t('artLegend'))} · <span class="up">${esc(window.t('artRaises'))}</span> · <span class="down">${esc(window.t('artLowers'))}</span></div>
         ${arts.length ? arts.map(articleHTML).join('') : `<p class="no-articles">${esc(window.t('noArticles'))}</p>`}
+        <button class="country-share" data-code="${esc(c.code || '')}" data-name="${esc(c.name)}" data-score="${c.score}">📤 ${esc(window.t('shareScore'))} ${esc(c.name)}</button>
       </div></div></div>
     </li>`; }).join('');
   animateBars();
@@ -222,6 +231,13 @@ document.addEventListener('change', (e) => {
   if (e.target.id === 'lang-switch') setLang(e.target.value);
 });
 document.addEventListener('click', (e) => {
+  const share = e.target.closest('.country-share');
+  if (share) { e.stopPropagation(); shareCountry(share.dataset.code, share.dataset.name, share.dataset.score); return; }
+  if (e.target.closest('#share-hero')) {
+    document.getElementById('rankings')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const s = $('#search'); if (s) setTimeout(() => s.focus(), 450);
+    return;
+  }
   const row = e.target.closest('.country-row');
   if (row) toggleCountry(row);
 });

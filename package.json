@@ -8,6 +8,7 @@
     "update:dry": "node -e \"process.env.DRY_RUN='1'\" && cross-env DRY_RUN=1 node scripts/update.mjs",
     "og": "node scripts/build-og.mjs",
     "social": "node scripts/build-social.mjs",
+    "country": "node scripts/build-country.mjs",
     "icons": "node scripts/build-icons.mjs",
     "serve": "node scripts/serve.mjs"
   },

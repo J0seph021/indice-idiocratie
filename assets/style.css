@@ -411,3 +411,41 @@ section.block { padding: clamp(28px, 5vw, 48px) 0; }
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- SHARE (scoreboard + per-country pages) ---------- */
+.share-hero {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 18px;
+  font-family: var(--font-mono); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.03em; text-transform: uppercase;
+  padding: 12px 22px; border-radius: 999px; border: 1px solid var(--alarm);
+  background: rgba(255, 46, 99, 0.10); color: var(--ink); cursor: pointer;
+  transition: transform 0.2s var(--ease), background 0.2s;
+}
+.share-hero:hover { transform: translateY(-2px); background: rgba(255, 46, 99, 0.20); }
+
+.country-share {
+  align-self: flex-start; margin-top: 4px;
+  font-family: var(--font-mono); font-weight: 700; font-size: 0.74rem; letter-spacing: 0.03em; text-transform: uppercase;
+  padding: 8px 16px; border-radius: 999px; border: 1px solid var(--alarm);
+  background: rgba(255, 46, 99, 0.10); color: var(--ink); cursor: pointer;
+  transition: transform 0.2s var(--ease), background 0.2s;
+}
+.country-share:hover { transform: translateY(-2px); background: rgba(255, 46, 99, 0.20); }
+
+/* per-country share page */
+.country-card-img {
+  width: 100%; max-width: 760px; height: auto; border-radius: 16px; border: 1px solid var(--line);
+  margin: 18px auto 6px; display: block; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+.share-label { font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-dim); margin: 22px 0 10px; }
+.share-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.share-btn {
+  font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.03em;
+  padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--bg-1); color: var(--ink); cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s var(--ease), background 0.2s;
+}
+.share-btn:hover { transform: translateY(-2px); text-decoration: none; border-color: var(--hazard); background: var(--bg-2); }
+.share-btn.x:hover { border-color: #fff; }
+.share-btn.fb:hover { border-color: #1877f2; }
+.share-btn.wa:hover { border-color: #25d366; }
+.share-btn.rd:hover { border-color: #ff4500; }

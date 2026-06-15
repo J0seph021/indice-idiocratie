@@ -304,6 +304,12 @@ async function main() {
   } catch (e) {
     console.warn(`  ⚠️  og.png non régénéré : ${e.message}`);
   }
+  // Régénère les cartes + pages de partage par pays (moteur viral).
+  try {
+    await import('./build-country.mjs');
+  } catch (e) {
+    console.warn(`  ⚠️  cartes pays non régénérées : ${e.message}`);
+  }
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) main().catch(e => { console.error('💥', e); process.exit(1); });

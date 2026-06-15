@@ -26,6 +26,6 @@ jobs:
         run: |
           git config user.name "Idiocracy Bot"
           git config user.email "bot@idiocratie.local"
-          git add data/scores.json assets/og.png
+          git add data/scores.json assets/og.png assets/og c
           git diff --staged --quiet || git commit -m "Conneries du jour"
           git push
