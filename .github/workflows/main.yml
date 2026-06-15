@@ -1,0 +1,29 @@
+name: Mise a jour quotidienne de l'Idiocratie
+
+on:
+  schedule:
+    - cron: '0 11 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Recalculer les scores
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/update.mjs
+      - name: Commit
+        run: |
+          git config user.name "Idiocracy Bot"
+          git config user.email "bot@idiocratie.local"
+          git add data/scores.json
+          git diff --staged --quiet || git commit -m "Conneries du jour"
+          git push
