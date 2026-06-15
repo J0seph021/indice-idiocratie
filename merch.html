@@ -5,50 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Satirical shop · The Idiocracy Index</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .print-tile { width:100%; height:100%; display:grid; place-items:center; text-align:center; padding:22px; }
+    .print-tile .ptxt { font-family:var(--font-display); font-weight:400; line-height:0.95; text-transform:uppercase; letter-spacing:0.01em; }
+    .tee text, .print-tile .ptxt { font-family:var(--font-display); }
+    .tee .chest { font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.5px; }
+  </style>
 </head>
 <body>
-  <div class="satire-bar">⚠️ SATIRE SITE. 100% original designs. We don't copy Brawndo or Camacho (Disney is watching).</div>
+  <div class="satire-bar">
+    <span class="tape-txt">⚠ SATIRE</span> &nbsp; 100% original designs. We don't copy Brawndo or Camacho (Disney is watching).
+  </div>
   <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-logo">🧠💀</span><span class="brand-text">The<br><strong>Idiocracy Index</strong></span></a>
+    <a class="brand" href="index.html"><span class="brand-logo">🧠💀</span><span class="brand-text">The<strong>Idiocracy Index</strong></span></a>
     <nav class="nav"><a href="index.html">Scoreboard</a><a href="about.html">Methodology</a><a href="merch.html" class="active">Shop</a></nav>
   </header>
 
-  <article class="page" style="max-width:1000px">
+  <!-- reusable t-shirt silhouette -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="tee" viewBox="0 0 400 500">
+      <path d="M120,70 L40,110 L70,172 L105,152 L105,448 L295,448 L295,152 L330,172 L360,110 L280,70 C250,114 150,114 120,70 Z"/>
+    </symbol>
+  </defs></svg>
+
+  <article class="page" style="max-width:1040px">
     <h1>🛒 Satirical shop</h1>
     <p>Wear civilizational stupidity with pride. Everything is print-on-demand: <strong>zero inventory, domestic manufacturing, no customs.</strong> Original designs, and no trademark from a certain 2006 film is used.</p>
-    <div class="callout">💡 <strong>Setup note:</strong> wire these buttons to your Printful / Printify / Shopify store. The visuals below are CSS mockups to validate the concept before printing.</div>
+    <div class="callout">💡 <strong>Setup note:</strong> wire these buttons to your Printful / Printify / Shopify store. The visuals below are vector mockups to validate the concept before printing.</div>
 
     <div class="merch-grid">
+
       <div class="merch-card">
-        <div class="merch-visual" style="background:#0a0a0f;color:#ffde2e">SURVIVED THE<br>WORLD SCORE<br>OF 69 · 2026</div>
+        <div class="merch-visual" style="background:radial-gradient(circle at 50% 35%, #1a1a26, #0a0a0f)">
+          <svg class="tee" viewBox="0 0 400 500"><use href="#tee" fill="#15151f" stroke="#2a2a3a" stroke-width="2"/>
+            <text class="chest" x="200" y="205" fill="#ffd60a" font-size="40" text-anchor="middle">SURVIVED</text>
+            <text class="chest" x="200" y="250" fill="#ffd60a" font-size="40" text-anchor="middle">THE 69</text>
+            <text x="200" y="300" fill="#a6a6c2" font-size="22" text-anchor="middle" font-family="Space Mono" font-weight="700">WORLD SCORE · 2026</text>
+          </svg>
+        </div>
         <div class="merch-info"><h3>"69 Line" tee</h3><div class="price">$29.99</div><a class="btn" href="#" data-buy>Buy</a></div>
       </div>
+
       <div class="merch-card">
-        <div class="merch-visual" style="background:#ff3e6e;color:#fff">IDIOCRACY<br>WAS A<br>DOCUMENTARY</div>
+        <div class="merch-visual" style="background:radial-gradient(circle at 50% 35%, #2a0a18, #0a0a0f)">
+          <svg class="tee" viewBox="0 0 400 500"><use href="#tee" fill="#ff2e63"/>
+            <text class="chest" x="200" y="215" fill="#fff" font-size="40" text-anchor="middle">IDIOCRACY</text>
+            <text class="chest" x="200" y="258" fill="#fff" font-size="40" text-anchor="middle">WAS A</text>
+            <text class="chest" x="200" y="298" fill="#0a0a0f" font-size="30" text-anchor="middle">DOCUMENTARY</text>
+          </svg>
+        </div>
         <div class="merch-info"><h3>"Documentary" tee</h3><div class="price">$29.99</div><a class="btn" href="#" data-buy>Buy</a></div>
       </div>
+
       <div class="merch-card">
-        <div class="merch-visual" style="background:#ffde2e;color:#0a0a0f">I'VE GOT<br>ELECTROLYTES<br>(probably)</div>
+        <div class="merch-visual" style="background:radial-gradient(circle at 50% 35%, #1a1a26, #0a0a0f)">
+          <svg class="tee" viewBox="0 0 400 500"><use href="#tee" fill="#0d0d15" stroke="#2a2a3a" stroke-width="2"/>
+            <text class="chest" x="200" y="215" fill="#c6f135" font-size="58" text-anchor="middle">IT'S GOT</text>
+            <text class="chest" x="200" y="278" fill="#c6f135" font-size="58" text-anchor="middle">WHAT</text>
+            <text class="chest" x="200" y="335" fill="#c6f135" font-size="40" text-anchor="middle">VOTERS CRAVE</text>
+          </svg>
+        </div>
+        <div class="merch-info"><h3>"Voters Crave" tee</h3><div class="price">$29.99</div><a class="btn" href="#" data-buy>Buy</a></div>
+      </div>
+
+      <div class="merch-card">
+        <div class="merch-visual" style="background:#ffd60a">
+          <div class="print-tile"><div class="ptxt" style="color:#0a0a0f;font-size:2.1rem">I'VE GOT<br>ELECTRO-<br>LYTES<br><span style="font-family:var(--font-mono);font-size:0.9rem;letter-spacing:0">(probably)</span></div></div>
+        </div>
         <div class="merch-info"><h3>"Electrolytes" mug</h3><div class="price">$19.99</div><a class="btn" href="#" data-buy>Buy</a></div>
       </div>
+
       <div class="merch-card">
-        <div class="merch-visual" style="background:#3ee08a;color:#0a0a0f">MY COUNTRY<br>BEAT YOURS<br>IN THE<br>RANKINGS</div>
+        <div class="merch-visual" style="background:#0a0a0f;border:1px solid var(--line)">
+          <div class="print-tile"><div class="ptxt" style="color:#34e5a0;font-size:2rem">MY COUNTRY<br>BEAT YOURS<br><span style="color:#fff">IN THE</span><br>RANKINGS</div></div>
+        </div>
         <div class="merch-info"><h3>"Champion" sticker</h3><div class="price">$4.99</div><a class="btn" href="#" data-buy>Buy</a></div>
       </div>
+
       <div class="merch-card">
-        <div class="merch-visual" style="background:#1c1c28;color:#ff9f2e">UFC ON THE<br>LAWN?<br>+4 POINTS</div>
-        <div class="merch-info"><h3>"+4" cap</h3><div class="price">$24.99</div><a class="btn" href="#" data-buy>Buy</a></div>
-      </div>
-      <div class="merch-card">
-        <div class="merch-visual" style="background:#fff;color:#0a0a0f">ANNUAL REPORT<br>ON GLOBAL<br>STUPIDITY 2026</div>
+        <div class="merch-visual" style="background:radial-gradient(circle at 50% 30%, #16161f, #07070b)">
+          <div class="print-tile"><div class="ptxt" style="color:#fff;font-size:1.7rem">ANNUAL REPORT<br><span style="color:#ffd60a;font-size:2.6rem">GLOBAL</span><br><span style="color:#ff2e63;font-size:2.6rem">STUPIDITY</span><br>2026</div></div>
+        </div>
         <div class="merch-info"><h3>"Annual Report" poster</h3><div class="price">$22.99</div><a class="btn" href="#" data-buy>Buy</a></div>
       </div>
+
     </div>
   </article>
 
   <footer class="site-footer">
-    <p class="footer-legal">⚠️ Work of satire. Original designs. © 2026. All rights to laugh reserved.</p>
+    <div class="wrap"><p class="footer-legal">⚠ WORK OF SATIRE. Original designs. © 2026. All rights to laugh reserved.</p></div>
   </footer>
   <script>
     document.querySelectorAll('[data-buy]').forEach(b => b.addEventListener('click', e => {

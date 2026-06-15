@@ -1,23 +1,23 @@
-// L'Indice d'Idiocratie — logique d'affichage
+// The Idiocracy Index — display engine (gauge, count-up, ticker, animated bars)
 const $ = (s) => document.querySelector(s);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function scoreClass(s) {
-  if (s >= 85) return 'score-extreme';
-  if (s >= 69) return 'score-high';
-  if (s >= 50) return 'score-mid';
-  return 'score-low';
-}
+const ZONES = [
+  { min: 85, cls: 's-extreme', hex: '#ff2e63' },
+  { min: 69, cls: 's-high',    hex: '#ff4d4d' },
+  { min: 50, cls: 's-warn',    hex: '#ffb02e' },
+  { min: 0,  cls: 's-safe',    hex: '#34e5a0' },
+];
+const zone = (s) => ZONES.find(z => s >= z.min) || ZONES[ZONES.length - 1];
+const scoreClass = (s) => zone(s).cls;
+const scoreColor = (s) => zone(s).hex;
+
 function trendHTML(t) {
   if (t > 0) return `<span class="trend-up">▲ +${t}</span>`;
   if (t < 0) return `<span class="trend-down">▼ ${t}</span>`;
   return `<span class="trend-flat">▬ 0</span>`;
 }
-function barColor(s) {
-  if (s >= 85) return '#ff3e6e';
-  if (s >= 69) return '#ff3e3e';
-  if (s >= 50) return '#ff9f2e';
-  return '#3ee08a';
-}
+const esc = (s) => String(s).replace(/[&<>"]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
 
 let DATA = null;
 
@@ -32,48 +32,94 @@ async function load() {
   render();
 }
 
+/* ---------- GAUGE ---------- */
+const R = 100, C = 2 * Math.PI * R;
+function buildGauge(score) {
+  const svg = $('#gauge');
+  const color = scoreColor(score);
+  // 69-line tick, placed in the svg's rotated frame
+  const a = 0.69 * 2 * Math.PI;
+  const tx = (r) => (120 + r * Math.cos(a)).toFixed(1);
+  const ty = (r) => (120 + r * Math.sin(a)).toFixed(1);
+  svg.innerHTML = `
+    <circle class="gauge-track" cx="120" cy="120" r="${R}"/>
+    <circle class="gauge-fill" cx="120" cy="120" r="${R}"
+      style="stroke:${color};color:${color};stroke-dasharray:${C.toFixed(1)};stroke-dashoffset:${C.toFixed(1)}"/>
+    <line class="gauge-tick" x1="${tx(88)}" y1="${ty(88)}" x2="${tx(112)}" y2="${ty(112)}"/>`;
+  // animate fill after paint
+  const fill = svg.querySelector('.gauge-fill');
+  const offset = C * (1 - Math.max(0, Math.min(100, score)) / 100);
+  requestAnimationFrame(() => requestAnimationFrame(() => { fill.style.strokeDashoffset = offset.toFixed(1); }));
+}
+
+function countUp(el, target, dur = 1500) {
+  if (reduceMotion) { el.textContent = target; return; }
+  const start = performance.now();
+  const from = 0;
+  function step(now) {
+    const p = Math.min(1, (now - start) / dur);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(from + (target - from) * eased);
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* ---------- TICKER ---------- */
+function buildTicker(countries) {
+  const items = countries
+    .slice().sort((a, b) => b.score - a.score)
+    .map(c => `<span class="ticker-item">${c.flag} <b>${esc(c.name)} ${c.score}</b> — ${esc(c.headline)}</span>`)
+    .join('');
+  // duplicate for seamless loop
+  $('#ticker').innerHTML = items + items;
+}
+
+/* ---------- RENDER ---------- */
 function render() {
-  // World
   const w = DATA.world;
   const ws = $('#world-score');
-  ws.textContent = w.score;
+  ws.className = 'gauge-num ' + scoreClass(w.score);
+  buildGauge(w.score);
+  countUp(ws, w.score);
   $('#world-trend').innerHTML = trendHTML(w.trend);
   $('#world-label').textContent = w.label || '';
-  $('#world-headline').textContent = w.headline || '';
-  $('#updated-date').textContent = formatDate(DATA.updated);
+  $('#world-headline').innerHTML = `<b>${esc((w.headline || '').split('.')[0])}.</b> ${esc((w.headline || '').split('.').slice(1).join('.').trim())}`;
+  $('#updated-date').textContent = fmtDate(DATA.updated);
   $('#year').textContent = (DATA.updated || '2026').slice(0, 4);
 
-  // Spotlight
+  buildTicker(DATA.countries || []);
+
   const sp = DATA.spotlight;
   if (sp) {
     $('#spotlight-card').innerHTML = `
       <div class="spotlight-flag">${sp.flag || '🌐'}</div>
       <div class="spotlight-body">
-        <div class="spotlight-country">${sp.country || ''}</div>
-        <div class="spotlight-headline">${escapeHTML(sp.headline || '')}</div>
-        <div class="spotlight-why">${escapeHTML(sp.why || '')}</div>
+        <div class="spotlight-country">${esc(sp.country || '')}</div>
+        <div class="spotlight-headline">${esc(sp.headline || '')}</div>
+        <div class="spotlight-why">${esc(sp.why || '')}</div>
       </div>
-      <div class="spotlight-score ${scoreClass(sp.score)}">${sp.score}<small>/100</small></div>`;
+      <div class="spotlight-score ${scoreClass(sp.score)}">${sp.score}<small>/ 100</small></div>`;
   }
 
-  // Continents
   const cg = $('#continent-grid');
   cg.innerHTML = (DATA.continents || []).slice().sort((a, b) => b.score - a.score).map(c => `
     <div class="continent-card">
-      <div class="continent-name">${c.emoji || '🌐'} ${c.name}</div>
+      <div class="continent-name">${c.emoji || '🌐'} ${esc(c.name)}</div>
       <div class="continent-score ${scoreClass(c.score)}">${c.score}</div>
-      <div class="continent-bar"><i style="width:${c.score}%;background:${barColor(c.score)}"></i></div>
-      <div style="font-size:.8rem;color:var(--text-dim);margin-top:6px">${trendHTML(c.trend)} over 7 days</div>
+      <div class="bar has69"><i data-w="${c.score}" style="background:${scoreColor(c.score)}"></i></div>
+      <div class="continent-trend">${trendHTML(c.trend)} over 7 days</div>
     </div>`).join('');
 
   renderCountries();
+  animateBars();
+  setupReveal();
 }
 
 function renderCountries() {
   const q = ($('#search').value || '').toLowerCase().trim();
   const sort = $('#sort').value;
   let list = (DATA.countries || []).slice();
-
   if (q) list = list.filter(c => c.name.toLowerCase().includes(q));
 
   const sorters = {
@@ -85,33 +131,47 @@ function renderCountries() {
   list.sort(sorters[sort] || sorters['score-desc']);
 
   $('#country-list').innerHTML = list.map((c, i) => `
-    <li class="country-row">
-      <span class="country-rank">${i + 1}</span>
+    <li class="country-row ${i < 3 ? 'top' + (i + 1) : ''}">
+      <span class="country-rank">${String(i + 1).padStart(2, '0')}</span>
       <span class="country-flag">${c.flag || '🏳️'}</span>
       <span class="country-info">
-        <div class="country-name">${c.name}</div>
-        <div class="country-headline">${escapeHTML(c.headline || '')}</div>
+        <div class="country-name">${esc(c.name)}</div>
+        <div class="country-headline">${esc(c.headline || '')}</div>
       </span>
+      <span class="country-bar"><span class="bar has69"><i data-w="${c.score}" style="background:${scoreColor(c.score)}"></i></span></span>
       <span class="country-trend">${trendHTML(c.trend)}</span>
       <span class="country-score ${scoreClass(c.score)}">${c.score}</span>
     </li>`).join('');
+  animateBars();
 }
 
-function formatDate(iso) {
+function animateBars() {
+  document.querySelectorAll('.bar > i[data-w]').forEach(el => {
+    const w = el.getAttribute('data-w');
+    if (reduceMotion) { el.style.width = w + '%'; return; }
+    el.style.width = '0%';
+    requestAnimationFrame(() => requestAnimationFrame(() => { el.style.width = w + '%'; }));
+  });
+}
+
+function setupReveal() {
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(e => e.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(e => io.observe(e));
+}
+
+function fmtDate(iso) {
   if (!iso) return '…';
-  try {
-    return new Date(iso + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-  } catch { return iso; }
-}
-function escapeHTML(s) {
-  return String(s).replace(/[&<>"]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
+  try { return new Date(iso + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); }
+  catch { return iso; }
 }
 
-document.addEventListener('input', (e) => {
-  if (e.target.id === 'search') renderCountries();
-});
-document.addEventListener('change', (e) => {
-  if (e.target.id === 'sort') renderCountries();
-});
+document.addEventListener('input', (e) => { if (e.target.id === 'search') renderCountries(); });
+document.addEventListener('change', (e) => { if (e.target.id === 'sort') renderCountries(); });
 
 load();
