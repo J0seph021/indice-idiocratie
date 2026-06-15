@@ -20,7 +20,7 @@ const I18N = {
     noArticles: 'No articles logged yet, check back after the daily update.',
     loadingWorld: 'Booting up the global stupidity monitor…',
     footAboutT: 'The Idiocracy Index', footAbout: 'A satirical barometer of civilizational stupidity. We rate <em>decisions</em> and <em>behaviors</em>, not peoples. No pseudo-scientific "national IQ" is ever used.',
-    footLinksT: 'Links', footWordsT: 'Famous last words', footQuote: '"I\'m not a prophet. I was just off by 490 years."',
+    footLinksT: 'Links', footWordsT: 'Famous last words', footQuote: '"I\'m not a prophet. I was just off by 490 years." — Mike Judge, probably.',
     footLegal: 'WORK OF SATIRE. Scores are humorous, hyperbolic exaggerations and are in no way verifiable statements of fact. This site targets no ethnicity, religion, or named person.',
   },
   fr: {
@@ -36,7 +36,7 @@ const I18N = {
     noArticles: 'Aucun article pour l\'instant, reviens après la mise à jour quotidienne.',
     loadingWorld: 'Démarrage du moniteur mondial de connerie…',
     footAboutT: "L'Indice d'Idiocratie", footAbout: 'Un baromètre satirique de la connerie civilisationnelle. On note des <em>décisions</em> et des <em>comportements</em>, pas des peuples. Aucun « QI national » pseudo-scientifique n\'est utilisé.',
-    footLinksT: 'Liens', footWordsT: 'Le mot de la fin', footQuote: '« Je ne suis pas un prophète. Je me suis juste trompé de 490 ans. »',
+    footLinksT: 'Liens', footWordsT: 'Le mot de la fin', footQuote: '« Je ne suis pas un prophète. Je me suis juste trompé de 490 ans. » — Mike Judge, probablement.',
     footLegal: 'ŒUVRE DE SATIRE. Les scores sont des exagérations humoristiques et hyperboliques, en aucun cas des affirmations de fait vérifiables. Ce site ne vise aucune ethnie, religion ni personne nommée.',
   },
   es: {
@@ -52,7 +52,7 @@ const I18N = {
     noArticles: 'Aún no hay artículos, vuelve tras la actualización diaria.',
     loadingWorld: 'Arrancando el monitor mundial de estupidez…',
     footAboutT: 'El Índice de Idiocracia', footAbout: 'Un barómetro satírico de la estupidez civilizatoria. Calificamos <em>decisiones</em> y <em>comportamientos</em>, no a los pueblos. Nunca se usa ningún "CI nacional" pseudocientífico.',
-    footLinksT: 'Enlaces', footWordsT: 'Últimas palabras', footQuote: '«No soy un profeta. Solo me equivoqué por 490 años.»',
+    footLinksT: 'Enlaces', footWordsT: 'Últimas palabras', footQuote: '«No soy un profeta. Solo me equivoqué por 490 años.» — Mike Judge, probablemente.',
     footLegal: 'OBRA DE SÁTIRA. Las puntuaciones son exageraciones humorísticas e hiperbólicas y de ningún modo afirmaciones de hecho verificables. Este sitio no apunta a ninguna etnia, religión ni persona nombrada.',
   },
   de: {
@@ -68,7 +68,7 @@ const I18N = {
     noArticles: 'Noch keine Artikel, schau nach dem täglichen Update wieder vorbei.',
     loadingWorld: 'Globaler Dummheits-Monitor startet…',
     footAboutT: 'Der Idiocracy-Index', footAbout: 'Ein satirisches Barometer zivilisatorischer Dummheit. Wir bewerten <em>Entscheidungen</em> und <em>Verhalten</em>, keine Völker. Es wird nie ein pseudowissenschaftlicher „nationaler IQ" verwendet.',
-    footLinksT: 'Links', footWordsT: 'Letzte Worte', footQuote: '„Ich bin kein Prophet. Ich lag nur um 490 Jahre daneben."',
+    footLinksT: 'Links', footWordsT: 'Letzte Worte', footQuote: '„Ich bin kein Prophet. Ich lag nur um 490 Jahre daneben." — Mike Judge, wahrscheinlich.',
     footLegal: 'SATIRE-WERK. Die Wertungen sind humorvolle, übertriebene Hyperbeln und keinesfalls überprüfbare Tatsachenbehauptungen. Diese Seite richtet sich gegen keine Ethnie, Religion oder benannte Person.',
   },
 };
