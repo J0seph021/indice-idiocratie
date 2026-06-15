@@ -73,13 +73,13 @@ function build({ file, w, h, cx, shapes = [], lines }) {
 
 const W = '#ffffff', BLK = '#0a0a0f', YEL = '#ffd60a', PINK = '#ff2e63', ACID = '#c6f135', GREEN = '#7bb800', DIM = '#a6a6c2', MUTE = '#6c6c86';
 
-// 1. 69 LINE — transparent, black shirt
+// 1. 69 LINE — transparent, optimised for a WHITE / light shirt (dark ink + pink accents)
 build({ file: '69-line.svg', w: 3000, h: 3600, cx: 1500,
-  shapes: ['<rect x="900" y="2330" width="1200" height="14" fill="#ffd60a"/>'],
+  shapes: ['<rect x="900" y="2330" width="1200" height="14" fill="#0a0a0f"/>'],
   lines: [
-    { y: 700,  size: 150, ls: 24, segments: [{ text: 'THE IDIOCRACY INDEX', fill: W }] },
-    { y: 1450, size: 640, ls: 10, segments: [{ text: 'SURVIVED', fill: W }] },
-    { y: 2150, size: 640, ls: 10, segments: [{ text: 'THE ', fill: W }, { text: '69', fill: YEL }] },
+    { y: 700,  size: 150, ls: 24, segments: [{ text: 'THE IDIOCRACY INDEX', fill: MUTE }] },
+    { y: 1450, size: 640, ls: 10, segments: [{ text: 'SURVIVED', fill: BLK }] },
+    { y: 2150, size: 640, ls: 10, segments: [{ text: 'THE ', fill: BLK }, { text: '69', fill: PINK }] },
     { y: 2820, size: 320, ls: 6, segments: [{ text: 'BRAWNDO WON.', fill: PINK }] },
   ] });
 
