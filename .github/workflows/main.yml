@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Installer les dependances (resvg, opentype) pour l'image sociale
+        run: npm install --no-audit --no-fund
       - name: Recalculer les scores
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -24,6 +26,6 @@ jobs:
         run: |
           git config user.name "Idiocracy Bot"
           git config user.email "bot@idiocratie.local"
-          git add data/scores.json
+          git add data/scores.json assets/og.png
           git diff --staged --quiet || git commit -m "Conneries du jour"
           git push

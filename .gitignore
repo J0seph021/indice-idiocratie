@@ -6,3 +6,7 @@ Thumbs.db
 
 # Doc de recherche/strategie interne — non publie
 compass_artifact_*.md
+marketing/
+
+# SECRET — codes de secours 2FA Etsy. NE JAMAIS committer/pousser (repo public).
+etsy_2fa_backup_codes.txt
