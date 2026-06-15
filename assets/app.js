@@ -130,19 +130,47 @@ function renderCountries() {
   };
   list.sort(sorters[sort] || sorters['score-desc']);
 
-  $('#country-list').innerHTML = list.map((c, i) => `
-    <li class="country-row ${i < 3 ? 'top' + (i + 1) : ''}">
-      <span class="country-rank">${String(i + 1).padStart(2, '0')}</span>
-      <span class="country-flag">${c.flag || '🏳️'}</span>
-      <span class="country-info">
-        <div class="country-name">${esc(c.name)}</div>
-        <div class="country-headline">${esc(c.headline || '')}</div>
-      </span>
-      <span class="country-bar"><span class="bar has69"><i data-w="${c.score}" style="background:${scoreColor(c.score)}"></i></span></span>
-      <span class="country-trend">${trendHTML(c.trend)}</span>
-      <span class="country-score ${scoreClass(c.score)}">${c.score}</span>
-    </li>`).join('');
+  $('#country-list').innerHTML = list.map((c, i) => {
+    const arts = c.articles || [];
+    return `
+    <li class="country-row-wrap ${i < 3 ? 'top' + (i + 1) : ''}">
+      <div class="country-row" role="button" tabindex="0" aria-expanded="false">
+        <span class="country-rank">${String(i + 1).padStart(2, '0')}</span>
+        <span class="country-flag">${c.flag || '🏳️'}</span>
+        <span class="country-info">
+          <div class="country-name">${esc(c.name)} <span class="country-chevron">▾</span></div>
+          <div class="country-headline">${esc(c.headline || '')}</div>
+        </span>
+        <span class="country-bar"><span class="bar has69"><i data-w="${c.score}" style="background:${scoreColor(c.score)}"></i></span></span>
+        <span class="country-trend">${trendHTML(c.trend)}</span>
+        <span class="country-score ${scoreClass(c.score)}">${c.score}</span>
+      </div>
+      <div class="country-articles"><div class="articles-inner"><div class="articles-pad">
+        <div class="articles-legend">Articles driving the score · <span class="up">+ raises</span> · <span class="down">− lowers</span></div>
+        ${arts.length ? arts.map(articleHTML).join('') : '<p class="no-articles">No articles logged yet — check back after the daily update.</p>'}
+      </div></div></div>
+    </li>`; }).join('');
   animateBars();
+}
+
+function articleHTML(a) {
+  const up = (a.impact ?? 0) >= 0;
+  const val = (up ? '+' : '−') + Math.abs(a.impact ?? 0);
+  return `<a class="article" href="${esc(a.url || '#')}" target="_blank" rel="noopener">
+    <span class="impact ${up ? 'up' : 'down'}">${val}</span>
+    <span class="article-body">
+      <span class="article-title">${esc(a.title || '')}</span>
+      <span class="article-meta">${esc(a.source || '')}${a.date ? ' · ' + esc(a.date) : ''}${a.note ? ' — ' + esc(a.note) : ''}</span>
+    </span>
+    <span class="article-go">↗</span>
+  </a>`;
+}
+
+function toggleCountry(row) {
+  const wrap = row.closest('.country-row-wrap');
+  if (!wrap) return;
+  const open = wrap.classList.toggle('open');
+  row.setAttribute('aria-expanded', open ? 'true' : 'false');
 }
 
 function animateBars() {
@@ -173,5 +201,15 @@ function fmtDate(iso) {
 
 document.addEventListener('input', (e) => { if (e.target.id === 'search') renderCountries(); });
 document.addEventListener('change', (e) => { if (e.target.id === 'sort') renderCountries(); });
+document.addEventListener('click', (e) => {
+  const row = e.target.closest('.country-row');
+  if (row) toggleCountry(row);
+});
+document.addEventListener('keydown', (e) => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.classList?.contains('country-row')) {
+    e.preventDefault();
+    toggleCountry(e.target);
+  }
+});
 
 load();

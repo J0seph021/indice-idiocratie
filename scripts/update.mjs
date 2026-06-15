@@ -39,21 +39,29 @@ const today = new Date().toISOString().slice(0, 10);
 // ---------------------------------------------------------------------------
 // 1. ACTUALITÉS — GDELT (gratuit, pas de clé)
 // ---------------------------------------------------------------------------
-async function fetchHeadlines(countryName, maxRecords = 12) {
-  // GDELT DOC 2.0 — on cherche les news politiques récentes mentionnant le pays.
+async function fetchHeadlines(countryName, maxRecords = 15) {
+  // GDELT DOC 2.0 — vraies actus politiques récentes (titre + URL + source).
   const query = encodeURIComponent(`"${countryName}" (government OR president OR law OR minister OR policy)`);
   const url = `https://api.gdeltproject.org/api/v2/doc/doc?query=${query}` +
-    `&mode=ArtList&format=json&timespan=2d&maxrecords=${maxRecords}&sort=DateDesc`;
+    `&mode=ArtList&format=json&timespan=3d&maxrecords=${maxRecords}&sort=DateDesc`;
   try {
     const res = await fetch(url, { headers: { 'User-Agent': 'IdiocracyIndex/1.0' } });
     if (!res.ok) return [];
     const json = await res.json();
-    const arts = (json.articles || []).map(a => a.title).filter(Boolean);
-    // dédoublonnage simple
-    return [...new Set(arts)].slice(0, maxRecords);
+    const seen = new Set();
+    return (json.articles || [])
+      .filter(a => a.title && a.url && !seen.has(a.title) && seen.add(a.title))
+      .map(a => ({ title: a.title, url: a.url, source: a.domain || '', date: (a.seendate || '').slice(0, 8) }))
+      .slice(0, maxRecords);
   } catch {
     return [];
   }
+}
+
+function fmtGdeltDate(d) { // "20260615" -> "Jun 15, 2026"
+  if (!/^\d{8}$/.test(d)) return '';
+  const M = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${M[+d.slice(4, 6) - 1]} ${+d.slice(6, 8)}, ${d.slice(0, 4)}`;
 }
 
 // ---------------------------------------------------------------------------
@@ -79,20 +87,24 @@ RULES:
 
 Respond STRICTLY in valid JSON, with no surrounding text.`;
 
-async function scoreCountry(country, headlines, prevScore) {
-  if (PROVIDER === 'none' || headlines.length === 0) {
-    // pas de LLM ou pas d'actu : petite dérive aléatoire autour du score précédent
+async function scoreCountry(country, articles, prevScore) {
+  if (PROVIDER === 'none' || articles.length === 0) {
+    // pas de LLM ou pas d'actu : petite dérive aléatoire, on garde les articles existants
     const drift = Math.round((Math.random() - 0.45) * 6);
     const score = clamp((prevScore ?? 55) + drift, 5, 99);
-    return { score, trend: score - (prevScore ?? score), headline: country.headline, why: country.why };
+    return { score, trend: score - (prevScore ?? score), headline: country.headline, why: country.why, articles: country.articles || [] };
   }
 
+  const list = articles.map((a, i) => `${i}. ${a.title}  [${a.source}]`).join('\n');
   const user = `COUNTRY: ${country.name}
 Previous score: ${prevScore}
-Recent news headlines:
-${headlines.map((h, i) => `${i + 1}. ${h}`).join('\n')}
 
-Return a JSON object: {"score": <0-100 integer>, "headline": "<the dumbest fact, 1 sentence>", "why": "<why it's idiocracy, 1 biting sentence>"}`;
+Recent REAL news headlines (index. title [source]):
+${list}
+
+Pick the 4-5 most relevant headlines. For EACH, give "i" (its index above), "impact" (signed int, + raises the stupidity score / - lowers it, range -6..+6) and "note" (one short biting sentence). Then an overall "score", a 1-sentence "headline" and a 1-sentence "why".
+
+Return JSON: {"score": <0-100 int>, "headline": "<1 sentence>", "why": "<1 biting sentence>", "articles": [{"i": <index>, "impact": <int>, "note": "<short>"}]}`;
 
   try {
     const out = PROVIDER === 'anthropic'
@@ -100,15 +112,25 @@ Return a JSON object: {"score": <0-100 integer>, "headline": "<the dumbest fact,
       : await callOpenAI(RUBRIC, user);
     const parsed = JSON.parse(extractJSON(out));
     const score = clamp(Math.round(parsed.score), 5, 99);
+    const arts = (parsed.articles || [])
+      .map(x => {
+        const src = articles[x.i];
+        if (!src) return null;
+        return { title: src.title, source: src.source, date: fmtGdeltDate(src.date), url: src.url,
+                 impact: clamp(Math.round(x.impact || 0), -6, 6), note: x.note || '' };
+      })
+      .filter(Boolean)
+      .slice(0, 5);
     return {
       score,
       trend: score - (prevScore ?? score),
       headline: parsed.headline || country.headline,
       why: parsed.why || country.why,
+      articles: arts.length ? arts : (country.articles || []),
     };
   } catch (e) {
     console.warn(`  ⚠️  scoring échoué pour ${country.name}: ${e.message}`);
-    return { score: prevScore ?? 55, trend: 0, headline: country.headline, why: country.why };
+    return { score: prevScore ?? 55, trend: 0, headline: country.headline, why: country.why, articles: country.articles || [] };
   }
 }
 
@@ -122,7 +144,7 @@ async function callAnthropic(system, user) {
     },
     body: JSON.stringify({
       model: process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5-20251001',
-      max_tokens: 400,
+      max_tokens: 800,
       system,
       messages: [{ role: 'user', content: user }],
     }),
@@ -141,7 +163,7 @@ async function callOpenAI(system, user) {
     },
     body: JSON.stringify({
       model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
-      max_tokens: 400,
+      max_tokens: 800,
       response_format: { type: 'json_object' },
       messages: [{ role: 'system', content: system }, { role: 'user', content: user }],
     }),
@@ -171,13 +193,14 @@ async function main() {
 
   // Score chaque pays
   for (const c of data.countries) {
-    const heads = await fetchHeadlines(c.name);
-    console.log(`  ${c.flag} ${c.name} — ${heads.length} titres`);
-    const r = await scoreCountry(c, heads, c.score);
+    const arts = await fetchHeadlines(c.name);
+    const r = await scoreCountry(c, arts, c.score);
+    console.log(`  ${c.flag} ${c.name} — ${arts.length} articles GDELT → ${r.articles.length} retenus, score ${r.score}`);
     c.score = r.score;
     c.trend = r.trend;
     c.headline = r.headline;
     c.why = r.why;
+    if (r.articles.length) c.articles = r.articles; // garde les anciens si GDELT/LLM n'a rien donné
     c.gdp_adjusted = clamp(Math.round(r.score * 0.95), 5, 99); // placeholder d'ajustement
   }
 

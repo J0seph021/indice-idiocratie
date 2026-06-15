@@ -10,8 +10,8 @@
   "spotlight": {
     "country": "United States",
     "flag": "🇺🇸",
-    "headline": "UFC fight held on the White House lawn for Trump's 80th birthday",
-    "why": "An octagon set up in front of the Oval Office, 'USA! USA!' chants, and a president hyping the bout. President Camacho couldn't have done it better.",
+    "headline": "UFC fight staged on the White House lawn for Trump's 80th birthday",
+    "why": "An octagon in front of the Oval Office, 'USA! USA!' chants, and a president hyping the bout. President Camacho couldn't have done it better.",
     "score": 94
   },
   "continents": [
@@ -23,21 +23,134 @@
     { "name": "Oceania", "emoji": "🌏", "score": 57, "trend": 0 }
   ],
   "countries": [
-    { "code": "US", "name": "United States", "flag": "🇺🇸", "continent": "North America", "score": 94, "trend": 4, "gdp_adjusted": 91, "headline": "UFC fight staged on the White House lawn for the president's 80th birthday.", "why": "Governance as spectacle, science replaced by posts, and a cult of brute force worthy of President Camacho." },
-    { "code": "RU", "name": "Russia", "flag": "🇷🇺", "continent": "Europe", "score": 88, "trend": 1, "gdp_adjusted": 84, "headline": "New law punishing the act of 'searching' for info online.", "why": "When loading a web page becomes a crime, you've left reality behind." },
-    { "code": "SV", "name": "El Salvador", "flag": "🇸🇻", "continent": "South America", "score": 79, "trend": 2, "gdp_adjusted": 71, "headline": "Entire national budget re-gambled on a cryptocurrency.", "why": "The public treasury treated like a casino chip." },
-    { "code": "GB", "name": "United Kingdom", "flag": "🇬🇧", "continent": "Europe", "score": 70, "trend": 2, "gdp_adjusted": 73, "headline": "Yet another parliamentary debate over the shape of bananas.", "why": "The fine art of turning a non-issue into a national crisis." },
-    { "code": "BR", "name": "Brazil", "flag": "🇧🇷", "continent": "South America", "score": 68, "trend": -2, "gdp_adjusted": 64, "headline": "Lawmakers brawl with chairs mid-session.", "why": "Idiocracy's 'Extreme Court,' but for real." },
-    { "code": "IN", "name": "India", "flag": "🇮🇳", "continent": "Asia", "score": 67, "trend": 1, "gdp_adjusted": 58, "headline": "Minister recommends cow dung as an antiviral.", "why": "Pseudoscience promoted to public health policy." },
-    { "code": "FR", "name": "France", "flag": "🇫🇷", "continent": "Europe", "score": 62, "trend": 0, "gdp_adjusted": 64, "headline": "Strike against a reform, then a strike against its cancellation.", "why": "The reflex to oppose before reading the text." },
-    { "code": "CN", "name": "China", "flag": "🇨🇳", "continent": "Asia", "score": 65, "trend": 0, "gdp_adjusted": 60, "headline": "Bonus social-credit points for snitching on your neighbors.", "why": "Gamified informing as civic virtue." },
-    { "code": "IT", "name": "Italy", "flag": "🇮🇹", "continent": "Europe", "score": 60, "trend": 1, "gdp_adjusted": 62, "headline": "Influencer elected mayor on a promise of a theme park.", "why": "The whole platform fits in a single story." },
-    { "code": "AU", "name": "Australia", "flag": "🇦🇺", "continent": "Oceania", "score": 57, "trend": 0, "gdp_adjusted": 59, "headline": "National debate: have the emus won another war?", "why": "Spoiler: yes." },
-    { "code": "DE", "name": "Germany", "flag": "🇩🇪", "continent": "Europe", "score": 54, "trend": -1, "gdp_adjusted": 56, "headline": "A 14-page form to report one too many forms.", "why": "Bureaucracy eating its own tail." },
-    { "code": "JP", "name": "Japan", "flag": "🇯🇵", "continent": "Asia", "score": 52, "trend": 0, "gdp_adjusted": 53, "headline": "Robot resigns, deemed overworked by its human coworkers.", "why": "At least someone's paying attention to well-being." },
-    { "code": "CA", "name": "Canada", "flag": "🇨🇦", "continent": "North America", "score": 51, "trend": 0, "gdp_adjusted": 52, "headline": "Official apology issued to a moose.", "why": "Politeness raised to diplomatic levels." },
-    { "code": "SE", "name": "Sweden", "flag": "🇸🇪", "continent": "Europe", "score": 44, "trend": -1, "gdp_adjusted": 45, "headline": "Coffee break nearly written into the constitution.", "why": "The fika as a bulwark against stupidity." },
-    { "code": "FI", "name": "Finland", "flag": "🇫🇮", "continent": "Europe", "score": 41, "trend": 0, "gdp_adjusted": 42, "headline": "Mandatory class on spotting fake news starting in elementary school.", "why": "World champion at resisting disinformation. Bravo." }
+    { "code": "US", "name": "United States", "flag": "🇺🇸", "continent": "North America", "score": 94, "trend": 4, "gdp_adjusted": 91,
+      "headline": "Trump plans a UFC fight on the White House lawn — staged around his 80th birthday.",
+      "why": "Governance as pay-per-view, science replaced by posts, brute-force spectacle worthy of President Camacho.",
+      "articles": [
+        { "title": "State Dept to slash visa processing in Africa from ~50 posts to 20 hubs", "source": "NAFSA", "date": "Jun 2026", "url": "https://www.nafsa.org/executive-and-regulatory-actions-trump2admin", "impact": 4, "note": "Fewer doors, more chaos." },
+        { "title": "The Trump–Carlson feud takes over the news cycle", "source": "Wikipedia", "date": "Jun 2026", "url": "https://en.wikipedia.org/wiki/Trump-Carlson_feud", "impact": 3, "note": "Governing by grudge match." },
+        { "title": "Litigation tracker: dozens of legal challenges pile up against the administration", "source": "Just Security", "date": "2026", "url": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/", "impact": 2, "note": "Move fast, get sued." },
+        { "title": "DOJ won't move forward with the $1.8B 'anti-weaponization' fund", "source": "CNN", "date": "Jun 2, 2026", "url": "https://www.cnn.com/2026/06/02/politics/live-news/trump-news-hearings", "impact": -2, "note": "A rare walk-back." },
+        { "title": "Nationwide protests against the second Trump administration continue", "source": "Wikipedia", "date": "2026", "url": "https://en.wikipedia.org/wiki/Protests_against_the_second_Trump_administration", "impact": -3, "note": "People pushing back = signs of life." }
+      ] },
+    { "code": "RU", "name": "Russia", "flag": "🇷🇺", "continent": "Europe", "score": 88, "trend": 1, "gdp_adjusted": 84,
+      "headline": "New law fines you for merely searching 'extremist' content online.",
+      "why": "When loading a web page becomes a finable offence, you've left reality behind.",
+      "articles": [
+        { "title": "Russia bill fines online searches for 'extremist' information", "source": "Global News", "date": "2026", "url": "https://globalnews.ca/news/11303908/russia-bill-fines-online-searches-extremist-information", "impact": 4, "note": "Curiosity is now a misdemeanour." },
+        { "title": "New law lets the FSB pause any communication channel on the president's say-so", "source": "zona.media", "date": "Apr 2026", "url": "https://en.zona.media/article/2026/04/07/russian_internet_censorship_2026", "impact": 3, "note": "An off switch for the whole internet." },
+        { "title": "Internet shutdowns escalate; WhatsApp and Telegram restricted", "source": "Human Rights Watch", "date": "Mar 31, 2026", "url": "https://www.hrw.org/news/2026/03/31/russia-internet-shutdowns-escalate", "impact": 2, "note": "Unplugging a nation." },
+        { "title": "'Great Crackdown': Russia tightens the screws on the internet", "source": "U.S. News", "date": "Mar 20, 2026", "url": "https://www.usnews.com/news/world/articles/2026-03-20/analysis-great-crackdown-russia-tightens-the-screws-on-the-internet", "impact": 1, "note": "More iron, less curtain." }
+      ] },
+    { "code": "SV", "name": "El Salvador", "flag": "🇸🇻", "continent": "South America", "score": 79, "trend": 2, "gdp_adjusted": 71,
+      "headline": "Bukele keeps buying one bitcoin a day as the crash erases hundreds of millions.",
+      "why": "The national treasury treated like a casino chip — doubling down mid-crash.",
+      "articles": [
+        { "title": "Bitcoin slump shatters Bukele's digital utopia in El Salvador", "source": "Bloomberg", "date": "Mar 4, 2026", "url": "https://www.bloomberg.com/opinion/articles/2026-03-04/bitcoin-slump-shatters-bukele-s-digital-utopia-in-el-salvador", "impact": 4, "note": "The utopia had a margin call." },
+        { "title": "Bitcoin rout exposes Bukele's gamble and hits El Salvador's debt", "source": "Bloomberg", "date": "Feb 12, 2026", "url": "https://www.bloomberg.com/news/articles/2026-02-12/bitcoin-rout-exposes-bukele-s-gamble-and-hits-el-salvador-debt", "impact": 2, "note": "Bond markets are not amused." },
+        { "title": "Finance chiefs tell the IMF the country hasn't bought BTC since February — contradicting Bukele", "source": "The Block", "date": "2026", "url": "https://www.theblock.co/post/363483/el-salvador-hasnt-bought-bitcoin-since-february-finance-chiefs-tell-imf-contradicting-bukele-administration", "impact": 1, "note": "Even the buying spree is fictional." },
+        { "title": "Bukele's approval soars to ~92% despite little love for the bitcoin plan", "source": "DL News", "date": "2026", "url": "https://www.dlnews.com/articles/people-culture/bitcoin-president-nayib-bukele-is-very-popular/", "impact": -3, "note": "Wildly popular anyway." }
+      ] },
+    { "code": "GB", "name": "United Kingdom", "flag": "🇬🇧", "continent": "Europe", "score": 70, "trend": 2, "gdp_adjusted": 73,
+      "headline": "95+ Labour MPs demand Starmer quit as ministers resign in protest.",
+      "why": "A governing party governing mostly its own meltdown.",
+      "articles": [
+        { "title": "2026 Labour Party leadership crisis: 95+ MPs call on Starmer to go", "source": "Wikipedia", "date": "May 2026", "url": "https://en.wikipedia.org/wiki/2026_Labour_Party_leadership_crisis", "impact": 3, "note": "A cabinet exodus." },
+        { "title": "'Freebiegate': ministers took £20k+ of free Taylor Swift tickets", "source": "Wikipedia", "date": "2026", "url": "https://en.wikipedia.org/wiki/2026_United_Kingdom_government_crisis", "impact": 2, "note": "Shake it off, Chancellor." },
+        { "title": "Back to the future? The strange state of British politics in 2026", "source": "Brookings", "date": "2026", "url": "https://www.brookings.edu/articles/back-to-the-future-british-politics-in-2026/", "impact": 1, "note": "Everything old is chaotic again." },
+        { "title": "Government forced into humiliating U-turns on welfare and winter fuel", "source": "TIME", "date": "2026", "url": "https://time.com/7299472/united-kingdom-welfare-bill-controversy-starmer-rebellion/", "impact": -4, "note": "Reversing a bad bill — credit where due." }
+      ] },
+    { "code": "BR", "name": "Brazil", "flag": "🇧🇷", "continent": "South America", "score": 68, "trend": -2, "gdp_adjusted": 64,
+      "headline": "Congress overrides Lula's veto to slash Bolsonaro's 27-year coup sentence.",
+      "why": "Idiocracy's 'Extreme Court,' but with real lawmakers and real chairs.",
+      "articles": [
+        { "title": "Brazil's Congress overrides veto to cut Bolsonaro's 27-year coup sentence", "source": "Euronews", "date": "May 1, 2026", "url": "https://www.euronews.com/2026/05/01/brazils-congress-passes-bill-to-reduce-former-president-jair-bolsonaros-27-year-prison-sen", "impact": 3, "note": "Accountability, optional." },
+        { "title": "A lawmaker occupies the chamber chair; brawl erupts with police and journalists", "source": "Al Jazeera", "date": "Dec 10, 2025", "url": "https://www.aljazeera.com/news/2025/12/10/brazils-chamber-of-deputies-passes-bill-to-lower-bolsonaros-sentence", "impact": 2, "note": "The Extreme Court is in session." },
+        { "title": "Congress ousts Bolsonaro allies amid coup fallout", "source": "Grand Pinnacle Tribune", "date": "2026", "url": "https://evrimagaci.org/gpt/brazils-congress-ousts-bolsonaro-allies-amid-coup-fallout-520625", "impact": -3, "note": "Some consequences, finally." },
+        { "title": "2026 in Brazil: the institutions keep grinding forward", "source": "Wikipedia", "date": "2026", "url": "https://en.wikipedia.org/wiki/2026_in_Brazil", "impact": -4, "note": "Democracy survives the food fight." }
+      ] },
+    { "code": "IN", "name": "India", "flag": "🇮🇳", "continent": "Asia", "score": 67, "trend": 1, "gdp_adjusted": 58,
+      "headline": "NEET medical exam cancelled after a massive paper leak — again.",
+      "why": "When the exam system collapses under repeated leaks, meritocracy becomes a lottery.",
+      "articles": [
+        { "title": "2026 NEET exam cancelled after paper leak; arrests follow", "source": "Wikipedia", "date": "May 2026", "url": "https://en.wikipedia.org/wiki/2026_NEET_controversy", "impact": 3, "note": "2.27M students, one leaked paper." },
+        { "title": "Creeping spread of pseudoscience worries Indian scientists", "source": "Chemistry World", "date": "2026", "url": "https://www.chemistryworld.com/news/creeping-spread-of-pseudoscience-worries-indian-scientists/3007951.article", "impact": 2, "note": "Mythology vs. evidence in the syllabus." },
+        { "title": "India's scientific temper and education system under siege", "source": "The Friday Times", "date": "May 23, 2026", "url": "https://www.thefridaytimes.com/23-May-2026/india-s-scientific-temper-education-system-siege", "impact": 1, "note": "Textbooks rewritten on the fly." },
+        { "title": "Scientists organise against the intensifying attack on scientific temperament", "source": "The Diplomat", "date": "2026", "url": "https://thediplomat.com/2024/08/indian-governments-intensifying-attack-on-scientific-temperament-worries-scientists/", "impact": -5, "note": "The pushback is real and growing." }
+      ] },
+    { "code": "FR", "name": "France", "flag": "🇫🇷", "continent": "Europe", "score": 62, "trend": 0, "gdp_adjusted": 64,
+      "headline": "Government rams the 2026 budget through with no vote, survives two no-confidence motions.",
+      "why": "Four months of deadlock, then a budget by procedural sleight-of-hand.",
+      "articles": [
+        { "title": "France adopts 2026 budget after two no-confidence votes fail", "source": "Al Jazeera", "date": "Feb 2, 2026", "url": "https://www.aljazeera.com/news/2026/2/2/france-adopts-2026-budget-after-two-no-confidence-votes-fail", "impact": 2, "note": "Budget by survival mode." },
+        { "title": "PM Lecornu's Marseille housing plan 'mirrors' an EU proposal, critics say", "source": "France in English", "date": "2026", "url": "https://franceinenglish.com/p/political-shifts-and-criticisms-ahead-of-the-2026-french-presidential-election", "impact": 1, "note": "Originality not included." },
+        { "title": "French government avoids collapse after surviving two no-confidence votes", "source": "Euronews", "date": "Jan 23, 2026", "url": "https://www.euronews.com/2026/01/23/french-government-avoids-collapse-after-surviving-two-no-confidence-votes", "impact": -3, "note": "Compromise, the old-fashioned way." }
+      ] },
+    { "code": "CN", "name": "China", "flag": "🇨🇳", "continent": "Asia", "score": 65, "trend": 0, "gdp_adjusted": 60,
+      "headline": "New 68-article cybercrime law entrenches censorship and mass surveillance.",
+      "why": "One framework to trace every user across every platform.",
+      "articles": [
+        { "title": "Cybercrime bill entrenches censorship and surveillance", "source": "Human Rights Watch", "date": "Mar 17, 2026", "url": "https://www.hrw.org/news/2026/03/17/china-cybercrime-bill-entrenches-censorship-surveillance", "impact": 3, "note": "68 articles, zero privacy." },
+        { "title": "'Seriously discredited entities' blacklists expand in finance and real estate", "source": "Wikipedia", "date": "2026", "url": "https://en.wikipedia.org/wiki/Social_Credit_System", "impact": 2, "note": "The blacklist, professionalised." },
+        { "title": "China quietly shelves individual citizen scoring, pivots to corporate compliance", "source": "Newsweek", "date": "2026", "url": "https://www.newsweek.com/how-china-changing-its-social-credit-system-11079499", "impact": -5, "note": "Less Black Mirror than feared." }
+      ] },
+    { "code": "IT", "name": "Italy", "flag": "🇮🇹", "continent": "Europe", "score": 60, "trend": 1, "gdp_adjusted": 62,
+      "headline": "Meloni's ad campaign splices in Mussolini footage, igniting a fascism row.",
+      "why": "Nothing says modern democracy like archival dictator B-roll.",
+      "articles": [
+        { "title": "Meloni faces a far-right challenge as 'Il Generale' Vannacci rises", "source": "Washington Times", "date": "Jun 14, 2026", "url": "https://www.washingtontimes.com/news/2026/jun/14/italys-meloni-faces-far-right-dilemma-il-generale-vannacci-rises/", "impact": 2, "note": "Out-flanked on the right." },
+        { "title": "Italian PM slams 'illiberal drift' after a comedian quits a TV festival", "source": "AOL/AP", "date": "2026", "url": "https://www.aol.com/articles/italian-pm-meloni-slams-illiberal-163433213.html", "impact": 1, "note": "Comedy as a casualty." },
+        { "title": "IMF tells Meloni her energy aid should target poorer families", "source": "Bloomberg", "date": "May 27, 2026", "url": "https://www.bloomberg.com/news/articles/2026-05-27/meloni-told-by-imf-that-italy-s-energy-aid-must-be-more-targeted", "impact": -2, "note": "A nudge toward sense." }
+      ] },
+    { "code": "AU", "name": "Australia", "flag": "🇦🇺", "continent": "Oceania", "score": 57, "trend": 0, "gdp_adjusted": 59,
+      "headline": "Minister flew to the UN — for $189k — to promote a teen social-media ban.",
+      "why": "A six-figure flight to lecture the world about screen time.",
+      "articles": [
+        { "title": "2025 parliamentary expenses controversy: $189k UN trip to promote the under-16 social-media ban", "source": "Wikipedia", "date": "Dec 2025", "url": "https://en.wikipedia.org/wiki/2025_Australian_parliamentary_expenses_controversy", "impact": 2, "note": "Frequent-flyer hypocrisy." },
+        { "title": "PM's 'captain's call' on the 2026 census ends in multiple backflips", "source": "Wikipedia", "date": "2026", "url": "https://en.wikipedia.org/wiki/2026_in_Australia", "impact": 2, "note": "Back to exactly where it started." },
+        { "title": "Watered-down hate-speech laws pass after a Labor–Liberal deal", "source": "Inquirer", "date": "2026", "url": "https://newsinfo.inquirer.net/1597917/australia-pm-trailing-in-election-polls-announces-housing-policy", "impact": -4, "note": "A messy compromise that still lands." }
+      ] },
+    { "code": "DE", "name": "Germany", "flag": "🇩🇪", "continent": "Europe", "score": 54, "trend": -1, "gdp_adjusted": 56,
+      "headline": "Merz's coalition burns weeks bickering over tax, welfare and health reform.",
+      "why": "Bureaucracy eating its own tail — slowly, thoroughly.",
+      "articles": [
+        { "title": "Germany's struggling coalition strives to bridge its differences", "source": "The Japan Times", "date": "May 6, 2026", "url": "https://www.japantimes.co.jp/news/2026/05/06/world/politics/germany-coalition-government-differences/", "impact": 1, "note": "Consensus by exhaustion." },
+        { "title": "Germany political outlook 2026: weak growth narrows the options", "source": "Edelman", "date": "2026", "url": "https://www.edelmanglobaladvisory.com/insights/germany-political-outlook-2026", "impact": 1, "note": "Reform, eventually." },
+        { "title": "Merz sticks with center-left partners despite the wrangling", "source": "AOL", "date": "2026", "url": "https://www.aol.com/articles/germanys-merz-rules-cooperation-far-125957331.html", "impact": -3, "note": "Stability, the boring superpower." }
+      ] },
+    { "code": "JP", "name": "Japan", "flag": "🇯🇵", "continent": "Asia", "score": 52, "trend": 0, "gdp_adjusted": 53,
+      "headline": "PM Takaichi engulfed in a scandal over videos defaming her own rivals.",
+      "why": "Smear campaigns, now with leaked audio.",
+      "articles": [
+        { "title": "Takaichi faces heat over a defamatory campaign-video scandal", "source": "The Japan Times", "date": "Jun 6, 2026", "url": "https://www.japantimes.co.jp/news/2026/06/06/japan/politics/takaichi-campaign-video-scandal/", "impact": 2, "note": "The audio leaked." },
+        { "title": "A fragmented Diet leaves a bare 233-seat majority", "source": "CFR", "date": "2026", "url": "https://www.cfr.org/articles/political-realignment-and-the-2026-japanese-election-ii", "impact": 1, "note": "Governing on a knife's edge." },
+        { "title": "Can Takaichi rebuild stable LDP rule? Reformers think so", "source": "Nippon.com", "date": "2026", "url": "https://www.nippon.com/en/in-depth/d01197/", "impact": -3, "note": "Grown-up politics, attempted." }
+      ] },
+    { "code": "CA", "name": "Canada", "flag": "🇨🇦", "continent": "North America", "score": 51, "trend": 0, "gdp_adjusted": 52,
+      "headline": "Carney scraps the watchdog policing Canadian firms' human-rights abuses abroad.",
+      "why": "Politeness at home, fewer questions overseas.",
+      "articles": [
+        { "title": "Feds are eliminating the ombudsperson overseeing companies operating abroad", "source": "CBC News", "date": "Jun 11, 2026", "url": "https://www.cbc.ca/news/politics/carney-eliminating-canadian-ombudperson-for-responsible-enterprise-9.7232539", "impact": 2, "note": "Out of sight, out of mandate." },
+        { "title": "Some Canadians boycott the census to protest the floor-crossings behind Carney's majority", "source": "CTV News", "date": "2026", "url": "https://www.ctvnews.ca/politics/article/some-canadians-using-census-to-protest-pm-carneys-majority-government/", "impact": 1, "note": "A very Canadian protest." },
+        { "title": "Carney cuts EV tariffs in a deal with Beijing to free up canola exports", "source": "Global News", "date": "Jan 2026", "url": "https://globalnews.ca/video/11209838/carney-canadian-premiers-united-on-nation-building-projects-but-do-not-list-them", "impact": -3, "note": "Pragmatic trade-making." }
+      ] },
+    { "code": "SE", "name": "Sweden", "flag": "🇸🇪", "continent": "Europe", "score": 44, "trend": -1, "gdp_adjusted": 45,
+      "headline": "Sweden drops its plan to jail 13-year-olds — after the backlash.",
+      "why": "A bad idea reversed is still a sign the system works.",
+      "articles": [
+        { "title": "Sweden drops plan to jail 13-year-olds. It should stop there.", "source": "Human Rights Watch", "date": "Jun 12, 2026", "url": "https://www.hrw.org/news/2026/06/12/sweden-drops-plan-to-jail-13-year-olds-it-should-stop-there", "impact": -3, "note": "Reversed under scrutiny." },
+        { "title": "But the age of criminal responsibility may still drop from 15 to 14", "source": "Human Rights Watch", "date": "Jun 2026", "url": "https://www.hrw.org/news/2026/06/12/sweden-drops-plan-to-jail-13-year-olds-it-should-stop-there", "impact": 2, "note": "Half a step back." },
+        { "title": "Proposal to reshape the judiciary tests Sweden's political consensus", "source": "ConstitutionNet", "date": "2026", "url": "https://constitutionnet.org/news/voices/political-consensus-balance-government-proposal-reshape-swedens-judiciary-and-constitutional", "impact": 1, "note": "Tinkering with the courts." }
+      ] },
+    { "code": "FI", "name": "Finland", "flag": "🇫🇮", "continent": "Europe", "score": 41, "trend": 0, "gdp_adjusted": 42,
+      "headline": "Finland now teaches 3-year-olds to spot fake news — still the world's most disinfo-proof.",
+      "why": "World champion at resisting disinformation. Annoyingly sensible.",
+      "articles": [
+        { "title": "Finland teaches media literacy to preschoolers to combat Russian disinformation", "source": "Washington Times", "date": "Jan 5, 2026", "url": "https://www.washingtontimes.com/news/2026/jan/5/finland-teaches-media-literacy-preschoolers-combat-russian/", "impact": -3, "note": "Inoculating toddlers against BS." },
+        { "title": "Media Literacy Index 2026: Finland again leads Europe's resilience ranking", "source": "OSIS Sofia", "date": "2026", "url": "https://osis.bg/?p=5746&lang=en", "impact": -2, "note": "Top of the class, again." },
+        { "title": "Finland adds AI literacy to the curriculum as info-warfare intensifies", "source": "The Reporting Project", "date": "2026", "url": "https://www.thereportingproject.org/in-finland-the-battle-against-truly-fake-news-starts-with-media-and-ai-literacy-in-preschool/", "impact": -2, "note": "Staying ahead of the bots." },
+        { "title": "Even Finland isn't immune: minor culture-war squabbles flare", "source": "OSIS Sofia", "date": "2026", "url": "https://osis.bg/?p=5746&lang=en", "impact": 1, "note": "Nobody's perfect." }
+      ] }
   ],
   "history": [
     { "date": "2026-06-08", "world": 69 },
