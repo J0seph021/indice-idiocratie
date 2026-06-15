@@ -16,8 +16,15 @@
   <div class="satire-bar"><span class="tape-txt">⚠ SATIRE</span> &nbsp; No score is a statement of fact. It's a joke.</div>
   <header class="site-header">
     <a class="brand" href="index.html"><span class="brand-logo">🧠💀</span><span class="brand-text">The<strong>Idiocracy Index</strong></span></a>
-    <nav class="nav"><a href="index.html">Scoreboard</a><a href="about.html" class="active">Methodology</a><a href="merch.html">Shop</a></nav>
+    <nav class="nav"><a href="index.html" data-i18n="navScoreboard">Scoreboard</a><a href="about.html" class="active" data-i18n="navMethodology">Methodology</a><a href="merch.html" data-i18n="navShop">Shop</a><select class="lang-switch" id="lang-switch" aria-label="Language"></select></nav>
   </header>
+  <script src="assets/i18n.js"></script>
+  <script>
+    applyI18n();
+    const ls = document.getElementById('lang-switch');
+    if (ls) { ls.innerHTML = LANGS.map(l => '<option value="' + l + '">' + LANG_NAMES[l] + '</option>').join(''); ls.value = LANG;
+      ls.addEventListener('change', e => { window.LANG = e.target.value; try { localStorage.setItem('ii_lang', window.LANG); } catch (x) {} applyI18n(); }); }
+  </script>
 
   <article class="page">
     <h1>Methodology & disclaimer</h1>
