@@ -41,10 +41,18 @@ const today = new Date().toISOString().slice(0, 10);
 // ---------------------------------------------------------------------------
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
+// Requêtes sur-mesure pour les pays où le nom seul ramène trop de bruit
+// (les USA captent surtout de la géopolitique → on cible le domestique).
+const QUERY_OVERRIDES = {
+  'United States': '(Trump OR "White House" OR Congress OR "U.S. Senate" OR "Supreme Court" OR governor) (order OR ban OR cut OR scandal OR lawsuit OR bill OR tariff OR firing OR pardon OR ruling OR protest) sourcelang:eng',
+};
+
 async function fetchHeadlines(countryName, maxRecords = 15) {
   // GDELT DOC 2.0 — vraies actus politiques récentes (titre + URL + source).
   // GDELT rate-limite les requêtes rapprochées → on réessaie avec backoff.
-  const query = encodeURIComponent(`"${countryName}" (government OR president OR parliament OR law OR minister OR policy OR election) sourcelang:eng`);
+  const raw = QUERY_OVERRIDES[countryName] ||
+    `"${countryName}" (government OR president OR parliament OR law OR minister OR policy OR election) sourcelang:eng`;
+  const query = encodeURIComponent(raw);
   const url = `https://api.gdeltproject.org/api/v2/doc/doc?query=${query}` +
     `&mode=ArtList&format=json&timespan=3d&maxrecords=${maxRecords}&sort=DateDesc`;
   for (let attempt = 0; attempt < 3; attempt++) {
