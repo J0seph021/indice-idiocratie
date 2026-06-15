@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy & cookies · The Idiocracy Index</title>
+  <meta name="description" content="How The Idiocracy Index handles privacy, cookies, analytics and advertising. We don't sell your data — we barely want it." />
+  <link rel="canonical" href="https://idiocracies.com/privacy.html" />
+  <meta name="robots" content="all" />
+  <meta property="og:site_name" content="The Idiocracy Index" />
+  <meta property="og:title" content="Privacy & cookies · The Idiocracy Index" />
+  <meta property="og:description" content="How we handle privacy, cookies, analytics and advertising." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://idiocracies.com/privacy.html" />
+  <meta property="og:image" content="https://idiocracies.com/assets/og.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="satire-bar"><span class="tape-txt">⚠ SATIRE</span> &nbsp; No score is a statement of fact. It's a joke.</div>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-logo">🧠💀</span><span class="brand-text">The<strong>Idiocracy Index</strong></span></a>
+    <nav class="nav"><a href="index.html" data-i18n="navScoreboard">Scoreboard</a><a href="about.html" data-i18n="navMethodology">Methodology</a><a href="merch.html" data-i18n="navShop">Shop</a><select class="lang-switch" id="lang-switch" aria-label="Language"></select></nav>
+  </header>
+  <script src="assets/i18n.js"></script>
+  <script>
+    applyI18n();
+    const ls = document.getElementById('lang-switch');
+    if (ls) { ls.innerHTML = LANGS.map(l => '<option value="' + l + '">' + LANG_NAMES[l] + '</option>').join(''); ls.value = LANG;
+      ls.addEventListener('change', e => { window.LANG = e.target.value; try { localStorage.setItem('ii_lang', window.LANG); } catch (x) {} applyI18n(); }); }
+  </script>
+
+  <article class="page">
+    <h1>Privacy & cookies</h1>
+    <p class="footer-quote" style="margin-top:-6px">Last updated: 15 June 2026</p>
+
+    <p>The Idiocracy Index (<strong>idiocracies.com</strong>) is a satirical website. This page explains, in plain language, what data is collected when you visit, why, and the choices you have. We don't ask you to create an account, and we don't sell your personal information.</p>
+
+    <h2>Who runs this site</h2>
+    <p>This site is an independent satirical project. For any privacy question or request, contact: <strong>privacy@idiocracies.com</strong>.</p>
+
+    <h2>What we collect</h2>
+    <p>We do <strong>not</strong> ask you for your name, email, or any personal detail to read the scoreboard. The only data involved is collected automatically by the third-party services below (analytics and advertising), in the form of cookies and standard technical information such as your approximate location (country/region), device and browser type, pages viewed, and referring site.</p>
+    <p>One preference we store <em>locally on your device</em> (not on a server) is your chosen language, via your browser's <code>localStorage</code>. It never leaves your device and you can clear it anytime.</p>
+
+    <h2>Cookies</h2>
+    <p>Cookies are small files placed on your device. We and our partners use them to measure traffic and, where applicable, to show advertising. You can block or delete cookies in your browser settings; the scoreboard will still work, though some features (like remembering your language) and ad relevance may be affected.</p>
+
+    <h2>Analytics — Google Analytics</h2>
+    <p>We use <strong>Google Analytics 4</strong> to understand how many people visit and which content is popular, so we can improve the site. It sets cookies and processes the technical data described above in aggregated, pseudonymous form. Learn more in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. You can opt out site-wide with the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+    <h2>Advertising — Google AdSense</h2>
+    <p>This site displays ads served by <strong>Google AdSense</strong> and its partners. Key points required by Google:</p>
+    <ul>
+      <li>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this and other websites.</li>
+      <li>Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to this site and/or other sites on the Internet.</li>
+      <li>You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>. You can also opt out of some third-party vendors' use of cookies for personalized advertising at <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info/choices</a> or <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener">youronlinechoices.eu</a> (EU).</li>
+    </ul>
+    <p>If you are in the EEA, UK or Switzerland, a consent banner manages your choices for advertising and measurement cookies before non-essential cookies are set.</p>
+
+    <h2>Other third parties</h2>
+    <ul>
+      <li><strong>GitHub Pages</strong> hosts this static site and may log standard request data (such as IP addresses) for security and delivery.</li>
+      <li><strong>Google Fonts</strong> serves the typefaces used on the site.</li>
+      <li><strong>Etsy</strong> — our shop links lead to Etsy, which has its own privacy policy. We don't process your payment or order data.</li>
+    </ul>
+
+    <h2>Your rights</h2>
+    <p>Depending on where you live (e.g. under the EU/UK GDPR, or California's CCPA/CPRA), you may have the right to access, correct, delete, or restrict the processing of your personal data, and to object to or opt out of certain advertising. Because we don't collect identifying information directly, most requests are best directed to the relevant third party (Google, etc.), but you can always contact us at <strong>privacy@idiocracies.com</strong> and we'll help.</p>
+
+    <h2>Children</h2>
+    <p>This site is intended for a general adult audience and is not directed to children under 13 (or the equivalent age in your country). We do not knowingly collect data from children.</p>
+
+    <h2>Data retention</h2>
+    <p>Analytics and advertising data are retained by the respective providers according to their own policies and your settings. We don't keep a separate database of visitors.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this page as the site evolves or as legal requirements change. The "last updated" date above reflects the latest version.</p>
+
+    <div class="callout"><strong>Reminder:</strong> The scores on this site are <strong>satire</strong> — humorous exaggerations, not statements of fact. See the <a href="about.html#disclaimer">methodology &amp; disclaimer</a>.</div>
+
+    <p style="margin-top:30px"><a href="index.html">← Back to the scoreboard</a></p>
+  </article>
+
+  <footer class="site-footer">
+    <div class="wrap"><p class="footer-legal">⚠ WORK OF SATIRE. No score is a verifiable statement of fact. This site targets no ethnicity, religion, or named person.</p></div>
+  </footer>
+</body>
+</html>
