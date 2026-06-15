@@ -4,156 +4,1383 @@
   "world": {
     "score": 71,
     "trend": 2,
-    "label": "We crossed the 69 line. Brawndo won.",
-    "headline": "The planet sets a new record: cage fights, viral conspiracies, and leaders governing by meme."
+    "label": {
+      "en": "We crossed the 69 line. Brawndo won.",
+      "fr": "Nous avons franchi la barre des 69. Brawndo a gagné.",
+      "es": "Cruzamos la línea 69. Brawndo ganó.",
+      "de": "Wir haben die 69er-Grenze überschritten. Brawndo hat gewonnen."
+    },
+    "headline": {
+      "en": "The planet sets a new record: cage fights, viral conspiracies, and leaders governing by meme.",
+      "fr": "La planète établit un nouveau record : combats de cage, conspirations virales, et dirigeants gouvernant par mème.",
+      "es": "El planeta establece un nuevo récord: peleas en jaula, conspiraciones virales y líderes gobernando por memes.",
+      "de": "Der Planet setzt einen neuen Rekord: Käfigkämpfe, virale Verschwörungen und Anführer, die mit Memes regieren."
+    }
   },
   "spotlight": {
     "country": "United States",
     "flag": "🇺🇸",
-    "headline": "UFC fight staged on the White House lawn for Trump's 80th birthday",
-    "why": "An octagon in front of the Oval Office, 'USA! USA!' chants, and a president hyping the bout. President Camacho couldn't have done it better.",
+    "headline": {
+      "en": "UFC fight staged on the White House lawn for Trump's 80th birthday",
+      "fr": "Combat de l'UFC organisé sur la pelouse de la Maison Blanche pour le 80e anniversaire de Trump",
+      "es": "Lucha de UFC montada en el césped de la Casa Blanca para el 80° cumpleaños de Trump",
+      "de": "UFC-Kampf auf dem Rasen des Weißen Hauses zum 80. Geburtstag von Trump inszeniert"
+    },
+    "why": {
+      "en": "An octagon in front of the Oval Office, 'USA! USA!' chants, and a president hyping the bout. President Camacho couldn't have done it better.",
+      "fr": "Un octogone devant le Bureau ovale, des chants 'USA ! USA !', et un président qui hypait le combat. Le président Camacho n'aurait pas fait mieux.",
+      "es": "Un octágono frente a la Oficina Oval, gritos de '¡EE.UU.! ¡EE.UU.!', y un presidente animando la pelea. El presidente Camacho no lo podría haber hecho mejor.",
+      "de": "Ein Oktagon vor dem Oval Office, 'USA! USA!' Rufe und ein Präsident, der den Kampf anheizt. Präsident Camacho hätte es nicht besser machen können."
+    },
     "score": 94
   },
   "continents": [
-    { "name": "North America", "emoji": "🌎", "score": 78, "trend": 3 },
-    { "name": "Europe", "emoji": "🌍", "score": 61, "trend": 1 },
-    { "name": "Asia", "emoji": "🌏", "score": 66, "trend": 0 },
-    { "name": "South America", "emoji": "🌎", "score": 64, "trend": -1 },
-    { "name": "Africa", "emoji": "🌍", "score": 63, "trend": 1 },
-    { "name": "Oceania", "emoji": "🌏", "score": 57, "trend": 0 }
+    {
+      "name": "North America",
+      "emoji": "🌎",
+      "score": 78,
+      "trend": 3
+    },
+    {
+      "name": "Europe",
+      "emoji": "🌍",
+      "score": 61,
+      "trend": 1
+    },
+    {
+      "name": "Asia",
+      "emoji": "🌏",
+      "score": 66,
+      "trend": 0
+    },
+    {
+      "name": "South America",
+      "emoji": "🌎",
+      "score": 64,
+      "trend": -1
+    },
+    {
+      "name": "Africa",
+      "emoji": "🌍",
+      "score": 63,
+      "trend": 1
+    },
+    {
+      "name": "Oceania",
+      "emoji": "🌏",
+      "score": 57,
+      "trend": 0
+    }
   ],
   "countries": [
-    { "code": "US", "name": "United States", "flag": "🇺🇸", "continent": "North America", "score": 94, "trend": 4, "gdp_adjusted": 91,
-      "headline": "Trump plans a UFC fight on the White House lawn — staged around his 80th birthday.",
-      "why": "Governance as pay-per-view, science replaced by posts, brute-force spectacle worthy of President Camacho.",
+    {
+      "code": "US",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "continent": "North America",
+      "score": 94,
+      "trend": 4,
+      "gdp_adjusted": 91,
+      "headline": {
+        "en": "Trump plans a UFC fight on the White House lawn — staged around his 80th birthday.",
+        "fr": "Trump prévoit un combat de l'UFC dans le jardin de la Maison Blanche — mis en scène autour de son 80ème anniversaire.",
+        "es": "Trump planea una pelea de UFC en el jardín de la Casa Blanca — escenificada alrededor de su 80 cumpleaños.",
+        "de": "Trump plant ein UFC-Kampf auf dem Rasen des Weißen Hauses — inszeniert rund um seinen 80. Geburtstag."
+      },
+      "why": {
+        "en": "Governance as pay-per-view, science replaced by posts, brute-force spectacle worthy of President Camacho.",
+        "fr": "Gouvernance en mode pay-per-view, science remplacée par des posts, un spectacle brut digne du Président Camacho.",
+        "es": "Gobernanza como pago por evento, ciencia sustituida por publicaciones, espectáculo de fuerza bruta digno del presidente Camacho.",
+        "de": "Regierung als Pay-per-View, Wissenschaft ersetzt durch Posts, brutales Spektakel würdig des Präsidenten Camacho."
+      },
       "articles": [
-        { "title": "State Dept to slash visa processing in Africa from ~50 posts to 20 hubs", "source": "NAFSA", "date": "Jun 2026", "url": "https://www.nafsa.org/executive-and-regulatory-actions-trump2admin", "impact": 4, "note": "Fewer doors, more chaos." },
-        { "title": "Visa and deportation controversies pile up across the administration", "source": "Wikipedia", "date": "2026", "url": "https://en.wikipedia.org/wiki/Visa_and_deportation_controversies_in_the_second_Trump_administration", "impact": 3, "note": "Policy by chaos and reversal." },
-        { "title": "Litigation tracker: dozens of legal challenges pile up against the administration", "source": "Just Security", "date": "2026", "url": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/", "impact": 2, "note": "Move fast, get sued." },
-        { "title": "DOJ won't move forward with the $1.8B 'anti-weaponization' fund", "source": "CNN", "date": "Jun 2, 2026", "url": "https://www.cnn.com/2026/06/02/politics/live-news/trump-news-hearings", "impact": -2, "note": "A rare walk-back." },
-        { "title": "Nationwide protests against the second Trump administration continue", "source": "Wikipedia", "date": "2026", "url": "https://en.wikipedia.org/wiki/Protests_against_the_second_Trump_administration", "impact": -3, "note": "People pushing back = signs of life." }
-      ] },
-    { "code": "RU", "name": "Russia", "flag": "🇷🇺", "continent": "Europe", "score": 88, "trend": 1, "gdp_adjusted": 84,
-      "headline": "New law fines you for merely searching 'extremist' content online.",
-      "why": "When loading a web page becomes a finable offence, you've left reality behind.",
+        {
+          "title": {
+            "en": "State Dept to slash visa processing in Africa from ~50 posts to 20 hubs",
+            "fr": "Le département d'État va réduire le traitement des visas en Afrique de ~50 postes à 20 centres",
+            "es": "El Departamento de Estado recortará el procesamiento de visas en África de ~50 puestos a 20 centros",
+            "de": "Das Außenministerium wird die Visa-Beantragung in Afrika von ~50 Stellen auf 20 Hubs reduzieren"
+          },
+          "source": "NAFSA",
+          "date": "Jun 2026",
+          "url": "https://www.nafsa.org/executive-and-regulatory-actions-trump2admin",
+          "impact": 4,
+          "note": {
+            "en": "Fewer doors, more chaos.",
+            "fr": "Moins de portes, plus de chaos.",
+            "es": "Menos puertas, más caos.",
+            "de": "Weniger Türen, mehr Chaos."
+          }
+        },
+        {
+          "title": {
+            "en": "Visa and deportation controversies pile up across the administration",
+            "fr": "Les controverses sur les visas et les déportations s'accumulent au sein de l'administration",
+            "es": "Las controversias sobre visas y deportaciones se acumulan en la administración",
+            "de": "Visa- und Abschiebungsproteste häufen sich in der Verwaltung"
+          },
+          "source": "Wikipedia",
+          "date": "2026",
+          "url": "https://en.wikipedia.org/wiki/Visa_and_deportation_controversies_in_the_second_Trump_administration",
+          "impact": 3,
+          "note": {
+            "en": "Policy by chaos and reversal.",
+            "fr": "Politique par le chaos et l'inversion.",
+            "es": "Política por caos y reversión.",
+            "de": "Politik durch Chaos und Umkehr."
+          }
+        },
+        {
+          "title": {
+            "en": "Litigation tracker: dozens of legal challenges pile up against the administration",
+            "fr": "Suivi des litiges : des dizaines de défis juridiques s'accumulent contre l'administration",
+            "es": "Seguimiento de litigios: decenas de desafíos legales se acumulan contra la administración",
+            "de": "Rechtsstreit-Tracker: Dutzende rechtliche Herausforderungen häufen sich gegen die Verwaltung"
+          },
+          "source": "Just Security",
+          "date": "2026",
+          "url": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/",
+          "impact": 2,
+          "note": {
+            "en": "Move fast, get sued.",
+            "fr": "Agissez vite, soyez poursuivi.",
+            "es": "Muévete rápido, te demandan.",
+            "de": "Schnell handeln, verklagt werden."
+          }
+        },
+        {
+          "title": {
+            "en": "DOJ won't move forward with the $1.8B 'anti-weaponization' fund",
+            "fr": "Le DOJ ne va pas avancer avec le fonds de 1,8 milliard de dollars 'anti-weaponization'",
+            "es": "El DOJ no avanzará con el fondo de $1.8B 'anti-weaponization'",
+            "de": "Das DOJ wird nicht mit dem $1.8B 'Anti-Waffenisierung'-Fonds vorankommen"
+          },
+          "source": "CNN",
+          "date": "Jun 2, 2026",
+          "url": "https://www.cnn.com/2026/06/02/politics/live-news/trump-news-hearings",
+          "impact": -2,
+          "note": {
+            "en": "A rare walk-back.",
+            "fr": "Un rare recul.",
+            "es": "Un raro retroceso.",
+            "de": "Ein seltener Rückzieher."
+          }
+        },
+        {
+          "title": {
+            "en": "Nationwide protests against the second Trump administration continue",
+            "fr": "Les manifestations à l'échelle nationale contre la deuxième administration Trump se poursuivent",
+            "es": "Las protestas en todo el país contra la segunda administración de Trump continúan",
+            "de": "Landesweite Proteste gegen die zweite Trump-Administration gehen weiter"
+          },
+          "source": "Wikipedia",
+          "date": "2026",
+          "url": "https://en.wikipedia.org/wiki/Protests_against_the_second_Trump_administration",
+          "impact": -3,
+          "note": {
+            "en": "People pushing back = signs of life.",
+            "fr": "Les gens qui se rebellent = signes de vie.",
+            "es": "La gente que responde = signos de vida.",
+            "de": "Menschen wehren sich = Lebenszeichen."
+          }
+        }
+      ]
+    },
+    {
+      "code": "RU",
+      "name": "Russia",
+      "flag": "🇷🇺",
+      "continent": "Europe",
+      "score": 88,
+      "trend": 1,
+      "gdp_adjusted": 84,
+      "headline": {
+        "en": "New law fines you for merely searching 'extremist' content online.",
+        "fr": "Une nouvelle loi vous inflige une amende juste pour avoir recherché du contenu 'extrémiste' en ligne.",
+        "es": "Nueva ley te multa por simplemente buscar contenido 'extremista' en línea.",
+        "de": "Neues Gesetz bestraft dich, nur weil du online nach 'extremistischen' Inhalten suchst."
+      },
+      "why": {
+        "en": "When loading a web page becomes a finable offence, you've left reality behind.",
+        "fr": "Quand charger une page web devient une infraction passible d'amende, vous avez quitté la réalité.",
+        "es": "Cuando cargar una página web se convierte en un delito punible, has dejado la realidad atrás.",
+        "de": "Wenn das Laden einer Webseite ein bußgeldpflichtiges Vergehen wird, hast du die Realität hinter dir gelassen."
+      },
       "articles": [
-        { "title": "Russia bill fines online searches for 'extremist' information", "source": "Global News", "date": "2026", "url": "https://globalnews.ca/news/11303908/russia-bill-fines-online-searches-extremist-information", "impact": 4, "note": "Curiosity is now a misdemeanour." },
-        { "title": "New law lets the FSB pause any communication channel on the president's say-so", "source": "zona.media", "date": "Apr 2026", "url": "https://en.zona.media/article/2026/04/07/russian_internet_censorship_2026", "impact": 3, "note": "An off switch for the whole internet." },
-        { "title": "Internet shutdowns escalate; WhatsApp and Telegram restricted", "source": "Human Rights Watch", "date": "Mar 31, 2026", "url": "https://www.hrw.org/news/2026/03/31/russia-internet-shutdowns-escalate", "impact": 2, "note": "Unplugging a nation." },
-        { "title": "'Great Crackdown': Russia tightens the screws on the internet", "source": "U.S. News", "date": "Mar 20, 2026", "url": "https://www.usnews.com/news/world/articles/2026-03-20/analysis-great-crackdown-russia-tightens-the-screws-on-the-internet", "impact": 1, "note": "More iron, less curtain." }
-      ] },
-    { "code": "SV", "name": "El Salvador", "flag": "🇸🇻", "continent": "South America", "score": 79, "trend": 2, "gdp_adjusted": 71,
-      "headline": "Bukele keeps buying one bitcoin a day as the crash erases hundreds of millions.",
-      "why": "The national treasury treated like a casino chip — doubling down mid-crash.",
+        {
+          "title": {
+            "en": "Russia bill fines online searches for 'extremist' information",
+            "fr": "Projet de loi en Russie inflige des amendes pour les recherches en ligne sur des informations 'extrémistes'",
+            "es": "Proyecto de ley en Rusia multa búsquedas en línea de información 'extremista'",
+            "de": "Russisches Gesetz bestraft Online-Suchen nach 'extremistischen' Informationen"
+          },
+          "source": "Global News",
+          "date": "2026",
+          "url": "https://globalnews.ca/news/11303908/russia-bill-fines-online-searches-extremist-information",
+          "impact": 4,
+          "note": {
+            "en": "Curiosity is now a misdemeanour.",
+            "fr": "La curiosité est désormais un délit.",
+            "es": "La curiosidad ahora es un delito.",
+            "de": "Neugier ist jetzt ein Verbrechen."
+          }
+        },
+        {
+          "title": {
+            "en": "New law lets the FSB pause any communication channel on the president's say-so",
+            "fr": "La nouvelle loi permet au FSB de suspendre n'importe quel canal de communication sur le simple ordre du président",
+            "es": "La nueva ley permite al FSB pausar cualquier canal de comunicación con solo la orden del presidente",
+            "de": "Neues Gesetz erlaubt es dem FSB, jeden Kommunikationskanal auf Geheiß des Präsidenten zu pausieren"
+          },
+          "source": "zona.media",
+          "date": "Apr 2026",
+          "url": "https://en.zona.media/article/2026/04/07/russian_internet_censorship_2026",
+          "impact": 3,
+          "note": {
+            "en": "An off switch for the whole internet.",
+            "fr": "Un interrupteur pour tout internet.",
+            "es": "Un interruptor para toda la internet.",
+            "de": "Ein Ausschalter für das gesamte Internet."
+          }
+        },
+        {
+          "title": {
+            "en": "Internet shutdowns escalate; WhatsApp and Telegram restricted",
+            "fr": "Les coupures d'internet se multiplient ; WhatsApp et Telegram restreints",
+            "es": "Las interrupciones de internet aumentan; WhatsApp y Telegram restringidos",
+            "de": "Internetausfälle nehmen zu; WhatsApp und Telegram eingeschränkt"
+          },
+          "source": "Human Rights Watch",
+          "date": "Mar 31, 2026",
+          "url": "https://www.hrw.org/news/2026/03/31/russia-internet-shutdowns-escalate",
+          "impact": 2,
+          "note": {
+            "en": "Unplugging a nation.",
+            "fr": "Débrancher une nation.",
+            "es": "Desenchufando una nación.",
+            "de": "Eine Nation vom Stromnetz trennen."
+          }
+        },
+        {
+          "title": {
+            "en": "'Great Crackdown': Russia tightens the screws on the internet",
+            "fr": "'Grande Répression' : La Russie serre la vis sur internet",
+            "es": "'Gran Represión': Rusia aprieta las tuercas en internet",
+            "de": "'Große Durchgreifung': Russland zieht die Schrauben im Internet an"
+          },
+          "source": "U.S. News",
+          "date": "Mar 20, 2026",
+          "url": "https://www.usnews.com/news/world/articles/2026-03-20/analysis-great-crackdown-russia-tightens-the-screws-on-the-internet",
+          "impact": 1,
+          "note": {
+            "en": "More iron, less curtain.",
+            "fr": "Plus de fer, moins de rideau.",
+            "es": "Más hierro, menos cortina.",
+            "de": "Mehr Eisen, weniger Vorhang."
+          }
+        }
+      ]
+    },
+    {
+      "code": "SV",
+      "name": "El Salvador",
+      "flag": "🇸🇻",
+      "continent": "South America",
+      "score": 79,
+      "trend": 2,
+      "gdp_adjusted": 71,
+      "headline": {
+        "en": "Bukele keeps buying one bitcoin a day as the crash erases hundreds of millions.",
+        "fr": "Bukele continue d'acheter un bitcoin par jour alors que l'effondrement efface des centaines de millions.",
+        "es": "Bukele sigue comprando un bitcoin al día mientras el colapso borra cientos de millones.",
+        "de": "Bukele kauft weiterhin jeden Tag einen Bitcoin, während der Crash Hunderte Millionen löscht."
+      },
+      "why": {
+        "en": "The national treasury treated like a casino chip — doubling down mid-crash.",
+        "fr": "Le trésor national traité comme un jeton de casino — il double les mises au milieu de la débâcle.",
+        "es": "El tesoro nacional tratado como un fichaje de casino — apostando de nuevo mientras el desastre sucede.",
+        "de": "Die Staatskasse wird wie ein Casino-Chip behandelt — mitten im Crash verdoppelt er die Einsätze."
+      },
       "articles": [
-        { "title": "Bitcoin slump shatters Bukele's digital utopia in El Salvador", "source": "Bloomberg", "date": "Mar 4, 2026", "url": "https://www.bloomberg.com/opinion/articles/2026-03-04/bitcoin-slump-shatters-bukele-s-digital-utopia-in-el-salvador", "impact": 4, "note": "The utopia had a margin call." },
-        { "title": "Bitcoin rout exposes Bukele's gamble and hits El Salvador's debt", "source": "Bloomberg", "date": "Feb 12, 2026", "url": "https://www.bloomberg.com/news/articles/2026-02-12/bitcoin-rout-exposes-bukele-s-gamble-and-hits-el-salvador-debt", "impact": 2, "note": "Bond markets are not amused." },
-        { "title": "Finance chiefs tell the IMF the country hasn't bought BTC since February — contradicting Bukele", "source": "The Block", "date": "2026", "url": "https://www.theblock.co/post/363483/el-salvador-hasnt-bought-bitcoin-since-february-finance-chiefs-tell-imf-contradicting-bukele-administration", "impact": 1, "note": "Even the buying spree is fictional." },
-        { "title": "Bukele's approval soars to ~92% despite little love for the bitcoin plan", "source": "DL News", "date": "2026", "url": "https://www.dlnews.com/articles/people-culture/bitcoin-president-nayib-bukele-is-very-popular/", "impact": -3, "note": "Wildly popular anyway." }
-      ] },
-    { "code": "GB", "name": "United Kingdom", "flag": "🇬🇧", "continent": "Europe", "score": 70, "trend": 2, "gdp_adjusted": 73,
-      "headline": "95+ Labour MPs demand Starmer quit as ministers resign in protest.",
-      "why": "A governing party governing mostly its own meltdown.",
+        {
+          "title": {
+            "en": "Bitcoin slump shatters Bukele's digital utopia in El Salvador",
+            "fr": "La chute du Bitcoin ruine l'utopie numérique de Bukele au Salvador",
+            "es": "La caída del bitcoin destroza la utopía digital de Bukele en El Salvador",
+            "de": "Der Bitcoin-Absturz zertrümmert Bukeles digitale Utopie in El Salvador"
+          },
+          "source": "Bloomberg",
+          "date": "Mar 4, 2026",
+          "url": "https://www.bloomberg.com/opinion/articles/2026-03-04/bitcoin-slump-shatters-bukele-s-digital-utopia-in-el-salvador",
+          "impact": 4,
+          "note": {
+            "en": "The utopia had a margin call.",
+            "fr": "L'utopie a reçu un appel de marge.",
+            "es": "La utopía recibió una llamada de margen.",
+            "de": "Die Utopie erhielt einen Margin Call."
+          }
+        },
+        {
+          "title": {
+            "en": "Bitcoin rout exposes Bukele's gamble and hits El Salvador's debt",
+            "fr": "La débâcle du Bitcoin expose le pari de Bukele et frappe la dette du Salvador",
+            "es": "El desplome del bitcoin expone la apuesta de Bukele y golpea la deuda de El Salvador",
+            "de": "Die Bitcoin-Pleite enthüllt Bukeles Spiel und trifft El Salvadors Schulden"
+          },
+          "source": "Bloomberg",
+          "date": "Feb 12, 2026",
+          "url": "https://www.bloomberg.com/news/articles/2026-02-12/bitcoin-rout-exposes-bukele-s-gamble-and-hits-el-salvador-debt",
+          "impact": 2,
+          "note": {
+            "en": "Bond markets are not amused.",
+            "fr": "Les marchés obligataires ne sont pas amusés.",
+            "es": "Los mercados de bonos no están divertidos.",
+            "de": "Die Anleihemärkte sind nicht amüsiert."
+          }
+        },
+        {
+          "title": {
+            "en": "Finance chiefs tell the IMF the country hasn't bought BTC since February — contradicting Bukele",
+            "fr": "Les chefs financiers informent le FMI que le pays n'a pas acheté de BTC depuis février — contredisant Bukele",
+            "es": "Los jefes financieros dicen al FMI que el país no ha comprado BTC desde febrero — contradiciendo a Bukele",
+            "de": "Finanzchefs informieren den IWF, dass das Land seit Februar kein BTC mehr gekauft hat — was Bukele widerspricht"
+          },
+          "source": "The Block",
+          "date": "2026",
+          "url": "https://www.theblock.co/post/363483/el-salvador-hasnt-bought-bitcoin-since-february-finance-chiefs-tell-imf-contradicting-bukele-administration",
+          "impact": 1,
+          "note": {
+            "en": "Even the buying spree is fictional.",
+            "fr": "Même la frénésie d'achat est fictive.",
+            "es": "Incluso la locura de compras es ficticia.",
+            "de": "Sogar die Kaufrausch ist fiktiv."
+          }
+        },
+        {
+          "title": {
+            "en": "Bukele's approval soars to ~92% despite little love for the bitcoin plan",
+            "fr": "L'approbation de Bukele grimpe à ~92% malgré peu d'enthousiasme pour le plan Bitcoin",
+            "es": "La aprobación de Bukele se dispara a ~92% a pesar de poco amor por el plan bitcoin",
+            "de": "Bukeles Zustimmungsrate steigt auf ~92% trotz wenig Liebe für den Bitcoin-Plan"
+          },
+          "source": "DL News",
+          "date": "2026",
+          "url": "https://www.dlnews.com/articles/people-culture/bitcoin-president-nayib-bukele-is-very-popular/",
+          "impact": -3,
+          "note": {
+            "en": "Wildly popular anyway.",
+            "fr": "Étrangement populaire quand même.",
+            "es": "Igualmente popular de forma salvaje.",
+            "de": "Trotzdem irgendwie extrem beliebt."
+          }
+        }
+      ]
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "flag": "🇬🇧",
+      "continent": "Europe",
+      "score": 70,
+      "trend": 2,
+      "gdp_adjusted": 73,
+      "headline": {
+        "en": "95+ Labour MPs demand Starmer quit as ministers resign in protest.",
+        "fr": "Plus de 95 députés travaillistes demandent à Starmer de démissionner alors que des ministres démissionnent en signe de protestation.",
+        "es": "Más de 95 diputados laboristas exigen la renuncia de Starmer mientras ministros dimiten en protesta.",
+        "de": "Über 95 Labour-Abgeordnete fordern Starmer zum Rücktritt auf, während Minister als Protest zurücktreten."
+      },
+      "why": {
+        "en": "A governing party governing mostly its own meltdown.",
+        "fr": "Un parti au pouvoir qui gère principalement son propre effondrement.",
+        "es": "Un partido en el poder gestionando principalmente su propia implosión.",
+        "de": "Eine Regierung, die größtenteils ihr eigenes Chaos verwaltet."
+      },
       "articles": [
-        { "title": "2026 Labour Party leadership crisis: 95+ MPs call on Starmer to go", "source": "Wikipedia", "date": "May 2026", "url": "https://en.wikipedia.org/wiki/2026_Labour_Party_leadership_crisis", "impact": 3, "note": "A cabinet exodus." },
-        { "title": "'Freebiegate': ministers took £20k+ of free Taylor Swift tickets", "source": "Wikipedia", "date": "2026", "url": "https://en.wikipedia.org/wiki/2026_United_Kingdom_government_crisis", "impact": 2, "note": "Shake it off, Chancellor." },
-        { "title": "Back to the future? The strange state of British politics in 2026", "source": "Brookings", "date": "2026", "url": "https://www.brookings.edu/articles/back-to-the-future-british-politics-in-2026/", "impact": 1, "note": "Everything old is chaotic again." },
-        { "title": "Government forced into humiliating U-turns on welfare and winter fuel", "source": "TIME", "date": "2026", "url": "https://time.com/7299472/united-kingdom-welfare-bill-controversy-starmer-rebellion/", "impact": -4, "note": "Reversing a bad bill — credit where due." }
-      ] },
-    { "code": "BR", "name": "Brazil", "flag": "🇧🇷", "continent": "South America", "score": 68, "trend": -2, "gdp_adjusted": 64,
-      "headline": "Congress overrides Lula's veto to slash Bolsonaro's 27-year coup sentence.",
-      "why": "Idiocracy's 'Extreme Court,' but with real lawmakers and real chairs.",
+        {
+          "title": {
+            "en": "2026 Labour Party leadership crisis: 95+ MPs call on Starmer to go",
+            "fr": "Crise de leadership du Parti Travailliste 2026 : Plus de 95 députés appellent Starmer à partir",
+            "es": "Crisis de liderazgo del Partido Laborista 2026: más de 95 diputados piden que Starmer se vaya",
+            "de": "Führungs Krise der Labour Party 2026: Über 95 Abgeordnete fordern Starmer zum Gehen auf"
+          },
+          "source": "Wikipedia",
+          "date": "May 2026",
+          "url": "https://en.wikipedia.org/wiki/2026_Labour_Party_leadership_crisis",
+          "impact": 3,
+          "note": {
+            "en": "A cabinet exodus.",
+            "fr": "Un exode ministériel.",
+            "es": "Un éxodo de ministros.",
+            "de": "Ein Ministerexodus."
+          }
+        },
+        {
+          "title": {
+            "en": "'Freebiegate': ministers took £20k+ of free Taylor Swift tickets",
+            "fr": "'Freebiegate' : des ministres ont pris plus de 20 000 £ de billets gratuits pour Taylor Swift",
+            "es": "'Freebiegate': ministros se llevaron más de 20,000 £ en entradas gratis para Taylor Swift",
+            "de": "'Freebiegate': Minister haben über 20.000 £ an kostenlosen Tickets für Taylor Swift genommen"
+          },
+          "source": "Wikipedia",
+          "date": "2026",
+          "url": "https://en.wikipedia.org/wiki/2026_United_Kingdom_government_crisis",
+          "impact": 2,
+          "note": {
+            "en": "Shake it off, Chancellor.",
+            "fr": "Secoue-le, Chancelier.",
+            "es": "Sacúdelo, Canciller.",
+            "de": "Schüttel es ab, Kanzler."
+          }
+        },
+        {
+          "title": {
+            "en": "Back to the future? The strange state of British politics in 2026",
+            "fr": "Retour vers le futur ? L'étrange état de la politique britannique en 2026",
+            "es": "¿Volver al futuro? El extraño estado de la política británica en 2026",
+            "de": "Zurück in die Zukunft? Der seltsame Zustand der britischen Politik im Jahr 2026"
+          },
+          "source": "Brookings",
+          "date": "2026",
+          "url": "https://www.brookings.edu/articles/back-to-the-future-british-politics-in-2026/",
+          "impact": 1,
+          "note": {
+            "en": "Everything old is chaotic again.",
+            "fr": "Tout ce qui est vieux est de nouveau chaotique.",
+            "es": "Todo lo viejo es caótico de nuevo.",
+            "de": "Alles Alte ist wieder chaotisch."
+          }
+        },
+        {
+          "title": {
+            "en": "Government forced into humiliating U-turns on welfare and winter fuel",
+            "fr": "Gouvernement contraint à des demi-tours humiliants sur le bien-être et le carburant d'hiver",
+            "es": "Gobierno forzado a humillantes giros de 180 grados en bienestar y combustible invernal",
+            "de": "Regierung gezwungen, demütigende Kehrtwende bei Sozialhilfe und Winterheizkosten zu vollziehen"
+          },
+          "source": "TIME",
+          "date": "2026",
+          "url": "https://time.com/7299472/united-kingdom-welfare-bill-controversy-starmer-rebellion/",
+          "impact": -4,
+          "note": {
+            "en": "Reversing a bad bill — credit where due.",
+            "fr": "Reverser une mauvaise loi — crédit où il est dû.",
+            "es": "Revirtiendo una mala ley — crédito donde se debe.",
+            "de": "Eine schlechte Gesetzgebung rückgängig machen — Credit, wo es fällig ist."
+          }
+        }
+      ]
+    },
+    {
+      "code": "BR",
+      "name": "Brazil",
+      "flag": "🇧🇷",
+      "continent": "South America",
+      "score": 68,
+      "trend": -2,
+      "gdp_adjusted": 64,
+      "headline": {
+        "en": "Congress overrides Lula's veto to slash Bolsonaro's 27-year coup sentence.",
+        "fr": "Le Congrès passe outre le veto de Lula pour réduire la peine de 27 ans de Bolsonaro pour coup d'État.",
+        "es": "El Congreso anula el veto de Lula para reducir la sentencia de golpe de 27 años de Bolsonaro.",
+        "de": "Der Kongress überstimmt Lulas Veto, um Bolsonaros 27-jährige Staatsstreichstrafe zu kürzen."
+      },
+      "why": {
+        "en": "Idiocracy's 'Extreme Court,' but with real lawmakers and real chairs.",
+        "fr": "La 'Cour Extrême' d'Idiocracy, mais avec de vrais législateurs et de vraies chaises.",
+        "es": "La 'Corte Extrema' de Idiocracy, pero con verdaderos legisladores y sillas de verdad.",
+        "de": "Idiocracy's 'Extrem Gericht', aber mit echten Gesetzgebern und echten Stühlen."
+      },
       "articles": [
-        { "title": "Brazil's Congress overrides veto to cut Bolsonaro's 27-year coup sentence", "source": "Euronews", "date": "May 1, 2026", "url": "https://www.euronews.com/2026/05/01/brazils-congress-passes-bill-to-reduce-former-president-jair-bolsonaros-27-year-prison-sen", "impact": 3, "note": "Accountability, optional." },
-        { "title": "A lawmaker occupies the chamber chair; brawl erupts with police and journalists", "source": "Al Jazeera", "date": "Dec 10, 2025", "url": "https://www.aljazeera.com/news/2025/12/10/brazils-chamber-of-deputies-passes-bill-to-lower-bolsonaros-sentence", "impact": 2, "note": "The Extreme Court is in session." },
-        { "title": "Coup fallout: courts and Congress weigh consequences for Bolsonaro", "source": "Wikipedia", "date": "2026", "url": "https://en.wikipedia.org/wiki/Jair_Bolsonaro", "impact": -3, "note": "Some accountability, finally." },
-        { "title": "2026 in Brazil: the institutions keep grinding forward", "source": "Wikipedia", "date": "2026", "url": "https://en.wikipedia.org/wiki/2026_in_Brazil", "impact": -4, "note": "Democracy survives the food fight." }
-      ] },
-    { "code": "IN", "name": "India", "flag": "🇮🇳", "continent": "Asia", "score": 67, "trend": 1, "gdp_adjusted": 58,
-      "headline": "NEET medical exam cancelled after a massive paper leak — again.",
-      "why": "When the exam system collapses under repeated leaks, meritocracy becomes a lottery.",
+        {
+          "title": {
+            "en": "Brazil's Congress overrides veto to cut Bolsonaro's 27-year coup sentence",
+            "fr": "Le Congrès brésilien passe outre le veto pour réduire la peine de coup d'État de 27 ans de Bolsonaro.",
+            "es": "El Congreso de Brasil anula el veto para recortar la sentencia de golpe de 27 años de Bolsonaro.",
+            "de": "Der brasilianische Kongress überstimmt das Veto, um Bolsonaros 27-jährige Staatsstreichstrafe zu verkürzen."
+          },
+          "source": "Euronews",
+          "date": "May 1, 2026",
+          "url": "https://www.euronews.com/2026/05/01/brazils-congress-passes-bill-to-reduce-former-president-jair-bolsonaros-27-year-prison-sen",
+          "impact": 3,
+          "note": {
+            "en": "Accountability, optional.",
+            "fr": "Responsabilité, optionnelle.",
+            "es": "Responsabilidad, opcional.",
+            "de": "Rechenschaft, optional."
+          }
+        },
+        {
+          "title": {
+            "en": "A lawmaker occupies the chamber chair; brawl erupts with police and journalists",
+            "fr": "Un législateur occupe la chaise de la chambre ; une bagarre éclate avec la police et les journalistes.",
+            "es": "Un legislador ocupa la silla de la cámara; estalla una pelea con la policía y periodistas.",
+            "de": "Ein Abgeordneter nimmt den Platz im Plenarsaal ein; ein Handgemenge bricht mit der Polizei und Journalisten aus."
+          },
+          "source": "Al Jazeera",
+          "date": "Dec 10, 2025",
+          "url": "https://www.aljazeera.com/news/2025/12/10/brazils-chamber-of-deputies-passes-bill-to-lower-bolsonaros-sentence",
+          "impact": 2,
+          "note": {
+            "en": "The Extreme Court is in session.",
+            "fr": "La Cour Extrême est en session.",
+            "es": "La Corte Extrema está en sesión.",
+            "de": "Das Extrem Gericht ist in Sitzung."
+          }
+        },
+        {
+          "title": {
+            "en": "Coup fallout: courts and Congress weigh consequences for Bolsonaro",
+            "fr": "Conséquences du coup d'État : les tribunaux et le Congrès pèsent les conséquences pour Bolsonaro.",
+            "es": "Consecuencias del golpe: tribunales y Congreso evalúan las consecuencias para Bolsonaro.",
+            "de": "Nachwirkungen des Putsches: Gerichte und Kongress wägen die Konsequenzen für Bolsonaro ab."
+          },
+          "source": "Wikipedia",
+          "date": "2026",
+          "url": "https://en.wikipedia.org/wiki/Jair_Bolsonaro",
+          "impact": -3,
+          "note": {
+            "en": "Some accountability, finally.",
+            "fr": "Un peu de responsabilité, enfin.",
+            "es": "Un poco de responsabilidad, por fin.",
+            "de": "Ein wenig Rechenschaft, endlich."
+          }
+        },
+        {
+          "title": {
+            "en": "2026 in Brazil: the institutions keep grinding forward",
+            "fr": "2026 au Brésil : les institutions continuent d'avancer.",
+            "es": "2026 en Brasil: las instituciones siguen avanzando.",
+            "de": "2026 in Brasilien: Die Institutionen mahlen weiter."
+          },
+          "source": "Wikipedia",
+          "date": "2026",
+          "url": "https://en.wikipedia.org/wiki/2026_in_Brazil",
+          "impact": -4,
+          "note": {
+            "en": "Democracy survives the food fight.",
+            "fr": "La démocratie survit à la bataille alimentaire.",
+            "es": "La democracia sobrevive a la pelea de comida.",
+            "de": "Die Demokratie überlebt die Essensschlacht."
+          }
+        }
+      ]
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "flag": "🇮🇳",
+      "continent": "Asia",
+      "score": 67,
+      "trend": 1,
+      "gdp_adjusted": 58,
+      "headline": {
+        "en": "NEET medical exam cancelled after a massive paper leak — again.",
+        "fr": "Examen NEET annulé après une massive fuite de sujet — encore.",
+        "es": "Examen NEET cancelado tras una masiva filtración de papel — otra vez.",
+        "de": "NEET-Prüfung wegen einer massiven Themenleckung wieder abgesagt."
+      },
+      "why": {
+        "en": "When the exam system collapses under repeated leaks, meritocracy becomes a lottery.",
+        "fr": "Quand le système d'examen s'effondre sous des fuites répétées, la méritocratie devient une loterie.",
+        "es": "Cuando el sistema de exámenes colapsa por filtraciones repetidas, la meritocracia se convierte en una lotería.",
+        "de": "Wenn das Prüfungssystem unter wiederholten Leaks zusammenbricht, wird Meritokratie zur Lotterie."
+      },
       "articles": [
-        { "title": "2026 NEET exam cancelled after paper leak; arrests follow", "source": "Wikipedia", "date": "May 2026", "url": "https://en.wikipedia.org/wiki/2026_NEET_controversy", "impact": 3, "note": "2.27M students, one leaked paper." },
-        { "title": "Creeping spread of pseudoscience worries Indian scientists", "source": "Chemistry World", "date": "2026", "url": "https://www.chemistryworld.com/news/creeping-spread-of-pseudoscience-worries-indian-scientists/3007951.article", "impact": 2, "note": "Mythology vs. evidence in the syllabus." },
-        { "title": "India's scientific temper and education system under siege", "source": "The Friday Times", "date": "May 23, 2026", "url": "https://www.thefridaytimes.com/23-May-2026/india-s-scientific-temper-education-system-siege", "impact": 1, "note": "Textbooks rewritten on the fly." },
-        { "title": "Scientists organise against the intensifying attack on scientific temperament", "source": "The Diplomat", "date": "2026", "url": "https://thediplomat.com/2024/08/indian-governments-intensifying-attack-on-scientific-temperament-worries-scientists/", "impact": -5, "note": "The pushback is real and growing." }
-      ] },
-    { "code": "FR", "name": "France", "flag": "🇫🇷", "continent": "Europe", "score": 62, "trend": 0, "gdp_adjusted": 64,
-      "headline": "Government rams the 2026 budget through with no vote, survives two no-confidence motions.",
-      "why": "Four months of deadlock, then a budget by procedural sleight-of-hand.",
+        {
+          "title": {
+            "en": "2026 NEET exam cancelled after paper leak; arrests follow",
+            "fr": "Examen NEET 2026 annulé après fuite de sujet ; des arrestations s'ensuivent",
+            "es": "Examen NEET 2026 cancelado tras filtración de papel; siguen arrestos",
+            "de": "NEET-Prüfung 2026 nach Themenleckung abgesagt; Festnahmen folgen"
+          },
+          "source": "Wikipedia",
+          "date": "May 2026",
+          "url": "https://en.wikipedia.org/wiki/2026_NEET_controversy",
+          "impact": 3,
+          "note": {
+            "en": "2.27M students, one leaked paper.",
+            "fr": "2,27 millions d'étudiants, une feuille de réponse fuitée.",
+            "es": "2,27 millones de estudiantes, un papel filtrado.",
+            "de": "2,27 Millionen Schüler, ein geleaktes Papier."
+          }
+        },
+        {
+          "title": {
+            "en": "Creeping spread of pseudoscience worries Indian scientists",
+            "fr": "La propagation rampante de la pseudoscience inquiète les scientifiques indiens",
+            "es": "La propagación silenciosa de la pseudociencia preocupa a los científicos indios",
+            "de": "Das schleichende Ausbreiten von Pseudowissenschaft sorgt für Sorgen bei indischen Wissenschaftlern"
+          },
+          "source": "Chemistry World",
+          "date": "2026",
+          "url": "https://www.chemistryworld.com/news/creeping-spread-of-pseudoscience-worries-indian-scientists/3007951.article",
+          "impact": 2,
+          "note": {
+            "en": "Mythology vs. evidence in the syllabus.",
+            "fr": "Mythologie contre preuves dans le programme.",
+            "es": "Mitología vs. evidencia en el plan de estudios.",
+            "de": "Mythologie gegen Beweise im Lehrplan."
+          }
+        },
+        {
+          "title": {
+            "en": "India's scientific temper and education system under siege",
+            "fr": "Le tempérament scientifique et le système éducatif de l'Inde sous siège",
+            "es": "El temperamento científico y el sistema educativo de la India bajo ataque",
+            "de": "Indiens wissenschaftlicher Geist und Bildungssystem unter Beschuss"
+          },
+          "source": "The Friday Times",
+          "date": "May 23, 2026",
+          "url": "https://www.thefridaytimes.com/23-May-2026/india-s-scientific-temper-education-system-siege",
+          "impact": 1,
+          "note": {
+            "en": "Textbooks rewritten on the fly.",
+            "fr": "Manuels réécrits à la volée.",
+            "es": "Libros de texto reescritos sobre la marcha.",
+            "de": "Lehrbücher werden im Handumdrehen umgeschrieben."
+          }
+        },
+        {
+          "title": {
+            "en": "Scientists organise against the intensifying attack on scientific temperament",
+            "fr": "Les scientifiques s'organisent contre l'attaque croissante sur le tempérament scientifique",
+            "es": "Los científicos se organizan contra el ataque creciente al temperamento científico",
+            "de": "Wissenschaftler organisieren sich gegen den sich verstärkenden Angriff auf den wissenschaftlichen Geist"
+          },
+          "source": "The Diplomat",
+          "date": "2026",
+          "url": "https://thediplomat.com/2024/08/indian-governments-intensifying-attack-on-scientific-temperament-worries-scientists/",
+          "impact": -5,
+          "note": {
+            "en": "The pushback is real and growing.",
+            "fr": "La résistance est réelle et en pleine expansion.",
+            "es": "La resistencia es real y va en aumento.",
+            "de": "Der Widerstand ist real und wächst."
+          }
+        }
+      ]
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "flag": "🇫🇷",
+      "continent": "Europe",
+      "score": 62,
+      "trend": 0,
+      "gdp_adjusted": 64,
+      "headline": {
+        "en": "Government rams the 2026 budget through with no vote, survives two no-confidence motions.",
+        "fr": "Le gouvernement pousse le budget 2026 sans vote, survit à deux motions de censure.",
+        "es": "El gobierno aprueba el presupuesto 2026 sin votación, sobrevive a dos mociones de censura.",
+        "de": "Die Regierung drückt den Haushalt 2026 ohne Abstimmung durch und übersteht zwei Misstrauensanträge."
+      },
+      "why": {
+        "en": "Four months of deadlock, then a budget by procedural sleight-of-hand.",
+        "fr": "Quatre mois de blocage, puis un budget par des tours de passe-passe procéduraux.",
+        "es": "Cuatro meses de estancamiento, luego un presupuesto a base de trucos de procedimiento.",
+        "de": "Vier Monate Stillstand, dann ein Haushalt durch prozedurale Zauberei."
+      },
       "articles": [
-        { "title": "France adopts 2026 budget after two no-confidence votes fail", "source": "Al Jazeera", "date": "Feb 2, 2026", "url": "https://www.aljazeera.com/news/2026/2/2/france-adopts-2026-budget-after-two-no-confidence-votes-fail", "impact": 2, "note": "Budget by survival mode." },
-        { "title": "PM Lecornu's Marseille housing plan 'mirrors' an EU proposal, critics say", "source": "France in English", "date": "2026", "url": "https://franceinenglish.com/p/political-shifts-and-criticisms-ahead-of-the-2026-french-presidential-election", "impact": 1, "note": "Originality not included." },
-        { "title": "French government avoids collapse after surviving two no-confidence votes", "source": "Euronews", "date": "Jan 23, 2026", "url": "https://www.euronews.com/2026/01/23/french-government-avoids-collapse-after-surviving-two-no-confidence-votes", "impact": -3, "note": "Compromise, the old-fashioned way." }
-      ] },
-    { "code": "CN", "name": "China", "flag": "🇨🇳", "continent": "Asia", "score": 65, "trend": 0, "gdp_adjusted": 60,
-      "headline": "New 68-article cybercrime law entrenches censorship and mass surveillance.",
-      "why": "One framework to trace every user across every platform.",
+        {
+          "title": {
+            "en": "France adopts 2026 budget after two no-confidence votes fail",
+            "fr": "La France adopte le budget 2026 après l'échec de deux motions de censure",
+            "es": "Francia adopta el presupuesto 2026 tras fracasar dos mociones de censura",
+            "de": "Frankreich verabschiedet den Haushalt 2026 nach dem Scheitern von zwei Misstrauensanträgen"
+          },
+          "source": "Al Jazeera",
+          "date": "Feb 2, 2026",
+          "url": "https://www.aljazeera.com/news/2026/2/2/france-adopts-2026-budget-after-two-no-confidence-votes-fail",
+          "impact": 2,
+          "note": {
+            "en": "Budget by survival mode.",
+            "fr": "Budget en mode survie.",
+            "es": "Presupuesto en modo supervivencia.",
+            "de": "Haushalt im Überlebensmodus."
+          }
+        },
+        {
+          "title": {
+            "en": "PM Lecornu's Marseille housing plan 'mirrors' an EU proposal, critics say",
+            "fr": "Le plan de logement de PM Lecornu à Marseille 'reflète' une proposition de l'UE, disent les critiques",
+            "es": "El plan de vivienda del PM Lecornu en Marsella 'refleja' una propuesta de la UE, dicen los críticos",
+            "de": "Der Wohnungsbauplan von PM Lecornu in Marseille 'spiegelt' einen EU-Vorschlag wider, sagen die Kritiker"
+          },
+          "source": "France in English",
+          "date": "2026",
+          "url": "https://franceinenglish.com/p/political-shifts-and-criticisms-ahead-of-the-2026-french-presidential-election",
+          "impact": 1,
+          "note": {
+            "en": "Originality not included.",
+            "fr": "Originalité non incluse.",
+            "es": "Originalidad no incluida.",
+            "de": "Originalität nicht inklusive."
+          }
+        },
+        {
+          "title": {
+            "en": "French government avoids collapse after surviving two no-confidence votes",
+            "fr": "Le gouvernement français évite l'effondrement après avoir survécu à deux motions de censure",
+            "es": "El gobierno francés evita el colapso tras sobrevivir a dos mociones de censura",
+            "de": "Die französische Regierung entkommt dem Zusammenbruch, nachdem sie zwei Misstrauensanträge überstanden hat"
+          },
+          "source": "Euronews",
+          "date": "Jan 23, 2026",
+          "url": "https://www.euronews.com/2026/01/23/french-government-avoids-collapse-after-surviving-two-no-confidence-votes",
+          "impact": -3,
+          "note": {
+            "en": "Compromise, the old-fashioned way.",
+            "fr": "Compromis à l'ancienne.",
+            "es": "Compromiso, a la antigua.",
+            "de": "Kompromiss, old-school."
+          }
+        }
+      ]
+    },
+    {
+      "code": "CN",
+      "name": "China",
+      "flag": "🇨🇳",
+      "continent": "Asia",
+      "score": 65,
+      "trend": 0,
+      "gdp_adjusted": 60,
+      "headline": {
+        "en": "New 68-article cybercrime law entrenches censorship and mass surveillance.",
+        "fr": "Nouvelle loi sur la cybercriminalité en 68 articles qui ancre la censure et la surveillance de masse.",
+        "es": "Nueva ley de cibercrimen de 68 artículos que afianca la censura y la vigilancia masiva.",
+        "de": "Neues Gesetz über Cyberkriminalität mit 68 Artikeln verankert Zensur und Massenüberwachung."
+      },
+      "why": {
+        "en": "One framework to trace every user across every platform.",
+        "fr": "Un cadre pour traquer chaque utilisateur sur chaque plateforme.",
+        "es": "Un marco para rastrear a cada usuario en cada plataforma.",
+        "de": "Ein Rahmen, um jeden Nutzer auf jeder Plattform zu verfolgen."
+      },
       "articles": [
-        { "title": "Cybercrime bill entrenches censorship and surveillance", "source": "Human Rights Watch", "date": "Mar 17, 2026", "url": "https://www.hrw.org/news/2026/03/17/china-cybercrime-bill-entrenches-censorship-surveillance", "impact": 3, "note": "68 articles, zero privacy." },
-        { "title": "'Seriously discredited entities' blacklists expand in finance and real estate", "source": "Wikipedia", "date": "2026", "url": "https://en.wikipedia.org/wiki/Social_Credit_System", "impact": 2, "note": "The blacklist, professionalised." },
-        { "title": "China quietly shelves individual citizen scoring, pivots to corporate compliance", "source": "Newsweek", "date": "2026", "url": "https://www.newsweek.com/how-china-changing-its-social-credit-system-11079499", "impact": -5, "note": "Less Black Mirror than feared." }
-      ] },
-    { "code": "IT", "name": "Italy", "flag": "🇮🇹", "continent": "Europe", "score": 60, "trend": 1, "gdp_adjusted": 62,
-      "headline": "Meloni's ad campaign splices in Mussolini footage, igniting a fascism row.",
-      "why": "Nothing says modern democracy like archival dictator B-roll.",
+        {
+          "title": {
+            "en": "Cybercrime bill entrenches censorship and surveillance",
+            "fr": "Le projet de loi sur la cybercriminalité ancre la censure et la surveillance",
+            "es": "El proyecto de ley de cibercrimen afianca la censura y la vigilancia",
+            "de": "Cyberkriminalitätsgesetz verankert Zensur und Überwachung"
+          },
+          "source": "Human Rights Watch",
+          "date": "Mar 17, 2026",
+          "url": "https://www.hrw.org/news/2026/03/17/china-cybercrime-bill-entrenches-censorship-surveillance",
+          "impact": 3,
+          "note": {
+            "en": "68 articles, zero privacy.",
+            "fr": "68 articles, zéro vie privée.",
+            "es": "68 artículos, cero privacidad.",
+            "de": "68 Artikel, null Privatsphäre."
+          }
+        },
+        {
+          "title": {
+            "en": "'Seriously discredited entities' blacklists expand in finance and real estate",
+            "fr": "Les listes noires d'entités 'sérieusement discréditées' s'étendent dans les finances et l'immobilier",
+            "es": "Las listas negras de 'entidades seriamente desacreditadas' se expanden en finanzas e inmobiliaria",
+            "de": "Die Schwarze Liste 'ernsthaft diskreditierter' Einrichtungen weitet sich im Finanz- und Immobilienbereich aus"
+          },
+          "source": "Wikipedia",
+          "date": "2026",
+          "url": "https://en.wikipedia.org/wiki/Social_Credit_System",
+          "impact": 2,
+          "note": {
+            "en": "The blacklist, professionalised.",
+            "fr": "La liste noire, professionnalisée.",
+            "es": "La lista negra, profesionalizada.",
+            "de": "Die schwarze Liste, professionalisiert."
+          }
+        },
+        {
+          "title": {
+            "en": "China quietly shelves individual citizen scoring, pivots to corporate compliance",
+            "fr": "La Chine met discrètement de côté le scoring des citoyens, se tourne vers la conformité des entreprises",
+            "es": "China silenciosamente deja de lado la puntuación de ciudadanos, se orienta hacia la conformidad empresarial",
+            "de": "China legt stillschweigend das Scoring von Bürgern auf Eis, wechselt zur Unternehmenskonformität"
+          },
+          "source": "Newsweek",
+          "date": "2026",
+          "url": "https://www.newsweek.com/how-china-changing-its-social-credit-system-11079499",
+          "impact": -5,
+          "note": {
+            "en": "Less Black Mirror than feared.",
+            "fr": "Moins Black Mirror que redouté.",
+            "es": "Menos Black Mirror de lo temido.",
+            "de": "Weniger Black Mirror als befürchtet."
+          }
+        }
+      ]
+    },
+    {
+      "code": "IT",
+      "name": "Italy",
+      "flag": "🇮🇹",
+      "continent": "Europe",
+      "score": 60,
+      "trend": 1,
+      "gdp_adjusted": 62,
+      "headline": {
+        "en": "Meloni's ad campaign splices in Mussolini footage, igniting a fascism row.",
+        "fr": "La campagne publicitaire de Meloni intègre des images de Mussolini, déclenchant une polémique sur le fascisme.",
+        "es": "La campaña publicitaria de Meloni incluye metraje de Mussolini, desatando una polémica fascista.",
+        "de": "Melonis Werbekampagne schneidet Musolini-Footage ein und entfacht eine Faschismus-Debatte."
+      },
+      "why": {
+        "en": "Nothing says modern democracy like archival dictator B-roll.",
+        "fr": "Rien ne dit démocratie moderne comme des séquences d'archive d'un dictateur.",
+        "es": "Nada dice democracia moderna como las tomas de archivo de un dictador.",
+        "de": "Nichts sagt moderne Demokratie wie Archivmaterial eines Diktators."
+      },
       "articles": [
-        { "title": "Meloni faces a far-right challenge as 'Il Generale' Vannacci rises", "source": "Washington Times", "date": "Jun 14, 2026", "url": "https://www.washingtontimes.com/news/2026/jun/14/italys-meloni-faces-far-right-dilemma-il-generale-vannacci-rises/", "impact": 2, "note": "Out-flanked on the right." },
-        { "title": "Italian PM slams 'illiberal drift' after a comedian quits a TV festival", "source": "AOL/AP", "date": "2026", "url": "https://www.aol.com/articles/italian-pm-meloni-slams-illiberal-163433213.html", "impact": 1, "note": "Comedy as a casualty." },
-        { "title": "IMF tells Meloni her energy aid should target poorer families", "source": "Bloomberg", "date": "May 27, 2026", "url": "https://www.bloomberg.com/news/articles/2026-05-27/meloni-told-by-imf-that-italy-s-energy-aid-must-be-more-targeted", "impact": -2, "note": "A nudge toward sense." }
-      ] },
-    { "code": "AU", "name": "Australia", "flag": "🇦🇺", "continent": "Oceania", "score": 57, "trend": 0, "gdp_adjusted": 59,
-      "headline": "Minister flew to the UN — for $189k — to promote a teen social-media ban.",
-      "why": "A six-figure flight to lecture the world about screen time.",
+        {
+          "title": {
+            "en": "Meloni faces a far-right challenge as 'Il Generale' Vannacci rises",
+            "fr": "Meloni est confrontée à un défi d'extrême droite alors que 'Il Generale' Vannacci fait son apparition",
+            "es": "Meloni enfrenta un desafío de extrema derecha mientras 'Il Generale' Vannacci se levanta",
+            "de": "Meloni sieht sich einer Herausforderung von Rechtsaußen gegenüber, während 'Il Generale' Vannacci aufsteigt"
+          },
+          "source": "Washington Times",
+          "date": "Jun 14, 2026",
+          "url": "https://www.washingtontimes.com/news/2026/jun/14/italys-meloni-faces-far-right-dilemma-il-generale-vannacci-rises/",
+          "impact": 2,
+          "note": {
+            "en": "Out-flanked on the right.",
+            "fr": "Dépourvue de soutien à droite.",
+            "es": "Superada por la derecha.",
+            "de": "Rechts überflügelt."
+          }
+        },
+        {
+          "title": {
+            "en": "Italian PM slams 'illiberal drift' after a comedian quits a TV festival",
+            "fr": "La PM italienne dénonce une ' dérive illibérale' après qu'un comédien quitte un festival de télévision",
+            "es": "La primera ministra italiana critica la 'deriva illiberal' tras la renuncia de un comediante a un festival de televisión",
+            "de": "Die italienische PM kritisiert die 'illiberale Drift', nachdem ein Komiker ein TV-Festival verlässt"
+          },
+          "source": "AOL/AP",
+          "date": "2026",
+          "url": "https://www.aol.com/articles/italian-pm-meloni-slams-illiberal-163433213.html",
+          "impact": 1,
+          "note": {
+            "en": "Comedy as a casualty.",
+            "fr": "La comédie en guise de victime.",
+            "es": "La comedia como víctima colateral.",
+            "de": "Die Komödie als collateral damage."
+          }
+        },
+        {
+          "title": {
+            "en": "IMF tells Meloni her energy aid should target poorer families",
+            "fr": "Le FMI dit à Meloni que son aide énergétique devrait cibler les familles les plus pauvres",
+            "es": "El FMI le dice a Meloni que su ayuda energética debería dirigirse a las familias más pobres",
+            "de": "Der IWF sagt Meloni, dass ihre Energiehilfe arme Familien anvisieren sollte"
+          },
+          "source": "Bloomberg",
+          "date": "May 27, 2026",
+          "url": "https://www.bloomberg.com/news/articles/2026-05-27/meloni-told-by-imf-that-italy-s-energy-aid-must-be-more-targeted",
+          "impact": -2,
+          "note": {
+            "en": "A nudge toward sense.",
+            "fr": "Un petit coup de pouce vers le bon sens.",
+            "es": "Un empujoncito hacia el sentido común.",
+            "de": "Ein kleiner Stupser in Richtung Vernunft."
+          }
+        }
+      ]
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "continent": "Oceania",
+      "score": 57,
+      "trend": 0,
+      "gdp_adjusted": 59,
+      "headline": {
+        "en": "Minister flew to the UN — for $189k — to promote a teen social-media ban.",
+        "fr": "Le ministre a pris l'avion pour l'ONU — pour 189 000 $ — pour promouvoir l'interdiction des réseaux sociaux pour les adolescents.",
+        "es": "El ministro voló a la ONU — por 189 mil dólares — para promover una prohibición de redes sociales para adolescentes.",
+        "de": "Minister flogte zur UN — für 189.000 $ — um ein Verbot von sozialen Medien für Teenager zu bewerben."
+      },
+      "why": {
+        "en": "A six-figure flight to lecture the world about screen time.",
+        "fr": "Un vol à six chiffres pour prêcher au monde sur le temps d'écran.",
+        "es": "Un vuelo de seis cifras para dar una cátedra al mundo sobre el tiempo de pantalla.",
+        "de": "Ein sechsstelliger Flug, um der Welt über Bildschirmzeit zu predigen."
+      },
       "articles": [
-        { "title": "2025 parliamentary expenses controversy: $189k UN trip to promote the under-16 social-media ban", "source": "Wikipedia", "date": "Dec 2025", "url": "https://en.wikipedia.org/wiki/2025_Australian_parliamentary_expenses_controversy", "impact": 2, "note": "Frequent-flyer hypocrisy." },
-        { "title": "PM's 'captain's call' on the 2026 census ends in multiple backflips", "source": "Wikipedia", "date": "2026", "url": "https://en.wikipedia.org/wiki/2026_in_Australia", "impact": 2, "note": "Back to exactly where it started." },
-        { "title": "Watered-down hate-speech laws pass after a Labor–Liberal deal", "source": "Inquirer", "date": "2026", "url": "https://newsinfo.inquirer.net/1597917/australia-pm-trailing-in-election-polls-announces-housing-policy", "impact": -4, "note": "A messy compromise that still lands." }
-      ] },
-    { "code": "DE", "name": "Germany", "flag": "🇩🇪", "continent": "Europe", "score": 54, "trend": -1, "gdp_adjusted": 56,
-      "headline": "Merz's coalition burns weeks bickering over tax, welfare and health reform.",
-      "why": "Bureaucracy eating its own tail — slowly, thoroughly.",
+        {
+          "title": {
+            "en": "2025 parliamentary expenses controversy: $189k UN trip to promote the under-16 social-media ban",
+            "fr": "Controverse sur les dépenses parlementaires de 2025 : voyage à 189 000 $ à l'ONU pour promouvoir l'interdiction des réseaux sociaux pour les moins de 16 ans",
+            "es": "Controversia de gastos parlamentarios de 2025: viaje de 189 mil dólares a la ONU para promover la prohibición de redes sociales para menores de 16 años",
+            "de": "Kontroverse um parlamentarische Ausgaben 2025: 189.000 $ UN-Reise zur Förderung des sozialen Medienverbots für unter 16-Jährige"
+          },
+          "source": "Wikipedia",
+          "date": "Dec 2025",
+          "url": "https://en.wikipedia.org/wiki/2025_Australian_parliamentary_expenses_controversy",
+          "impact": 2,
+          "note": {
+            "en": "Frequent-flyer hypocrisy.",
+            "fr": "L'hypocrisie du voyageur fréquent.",
+            "es": "La hipocresía del viajero frecuente.",
+            "de": "Die Heuchelei des Vielfliegers."
+          }
+        },
+        {
+          "title": {
+            "en": "PM's 'captain's call' on the 2026 census ends in multiple backflips",
+            "fr": "La 'décision du capitaine' du PM sur le recensement de 2026 se termine par plusieurs saltos",
+            "es": "La 'decisión del capitán' del PM sobre el censo de 2026 termina en múltiples volteretas",
+            "de": "Die 'Kapitänsentscheidung' des PM zum Zensus 2026 endet in mehreren Rückflügen"
+          },
+          "source": "Wikipedia",
+          "date": "2026",
+          "url": "https://en.wikipedia.org/wiki/2026_in_Australia",
+          "impact": 2,
+          "note": {
+            "en": "Back to exactly where it started.",
+            "fr": "Retour à exactement où cela a commencé.",
+            "es": "De vuelta a exactamente donde comenzó.",
+            "de": "Zurück genau dorthin, wo es angefangen hat."
+          }
+        },
+        {
+          "title": {
+            "en": "Watered-down hate-speech laws pass after a Labor–Liberal deal",
+            "fr": "Des lois sur le discours de haine assouplies passent après un accord entre le Parti du Travail et le Parti libéral",
+            "es": "Leyes de discurso de odio rebajadas son aprobadas tras un acuerdo entre Laboristas y Liberales",
+            "de": "Abgeschwächte Gesetze gegen Hassrede werden nach einem Deal zwischen Labor und Liberalen verabschiedet"
+          },
+          "source": "Inquirer",
+          "date": "2026",
+          "url": "https://newsinfo.inquirer.net/1597917/australia-pm-trailing-in-election-polls-announces-housing-policy",
+          "impact": -4,
+          "note": {
+            "en": "A messy compromise that still lands.",
+            "fr": "Un compromis bordélique qui laisse quand même des traces.",
+            "es": "Un compromiso desastroso que todavía deja huella.",
+            "de": "Ein chaotischer Kompromiss, der dennoch wirkt."
+          }
+        }
+      ]
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "continent": "Europe",
+      "score": 54,
+      "trend": -1,
+      "gdp_adjusted": 56,
+      "headline": {
+        "en": "Merz's coalition burns weeks bickering over tax, welfare and health reform.",
+        "fr": "La coalition de Merz se consume dans des semaines de querelles sur la fiscalité, le bien-être et la réforme de la santé.",
+        "es": "La coalición de Merz arde en semanas de peleas sobre impuestos, bienestar y reforma de salud.",
+        "de": "Merz' Koalition verbrennt wochenlang im Streit über Steuern, Wohlfahrt und Gesundheitsreform."
+      },
+      "why": {
+        "en": "Bureaucracy eating its own tail — slowly, thoroughly.",
+        "fr": "La bureaucratie s'auto-dévore - lentement, mais sûrement.",
+        "es": "La burocracia se muerde la cola - lentamente y a fondo.",
+        "de": "Bürokratie frisst ihren eigenen Schwanz - langsam und gründlich."
+      },
       "articles": [
-        { "title": "Germany's struggling coalition strives to bridge its differences", "source": "The Japan Times", "date": "May 6, 2026", "url": "https://www.japantimes.co.jp/news/2026/05/06/world/politics/germany-coalition-government-differences/", "impact": 1, "note": "Consensus by exhaustion." },
-        { "title": "Germany political outlook 2026: weak growth narrows the options", "source": "Edelman", "date": "2026", "url": "https://www.edelmanglobaladvisory.com/insights/germany-political-outlook-2026", "impact": 1, "note": "Reform, eventually." },
-        { "title": "Merz sticks with center-left partners despite the wrangling", "source": "AOL", "date": "2026", "url": "https://www.aol.com/articles/germanys-merz-rules-cooperation-far-125957331.html", "impact": -3, "note": "Stability, the boring superpower." }
-      ] },
-    { "code": "JP", "name": "Japan", "flag": "🇯🇵", "continent": "Asia", "score": 52, "trend": 0, "gdp_adjusted": 53,
-      "headline": "PM Takaichi engulfed in a scandal over videos defaming her own rivals.",
-      "why": "Smear campaigns, now with leaked audio.",
+        {
+          "title": {
+            "en": "Germany's struggling coalition strives to bridge its differences",
+            "fr": "La coalition allemande en difficulté tente de combler ses différences",
+            "es": "La coalición alemana en apuros intenta salvar sus diferencias",
+            "de": "Deutschlands kämpfende Koalition bemüht sich, ihre Unterschiede zu überbrücken"
+          },
+          "source": "The Japan Times",
+          "date": "May 6, 2026",
+          "url": "https://www.japantimes.co.jp/news/2026/05/06/world/politics/germany-coalition-government-differences/",
+          "impact": 1,
+          "note": {
+            "en": "Consensus by exhaustion.",
+            "fr": "Consensus par épuisement.",
+            "es": "Consenso por agotamiento.",
+            "de": "Konsens durch Erschöpfung."
+          }
+        },
+        {
+          "title": {
+            "en": "Germany political outlook 2026: weak growth narrows the options",
+            "fr": "Perspectives politiques allemandes 2026 : une croissance faible réduit les options",
+            "es": "Perspectivas políticas de Alemania 2026: el débil crecimiento reduce las opciones",
+            "de": "Politische Aussichten Deutschland 2026: Schwaches Wachstum reduziert die Optionen"
+          },
+          "source": "Edelman",
+          "date": "2026",
+          "url": "https://www.edelmanglobaladvisory.com/insights/germany-political-outlook-2026",
+          "impact": 1,
+          "note": {
+            "en": "Reform, eventually.",
+            "fr": "Réforme, un jour.",
+            "es": "Reforma, eventualmente.",
+            "de": "Reform, irgendwann."
+          }
+        },
+        {
+          "title": {
+            "en": "Merz sticks with center-left partners despite the wrangling",
+            "fr": "Merz persiste avec ses partenaires de centre-gauche malgré les disputes",
+            "es": "Merz se aferra a sus socios de centro-izquierda a pesar de las disputas",
+            "de": "Merz bleibt trotz der Zänke bei seinen Mitte-Links-Partnern"
+          },
+          "source": "AOL",
+          "date": "2026",
+          "url": "https://www.aol.com/articles/germanys-merz-rules-cooperation-far-125957331.html",
+          "impact": -3,
+          "note": {
+            "en": "Stability, the boring superpower.",
+            "fr": "Stabilité, la superpuissance ennuyeuse.",
+            "es": "Estabilidad, la superpotencia aburrida.",
+            "de": "Stabilität, die langweilige Supermacht."
+          }
+        }
+      ]
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
+      "flag": "🇯🇵",
+      "continent": "Asia",
+      "score": 52,
+      "trend": 0,
+      "gdp_adjusted": 53,
+      "headline": {
+        "en": "PM Takaichi engulfed in a scandal over videos defaming her own rivals.",
+        "fr": "La PM Takaichi entraînée dans un scandale à cause de vidéos diffamatoires sur ses rivaux.",
+        "es": "La PM Takaichi envuelta en un escándalo por videos que difaman a sus propios rivales.",
+        "de": "PM Takaichi in einen Skandal verwickelt über Videos, die ihre eigenen Rivalen diffamieren."
+      },
+      "why": {
+        "en": "Smear campaigns, now with leaked audio.",
+        "fr": "Campagnes de diffamation, maintenant avec des enregistrements audio fuités.",
+        "es": "Campañas de difamación, ahora con grabaciones de audio filtradas.",
+        "de": "Schmutzkampagnen, jetzt mit geleakten Audios."
+      },
       "articles": [
-        { "title": "Takaichi faces heat over a defamatory campaign-video scandal", "source": "The Japan Times", "date": "Jun 6, 2026", "url": "https://www.japantimes.co.jp/news/2026/06/06/japan/politics/takaichi-campaign-video-scandal/", "impact": 2, "note": "The audio leaked." },
-        { "title": "A fragmented Diet leaves a bare 233-seat majority", "source": "CFR", "date": "2026", "url": "https://www.cfr.org/articles/political-realignment-and-the-2026-japanese-election-ii", "impact": 1, "note": "Governing on a knife's edge." },
-        { "title": "Can Takaichi rebuild stable LDP rule? Reformers think so", "source": "Nippon.com", "date": "2026", "url": "https://www.nippon.com/en/in-depth/d01197/", "impact": -3, "note": "Grown-up politics, attempted." }
-      ] },
-    { "code": "CA", "name": "Canada", "flag": "🇨🇦", "continent": "North America", "score": 51, "trend": 0, "gdp_adjusted": 52,
-      "headline": "Carney scraps the watchdog policing Canadian firms' human-rights abuses abroad.",
-      "why": "Politeness at home, fewer questions overseas.",
+        {
+          "title": {
+            "en": "Takaichi faces heat over a defamatory campaign-video scandal",
+            "fr": "Takaichi sous le feu des critiques pour un scandale de vidéo de campagne diffamatoire",
+            "es": "Takaichi enfrenta presión por un escándalo de video de campaña difamatorio",
+            "de": "Takaichi steht im Fokus wegen eines Skandals um diffamierende Kampagnenvideos"
+          },
+          "source": "The Japan Times",
+          "date": "Jun 6, 2026",
+          "url": "https://www.japantimes.co.jp/news/2026/06/06/japan/politics/takaichi-campaign-video-scandal/",
+          "impact": 2,
+          "note": {
+            "en": "The audio leaked.",
+            "fr": "L'audio a fuité.",
+            "es": "El audio se filtró.",
+            "de": "Das Audio ist durchgesickert."
+          }
+        },
+        {
+          "title": {
+            "en": "A fragmented Diet leaves a bare 233-seat majority",
+            "fr": "Une Diète fragmentée laisse une majorité minimale de 233 sièges",
+            "es": "Una Dieta fragmentada deja una mayoría mínima de 233 escaños",
+            "de": "Eine fragmentierte Diät lässt eine knappe Mehrheit von 233 Sitzen zurück"
+          },
+          "source": "CFR",
+          "date": "2026",
+          "url": "https://www.cfr.org/articles/political-realignment-and-the-2026-japanese-election-ii",
+          "impact": 1,
+          "note": {
+            "en": "Governing on a knife's edge.",
+            "fr": "Gouverner sur le fil du rasoir.",
+            "es": "Gobernar al borde del abismo.",
+            "de": "Regieren auf der Klinge eines Messers."
+          }
+        },
+        {
+          "title": {
+            "en": "Can Takaichi rebuild stable LDP rule? Reformers think so",
+            "fr": "Takaichi peut-elle reconstruire un pouvoir stable du LDP ? Les réformateurs y croient.",
+            "es": "¿Puede Takaichi reconstruir un poder estable del LDP? Los reformistas piensan que sí.",
+            "de": "Kann Takaichi eine stabile Herrschaft der LDP wieder aufbauen? Reformisten glauben schon."
+          },
+          "source": "Nippon.com",
+          "date": "2026",
+          "url": "https://www.nippon.com/en/in-depth/d01197/",
+          "impact": -3,
+          "note": {
+            "en": "Grown-up politics, attempted.",
+            "fr": "Politique d'adulte, tentative.",
+            "es": "Política de adultos, intentada.",
+            "de": "Erwachsene Politik, versucht."
+          }
+        }
+      ]
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "continent": "North America",
+      "score": 51,
+      "trend": 0,
+      "gdp_adjusted": 52,
+      "headline": {
+        "en": "Carney scraps the watchdog policing Canadian firms' human-rights abuses abroad.",
+        "fr": "Carney abandonne le chien de garde qui surveille les abus en matière de droits humains des entreprises canadiennes à l’étranger.",
+        "es": "Carney elimina el vigilante que supervisa los abusos de derechos humanos de las empresas canadienses en el extranjero.",
+        "de": "Carney schrottet den Wächter, der die Menschenrechtsverletzungen kanadischer Unternehmen im Ausland überwacht."
+      },
+      "why": {
+        "en": "Politeness at home, fewer questions overseas.",
+        "fr": "Politesse à la maison, moins de questions à l’étranger.",
+        "es": "Cortesía en casa, menos preguntas en el extranjero.",
+        "de": "Höflichkeit zu Hause, weniger Fragen im Ausland."
+      },
       "articles": [
-        { "title": "Feds are eliminating the ombudsperson overseeing companies operating abroad", "source": "CBC News", "date": "Jun 11, 2026", "url": "https://www.cbc.ca/news/politics/carney-eliminating-canadian-ombudperson-for-responsible-enterprise-9.7232539", "impact": 2, "note": "Out of sight, out of mandate." },
-        { "title": "Some Canadians boycott the census to protest the floor-crossings behind Carney's majority", "source": "CTV News", "date": "2026", "url": "https://www.ctvnews.ca/politics/article/some-canadians-using-census-to-protest-pm-carneys-majority-government/", "impact": 1, "note": "A very Canadian protest." },
-        { "title": "Carney cuts EV tariffs in a deal with Beijing to free up canola exports", "source": "Global News", "date": "Jan 2026", "url": "https://globalnews.ca/video/11209838/carney-canadian-premiers-united-on-nation-building-projects-but-do-not-list-them", "impact": -3, "note": "Pragmatic trade-making." }
-      ] },
-    { "code": "SE", "name": "Sweden", "flag": "🇸🇪", "continent": "Europe", "score": 44, "trend": -1, "gdp_adjusted": 45,
-      "headline": "Sweden drops its plan to jail 13-year-olds — after the backlash.",
-      "why": "A bad idea reversed is still a sign the system works.",
+        {
+          "title": {
+            "en": "Feds are eliminating the ombudsperson overseeing companies operating abroad",
+            "fr": "Les feds suppriment le médiateur qui surveille les entreprises opérant à l’étranger",
+            "es": "Los feds eliminan al defensor del pueblo que supervisa a las empresas que operan en el extranjero",
+            "de": "Die Feds streichen den Ombudsmann, der Unternehmen im Ausland überwacht"
+          },
+          "source": "CBC News",
+          "date": "Jun 11, 2026",
+          "url": "https://www.cbc.ca/news/politics/carney-eliminating-canadian-ombudperson-for-responsible-enterprise-9.7232539",
+          "impact": 2,
+          "note": {
+            "en": "Out of sight, out of mandate.",
+            "fr": "Hors de vue, hors de mandat.",
+            "es": "Fuera de la vista, fuera de la competencia.",
+            "de": "Aus den Augen, aus dem Sinn."
+          }
+        },
+        {
+          "title": {
+            "en": "Some Canadians boycott the census to protest the floor-crossings behind Carney's majority",
+            "fr": "Certains Canadiens boycottent le recensement pour protester contre les traversées de plancher derrière la majorité de Carney",
+            "es": "Alcanza la mayoría de Carney, algunos canadienses boicotean el censo como protesta por los cambios de partido",
+            "de": "Einige Kanadier boykottieren die Volkszählung, um gegen die Fraktionswechsel hinter Carneys Mehrheit zu protestieren"
+          },
+          "source": "CTV News",
+          "date": "2026",
+          "url": "https://www.ctvnews.ca/politics/article/some-canadians-using-census-to-protest-pm-carneys-majority-government/",
+          "impact": 1,
+          "note": {
+            "en": "A very Canadian protest.",
+            "fr": "Une protestation très canadienne.",
+            "es": "Una protesta muy canadiense.",
+            "de": "Eine sehr kanadische Protestaktion."
+          }
+        },
+        {
+          "title": {
+            "en": "Carney cuts EV tariffs in a deal with Beijing to free up canola exports",
+            "fr": "Carney supprime les tarifs sur les VE dans un accord avec Pékin pour libérer les exportations de canola",
+            "es": "Carney recorta tarifas de vehículos eléctricos en un acuerdo con Pekín para liberar exportaciones de canola",
+            "de": "Carney senkt die Tarife für Elektroautos in einem Deal mit Peking, um Canola-Exporte freizugeben"
+          },
+          "source": "Global News",
+          "date": "Jan 2026",
+          "url": "https://globalnews.ca/video/11209838/carney-canadian-premiers-united-on-nation-building-projects-but-do-not-list-them",
+          "impact": -3,
+          "note": {
+            "en": "Pragmatic trade-making.",
+            "fr": "Faire du commerce de manière pragmatique.",
+            "es": "Comercio pragmático.",
+            "de": "Pragmatischer Handel."
+          }
+        }
+      ]
+    },
+    {
+      "code": "SE",
+      "name": "Sweden",
+      "flag": "🇸🇪",
+      "continent": "Europe",
+      "score": 44,
+      "trend": -1,
+      "gdp_adjusted": 45,
+      "headline": {
+        "en": "Sweden drops its plan to jail 13-year-olds — after the backlash.",
+        "fr": "La Suède abandonne son plan de mettre en prison les enfants de 13 ans - après la réaction.",
+        "es": "Suecia abandona su plan de encarcelar a los niños de 13 años — después de la reacción.",
+        "de": "Schweden lässt Plan fallen, 13-Jährige einzusperren - nach dem Aufschrei."
+      },
+      "why": {
+        "en": "A bad idea reversed is still a sign the system works.",
+        "fr": "Une mauvaise idée annulée est toujours un signe que le système fonctionne.",
+        "es": "Una mala idea revertida sigue siendo una señal de que el sistema funciona.",
+        "de": "Eine schlechte Idee zurückgenommen ist immer noch ein Zeichen dafür, dass das System funktioniert."
+      },
       "articles": [
-        { "title": "Sweden drops plan to jail 13-year-olds. It should stop there.", "source": "Human Rights Watch", "date": "Jun 12, 2026", "url": "https://www.hrw.org/news/2026/06/12/sweden-drops-plan-to-jail-13-year-olds-it-should-stop-there", "impact": -3, "note": "Reversed under scrutiny." },
-        { "title": "But the age of criminal responsibility may still drop from 15 to 14", "source": "Human Rights Watch", "date": "Jun 2026", "url": "https://www.hrw.org/news/2026/06/12/sweden-drops-plan-to-jail-13-year-olds-it-should-stop-there", "impact": 2, "note": "Half a step back." },
-        { "title": "Proposal to reshape the judiciary tests Sweden's political consensus", "source": "ConstitutionNet", "date": "2026", "url": "https://constitutionnet.org/news/voices/political-consensus-balance-government-proposal-reshape-swedens-judiciary-and-constitutional", "impact": 1, "note": "Tinkering with the courts." }
-      ] },
-    { "code": "FI", "name": "Finland", "flag": "🇫🇮", "continent": "Europe", "score": 41, "trend": 0, "gdp_adjusted": 42,
-      "headline": "Finland now teaches 3-year-olds to spot fake news — still the world's most disinfo-proof.",
-      "why": "World champion at resisting disinformation. Annoyingly sensible.",
+        {
+          "title": {
+            "en": "Sweden drops plan to jail 13-year-olds. It should stop there.",
+            "fr": "La Suède abandonne son plan de mettre en prison les enfants de 13 ans. Ça devrait s'arrêter là.",
+            "es": "Suecia abandona el plan de encarcelar a los niños de 13 años. Debería parar ahí.",
+            "de": "Schweden lässt Plan fallen, 13-Jährige einzusperren. Damit sollte es enden."
+          },
+          "source": "Human Rights Watch",
+          "date": "Jun 12, 2026",
+          "url": "https://www.hrw.org/news/2026/06/12/sweden-drops-plan-to-jail-13-year-olds-it-should-stop-there",
+          "impact": -3,
+          "note": {
+            "en": "Reversed under scrutiny.",
+            "fr": "Annulé sous l'examen.",
+            "es": "Revertido bajo escrutinio.",
+            "de": "Unter Prüfen zurückgezogen."
+          }
+        },
+        {
+          "title": {
+            "en": "But the age of criminal responsibility may still drop from 15 to 14",
+            "fr": "Mais l'âge de responsabilité pénale pourrait encore descendre de 15 à 14 ans",
+            "es": "Pero la edad de responsabilidad penal aún podría bajar de 15 a 14 años",
+            "de": "Aber das Alter der strafrechtlichen Verantwortung könnte trotzdem von 15 auf 14 sinken"
+          },
+          "source": "Human Rights Watch",
+          "date": "Jun 2026",
+          "url": "https://www.hrw.org/news/2026/06/12/sweden-drops-plan-to-jail-13-year-olds-it-should-stop-there",
+          "impact": 2,
+          "note": {
+            "en": "Half a step back.",
+            "fr": "Un petit pas en arrière.",
+            "es": "Un medio paso atrás.",
+            "de": "Ein halber Schritt zurück."
+          }
+        },
+        {
+          "title": {
+            "en": "Proposal to reshape the judiciary tests Sweden's political consensus",
+            "fr": "La proposition de remodeler la justice teste le consensus politique en Suède",
+            "es": "Propuesta para remodelar el sistema judicial pone a prueba el consenso político de Suecia",
+            "de": "Vorschlag zur Neugestaltung der Justiz testet Schwedens politischen Konsens"
+          },
+          "source": "ConstitutionNet",
+          "date": "2026",
+          "url": "https://constitutionnet.org/news/voices/political-consensus-balance-government-proposal-reshape-swedens-judiciary-and-constitutional",
+          "impact": 1,
+          "note": {
+            "en": "Tinkering with the courts.",
+            "fr": "Bricolage avec les tribunaux.",
+            "es": "Trasteando con los tribunales.",
+            "de": "Herumbasteln an den Gerichten."
+          }
+        }
+      ]
+    },
+    {
+      "code": "FI",
+      "name": "Finland",
+      "flag": "🇫🇮",
+      "continent": "Europe",
+      "score": 41,
+      "trend": 0,
+      "gdp_adjusted": 42,
+      "headline": {
+        "en": "Finland now teaches 3-year-olds to spot fake news — still the world's most disinfo-proof.",
+        "fr": "La Finlande enseigne maintenant aux enfants de 3 ans à repérer les fausses nouvelles — toujours la plus à l'abri de la désinformation.",
+        "es": "Finlandia ahora enseña a los niños de 3 años a detectar noticias falsas — sigue siendo la más a prueba de desinformación en el mundo.",
+        "de": "Finnland lehrt jetzt 3-Jährige, Fake News zu erkennen — immer noch das am besten gegen Desinformation geschützte Land der Welt."
+      },
+      "why": {
+        "en": "World champion at resisting disinformation. Annoyingly sensible.",
+        "fr": "Champion du monde de la résistance à la désinformation. Énervant mais sensé.",
+        "es": "Campeón mundial en resistir la desinformación. Fastidiosamente sensato.",
+        "de": "Weltmeister im Widerstand gegen Desinformation. Nervig vernünftig."
+      },
       "articles": [
-        { "title": "Finland teaches media literacy to preschoolers to combat Russian disinformation", "source": "Washington Times", "date": "Jan 5, 2026", "url": "https://www.washingtontimes.com/news/2026/jan/5/finland-teaches-media-literacy-preschoolers-combat-russian/", "impact": -3, "note": "Inoculating toddlers against BS." },
-        { "title": "Media Literacy Index 2026: Finland again leads Europe's resilience ranking", "source": "OSIS Sofia", "date": "2026", "url": "https://osis.bg/?p=5746&lang=en", "impact": -2, "note": "Top of the class, again." },
-        { "title": "Finland adds AI literacy to the curriculum as info-warfare intensifies", "source": "The Reporting Project", "date": "2026", "url": "https://www.thereportingproject.org/in-finland-the-battle-against-truly-fake-news-starts-with-media-and-ai-literacy-in-preschool/", "impact": -2, "note": "Staying ahead of the bots." },
-        { "title": "Even Finland isn't immune: minor culture-war squabbles flare", "source": "OSIS Sofia", "date": "2026", "url": "https://osis.bg/?p=5746&lang=en", "impact": 1, "note": "Nobody's perfect." }
-      ] }
+        {
+          "title": {
+            "en": "Finland teaches media literacy to preschoolers to combat Russian disinformation",
+            "fr": "La Finlande apprend la littératie médiatique aux petits pour contrer la désinformation russe",
+            "es": "Finlandia enseña alfabetización mediática a preescolares para combatir la desinformación rusa",
+            "de": "Finnland bringt Vorschulkindern Medienkompetenz bei, um russischer Desinformation entgegenzuwirken"
+          },
+          "source": "Washington Times",
+          "date": "Jan 5, 2026",
+          "url": "https://www.washingtontimes.com/news/2026/jan/5/finland-teaches-media-literacy-preschoolers-combat-russian/",
+          "impact": -3,
+          "note": {
+            "en": "Inoculating toddlers against BS.",
+            "fr": "Vacciner les tout-petits contre les conneries.",
+            "es": "Inmunizando a los más pequeños contra tonterías.",
+            "de": "Kleinkinder gegen Quatsch immunisieren."
+          }
+        },
+        {
+          "title": {
+            "en": "Media Literacy Index 2026: Finland again leads Europe's resilience ranking",
+            "fr": "Indice de littératie médiatique 2026 : la Finlande domine à nouveau le classement de résilience en Europe",
+            "es": "Índice de Alfabetización Mediática 2026: Finlandia vuelve a liderar la clasificación de resiliencia en Europa",
+            "de": "Medienkompetenz-Index 2026: Finnland führt wieder das Resilienz-Ranking in Europa an"
+          },
+          "source": "OSIS Sofia",
+          "date": "2026",
+          "url": "https://osis.bg/?p=5746&lang=en",
+          "impact": -2,
+          "note": {
+            "en": "Top of the class, again.",
+            "fr": "Encore en tête de la classe.",
+            "es": "De nuevo en la cima de la clase.",
+            "de": "Wieder an der Spitze der Klasse."
+          }
+        },
+        {
+          "title": {
+            "en": "Finland adds AI literacy to the curriculum as info-warfare intensifies",
+            "fr": "La Finlande ajoute la littératie en IA au programme alors que la guerre de l'information s'intensifie",
+            "es": "Finlandia añade alfabetización en IA al currículo a medida que la guerra de la información se intensifica",
+            "de": "Finnland fügt KI-Kompetenz zum Lehrplan hinzu, während die Informationskriege zunehmen"
+          },
+          "source": "The Reporting Project",
+          "date": "2026",
+          "url": "https://www.thereportingproject.org/in-finland-the-battle-against-truly-fake-news-starts-with-media-and-ai-literacy-in-preschool/",
+          "impact": -2,
+          "note": {
+            "en": "Staying ahead of the bots.",
+            "fr": "Rester en avance sur les bots.",
+            "es": "Manteniéndose un paso adelante de los bots.",
+            "de": "Den Bots immer einen Schritt voraus."
+          }
+        },
+        {
+          "title": {
+            "en": "Even Finland isn't immune: minor culture-war squabbles flare",
+            "fr": "Même la Finlande n'est pas à l'abri : des querelles mineures de culture émergent",
+            "es": "Incluso Finlandia no es inmune: estallan pequeñas peleas culturales",
+            "de": "Sogar Finnland ist nicht immun: kleinere Kulturkriege brechen aus"
+          },
+          "source": "OSIS Sofia",
+          "date": "2026",
+          "url": "https://osis.bg/?p=5746&lang=en",
+          "impact": 1,
+          "note": {
+            "en": "Nobody's perfect.",
+            "fr": "Personne n'est parfait.",
+            "es": "Nadie es perfecto.",
+            "de": "Niemand ist perfekt."
+          }
+        }
+      ]
+    }
   ],
   "history": [
-    { "date": "2026-06-08", "world": 69 },
-    { "date": "2026-06-15", "world": 71 }
+    {
+      "date": "2026-06-08",
+      "world": 69
+    },
+    {
+      "date": "2026-06-15",
+      "world": 71
+    }
   ]
 }

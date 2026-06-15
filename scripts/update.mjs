@@ -25,6 +25,10 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { translateData } from './translate.mjs';
+
+// Résout un champ potentiellement multilingue ({en,fr,...}) en anglais.
+const pickEn = (v) => (v && typeof v === 'object' && !Array.isArray(v)) ? (v.en || Object.values(v)[0] || '') : (v == null ? '' : v);
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = join(__dirname, '..', 'data', 'scores.json');
@@ -246,7 +250,7 @@ async function main() {
     country: top.name, flag: top.flag,
     headline: top.headline, why: top.why, score: top.score,
   };
-  data.world.headline = `Today's champion: ${top.name}. ${top.headline}`;
+  data.world.headline = `Today's champion: ${top.name}. ${pickEn(top.headline)}`;
 
   // Historique
   data.updated = today;
@@ -272,6 +276,10 @@ async function main() {
     }
     console.log('\n(DRY_RUN) — fichier non écrit.');
     return;
+  }
+  if (PROVIDER !== 'none') {
+    console.log('\n🌐 Traduction des nouveaux textes (en → fr/es/de)…');
+    await translateData(data); // les champs rafraîchis (chaînes EN) deviennent {en,fr,es,de}
   }
   await writeFile(DATA_PATH, JSON.stringify(data, null, 2) + '\n', 'utf8');
   console.log(`\n✅ ${DATA_PATH} mis à jour.`);
