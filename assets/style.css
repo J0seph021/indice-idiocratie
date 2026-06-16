@@ -159,7 +159,7 @@ a:hover { text-decoration: underline; }
 .ticker-track {
   display: inline-flex; gap: 0; white-space: nowrap;
   font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-dim);
-  padding: 9px 0; animation: marquee 105s linear infinite; will-change: transform;
+  padding: 9px 0; animation: marquee 210s linear infinite; will-change: transform;
 }
 .ticker:hover .ticker-track { animation-play-state: paused; }
 .ticker-item { padding: 0 28px; position: relative; }
