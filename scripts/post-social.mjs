@@ -89,14 +89,13 @@ async function postToFacebook(message, imageUrl) {
 
   if (DRY_RUN) { console.log('🔵 [DRY] Facebook post simulé.'); return; }
 
-  // Avec image → /photos ; sans image → /feed
-  const url = imageUrl
-    ? `https://graph.facebook.com/${pageId}/photos`
-    : `https://graph.facebook.com/${pageId}/feed`;
-
-  const body = imageUrl
-    ? { caption: message, url: imageUrl, access_token: token }
-    : { message, access_token: token };
+  // On poste texte + lien (l'aperçu og.png s'affiche automatiquement via les balises Open Graph)
+  const url = `https://graph.facebook.com/${pageId}/feed`;
+  const body = {
+    message,
+    link: 'https://idiocracies.com',
+    access_token: token,
+  };
 
   const res = await fetch(url, {
     method: 'POST',
