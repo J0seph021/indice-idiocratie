@@ -46,15 +46,19 @@ function buildPost(data) {
 
   const scoreEmoji = score >= 69 ? '🔴' : score >= 50 ? '🟠' : '🟡';
 
-  // Version courte (≤ 500 chars) pour Threads
+  // Hashtags pour X
+  const countryTag = '#' + country.replace(/\s+/g, '');
+  const hashtags = `${countryTag} #Satire #Politics #Idiocracy`;
+
+  // Version courte (≤ 280 chars pour X)
   const short = [
     `${scoreEmoji} Stupidity Score: ${score}/100`,
     ``,
-    `${flag} ${country}: "${headline.slice(0, 120)}${headline.length > 120 ? '…' : ''}"`,
+    `${flag} ${country}: "${headline.slice(0, 100)}${headline.length > 100 ? '…' : ''}"`,
     ``,
-    `${why.slice(0, 100)}${why.length > 100 ? '…' : ''}`,
+    `idiocracies.com`,
     ``,
-    `100% satire · idiocracies.com`,
+    hashtags,
   ].join('\n');
 
   // Version longue pour Facebook / Instagram (pas de limite stricte)
