@@ -31,7 +31,7 @@ const ENDPOINT = 'https://api.twitter.com/2/tweets';
 
 const env = (k, d = '') => process.env[k] || d;
 const ANGLE = env('POST_ANGLE', 'spotlight');
-const LANG = env('POST_LANG', 'fr');
+const LANG = env('POST_LANG', 'en');
 const DRY = env('DRY_RUN') === '1' || env('DRY_RUN') === 'true';
 
 const KEY = env('X_API_KEY'), SECRET = env('X_API_SECRET');

@@ -32,7 +32,7 @@ const GRAPH = 'https://graph.facebook.com/v21.0';
 
 const env = (k, d = '') => process.env[k] || d;
 const ANGLE = env('POST_ANGLE', 'spotlight');
-const LANG = env('POST_LANG', 'fr');
+const LANG = env('POST_LANG', 'en');
 const DRY = env('DRY_RUN') === '1' || env('DRY_RUN') === 'true';
 
 const FB_PAGE_ID = env('FB_PAGE_ID');

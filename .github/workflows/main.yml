@@ -37,7 +37,7 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           POST_ANGLE: spotlight
-          POST_LANG: fr
+          POST_LANG: en
         run: node scripts/publish-social.mjs
       - name: Publier sur X / Twitter (si les secrets sont configures)
         continue-on-error: true
@@ -47,7 +47,7 @@ jobs:
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
           POST_ANGLE: spotlight
-          POST_LANG: fr
+          POST_LANG: en
         run: node scripts/publish-x.mjs
       - name: Brouillons de posts (artifact prive, non publie sur le site)
         uses: actions/upload-artifact@v4

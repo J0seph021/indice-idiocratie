@@ -127,7 +127,7 @@ workflow **« Mise a jour quotidienne »** → **Run workflow**.
 Dans `.github/workflows/main.yml`, étape *« Publier sur Facebook / Instagram »* :
 
 - `POST_ANGLE` : `spotlight` (défaut, la connerie du jour), `world`, `podium`, `mover`.
-- `POST_LANG` : `fr` (défaut) ou `en`.
+- `POST_LANG` : `en` (défaut — tous les posts sont en anglais) ou `fr`.
 
 L'étape a `continue-on-error: true` : si Meta a un hoquet un jour, ça **n'empêche
 pas** la mise à jour des scores.

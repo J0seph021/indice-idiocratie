@@ -28,7 +28,7 @@ const arg = (k, d) => {
   const m = process.argv.find((a) => a.startsWith(`--${k}=`));
   return m ? m.split('=')[1] : d;
 };
-const LANG = (arg('lang', 'fr') || 'fr').toLowerCase();
+const LANG = (arg('lang', 'en') || 'en').toLowerCase();
 
 const data = JSON.parse(readFileSync(join(ROOT, 'data', 'scores.json'), 'utf8'));
 const date = data.updated || new Date().toISOString().slice(0, 10);
@@ -188,7 +188,7 @@ const json = {
   })),
 };
 writeFileSync(join(OUT, `latest-${LANG}.json`), JSON.stringify(json, null, 2));
-if (LANG === 'fr') writeFileSync(join(OUT, 'latest.json'), JSON.stringify(json, null, 2));
+if (LANG === 'en') writeFileSync(join(OUT, 'latest.json'), JSON.stringify(json, null, 2));
 
 console.log(`✓ ${posts.length} angles (${LANG.toUpperCase()}) avec vraies actus + punchlines`);
 console.log(`✓ ${copied.size} image(s) du jour → marketing/social/img/`);

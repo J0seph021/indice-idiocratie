@@ -53,8 +53,8 @@ Le script ne **publie rien** tout seul — il te prépare des brouillons prêts 
 **toi** tu gardes le doigt sur le bouton « publier » (le 100 % auto = spam = comptes bannis).
 
 ```powershell
-npm run posts                 # version FR → marketing/social/latest.md
-node scripts/build-posts.mjs --lang=en   # version anglaise
+npm run posts                 # anglais (défaut) → marketing/social/latest.md
+node scripts/build-posts.mjs --lang=fr   # version française (optionnelle)
 ```
 
 **Publication 100 % automatique (gratuit) :** une fois les jetons configurés,
