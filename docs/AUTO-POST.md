@@ -8,6 +8,14 @@ comptes*.
 
 > Tu ne fais ce setup **qu'une seule fois**. Ensuite : zéro intervention.
 
+> **Page ≠ profil perso.** Les posts partent au nom de **la Page** (ton nom perso
+> n'apparaît jamais dessus). Ton compte perso sert juste d'**admin invisible** de
+> la Page — c'est lui qui génère le jeton. L'API Meta **ne peut poster que sur une
+> Page**, donc créer une Page dédiée est exactement ce qu'il faut. Vérifie juste
+> que ton compte perso est **admin** de la Page : sinon `GET /me/accounts` (étape 3.5)
+> ne la listera pas. (Seul détail public : la « Transparence de la Page » montre le
+> *pays* des gestionnaires, jamais leur nom.)
+
 ---
 
 ## A. Facebook (≈ 15 min) — le minimum
