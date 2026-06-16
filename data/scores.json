@@ -2,62 +2,62 @@
   "updated": "2026-06-16",
   "scale_note": "Scale 0-100. 69 = the critical stupidity line. The higher, the more Idiocracy.",
   "world": {
-    "score": 49,
-    "trend": -7,
+    "score": 50,
+    "trend": 1,
     "label": {
       "en": "Still under the 69 line. Enjoy it while it lasts.",
-      "fr": "Toujours sous la ligne des 69. Profitez-en tant que ça dure.",
-      "es": "Todavía bajo la línea de los 69. Disfrútalo mientras dure.",
-      "de": "Noch unter der 69er-Linie. Genießt es, solange es hält."
+      "fr": "Toujours sous la ligne 69. Profitez-en tant que ça dure.",
+      "es": "Aún por debajo de la línea 69. Disfrútalo mientras puedas.",
+      "de": "Immer noch unter der 69er-Linie. Genießt es, solange es noch hält."
     },
     "headline": {
-      "en": "Today's champion: Russia. Putin pursues endless war with no off-ramp, while his alliances crumble and sanctions strangle the economy.",
-      "fr": "Champion du jour : Russia. Putin s'enlise dans une guerre sans fin ni issue, tandis que ses alliances s'effondrent et que les sanctions étouffent l'économie.",
-      "es": "Campeón del día: Russia. Putin persigue una guerra interminable sin salida, mientras sus alianzas se desmoronan y las sanciones asfixian la economía.",
-      "de": "Heutiger Champion: Russia. Putin verfolgt einen endlosen Krieg ohne Ausweg, während seine Allianzen zusammenbrechen und Sanktionen die Wirtschaft erdrosseln."
+      "en": "Today's champion: Russia. Putin touts satellite-controlled drone tech while systematically obliterating Ukrainian cities, spectacle masquerading as strategy.",
+      "fr": "Champion du jour : la Russie. Poutine vante sa technologie de drones contrôlés par satellite tout en rasa systématiquement les villes ukrainiennes, du spectacle déguisé en stratégie.",
+      "es": "Campeón del día: Rusia. Putin presume de tecnología de drones controlados por satélite mientras arrasa sistemáticamente ciudades ucranianas, espectáculo disfrazado de estrategia.",
+      "de": "Heutiger Champion: Russland. Putin prahlt mit satellitengestützter Drohnentechnik, während er ukrainische Städte systematisch dem Erdboden gleichmacht, Spektakel als Strategie getarnt."
     }
   },
   "spotlight": {
     "country": "Russia",
     "flag": "🇷🇺",
     "headline": {
-      "en": "Putin pursues endless war with no off-ramp, while his alliances crumble and sanctions strangle the economy.",
-      "fr": "Putin s'enlise dans une guerre sans fin ni issue, tandis que ses alliances s'effondrent et que les sanctions étouffent l'économie.",
-      "es": "Putin persigue una guerra interminable sin salida, mientras sus alianzas se desmoronan y las sanciones asfixian la economía.",
-      "de": "Putin verfolgt einen endlosen Krieg ohne Ausweg, während seine Allianzen zusammenbrechen und Sanktionen die Wirtschaft erdrosseln."
+      "en": "Putin touts satellite-controlled drone tech while systematically obliterating Ukrainian cities, spectacle masquerading as strategy.",
+      "fr": "Poutine vante sa technologie de drones contrôlés par satellite tout en rasant systématiquement les villes ukrainiennes, du spectacle déguisé en stratégie.",
+      "es": "Putin presume de tecnología de drones controlados por satélite mientras arrasa sistemáticamente ciudades ucranianas, espectáculo disfrazado de estrategia.",
+      "de": "Putin prahlt mit satellitengestützter Drohnentechnik, während er ukrainische Städte systematisch dem Erdboden gleichmacht, Spektakel als Strategie getarnt."
     },
     "why": {
-      "en": "A state locked in perpetual conflict, isolated globally, censoring dissent, and burning resources on military spectacle while losing the information war, textbook late-stage Idiocracy, minus the entertainment value.",
-      "fr": "Un État enfermé dans un conflit perpétuel, isolé mondialement, étouffant la dissidence, et gaspillant les ressources en spectacles militaires tout en perdant la guerre de l'information, Idiocracy façon fin de règne, mais sans le divertissement.",
-      "es": "Un Estado atrapado en un conflicto perpetuo, aislado globalmente, censurando la disidencia y quemando recursos en espectáculos militares mientras pierde la guerra de la información, Idiocracy de manual en su fase terminal, pero sin diversión.",
-      "de": "Ein Staat gefangen im Dauerkonflikt, global isoliert, Dissidenten zum Schweigen gebracht und Ressourcen für militärische Spektakel verpulvert, während er den Informationskrieg verliert, Idiocracy im späten Stadium par excellence, nur ohne den Unterhaltungswert."
+      "en": "Russia's governance is now indistinguishable from Camacho's war cabinet: showcase shiny weapons, ignore the fact that Ukraine's innovation is outpacing your industrial base, keep the barrages coming.",
+      "fr": "La gouvernance russe est désormais indistinguible du cabinet de guerre de Camacho : exhiber des armes clinquantes, ignorer que l'innovation ukrainienne dépasse votre base industrielle, continuer les bombardements.",
+      "es": "La gobernanza rusa es ahora indistinguible del gabinete de guerra de Camacho: exhibir armas relucientes, ignorar que la innovación ucraniana supera tu base industrial, mantener los bombardeos.",
+      "de": "Russlands Regierungsweise ist nun nicht von Camacho's Kriegskabinett zu unterscheiden: glänzende Waffen zur Schau stellen, ignorieren dass Ukraines Innovation deine Industriebasis überflügelt, die Bombardements weitergehen lassen."
     },
-    "score": 83
+    "score": 84
   },
   "continents": [
     {
       "name": "North America",
       "emoji": "🌎",
-      "score": 58,
-      "trend": -6
+      "score": 59,
+      "trend": 1
     },
     {
       "name": "Europe",
       "emoji": "🌍",
       "score": 43,
-      "trend": -7
+      "trend": 0
     },
     {
       "name": "Asia",
       "emoji": "🌏",
       "score": 53,
-      "trend": -6
+      "trend": 0
     },
     {
       "name": "South America",
       "emoji": "🌎",
       "score": 63,
-      "trend": -2
+      "trend": 0
     },
     {
       "name": "Africa",
@@ -69,7 +69,7 @@
       "name": "Oceania",
       "emoji": "🌏",
       "score": 38,
-      "trend": -16
+      "trend": 0
     }
   ],
   "countries": [
@@ -78,124 +78,105 @@
       "name": "United States",
       "flag": "🇺🇸",
       "continent": "North America",
-      "score": 69,
-      "trend": 0,
-      "gdp_adjusted": 66,
+      "score": 71,
+      "trend": 2,
+      "gdp_adjusted": 67,
       "headline": {
-        "en": "Trump administration prioritizes loyalty-based pardons and tariff theater over institutional guardrails, even as clean energy quietly surges.",
-        "fr": "L'administration Trump privilégie les grâces basées sur la loyauté et le théâtre tarifaire au détriment des garde-fous institutionnels, tandis que l'énergie propre progresse en silence.",
-        "es": "La administración Trump prioriza los indultos basados en la lealtad y el teatro arancelario sobre los contrapesos institucionales, mientras que la energía limpia avanza en silencio.",
-        "de": "Die Trump-Administration priorisiert loyalitätsbasierte Begnadigungen und Zolltheater gegenüber institutionellen Schutzvorrichtungen, während saubere Energie leise anschwillt."
+        "en": "Trump weaponizes pardons as currency while dismantling AI oversight in 2 weeks, pushing the index deeper into Idiocracy territory.",
+        "fr": "Trump transforme les grâces en monnaie d'échange tout en démantèlant la surveillance de l'IA en 2 semaines, plongeant l'indice plus profondément dans le territoire de l'Idiocracy.",
+        "es": "Trump convierte los indultos en moneda de cambio mientras desmantela la supervisión de IA en 2 semanas, hundiendo el índice más profundamente en territorio Idiocracy.",
+        "de": "Trump wandelt Begnadigungen in Währung um, während er die KI-Aufsicht in 2 Wochen abbaut und den Index tiefer ins Idiocracy-Territorium treibt."
       },
       "why": {
-        "en": "The US has drifted into executive spectacle and patronage capture (pardons for fraud, no DOJ process), yet some competent policy (AI oversight attempt, clean energy) shows the old machinery still twitches.",
-        "fr": "Les États-Unis ont glissé vers le spectacle exécutif et la capture par la rente (grâces pour fraude, sans procédure du DOJ), mais quelques politiques compétentes (tentative de supervision de l'IA, énergie propre) montrent que l'ancienne machine tressaille encore.",
-        "es": "Estados Unidos ha derivado hacia el espectáculo ejecutivo y la captura de rentas (indultos por fraude, sin proceso del DOJ), pero algunas políticas competentes (intento de supervisión de IA, energía limpia) muestran que la vieja maquinaria aún se mueve.",
-        "de": "Die USA sind in Exekutivspektakel und Renteneinfang abgerutscht (Begnadigungen für Betrug, ohne DOJ-Verfahren), doch einige kompetente Politik (KI-Aufsichtsversuch, saubere Energie) zeigt, dass die alte Maschinerie noch zuckt."
+        "en": "A president converting clemency into a pay-to-play scheme while abandoning stated governance priorities signals institutional capture and spectacle-over-substance governance.",
+        "fr": "Un président convertissant la clémence en système de pots-de-vin tandis qu'il abandonne les priorités gouvernementales affichées signale une capture institutionnelle et une gouvernance de spectacle plutôt que de substance.",
+        "es": "Un presidente que convierte la clemencia en un esquema de pago-por-favor mientras abandona las prioridades de gobierno declaradas señala captura institucional y gobernanza de espectáculo sobre sustancia.",
+        "de": "Ein Präsident, der Gnade in ein Pay-to-Play-Geschäft umwandelt, während er erklärte Regierungsprioritäten aufgibt, signalisiert institutionelle Vereinnahmung und Spektakel statt Substanz."
       },
       "articles": [
         {
           "title": {
             "en": "Exclusive | Charlie Javice Has Been Seeking a Pardon From Trump After Defrauding JPMorgan",
-            "fr": "Exclusivité | Charlie Javice Cherche une Grâce de Trump Après Avoir Arnaqué JPMorgan",
-            "es": "Exclusiva | Charlie Javice Ha Estado Buscando un Indulto de Trump Después de Defraudar a JPMorgan",
-            "de": "Exklusiv | Charlie Javice Sucht nach einer Begnadigung durch Trump, Nachdem er JPMorgan Betrogen Hat"
+            "fr": "Exclusivité | Charlie Javice cherche une grâce de Trump après avoir arnaqué JPMorgan",
+            "es": "Exclusiva | Charlie Javice Ha Estado Buscando un Indulto de Trump Tras Defraudar a JPMorgan",
+            "de": "Exklusiv | Charlie Javice Sucht eine Begnadigung von Trump Nach Betrug von JPMorgan"
           },
           "source": "WSJ",
           "date": "Jun 14, 2026",
           "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPbGRGWWhmYjRoS2xjaWoyOVBEU2ItQVNOQk13SDR4ZlduX2dGS1VIZC1OS2tRSFNUT2V2YUVDN2swLVNremJYWUFNZVJTc2ZfRS1mbU1aODRkMTdnZVFhdVhHcnVONFFNMW1WRW1kdW9Ub0J6MndHbWRrNjU0Qzl3dVptRnlxVkR4YUJOYm9yS0NhQ0Yyd0RnMkctVzBkeDR3NUtoRnRTdUVreTI1eS1oaUhYb3k?oc=5",
           "axis": "PUBLIC",
-          "impact": 5,
+          "impact": 4,
           "note": {
-            "en": "Presidential pardons for corporate fraud survivors with 'Bobby the influencer' as intermediary: Brawndo owns the courthouse now.",
-            "fr": "Les grâces présidentielles pour escrocs d'entreprise avec « Bobby l'influenceur » comme intermédiaire : Brawndo possède maintenant le palais de justice.",
-            "es": "Indultos presidenciales para estafadores corporativos con « Bobby el influencer » como intermediario: Brawndo ahora posee la corte.",
-            "de": "Präsidiale Begnadigungen für Unternehmensbetrüger mit « Bobby dem Influencer » als Vermittler: Brawndo besitzt jetzt das Gericht."
+            "en": "Pardons sold to fraudsters via influencer intermediaries: rule of law becomes a commodity, institutions hollowed.",
+            "fr": "Les grâces vendues aux escrocs via des intermédiaires influenceurs : l'État de droit devient une marchandise, les institutions se vident.",
+            "es": "Indultos vendidos a estafadores a través de intermediarios influenciadores: el estado de derecho se convierte en mercancía, instituciones vaciadas.",
+            "de": "Begnadigungen an Betrüger über Influencer-Vermittler verkauft: Rechtsstaatlichkeit wird zur Ware, Institutionen ausgehöhlt."
           }
         },
         {
           "title": {
             "en": "Trump promised to bring order to AI oversight. That lasted 2 weeks.",
-            "fr": "Trump a promis de mettre de l'ordre dans la supervision de l'IA. Ça a duré 2 semaines.",
-            "es": "Trump prometió traer orden a la supervisión de la IA. Eso duró 2 semanas.",
+            "fr": "Trump a promis d'instaurer l'ordre dans la surveillance de l'IA. Ça a duré 2 semaines.",
+            "es": "Trump prometió traer orden a la supervisión de IA. Eso duró 2 semanas.",
             "de": "Trump versprach, Ordnung in die KI-Aufsicht zu bringen. Das hielt 2 Wochen."
           },
           "source": "Politico",
           "date": "Jun 16, 2026",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcjJUeExDLVB0aHpfODdhNDBkY0o4Q01MQVhXLXpZMVRKdTc3SHAtV0FJUlFGVGNUaUV1bjZFNnFucHR6VzhNSmVKZzM5bUZVYlZHV1FWRmVBVkFiVzFTeVJ5eFRGRmxFWXVHcm1ENlVybUJNeWpRSnBVVmNfSDgxLVNPV1lRajhvcnY1bA?oc=5",
           "axis": "SPECTACLE",
-          "impact": 4,
+          "impact": 3,
           "note": {
-            "en": "AI oversight order reversed in 2 weeks signals governance by whim, not plan.",
-            "fr": "L'annulation du décret de supervision de l'IA en 2 semaines signale une gouvernance par caprice, pas par plan.",
-            "es": "La reversión del decreto de supervisión de IA en 2 semanas señala gobierno por capricho, no por plan.",
-            "de": "KI-Aufsichtsorder in 2 Wochen aufgehoben signalisiert Governance nach Laune, nicht nach Plan."
+            "en": "AI oversight gutted in 14 days, promised order abandoned for hands-off theater; long-term risk sacrificed for optics.",
+            "fr": "Surveillance de l'IA démantelée en 14 jours, l'ordre promis abandonné pour du théâtre sans contraintes ; les risques à long terme sacrifiés à l'optique.",
+            "es": "Supervisión de IA destrozada en 14 días, el orden prometido abandonado por teatro sin restricciones; riesgo a largo plazo sacrificado por apariencia.",
+            "de": "KI-Aufsicht in 14 Tagen zerlegt, versprochene Ordnung zugunsten zornsfreier Inszenierung aufgegeben; Langzeitrisiko für Optik geopfert."
           }
         },
         {
           "title": {
-            "en": "Trump Administration Abandons Fight Against Wind Energy as Clean Energy Output Surges",
-            "fr": "L'Administration Trump Abandonne la Lutte Contre l'Énergie Éolienne Alors que la Production d'Énergie Propre Explose",
-            "es": "La Administración Trump Abandona la Lucha Contra la Energía Eólica Mientras la Producción de Energía Limpia se Dispara",
-            "de": "Trump-Administration Gibt Kampf Gegen Windenergie Auf, da die Saubere Energieproduktion in die Höhe Schießt"
+            "en": "DOJ division that should have handled Trump IRS lawsuit has no record of it - CREW",
+            "fr": "La division du DOJ qui aurait dû gérer le procès fiscal de Trump n'en a pas gardé trace - CREW",
+            "es": "La división del DOJ que debería haber manejado la demanda fiscal de Trump no tiene registro de ella - CREW",
+            "de": "Die DOJ-Abteilung, die die IRS-Klage von Trump hätte bearbeiten sollen, hat keine Aufzeichnungen davon - CREW"
           },
-          "source": "Inside Climate News",
-          "date": "Jun 16, 2026",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNcWltSVBFVFFEcEZHeTNJYXZDZWU4V3FzR3pvTnQwcHdMOVdIOXlETl9HVUI2N0IyT3VfSUhXOGxic3l3cUE0Q2EwS1NJZVZGX05ydFB6LVdpSTYtREp6a09weWZsWHpIeEItSk9YX3pvZHpBb2NvaVRZeEJYaUN3WGVMeXZFYXFzeDlXQjRTYnI3ZGVGZ2JpMHViZmlQSkJzOXc?oc=5",
-          "axis": "FUTURE",
-          "impact": -4,
+          "source": "Citizens for Responsibility and Ethics in Washington",
+          "date": "Jun 11, 2026",
+          "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNSjFPTEpUQlN3c01JTXhiczRpTTdiZTZSZzhuXzhMbnkyOGRTVGVHb0Itb3RfWFhuYnpacmEtNkhady1hYXQ1UGlESFVUNW9FX0gzbm05ay1FN0E2MklRR1JxUXlvMmw0T3RrY0VwYmZMMUhuX21BMUVWUndoWnNrRHVXb29xLUlWNmV4REZMWk5LTFNXLWZmZ1dlLXhUTmE1OFJNV1JkeGxheEU1VmhqQUdSbng3eDhxRUEweFJlSVpzd2NKZTk4dkh1WmhSRUlFRmg1MVpiTTVWRjNweEl6RldHd1Ixbnlh?oc=5",
+          "axis": "CRIT",
+          "impact": 2,
           "note": {
-            "en": "Admin backs away from wind fight as clean energy surges; a rare capitulation to reality and long-term sense.",
-            "fr": "L'admin abandonne la bataille contre l'éolien alors que l'énergie propre explose ; une rare capitulation devant la réalité et le bon sens à long terme.",
-            "es": "Admin se echa atrás en la batalla contra la eólica mientras la energía limpia se dispara; una rara capitulación ante la realidad y el sentido a largo plazo.",
-            "de": "Admin zieht sich aus dem Windkampf zurück, während saubere Energie explodiert; eine seltene Kapitulation vor der Realität und langfristigem Verstand."
+            "en": "DOJ 'loses' Trump lawsuit filing: either incompetence or suppression, either way the institution is corroded.",
+            "fr": "Le DOJ « perd » le dossier du procès de Trump : soit de l'incompétence, soit de la suppression, dans les deux cas l'institution se corrode.",
+            "es": "DOJ 'pierde' la presentación de demanda de Trump: ya sea incompetencia o supresión, de cualquier manera la institución está corroída.",
+            "de": "DOJ 'verliert' die Klageeinreichung von Trump: entweder Inkompetenz oder Unterdrückung, jedenfalls ist die Institution korrumpiert."
           }
         },
         {
           "title": {
             "en": "Trump won't back FISA renewal without his SAVE America Act voting bill",
-            "fr": "Trump ne soutient pas le renouvellement de la FISA sans sa loi de vote SAVE America Act",
-            "es": "Trump no respalda la renovación de FISA sin su proyecto de ley de voto SAVE America Act",
-            "de": "Trump unterstützt FISA-Verlängerung nicht ohne sein SAVE America Act Wahlgesetzgebung"
+            "fr": "Trump ne soutient pas le renouvellement du FISA sans son projet de loi électorale SAVE America Act",
+            "es": "Trump no respalda la renovación del FISA sin su proyecto de ley electoral SAVE America Act",
+            "de": "Trump unterstützt die FISA-Verlängerung nicht ohne seinen SAVE America Act Wahlgesetzentwurf"
           },
           "source": "Axios",
           "date": "Jun 14, 2026",
           "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE40d1hYTjZFTnZCemZHa0dQbkxNWnh4VVN3d3VFbFZaZ2J0OHhvbkdsTWsyVEZuMEg4eFRaV0FhS2FmakgzbWxrY0VFQklZcTJBRi1VcGJ5S2xrTUpzbnRvR2h0Y1lTQ29sUHFXWGl4bHI4T19nQW9r?oc=5",
           "axis": "CRIT",
-          "impact": 3,
-          "note": {
-            "en": "Weaponizing FISA renewal to extort voting-law leverage: Congress reduced to hostage negotiators.",
-            "fr": "Instrumentaliser le renouvellement de la FISA pour extorquer un effet de levier sur les lois électorales : le Congrès réduit à des négociateurs d'otages.",
-            "es": "Weaponizar la renovación de FISA para extorsionar palanca sobre leyes electorales: el Congreso reducido a negociadores de rehenes.",
-            "de": "FISA-Verlängerung als Waffe nutzen, um Hebelwirkung bei Wahlgesetzen zu erpressen: Kongress auf Geiselverhandler reduziert."
-          }
-        },
-        {
-          "title": {
-            "en": "Trump names Jay Clayton to serve as director of national intelligence",
-            "fr": "Trump nomme Jay Clayton directeur du renseignement national",
-            "es": "Trump nombra a Jay Clayton como director de inteligencia nacional",
-            "de": "Trump benennt Jay Clayton zum Direktor des nationalen Geheimdienstes"
-          },
-          "source": "NPR",
-          "date": "Jun 11, 2026",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVy03SnVhT19EUk1CX2FfOU83dm40ZXRlU09IUkhITzlyTTVuNF9aNXEzd1Roa2hNTFdxM1RCcTJvaEJYZHg2cHR1MWlTWU01MHpobVJ4TEVUNTFLRlRJSlJwcVFPbDhjbVYtckJGd3p3SzJLcWNlV1E2MkxnUHlYdm55a2VCWGxfNnZuWGFzS2I4SFBQaVh0X0diS04ybjJCckxBdWJ4MlJSclZMNFQtOVNjNG5GTWc?oc=5",
-          "axis": "KNOW",
           "impact": 2,
           "note": {
-            "en": "Jay Clayton (crypto lobbyist, not intelligence veteran) as DNI: competence replaced by loyalty.",
-            "fr": "Jay Clayton (lobbyiste crypto, pas vétéran du renseignement) comme DNI : la compétence remplacée par la loyauté.",
-            "es": "Jay Clayton (cabildero cripto, no veterano de inteligencia) como DNI: la competencia reemplazada por lealtad.",
-            "de": "Jay Clayton (Krypto-Lobbyist, kein Geheimdienstveteran) als DNI: Kompetenz durch Loyalität ersetzt."
+            "en": "Hostaging FISA renewal to partisan voting bill conflates national security with electoral gain.",
+            "fr": "Conditionner le renouvellement du FISA à un projet de loi électoral partisan confond la sécurité nationale avec les gains électoraux.",
+            "es": "Condicionar la renovación del FISA a un proyecto de ley electoral partidista confunde la seguridad nacional con ganancia electoral.",
+            "de": "FISA-Erneuerung an Partei-Wahlgesetzentwurf festmachen vermischt nationale Sicherheit mit Wahlgewinn."
           }
         }
       ],
       "axes": {
         "SCI": 68,
-        "SPECTACLE": 72,
-        "PUBLIC": 71,
+        "SPECTACLE": 75,
+        "PUBLIC": 75,
         "KNOW": 65,
-        "CRIT": 70,
+        "CRIT": 74,
         "FUTURE": 69
       }
     },
@@ -204,106 +185,87 @@
       "name": "Russia",
       "flag": "🇷🇺",
       "continent": "Europe",
-      "score": 83,
-      "trend": 0,
-      "gdp_adjusted": 79,
+      "score": 84,
+      "trend": 1,
+      "gdp_adjusted": 80,
       "headline": {
-        "en": "Putin pursues endless war with no off-ramp, while his alliances crumble and sanctions strangle the economy.",
-        "fr": "Poutine poursuit une guerre sans fin sans issue de secours, tandis que ses alliances s'effondrent et les sanctions étranglent l'économie.",
-        "es": "Putin persigue una guerra interminable sin salida, mientras sus alianzas se desmorona y las sanciones estrangula la economía.",
-        "de": "Putin verfolgt einen endlosen Krieg ohne Ausweg, während seine Allianzen bröckeln und Sanktionen die Wirtschaft erdrosseln."
+        "en": "Putin touts satellite-controlled drone tech while systematically obliterating Ukrainian cities, spectacle masquerading as strategy.",
+        "fr": "Poutine vante sa technologie de drones contrôlés par satellite tout en rasant méthodiquement les villes ukrainiennes, du spectacle déguisé en stratégie.",
+        "es": "Putin alardea de tecnología de drones controlados por satélite mientras arrasa metódicamente las ciudades ucranianas, espectáculo disfrazado de estrategia.",
+        "de": "Putin prahlt mit satellitengestützter Drohnentechnologie, während er ukrainische Städte systematisch dem Erdboden gleichmacht, Spektakel als Strategie verkleidet."
       },
       "why": {
-        "en": "A state locked in perpetual conflict, isolated globally, censoring dissent, and burning resources on military spectacle while losing the information war, textbook late-stage Idiocracy, minus the entertainment value.",
-        "fr": "Un État enfermé dans un conflit perpétuel, isolé mondialement, censureur des dissidents, et brûlant les ressources sur du spectaculaire militaire tout en perdant la guerre de l'information, l'Idiocracy en phase terminale, moins le divertissement.",
-        "es": "Un estado atrapado en conflicto perpetuo, aislado globalmente, censurando disidencia, e incinerando recursos en espectáculo militar mientras pierde la guerra de la información, la Idiocracy en fase terminal, sin el valor del entretenimiento.",
-        "de": "Ein Staat im perpetuellen Konflikt gefangen, global isoliert, Dissidenten zensierend und Ressourcen für militärisches Schauspiel verbrennend, während er den Informationskrieg verliert, Idiocracy im Endstadium, ohne Unterhaltungswert."
+        "en": "Russia's governance is now indistinguishable from Camacho's war cabinet: showcase shiny weapons, ignore the fact that Ukraine's innovation is outpacing your industrial base, keep the barrages coming.",
+        "fr": "La gouvernance russe est devenue indissociable du cabinet de guerre de Camacho : exhiber des armes rutilantes, ignorer que l'innovation ukrainienne surpasse votre base industrielle, continuer les bombardements.",
+        "es": "La gobernanza rusa es ahora indistinguible del gabinete de guerra de Camacho: exhibir armas relucientes, ignorar que la innovación ucraniana supera tu base industrial, mantener los bombardeos.",
+        "de": "Russlands Regierungsweise ist jetzt von Camachos Kriegskabinett nicht zu unterscheiden: glänzende Waffen präsentieren, ignorieren, dass Ukraines Innovation deine Industriebasis überholt, Bombardements weitermachen."
       },
       "articles": [
         {
           "title": {
             "en": "Putin says Russia developing satellite-based drone control system, Ifax says",
-            "fr": "Poutine affirme que la Russie développe un système de contrôle de drones par satellite, selon Ifax",
-            "es": "Putin dice que Rusia desarrolla sistema de control de drones por satélite, según Ifax",
-            "de": "Putin sagt, Russland entwickelt satellitengestütztes Drohnensteuerungssystem, wie Ifax berichtet"
+            "fr": "Poutine dit que la Russie développe un système de contrôle de drones par satellite, selon Ifax",
+            "es": "Putin dice que Rusia está desarrollando un sistema de control de drones basado en satélites, dice Ifax",
+            "de": "Putin sagt, Russland entwickelt satellitengestütztes Drohenkontrollsystem, sagt Ifax"
           },
           "source": "Reuters",
           "date": "Jun 12, 2026",
           "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZVBaSk9fQWtNU1ZCOXo4NTZYUHg1eU5fS2xaVjlpTG5hdERYVlh5bDNRc0tlWEsyUTYzZHlUZmZndTczR3BBM2M2d0xsQ0kyRDJWeGNyY0lhN1pOWWZuaWtZQUkwVTVmWVJqTGxVLWpKNlNQZF84cFBNVlhtSUpRdkVfQVhwU0t5ZWtMdWxCVTBVdkFzdmJtZTFqb25jQ2Y3cU5lZ0U1UExkYkhSVnlKWUpqMFV3TkZV?oc=5",
-          "axis": "SCI",
-          "impact": 1,
+          "axis": "SPECTACLE",
+          "impact": 2,
           "note": {
-            "en": "Satellite drone control is real military tech, but the *announcement* is pure bluster, posturing over substance.",
-            "fr": "Le contrôle de drones par satellite est une vraie technologie militaire, mais l'*annonce* est du pur baratin, du positionnement sans substance.",
-            "es": "El control de drones por satélite es tecnología militar real, pero el *anuncio* es puro bluff, postureo sin sustancia.",
-            "de": "Satellitengestützte Drohnensteuerung ist echte Militärtechnologie, aber die *Ankündigung* ist reines Gehabe, Pose statt Substanz."
+            "en": "Putin announces satellite-drone systems as propaganda theater while real-world drone innovation (Ukraine's) is proving more decisive, the showmanship of a regime substituting announcement for competence.",
+            "fr": "Poutine annonce des systèmes drone-satellite comme du théâtre de propagande tandis que l'innovation réelle en matière de drones (celle de l'Ukraine) s'avère plus décisive, le cabotinage d'un régime substituant l'annonce à la compétence.",
+            "es": "Putin anuncia sistemas drone-satélite como teatro de propaganda mientras que la innovación real en drones (la de Ucrania) resulta más decisiva, la parafernalia de un régimen sustituyendo anuncios por competencia.",
+            "de": "Putin kündet Drohnen-Satelliten-Systeme als Propagandatheater an, während echte Drohneninnovation (Ukraines) sich als entscheidender erweist, die Scharade eines Regimes, das Ankündigungen durch Kompetenz ersetzt."
+          }
+        },
+        {
+          "title": {
+            "en": "Russia unleashes an overnight barrage on Ukraine, killing 11 people and damaging a religious landmark, officials say",
+            "fr": "La Russie lance un barrage nocturne sur l'Ukraine, tuant 11 personnes et endommageant un site religieux, selon les autorités",
+            "es": "Rusia desata un bombardeo nocturno en Ucrania, matando a 11 personas y dañando un sitio religioso, según funcionarios",
+            "de": "Russland entfesselt nächtlichen Beschuss auf Ukraine, tötet 11 Menschen und beschädigt religiöse Stätte, sagen Beamte"
+          },
+          "source": "PBS",
+          "date": "Jun 15, 2026",
+          "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQclhQNFAwZ2NVSG5PY3N0MXctQlkwczlPQXVRT0hJcWVaNDVxYXRNR2VoX29ITmVqVnFQVHFkc0NLSEJZdGFjdTBlOGVZWmdZeFVHaXJyQkd0UjgwcGRQMlByUUtkVHZaSU9qME9ZdFJWcmJkTHQ0dTRSQVBpaGNHTThORXFBaHhOVk1tNldpajBZNVNaSTRNSEQ5WjNpOWtIdHZoVzUxN0tmYzhjNW1OWV9MeWl2cG9tbjRoaVF1MmsyTEtvNFZqUTQtcmJOcU5ZUkRIRzJCMkdiNkZiQmRVT29rQ1FnTDZC0gHoAUFVX3lxTFByWFA0UDBnY1VIbk9jc3Qxdy1CWTBzOU9BdVFPSElxZVo0NXFhdE1HZWhfb0hOZWpWcVBUcWRzQ0tIQll0YWN1MGU4ZVlaZ1l4VUdpcnJCR3RSODBwZFAyUHJRS2RUdlpJT2owT1l0UlZyYmRMdDR1NFJBUGloY0dNOE5FcUFoeE5WTW02V2lqMFk1U1pJNE1IRDlaM2k5a0h0dmhXNTE3S2ZjOGM1bU5ZX0x5aXZwb21uNGhpUXUyazJMS280VmpRNC1yYk5xTllSREhHMkIyR2I2RmJCZFVPb2tDUWdMNkI?oc=5",
+          "axis": "FUTURE",
+          "impact": 3,
+          "note": {
+            "en": "Overnight barrage on civilian infrastructure (religious site, 11 dead) epitomizes short-term attrition tactics with zero endgame, pure Idiocracy-era scorched-earth governance.",
+            "fr": "Barrage nocturne sur les infrastructures civiles (site religieux, 11 morts) incarne les tactiques d'usure à court terme sans fin stratégique, de la gouvernance brûle-tout à l'ère Idiocracy.",
+            "es": "Bombardeo nocturno sobre infraestructura civil (sitio religioso, 11 muertos) ejemplifica tácticas de desgaste a corto plazo sin endgame, gobernanza de tierra quemada pura al estilo Idiocracy.",
+            "de": "Nächtlicher Beschuss auf Zivilinfrastruktur (religiöse Stätte, 11 Tote) verkörpert kurzfristige Verschleißtaktiken ohne Endziel, reine verbrannte Erde à la Idiocracy."
           }
         },
         {
           "title": {
             "en": "The World According to Putin: No Deal on Ukraine in Sight",
-            "fr": "Le Monde selon Poutine : Aucun accord sur l'Ukraine en vue",
-            "es": "El Mundo Según Putin: Sin Acuerdo sobre Ucrania a la Vista",
-            "de": "Die Welt nach Putins Verständnis: Keine Einigung zu Ukraina in Sicht"
+            "fr": "Le Monde selon Poutine : aucun accord sur l'Ukraine en vue",
+            "es": "El Mundo Según Putin: Sin acuerdos sobre Ucrania a la vista",
+            "de": "Die Welt nach Putin: Kein Deal zur Ukraine in Sicht"
           },
           "source": "Carnegie Endowment for International Peace",
           "date": "Jun 10, 2026",
           "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOZ1ByN2RNQmVtMG1oeGRLYVB0YlIzdDE5RzdmQ1dnSGstSkFpZlV2WmFDWlhUMFJyLW83WkRVOE9hYUV4TVVKRFJ3bjFsWF9ZTDdKaW4teXdpcmdNc05xZWRRZmxianR3SF9rVlFiaXN3VkZ4MHdBTFpQbUtuUkxOWEg4cmZXdnRoLVVWYXZaaw?oc=5",
-          "axis": "FUTURE",
-          "impact": 4,
-          "note": {
-            "en": "Putin's refusal to negotiate and insistence on maximalist demands locks Russia into attrition it cannot win, short-termism as foreign policy.",
-            "fr": "Le refus de négocier de Poutine et son insistance sur des exigences maximalistes enferment la Russie dans une attrition qu'elle ne peut gagner, du court-termisme en tant que politique étrangère.",
-            "es": "La negativa de Putin a negociar e insistencia en exigencias maximalistas encierra a Rusia en una guerra de desgaste que no puede ganar, cortoplacismo como política exterior.",
-            "de": "Putins Verhandlungsverweigerung und Beharren auf maximalistische Forderungen sperren Russland in einen Verschleißkrieg, den es nicht gewinnen kann, Kurzfristigkeit als Außenpolitik."
-          }
-        },
-        {
-          "title": {
-            "en": "Russia’s war of aggression against Ukraine: new EU sanctions target energy revenues, the military-industrial complex, propaganda and human rights violations",
-            "fr": "La guerre d'agression russe contre l'Ukraine : nouvelles sanctions de l'UE ciblant les revenus énergétiques, le complexe militaro-industriel, la propagande et les violations des droits humains",
-            "es": "La guerra de agresión rusa contra Ucrania: nuevas sanciones de la UE apuntan a ingresos energéticos, complejo militar-industrial, propaganda y violaciones de derechos humanos",
-            "de": "Russlands Angriffskrieg gegen die Ukraine: Neue EU-Sanktionen zielen auf Energieeinnahmen, Rüstungskomplex, Propaganda und Menschenrechtsverletzungen"
-          },
-          "source": "consilium.europa.eu",
-          "date": "Jun 15, 2026",
-          "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxOT09iSEFJNU8tZ2Y1alFaSVhTNGU0ODFHenQ4VUJ6anFRNE0wcmZMb29BcFVYOXVrVzJPdjZGaHpwSld2bmJnTHBzbnAteEx3Qk0yeC11REhKc19PdEZPNktlclRLdmFybTlLZEViSm5zTm5tVWYtWWtOUF9aZUswTzV5M1BDNmZwZ0k4NllOSWxJWGEtTURKSlRqV3pDREs5V0JDRzJHcXB6b0VfWDNEZkJiQUVQOFA2bGpITTZpOFpTZV9kSmtrdHM2bWx4NkwyMF9ILUNnZEFwQk12elhfdUQtb3FLWlRiYVRkYmx2UEpmTFRPakVhV0FCSHFzSUpWZEFaUEFGUGttRjl2SHBKenh4bHIxQy1ocVFIbVk5VC1hbzhmWjA3M1BzRGpRaW5EWFFvZmZSbUlCQ2M1Ri1wWjIwcw?oc=5",
-          "axis": "PUBLIC",
-          "impact": 3,
-          "note": {
-            "en": "Energy revenues and military-industrial complex sanctions show how far the state has merged corporate/state interests into a war machine.",
-            "fr": "Les sanctions sur les revenus énergétiques et le complexe militaro-industriel montrent comment l'État a fusionné les intérêts corporate/étatiques en une machine de guerre.",
-            "es": "Las sanciones sobre ingresos energéticos y el complejo militar-industrial muestran cómo el estado ha fusionado los intereses corporativo/estatal en una máquina de guerra.",
-            "de": "Sanktionen gegen Energieeinnahmen und den Rüstungskomplex zeigen, wie sehr der Staat Unternehmens- und Staatsinteressen zu einer Kriegsmaschinerie verschmolzen hat."
-          }
-        },
-        {
-          "title": {
-            "en": "Armenia Votes to Shun Russia",
-            "fr": "L'Arménie Vote pour Repousser la Russie",
-            "es": "Armenia Vota para Rechazar a Rusia",
-            "de": "Armenien Stimmt dafür, Russland zu Meiden"
-          },
-          "source": "Center for European Policy Analysis (CEPA)",
-          "date": "Jun 9, 2026",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5acEtRV2t4eHhRXzBOM1ltQXUyMWJCTHNRRXhoTU1FdnJWREw3NEtzbW1zTy1PNXQ5eWh3QnA5Y0t1bWEtOERrQTE2YXdqRTgtWG1aQWhzLVBUaHdvaVR2Rl9QUWo?oc=5",
           "axis": "CRIT",
           "impact": 2,
           "note": {
-            "en": "Armenia voting to shun Russia signals the propaganda and coercion that held the 'near abroad' is finally cracking under reality.",
-            "fr": "Le vote de l'Arménie pour repousser la Russie signale que la propagande et la coercition qui maintenaient l'« étranger proche » craquent enfin face à la réalité.",
-            "es": "La votación de Armenia para rechazar a Rusia señala que la propaganda y coerción que sostenían el 'extranjero cercano' finalmente se quiebra frente a la realidad.",
-            "de": "Armeniens Abstimmung, Russland zu meiden, signalisiert, dass die Propaganda und Nötigung, die die 'nahe Ausland' hielten, endlich unter der Realität zusammenbricht."
+            "en": "Putin's 'no deal' posture locks in indefinite war, blocks any skepticism of strategy, silences institutional debate, propaganda calcifying into policy.",
+            "fr": "La posture « pas d'accord » de Poutine fige la guerre indéfinie, bloque tout doute sur la stratégie, muselle le débat institutionnel, la propagande se calcifie en politique.",
+            "es": "La postura de 'sin acuerdo' de Putin congela la guerra indefinida, bloquea todo escepticismo estratégico, silencia el debate institucional, la propaganda calcificándose en política.",
+            "de": "Putins 'kein Deal'-Haltung konserviert den unbegrenzten Krieg, blockiert jede Strategieskepsis, erstickt institutionelle Debatten ab, Propaganda verhärtet sich zur Politik."
           }
         }
       ],
       "axes": {
         "SCI": 78,
-        "SPECTACLE": 82,
+        "SPECTACLE": 84,
         "PUBLIC": 85,
         "KNOW": 80,
-        "CRIT": 88,
-        "FUTURE": 84
+        "CRIT": 90,
+        "FUTURE": 87
       }
     },
     {
@@ -311,45 +273,45 @@
       "name": "El Salvador",
       "flag": "🇸🇻",
       "continent": "South America",
-      "score": 66,
-      "trend": 0,
-      "gdp_adjusted": 63,
+      "score": 67,
+      "trend": 1,
+      "gdp_adjusted": 64,
       "headline": {
-        "en": "Bukele's populist grip, high approval, Bitcoin gambles, and press freedom erosion, rides spectacle over substance in a country trading democratic guardrails for strongman charisma.",
-        "fr": "L'emprise populiste de Bukele, approbation massive, paris sur le Bitcoin, et érosion de la liberté de presse, surfe sur le spectacle plutôt que sur la substance dans un pays qui échange ses garde-fous démocratiques contre le charisme d'un chef autocrate.",
-        "es": "El dominio populista de Bukele, aprobación masiva, apuestas con Bitcoin y erosión de la libertad de prensa, cabalga sobre el espectáculo en lugar de la sustancia en un país que canjea sus barandillas democráticas por el carisma de un autócrata.",
-        "de": "Bukeles populistische Kontrolle, massive Zustimmung, Bitcoin-Glücksspiele und Erosion der Pressefreiheit, reitet auf Spektakel statt Substanz in einem Land, das seine demokratischen Schutzvorrichtungen gegen Autokraten-Charisma eintauscht."
+        "en": "Bukele's crypto-casino governance and WhatsApp help lines mask an autocracy running on spectacle and short-term gimmicks.",
+        "fr": "La gouvernance crypto-casino de Bukele et les lignes d'aide WhatsApp masquent une autocratie qui tourne au spectacle et aux gadgets éphémères.",
+        "es": "La gobernanza cripto-casino de Bukele y las líneas de ayuda WhatsApp enmascaran una autocracia que funciona a base de espectáculo y trucos pasajeros.",
+        "de": "Bukeles Krypto-Casino-Regierungsführung und WhatsApp-Hilfshotlines verschleiern eine Autokratie, die auf Spektakel und kurzfristige Gimmicks läuft."
       },
       "why": {
-        "en": "El Salvador shows the early-to-mid Idiocracy syndrome: a charismatic autocrat with mass support, institutional decay masquerading as innovation, and short-term gimmicks (Bitcoin City) substituting for real governance.",
-        "fr": "El Salvador affiche les signes précurseurs du syndrome Idiocracy : un autocrate charismatique avec le soutien des masses, la décadence institutionnelle déguisée en innovation, et des gadgets éphémères (Bitcoin City) qui remplacent la véritable gouvernance.",
-        "es": "El Salvador exhibe el síndrome Idiocracy en sus primeras etapas: un autócrata carismático con apoyo masivo, decadencia institucional disfrazada de innovación, y trucos efímeros (Bitcoin City) sustituyendo la verdadera gobernanza.",
-        "de": "El Salvador zeigt das früh- bis mittlere Idiocracy-Syndrom: ein charismatischer Autokrat mit Massenzustimmung, institutioneller Verfall als Innovation getarnt, und kurzfristige Gimmicks (Bitcoin City) ersetzen echte Regierungsführung."
+        "en": "El Salvador is substituting substance (rule of law, institutional checks) with showmanship (Bitcoin adoption, trendy UX), while approval numbers hide democratic erosion.",
+        "fr": "El Salvador substitue la substance (état de droit, contrôles institutionnels) par du spectaculaire (adoption Bitcoin, UX tendance), tandis que les chiffres d'approbation dissimulent l'érosion démocratique.",
+        "es": "El Salvador sustituye la sustancia (estado de derecho, controles institucionales) por efectismo (adopción Bitcoin, UX trendy), mientras que las cifras de aprobación ocultan la erosión democrática.",
+        "de": "El Salvador ersetzt Substanz (Rechtsstaatlichkeit, institutionelle Kontrollen) durch Effekthascherei (Bitcoin-Adoption, trendiges UX), während Zustimmungsquoten die demokratische Aushöhlung verbergen."
       },
       "articles": [
         {
           "title": {
             "en": "El Salvador's Bukele tops regional approval rankings for June",
-            "fr": "Bukele d'El Salvador en tête des classements d'approbation régionaux en juin",
+            "fr": "Bukele d'El Salvador en tête des classements d'approbation régionale en juin",
             "es": "Bukele de El Salvador encabeza los rankings de aprobación regional en junio",
-            "de": "Bukeles El Salvador führt regionale Zustimmungswerte im Juni an"
+            "de": "Bukeles El Salvador führt regionale Zustimmungsrankings im Juni an"
           },
           "source": "IntelliNews",
           "date": "Jun 10, 2026",
           "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNG5XaXM3SFBFdjB3ZGhnVmlDZm1tWXA2VzF3TV9zb2UwSzRJck4xemxUZ292dXRqcTVRWklmdU0tYl9Ub1hFc0Z1NGQwdWVHWDVyT2tzVWljTGZKamdaOE9UaG5lekRObldDMWVFX241LTZ3eG9YRVV5blhDSjRBMTlMNTAtdU1mNXJoRlJBbFZvekRxQ1RqbUJsSGY1QQ?oc=5",
           "axis": "SPECTACLE",
-          "impact": 3,
+          "impact": 2,
           "note": {
-            "en": "High approval ratings for a president who rules by spectacle and decree, not institutions, the strongman formula that works until it doesn't.",
-            "fr": "Des taux d'approbation exceptionnels pour un président qui gouverne par le spectacle et le décret, non par les institutions, la formule du chef qui marche jusqu'au jour où elle s'effondre.",
-            "es": "Índices de aprobación astronómicos para un presidente que gobierna por espectáculo y decreto, no por instituciones, la fórmula del caudillo que funciona hasta que no.",
-            "de": "Astronomale Zustimmungswerte für einen Präsidenten, der durch Spektakel und Dekret regiert, nicht durch Institutionen, die Strongman-Formel, die funktioniert, bis sie es nicht tut."
+            "en": "High approval ratings reward theatric strongman governance over competent boring bureaucracy; populism as spectacle.",
+            "fr": "Les taux d'approbation élevés récompensent la gouvernance autoritaire théâtrale plutôt que la bureaucratie compétente mais ennuyeuse ; le populisme comme spectacle.",
+            "es": "Los altos índices de aprobación premian la gobernanza autoritaria teatral sobre la burocracia competente pero aburrida; el populismo como espectáculo.",
+            "de": "Hohe Zustimmungswerte belohnen theatralische Autokratenherrschaft gegenüber kompetenter, aber langweiliger Bürokratie; Populismus als Spektakel."
           }
         },
         {
           "title": {
             "en": "Five Years On, El Salvador Is Still Buying Bitcoin",
-            "fr": "Cinq ans plus tard, El Salvador achète toujours du Bitcoin",
+            "fr": "Cinq ans après, El Salvador achète toujours du Bitcoin",
             "es": "Cinco años después, El Salvador sigue comprando Bitcoin",
             "de": "Fünf Jahre später kauft El Salvador immer noch Bitcoin"
           },
@@ -357,20 +319,20 @@
           "date": "Jun 9, 2026",
           "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE96aEt4Z3hHa043ZUdhejhGelZLaXdlSGJGTU1MMUVkTGtvZUtKNnVyWlVzLVBSRVVPR25fbVNqZFJYNmx6XzgydVBMXzFmZ3ZSS1NrUFNJMjQ2WHBueUlFZDBOQ3F1SHZJQ3QwR3doV2UwbDgyYms0WWRYZw?oc=5",
           "axis": "FUTURE",
-          "impact": 2,
+          "impact": 3,
           "note": {
-            "en": "Five years of Bitcoin gambling as national policy: speculative, volatile, zero connection to food security or infrastructure, pure short-termism wrapped in tech-bro gloss.",
-            "fr": "Cinq ans de pari sur le Bitcoin en tant que politique nationale : spéculatif, volatil, aucun lien avec la sécurité alimentaire ou l'infrastructure, du court-termisme pur enrobé de vernis crypto-geek.",
-            "es": "Cinco años apostando al Bitcoin como política nacional: especulativo, volátil, sin conexión alguna con seguridad alimentaria o infraestructura, puro cortoplacismo envuelto en brillo tecno-bro.",
-            "de": "Fünf Jahre Bitcoin-Glücksspiel als Staatspolitik: spekulativ, volatil, keine Verbindung zu Lebensmittelsicherheit oder Infrastruktur, reiner Kurzzeitismus verpackt in Tech-Bro-Glanz."
+            "en": "Tying national treasury to volatile crypto shows magical thinking and short-term tech gambling over fiscal stability and real GDP.",
+            "fr": "Amarrer le trésor national à la crypto volatile relève de la pensée magique et du pari technologique à court terme plutôt que de la stabilité budgétaire et du PIB réel.",
+            "es": "Amarrar el tesoro nacional a las criptos volátiles refleja pensamiento mágico y apuestas tecnológicas a corto plazo en lugar de estabilidad fiscal y PIB real.",
+            "de": "Die nationale Staatskasse an volatile Kryptos zu binden zeugt von magischem Denken und kurzfristiger Tech-Glücksspielerei statt Haushaltsstabilität und echtem BIP."
           }
         },
         {
           "title": {
             "en": "Bitcoin Beach Life With Real Tax Perks? Inside Bukele’s 90-Day Residency Overhaul",
-            "fr": "La vie à Bitcoin Beach avec des avantages fiscaux réels ? La révision du programme de résidence de 90 jours de Bukele",
-            "es": "¿Vida en Bitcoin Beach con ventajas fiscales reales? Dentro de la revisión del programa de residencia de 90 días de Bukele",
-            "de": "Bitcoin-Beach-Leben mit echten Steuervergünstigungen? Inside Bukeles 90-Tage-Residenzverhältnis-Überhaul"
+            "fr": "La vie de Bitcoin Beach avec de vrais avantages fiscaux ? À l'intérieur de la refonte de résidence de 90 jours de Bukele",
+            "es": "¿Vida en Bitcoin Beach con beneficios fiscales reales? Dentro de la reforma de residencia de 90 días de Bukele",
+            "de": "Bitcoin-Beach-Leben mit echten Steuervergünstigungen? Innenansicht von Bukeles 90-Tage-Aufenthaltsreform"
           },
           "source": "Bitcoin Magazine",
           "date": "Jun 11, 2026",
@@ -378,58 +340,39 @@
           "axis": "PUBLIC",
           "impact": 2,
           "note": {
-            "en": "Bukele's residency program lures crypto wealth over domestic institution-building, privatizing citizenship, externalizing governance to speculators.",
-            "fr": "Le programme de résidence de Bukele attire la richesse cryptographique plutôt que de construire des institutions nationales, privatiser la citoyenneté, externaliser la gouvernance aux spéculateurs.",
-            "es": "El programa de residencia de Bukele atrae riqueza cripto antes que construir instituciones domésticas, privatizar la ciudadanía, externalizar la gobernanza a especuladores.",
-            "de": "Bukeles Aufenthaltsprogramm lockt Krypto-Vermögen statt inländischer Institutionen, Bürgerschaft privatisieren, Regierungsführung an Spekulanten auslagern."
+            "en": "Bitcoin residency programs capture state policy in service of crypto elites; public good subordinated to financial speculation.",
+            "fr": "Les programmes de résidence Bitcoin capturent la politique d'État au service des élites crypto ; l'intérêt public est subordonné à la spéculation financière.",
+            "es": "Los programas de residencia Bitcoin capturan la política estatal al servicio de las élites cripto; el bien público subordinado a la especulación financiera.",
+            "de": "Bitcoin-Aufenthaltsprogramme kapern Staatspolitik zum Nutzen von Krypto-Eliten; Gemeinwohl wird der Finanzspekulationen untergeordnet."
           }
         },
         {
           "title": {
-            "en": "Gangs and Climate Change, Born in the USA, Drive Migration and Autocracy in Central America",
-            "fr": "Les gangs et le changement climatique, nés aux USA, poussent la migration et l'autocratie en Amérique centrale",
-            "es": "Pandillas y cambio climático, nacidos en USA, impulsan la migración y la autocracia en Centroamérica",
-            "de": "Banden und Klimawandel, in den USA geboren, treiben Migration und Autokratie in Zentralamerika an"
+            "en": "El Salvador Airport Introduces WhatsApp Help Line for Travelers",
+            "fr": "L'aéroport d'El Salvador introduit une ligne d'aide WhatsApp pour les voyageurs",
+            "es": "El aeropuerto de El Salvador introduce línea de ayuda WhatsApp para viajeros",
+            "de": "Flughafen El Salvador führt WhatsApp-Hilfslinie für Reisende ein"
           },
-          "source": "Fair Observer",
-          "date": "Jun 15, 2026",
-          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQY3A1cnZteWVudUVfLWl5cVlINjVDUVFha0ROQy00c1JRclVienBZczdqQ0xyNGxDRmo0d3Q5SU9TaDRzMUw0YXR5MVVUSFZTLU9tMk05QjNHa2RmUmN4akpSZGRUTUNKTnF6eENpTkkydzA1UHlaSkRlWTl2dHkzOGJydW1VUDE3NG9hdXd0ek5Ya1V3S1lWSm0xSWk4bHk2TmpiZld5dVNfSy1iejNqWGFGRloyRjgzaWN3TTBORmhaLUJiUTlpbHM0bmxLTXowOTRVWVBfMA?oc=5",
-          "axis": "CRIT",
-          "impact": 4,
+          "source": "The Tico Times",
+          "date": "Jun 12, 2026",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOTUJzNmsxbWdGZU9KOGpIZElhQWRrSjhMZ3Q0SmpiSFFxWjI4c0dzVXlIbEFqZmEtbEl0M0xSMU55YndpUk9uVWVEVEdmc0tBdk81UzQ1UkJudUlCWnpfaU1EZHM3b2VzU3dEdXlGUC0yQ2xJODFudHliV2xNX1RIRUg0dkxIWUpGQ09FRWhBSTExdkdEZF83aUZIbFE?oc=5",
+          "axis": "KNOW",
+          "impact": -1,
           "note": {
-            "en": "Gangs, climate, and US-born drug policy chaos; Bukele responds with theatrical 'mano dura' and mass incarceration, not root-cause analysis, strength theater over critical thought.",
-            "fr": "Gangs, climat, et chaos des politiques antidrogue nés aux USA ; Bukele répond par un théâtre de « mano dura » et l'incarcération de masse, pas par une analyse des causes profondes, du théâtre de la force plutôt que de la pensée critique.",
-            "es": "Pandillas, clima y caos de políticas antidroga nacidos en USA; Bukele responde con teatro de « mano dura » e encarcelamiento masivo, no análisis de raíces, teatro de la fuerza sobre pensamiento crítico.",
-            "de": "Banden, Klima und in den USA geborenes Drogenpolitik-Chaos; Bukele antwortet mit theatralischer « mano dura » und Masseninhaftierung, nicht Wurzelursachen-Analyse, Stärke-Theater statt kritisches Denken."
-          }
-        },
-        {
-          "title": {
-            "en": "Cleveland Clinic Expands Access to Care with an El Salvador-Based Representative",
-            "fr": "Cleveland Clinic étend l'accès aux soins avec un représentant basé à El Salvador",
-            "es": "Cleveland Clinic expande acceso a la atención con un representante con base en El Salvador",
-            "de": "Cleveland Clinic erweitert Zugang zur Betreuung mit einem El-Salvador-gestützten Vertreter"
-          },
-          "source": "Cleveland Clinic Newsroom",
-          "date": "Jun 15, 2026",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOaWtQRlhGQ3FvZXNQeDVPMlBaVGx2RHVfR3FrTW82YXlpWHBBbjBoMGptUGZDdEUtTV9jS3pfSEpRckZnYXlZZGxPR3V1LWtXSXEyY2U0SlVDNzR5UThQVXd5bHp4dWgxczB1ZExNS0ZYSGRYcjNNZEs2T1pjQWJJVUhJU3dZWEV0YmtudUhNdTA4TXhKZXVBUE9WQ3ZpSE14aC03ZXZlY1dZUUxmT0Z3U2VYS3hnN1JLUkNvMHY2d21PUFJpd1VB?oc=5",
-          "axis": "SCI",
-          "impact": -2,
-          "note": {
-            "en": "Cleveland Clinic partnership signals real healthcare infrastructure-building, a rare competent move in an otherwise spectacle-driven playbook.",
-            "fr": "Le partenariat de Cleveland Clinic signale une véritable construction d'infrastructure de santé, un rare mouvement compétent dans un scénario dominé par le spectacle.",
-            "es": "La asociación de Cleveland Clinic señala verdadera construcción de infraestructura sanitaria, un raro movimiento competente en un libreto dominado por el espectáculo.",
-            "de": "Die Cleveland-Clinic-Partnerschaft signalisiert echte Gesundheitsinfrastruktur-Entwicklung, ein seltener kompetenter Schachzug in einem sonst spektakelgesteuerten Spielbuch."
+            "en": "WhatsApp help line is a minor UX win, small sign of modernizing service delivery, though cosmetic next to deeper institutional problems.",
+            "fr": "La ligne d'aide WhatsApp est une petite victoire UX, léger signe de modernisation de la prestation de services, mais cosmétique face aux problèmes institutionnels plus profonds.",
+            "es": "La línea de ayuda WhatsApp es una pequeña victoria UX, señal menor de modernización en la prestación de servicios, aunque cosmética frente a problemas institucionales más profundos.",
+            "de": "Die WhatsApp-Hilfslinie ist ein kleiner UX-Sieg, zartes Zeichen moderner Servicebereitstellung, aber Kosmetik gegenüber tieferen institutionellen Problemen."
           }
         }
       ],
       "axes": {
         "SCI": 62,
-        "SPECTACLE": 71,
-        "PUBLIC": 68,
-        "KNOW": 59,
+        "SPECTACLE": 73,
+        "PUBLIC": 70,
+        "KNOW": 58,
         "CRIT": 72,
-        "FUTURE": 64
+        "FUTURE": 67
       }
     },
     {
@@ -437,47 +380,47 @@
       "name": "United Kingdom",
       "flag": "🇬🇧",
       "continent": "Europe",
-      "score": 43,
-      "trend": 0,
-      "gdp_adjusted": 41,
+      "score": 44,
+      "trend": 1,
+      "gdp_adjusted": 42,
       "headline": {
-        "en": "Britain bans under-16s from social media while riots erupt over migration fears, exposing fractures between tech regulation and social cohesion.",
-        "fr": "La Grande-Bretagne interdit les réseaux sociaux aux moins de 16 ans tandis que des émeutes éclatent sur les craintes migratoires, exposant les fractures entre régulation technologique et cohésion sociale.",
-        "es": "Reino Unido prohíbe las redes sociales a menores de 16 años mientras estallan disturbios por temores migratorios, exponiendo fracturas entre regulación tecnológica y cohesión social.",
-        "de": "Großbritannien verbietet Sozialmedien für unter 16-Jährige, während Unruhen wegen Migrationsfurcht ausbrechen und Risse zwischen Tech-Regulierung und sozialer Kohäsion offenbaren."
+        "en": "Britain bans social media for under-16s, a paternalist sledgehammer; meanwhile, police arrest 500+ at peaceful protests.",
+        "fr": "La Grande-Bretagne interdit les réseaux sociaux aux moins de 16 ans, un coup de massue paternaliste ; pendant ce temps, la police arrête 500+ manifestants pacifiques.",
+        "es": "Gran Bretaña prohíbe redes sociales para menores de 16 años, un mazo paternalista; mientras tanto, la policía detiene a 500+ en protestas pacíficas.",
+        "de": "Großbritannien verbietet soziale Medien für unter 16-Jährige, ein paternalistischer Hammer; währenddessen verhaftet die Polizei 500+ bei friedlichen Protesten."
       },
       "why": {
-        "en": "A competent, evidence-based move on child safety collides with a country roiling in culture-war spectacle and anxious nativism, the UK is managing some axes well while others slide toward reactive, short-termist governance.",
-        "fr": "Une mesure compétente et fondée sur des preuves pour la sécurité des enfants entre en collision avec un pays déchiré par le spectacle des guerres culturelles et l'anxiété nativiste, le Royaume-Uni gère correctement certains dossiers tandis que d'autres glissent vers une gouvernance réactive et court-termiste.",
-        "es": "Una medida competente y basada en evidencia para la seguridad infantil colisiona con un país desgarrado por espectáculo de guerras culturales y ansiedades nativistas, Reino Unido maneja bien algunos frentes mientras otros se deslizan hacia una gobernanza reactiva y cortoplacista.",
-        "de": "Ein kompetenter, faktengestützter Schachzug zur Kindersicherheit prallt auf ein Land, das von Culture-War-Spektakeln und nativistischer Angst zerrissen wird, Großbritannien managed einige Baustellen anständig, während andere in reaktive, kurzsichtige Regierungsführung abgleiten."
+        "en": "One move is competent-if-blunt public health; the other is authoritarian creep that guts free speech.",
+        "fr": "L'un est une politique de santé publique compétente-sinon-maladroite ; l'autre est une dérive autoritaire qui massacre la liberté d'expression.",
+        "es": "Un movimiento es política de salud pública competente-aunque-torpe; el otro es progresión autoritaria que destruye la libertad de expresión.",
+        "de": "Das eine ist kompetente-wenn-auch-plumpe Gesundheitspolitik; das andere ist autoritärer Übergriff, der Redefreiheit zerstört."
       },
       "articles": [
         {
           "title": {
             "en": "Britain unveils sweeping ban on social media for under-16s",
-            "fr": "La Grande-Bretagne déploie une interdiction massive des réseaux sociaux pour les moins de 16 ans",
-            "es": "Reino Unido despliega prohibición masiva de redes sociales para menores de 16 años",
-            "de": "Großbritannien entfesselt umfassendes Sozialmedien-Verbot für unter 16-Jährige"
+            "fr": "La Grande-Bretagne dévoile une interdiction massive des réseaux sociaux pour les moins de 16 ans",
+            "es": "Gran Bretaña anuncia prohibición masiva de redes sociales para menores de 16 años",
+            "de": "Großbritannien führt umfassendes Verbot sozialer Medien für unter 16-Jährige ein"
           },
           "source": "NBC News",
           "date": "Jun 15, 2026",
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQUGxzeHB5VVpQS2R4RG9iSFRnaUlpWDg5WkRJaVNZVjlQQ2NNejFPa3hIMF9pZHdfQlZYSHBjYlZiTDlLelZUdmF6QjJmcDZGcDRwbnNXcmpOb1R2aE1DblhsSHlDd1ZCMlRSUVUzZU02dktKb3RSVlVLWTl1ZGgwRGtKRjIyZllVTERGV0ZfOENnbDdiZVdEZjZB?oc=5",
           "axis": "FUTURE",
-          "impact": -5,
+          "impact": -2,
           "note": {
-            "en": "Sweeping age-based social media ban: long-term, evidence-informed child protection policy, boring and smart.",
-            "fr": "Interdiction massive basée sur l'âge : politique de protection de l'enfance à long terme, fondée sur des données, ennuyeuse et intelligente.",
-            "es": "Prohibición masiva por edad: política de protección infantil a largo plazo, basada en datos, aburrida e inteligente.",
-            "de": "Radikales altersbasiertes Verbot: langfristige, evidenzgestützte Kinderschutzpolitik, öde und clever."
+            "en": "Banning social media for minors is protective overreach, but at least evidence-based (dopamine, mental health) rather than spectacle-driven; nudges toward long-term thinking over clickbait profits.",
+            "fr": "Interdire les réseaux sociaux aux mineurs est une surprotection envahissante, mais au moins basée sur des preuves (dopamine, santé mentale) plutôt que sur le spectaculaire ; pousse vers une réflexion à long terme plutôt que vers les profits du clickbait.",
+            "es": "Prohibir redes sociales a menores es sobreprotección invasiva, pero al menos basada en evidencia (dopamina, salud mental) en lugar de espectáculo; impulsa pensamiento a largo plazo sobre ganancias de clickbait.",
+            "de": "Soziale Medien für Minderjährige zu verbieten ist invasiver Überpaternalismus, aber wenigstens evidenzbasiert (Dopamin, psychische Gesundheit) statt sensationsgeil; fördert langfristiges Denken statt Clickbait-Profite."
           }
         },
         {
           "title": {
             "en": "UNITED KINGDOM: OVER 500 FURTHER ARRESTS AT PEACEFUL PROTESTS (Fifth 77.25)",
-            "fr": "ROYAUME-UNI : PLUS DE 500 ARRESTATIONS SUPPLÉMENTAIRES AUX MANIFESTATIONS PACIFIQUES (Fifth 77.25)",
-            "es": "REINO UNIDO: MÁS DE 500 DETENCIONES ADICIONALES EN PROTESTAS PACÍFICAS (Fifth 77.25)",
-            "de": "GROSSBRITANNIEN: ÜBER 500 WEITERE VERHAFTUNGEN BEI FRIEDLICHEN PROTESTEN (Fifth 77.25)"
+            "fr": "ROYAUME-UNI : PLUS DE 500 ARRESTATIONS SUPPLÉMENTAIRES LORS DE MANIFESTATIONS PACIFIQUES (Cinquième 77.25)",
+            "es": "REINO UNIDO: MÁS DE 500 DETENCIONES ADICIONALES EN PROTESTAS PACÍFICAS (Quinto 77.25)",
+            "de": "VEREINIGTES KÖNIGREICH: ÜBER 500 WEITERE FESTNAHMEN BEI FRIEDLICHEN PROTESTEN (Fünftes 77.25)"
           },
           "source": "Amnesty International USA",
           "date": "Jun 15, 2026",
@@ -485,77 +428,39 @@
           "axis": "CRIT",
           "impact": 4,
           "note": {
-            "en": "500+ arrests at peaceful protests signals creeping intolerance of dissent and press scrutiny of police conduct.",
-            "fr": "500+ arrestations aux manifestations pacifiques signalent une intolérance croissante envers la dissidence et un manque de contrôle des forces de l'ordre.",
-            "es": "500+ detenciones en protestas pacíficas señalan intolerancia creciente hacia la disidencia y falta de rendición de cuentas policial.",
-            "de": "500+ Verhaftungen bei friedlichen Protesten deuten auf wachsende Intoleranz gegen Dissidenz und Polizeikontrolle hin."
-          }
-        },
-        {
-          "title": {
-            "en": "U.K. leaders call for calm as protests break out after Belfast street stabbing",
-            "fr": "Les dirigeants britanniques appellent au calme alors que des protestations éclatent après un coup de couteau à Belfast",
-            "es": "Líderes británicos piden calma mientras estallan protestas tras apuñalamiento en Belfast",
-            "de": "Britische Anführer rufen zur Ruhe auf, während Proteste nach Messerstecherei in Belfast ausbrechen"
-          },
-          "source": "NPR",
-          "date": "Jun 10, 2026",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcVBWcTRpWjFVWnl3RFVLUFhUQXRZMkJMRWpINGZRYXNBRzFTR2FYNzNpX1NpUnRmS1VoNGZlcWVjYmNFYjRQNnR6ZENkZzM5R2tTbkh0U1dyekxzSHNqdXhDVV93NEp6MjJMSDBTTmJ4Q3J5VzFEMFhTNFAtNU55dWs2X2E1OXdS?oc=5",
-          "axis": "SPECTACLE",
-          "impact": 3,
-          "note": {
-            "en": "Reactive 'call for calm' after street stabbing triggers riots: governing by crisis and identity rather than prevention.",
-            "fr": "Un appel réactif au calme après un coup de couteau déclenche des émeutes : gouverner par crise et identité plutôt que par prévention.",
-            "es": "Llamada reactiva al calma tras apuñalamiento desata disturbios: gobernar por crisis e identidad en lugar de prevención.",
-            "de": "Reaktiver Beruhigungsaufruf nach Messerstecherei löst Krawalle aus: Regieren durch Krise und Identität statt Prävention."
+            "en": "500+ arrests at peaceful protests under the public order acts is textbook authoritarian suppression of dissent; press freedom and critical challenge are gutted.",
+            "fr": "500+ arrestations lors de manifestations pacifiques en vertu des lois d'ordre public, c'est de la répression autoritaire classique du droit de contester ; la liberté de la presse et l'esprit critique sont anéantis.",
+            "es": "500+ detenciones en protestas pacíficas bajo las leyes de orden público es represión autoritaria de manual contra la disidencia; la libertad de prensa y el pensamiento crítico quedan aniquilados.",
+            "de": "500+ Festnahmen bei friedlichen Protesten nach Ordnungsgesetzen ist Lehrbuch-Autoritarismus gegen Dissidenten; Pressefreiheit und kritisches Denken sind zerstört."
           }
         },
         {
           "title": {
             "en": "Racist riots break out across United Kingdom",
-            "fr": "Des émeutes racistes éclatent à travers le Royaume-Uni",
-            "es": "Disturbios racistas estallan en todo Reino Unido",
-            "de": "Rassistische Krawalle brechen in ganz Großbritannien aus"
+            "fr": "Des émeutes racistes éclatent dans tout le Royaume-Uni",
+            "es": "Estallidos de disturbios racistas en todo el Reino Unido",
+            "de": "Rassistische Aufstände brechen im ganzen Vereinigten Königreich aus"
           },
-          "source": "dw.com",
+          "source": "DW",
           "date": "Jun 12, 2026",
           "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPWGVtRnZWTGFxalluMVVmbS1SZU5qRXluU2thOXBYcUVhQi13UkNpZzZhQVQ3RlZ5Z0h5V1V0dU5ScTktQ3lVVWFSZ3VBR1hHVVpOa2htUnpiUjlQVl9Dd0lxeV9zdzYxSUU5cW52dGx6cG5yYkFsZjBLdGxRaHJzRDZSUdIBgwFBVV95cUxPSm04N29PUU9iSDdDS2hxcy14cmw1d3FJWkVPejdyMTByV0lZSG1MX0dJeGFBSmZnVGllaDJ3NGQ5aVAyaXhRX0NJWGNaT1E0OXZOQkJYUnBGWHNBUHByOFg2Q1NsOEFoQ1IwUjdmdWhFWjlCa1hmOWR6X2lOSFc1WlNKNA?oc=5",
-          "axis": "KNOW",
-          "impact": 5,
-          "note": {
-            "en": "Racist riots reflect and amplify anti-immigrant rhetoric, populism, and demagogic framing of complex problems.",
-            "fr": "Les émeutes racistes reflètent et amplifient la rhétorique anti-immigrés, le populisme et le discours démagogique sur des problèmes complexes.",
-            "es": "Disturbios racistas reflejan y amplifican retórica antiinmigrante, populismo y encuadre demagógico de problemas complejos.",
-            "de": "Rassistische Krawalle spiegeln und verstärken Anti-Immigranten-Rhetorik, Populismus und demagogische Rahmung komplexer Probleme."
-          }
-        },
-        {
-          "title": {
-            "en": "United Kingdom: The “Defense Investment Plan” will be delayed following the defense minister’s resignation",
-            "fr": "Royaume-Uni : Le « Plan d'investissement dans la défense » sera retardé suite à la démission du ministre de la Défense",
-            "es": "Reino Unido: El « Plan de Inversión en Defensa » se retrasará tras la renuncia del ministro de defensa",
-            "de": "Großbritannien: Der « Verteidigungsinvestitionsplan » wird nach Rücktritt des Verteidigungsministers verzögert"
-          },
-          "source": "Table.Briefings",
-          "date": "Jun 12, 2026",
-          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOcjVXZ0VmQnlaSVpDT1dLR2Uwa2FNSzBNdlRNbGpNdTBhMEhtTDFvNFg4MHBXck1vd3VLMThIWWlqT28zRW9lVGZTSmV1MUJZelhwRlVhZl9hUFNaVkFJM05uLWdCcjVma05wbVlsTmN3TndiaHQ5LXRvZzFCME9fQlhTWTN2MWVqVk5kbUxsWTliZXR3N2p1S3l3TDU1RExuUE1qZXZrNmx3cjRQX2hWUmFuUE5OQVB3bGtyRjZWc2sxYnczeloyNlRNMGJ5NmFGUmtqM3J1b19fdw?oc=5",
           "axis": "SPECTACLE",
-          "impact": 2,
+          "impact": 3,
           "note": {
-            "en": "Defense minister resignation delays defense strategy: personal/political drama crowding out institutional planning.",
-            "fr": "La démission du ministre de la Défense retarde la stratégie de défense : le drame politique éclipse la planification institutionnelle.",
-            "es": "Renuncia del ministro de defensa retrasa estrategia defensiva: el drama político ahoga la planificación institucional.",
-            "de": "Rücktritt des Verteidigungsministers verzögert Verteidigungsstrategie: politisches Drama verdrängt institutionelle Planung."
+            "en": "Racist riots + the government's heavy-handed arrest response conflates legitimate protest with disorder, feeding strongman 'restore order' rhetoric (very Camacho).",
+            "fr": "Des émeutes racistes + la réponse policière brutale du gouvernement confondent manifestation légitime et désordre, alimentant la rhétorique du homme fort « rétablir l'ordre » (très Camacho).",
+            "es": "Disturbios racistas + respuesta represiva del gobierno confunden protesta legítima con caos, alimentando retórica del hombre fuerte «restaurar el orden» (muy Camacho).",
+            "de": "Rassistische Aufstände + die harsche Verhaftungsreaktion der Regierung vermischen legitimen Protest mit Unordnung, füttern die »Ordnung wiederherstellen«-Rhetorik des Strongman (sehr Camacho)."
           }
         }
       ],
       "axes": {
         "SCI": 38,
-        "SPECTACLE": 42,
+        "SPECTACLE": 45,
         "PUBLIC": 45,
         "KNOW": 35,
-        "CRIT": 52,
-        "FUTURE": 48
+        "CRIT": 56,
+        "FUTURE": 46
       }
     },
     {
@@ -693,101 +598,82 @@
       "trend": 0,
       "gdp_adjusted": 58,
       "headline": {
-        "en": "India's viral Cockroach Janta Party youth uprising clashes with Modi's longest-serving tenure amid Telegram bans and exam fraud.",
-        "fr": "L'insurrection virale de la Cockroach Janta Party en Inde s'affronte au mandat le plus long de Modi, avec interdictions de Telegram et fraudes aux examens.",
-        "es": "El levantamiento viral de la Cockroach Janta Party de India choca con el mandato más largo de Modi, con prohibiciones de Telegram y fraude en exámenes.",
-        "de": "Indiens viraler Cockroach Janta Party-Aufstand kollidiert mit Modis längster Amtszeit, mit Telegram-Verboten und Prüfungsbetrug."
+        "en": "India bans Telegram to fight exam fraud, then immediately unblocks it, a panic move masquerading as policy.",
+        "fr": "L'Inde interdit Telegram pour combattre la fraude aux examens, puis le débloque immédiatement, un mouvement de panique déguisé en politique.",
+        "es": "India prohíbe Telegram para combatir fraude en exámenes, luego lo desbloquea inmediatamente, un movimiento de pánico disfrazado de política.",
+        "de": "Indien verbietet Telegram zur Bekämpfung von Prüfungsbetrug, entsperrt es dann sofort wieder, ein Panikmove als Politik verkleidet."
       },
       "why": {
-        "en": "A nation oscillating between grassroots democratic pushback and authoritarian shortcuts, with competent institutions cracking under pressure and populist theatrics.",
-        "fr": "Une nation oscillant entre la riposte démocratique populaire et les raccourcis autoritaires, avec des institutions compétentes qui s'effondrent sous la pression et des théâtrales populistes.",
-        "es": "Una nación oscilando entre la contrarrespuesta democrática de base y atajos autoritarios, con instituciones competentes colapsando bajo presión y teatro populista.",
-        "de": "Eine Nation, die zwischen grassroots-demokratischem Widerstand und autoritären Abkürzungen schwankt, mit kompetentem Institutionen, die unter Druck zusammenbrechen, und populistischem Theater."
+        "en": "Blocking a communication platform to solve corruption is spectacle-driven, technologically incoherent governance; the reversal proves it was performative.",
+        "fr": "Bloquer une plateforme de communication pour résoudre la corruption, c'est une gouvernance spectaculaire et techniquement incohérente ; l'annulation prouve que c'était du théâtre.",
+        "es": "Bloquear una plataforma de comunicación para resolver corrupción es gobernanza teatral e incoherente tecnológicamente; la marcha atrás prueba que era puro espectáculo.",
+        "de": "Eine Kommunikationsplattform zu blockieren, um Korruption zu lösen, ist Spektakel-getriebene, technisch inkohärente Governance; die Umkehrung beweist, dass es Theater war."
       },
       "articles": [
         {
           "title": {
-            "en": "India’s viral Cockroach Janta Party launches nationwide youth protest campaign",
-            "fr": "La Cockroach Janta Party d'Inde lance une campagne nationale de protestation des jeunes",
-            "es": "La Cockroach Janta Party de India lanza campaña nacional de protesta juvenil",
-            "de": "Indiens Cockroach Janta Party startet landesweite Jugendbewegung"
-          },
-          "source": "AP News",
-          "date": "Jun 12, 2026",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZ1pZdlFqT3ZaUERqWEhYYU9ieHl0cEMwYTNzV0dUNjUyZEJTZDQwcS1adTgxRWRvTklZUktOd0x5WF9vbjJaRnlid0tnVXAzUjRGbmdxRS1RS21FRHVMaWw2aDkwMUh4U1BJbW1EU0xvOS16LU5WdHhPZ2x1UTdleDhlZU8xTFh1UGFVeVJybURBMXVsVzltbmtxTQ?oc=5",
-          "axis": "SPECTACLE",
-          "impact": -3,
-          "note": {
-            "en": "Organic youth protest movement resists strongman consolidation, genuine democratic energy, not manufactured consensus.",
-            "fr": "Mouvement de protestation juvénile organique qui résiste à la consolidation du pouvoir personnel, une vraie énergie démocratique, pas du consensus fabriqué.",
-            "es": "Movimiento de protesta juvenil orgánico que resiste la consolidación del poder personalista, energía democrática genuina, no consenso fabricado.",
-            "de": "Organische Jugendbewegung widersetzt sich der Machtkonsolidierung von oben, echte demokratische Energie, nicht hergestellter Konsens."
-          }
-        },
-        {
-          "title": {
-            "en": "‘My voice is being heard’: A month of India’s Cockroach Janta Party",
-            "fr": "« Ma voix est entendue » : Un mois de la Cockroach Janta Party en Inde",
-            "es": "« Mi voz está siendo escuchada »: Un mes de la Cockroach Janta Party de India",
-            "de": "« Meine Stimme wird gehört »: Ein Monat der Cockroach Janta Party in Indien"
-          },
-          "source": "Al Jazeera",
-          "date": "Jun 16, 2026",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPM2R0S3Y2c3ZsVGVUVDR5V3ptaVZUazgzTlh0Umo5ZFl5QjZvcHdJTTRyYlYtMXY5dVhKellqckljU0lfeTRaSVJ1QkZIN0VDR1Z1OVlNanBXMmcyN2ludnlxZlJRbWFEdk1ac0VBUDZLd1VFellZcnYyZkpsdGczOXlOZjdOSnVMZUVrWGExTHNlb1l6Q1lDdDhPYW9uNTlpdkVERkNld9IBrAFBVV95cUxOclBXXy10M1NwVEQ2cXczdGVIRk40NnJsU2JTY0FVQlozcDAtR1VFdlM1YnVaSXJjZmZYdEZQN2hvdDY5VTFCRVN0WDR0U2FvcGRUZlRLWXZkQnROZ2lwZDl3bjdzaVgyLWhjdW55dDNFaHlkZG9yNWhtWTM5YWkwVWhDMTFPRllRcmg4VkxwTkNXWVRTWlladU5sdFM0X25NTl8zUTdDZFVwZmd4?oc=5",
-          "axis": "CRIT",
-          "impact": -2,
-          "note": {
-            "en": "Month-long protest campaign shows citizens still questioning authority and organizing; free speech and assembly still functional.",
-            "fr": "Une campagne de protestation d'un mois démontre que les citoyens questionnent toujours l'autorité et s'organisent; la liberté d'expression et de réunion fonctionnent encore.",
-            "es": "Campaña de protesta de un mes muestra que los ciudadanos siguen cuestionando la autoridad y organizándose; la libertad de expresión y reunión aún funcionan.",
-            "de": "Monatelange Protestkampagne zeigt, dass Bürger die Autorität noch hinterfragen und sich organisieren; Meinungs- und Versammlungsfreiheit funktionieren noch."
-          }
-        },
-        {
-          "title": {
             "en": "NEET: India temporarily bans Telegram to tackle fraud in key medical exam",
-            "fr": "NEET : L'Inde interdit temporairement Telegram pour lutter contre la fraude aux examens médicaux clés",
-            "es": "NEET: India prohíbe temporalmente Telegram para frenar el fraude en examen médico clave",
-            "de": "NEET: Indien sperrt Telegram vorübergehend, um Betrug bei kritischen Medizinprüfungen zu bekämpfen"
+            "fr": "NEET : l'Inde interdit temporairement Telegram pour lutter contre la fraude dans l'examen médical clé",
+            "es": "NEET: India prohíbe temporalmente Telegram para combatir fraude en examen médico clave",
+            "de": "NEET: Indien sperrt Telegram vorübergehend, um Betrug bei Hauptmedizinprüfung zu bekämpfen"
           },
           "source": "BBC",
           "date": "Jun 16, 2026",
           "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JcmNPUDhmTVdkcjlUZkJua1FGZHVUbmhjRTlMRFA2eE9LZmJ2emlzeTZodUoyRWExNUx6SGJPLXVlYXhxeTllM3RtMTlQS2V4S2ltLVpVTm5vUQ?oc=5",
-          "axis": "PUBLIC",
+          "axis": "SPECTACLE",
           "impact": 3,
           "note": {
-            "en": "Banning Telegram to catch exam cheaters is crude digital authoritarianism; collateral damage to privacy and free communication over messy governance.",
-            "fr": "Interdire Telegram pour attraper les fraudeurs aux examens, c'est de l'autoritarisme numérique brut; dégâts collatéraux à la vie privée et à la communication libre pour camoufler une gouvernance bancale.",
-            "es": "Prohibir Telegram para atrapar a los tramposos es autoritarismo digital tosco; daño colateral a la privacidad y la comunicación libre para encubrir una gobernanza desordenada.",
-            "de": "Telegram zu sperren, um Prüfungsbetrüger zu fassen, ist primitiver digitaler Autoritarismus; Kollateralschaden an Privatsphäre und freier Kommunikation zur Verschleierung von chaotischer Governance."
+            "en": "Banning Telegram over NEET fraud is theater, not solution, punishes millions for exam cheating; signals weak institutions resorting to blunt force.",
+            "fr": "Interdire Telegram à cause de la fraude NEET, c'est du cinéma, pas une solution, pénalise des millions pour des tricheurs ; signale des institutions faibles qui recourent à la force brute.",
+            "es": "Prohibir Telegram por fraude NEET es teatro, no solución, castiga a millones por trucos en exámenes; señala instituciones débiles que recurren a la fuerza bruta.",
+            "de": "Telegram wegen NEET-Betrug zu verbieten ist Theater, keine Lösung, bestraft Millionen für Prüfungsbetrug; signalisiert schwache Institutionen, die zu stumpfer Gewalt greifen."
+          }
+        },
+        {
+          "title": {
+            "en": "India’s viral Cockroach Janta Party launches nationwide youth protest campaign",
+            "fr": "Le Cockroach Janta Party viral de l'Inde lance une campagne nationale de protestation jeunesse",
+            "es": "El viral Cockroach Janta Party de India lanza campaña nacional de protesta juvenil",
+            "de": "Indiens virales Cockroach Janta Party startet landesweite Jugendprotestkampagne"
+          },
+          "source": "AP News",
+          "date": "Jun 12, 2026",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZ1pZdlFqT3ZaUERqWEhYYU9ieHl0cEMwYTNzV0dUNjUyZEJTZDQwcS1adTgxRWRvTklZUktOd0x5WF9vbjJaRnlid0tnVXAzUjRGbmdxRS1RS21FRHVMaWw2aDkwMUh4U1BJbW1EU0xvOS16LU5WdHhPZ2x1UTdleDhlZU8xTFh1UGFVeVJybURBMXVsVzltbmtxTQ?oc=5",
+          "axis": "CRIT",
+          "impact": -3,
+          "note": {
+            "en": "Cockroach Janta Party (grassroots youth protest) mobilizing suggests civil society and skepticism still functioning; pushback against conformity is alive.",
+            "fr": "La mobilisation du Cockroach Janta Party (protestation jeunesse de base) suggère que la société civile et le scepticisme fonctionnent encore ; la résistance au conformisme persiste.",
+            "es": "La movilización del Cockroach Janta Party (protesta juvenil de base) sugiere que la sociedad civil y el escepticismo aún funcionan; la resistencia al conformismo sigue viva.",
+            "de": "Die Mobilisierung der Cockroach Janta Party (Graswurzel-Jugendprotest) deutet an, dass Zivilgesellschaft und Skepsis noch funktionieren; der Widerstand gegen Konformität lebt."
           }
         },
         {
           "title": {
             "en": "Social media platforms spread hate music in India despite policy violations, new report says",
-            "fr": "Les réseaux sociaux propagent la musique de haine en Inde malgré les violations de politique, affirme un nouveau rapport",
-            "es": "Las plataformas de redes sociales difunden música de odio en India a pesar de violaciones de políticas, dice nuevo informe",
-            "de": "Soziale Medien verbreiten Hasmusik in Indien trotz Richtlinienverletzungen, sagt neuer Bericht"
+            "fr": "Les réseaux sociaux diffusent de la musique haineuse en Inde malgré les violations de politique, selon un nouveau rapport",
+            "es": "Plataformas de redes sociales difunden música de odio en India a pesar de violaciones de política, dice nuevo informe",
+            "de": "Soziale Medien verbreiten Hasmusik in Indien trotz Richtlinienverstößen, neuer Bericht sagt"
           },
           "source": "PBS",
           "date": "Jun 15, 2026",
           "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNck43WGN6cnNWZHA2VTJ0VjZRanpweW85WWpJcWFpVS1QeHVCR2dFaElIT2lnNjNLMGZacHVHYWJxajNCX0NyVThuTzhmdi1iOTB6cDRWcEJZSUlNVy1jc29JU1E0UEo2SGFobEhYM281aDJpRE1sN0hwQVpucVgtdHM3eDlubEZ4UHloVFp2YzRpOEVWdkxfLWJ2d09zd3FJTzVKczdKU3ltUmhBZkh3UmRLZ0JGdXNzWHZvaUc2djZ6SUVn0gHKAUFVX3lxTE5FOXNWV2dneXhCNDJXeUlzOTYwYlNRdGgyX3o3eHlDeFNOSlkxS3oyREgyUkNaOEtKV2N2Q3g4aVZZS2pYazZqLVh4WWxYUndMZ3dBeUNFMmctbFJ2S1R3alJIeEtjTnlQMktOa2N2a1diNGVvbjJHY2pKc1F1bUQ5bjhaeXZ2aGs1MGxXMDFoTEE1elZoMVFHRE5kQTNfVW5TYjd4YndjaDd6Y2x0V1ZXVmpaeG1tbklDSmJ3VlFLVXVid25zM0FFV1E?oc=5",
           "axis": "CRIT",
-          "impact": 4,
+          "impact": 2,
           "note": {
-            "en": "Hate music spreading on social platforms despite policy shows regulatory capture and algorithmic amplification of poison over moderation.",
-            "fr": "La musique de haine qui se propage sur les plateformes sociales malgré les règles montre la capture réglementaire et l'amplification algorithmique du poison au lieu de la modération.",
-            "es": "La música de odio propagándose en plataformas sociales a pesar de las reglas muestra captura regulatoria y amplificación algorítmica del veneno sobre la moderación.",
-            "de": "Hasmusik-Verbreitung auf sozialen Plattformen trotz Richtlinien zeigt Regulierungsübernahme und algorithmische Verstärkung von Gift statt Moderation."
+            "en": "Hate music spreading via social platforms despite policy shows regulatory capture and platform abuse; institutions failing to enforce public good.",
+            "fr": "La musique haineuse se propage via les plateformes malgré la politique, ce qui montre la capture réglementaire et l'abus de plateforme ; les institutions échouent à appliquer l'intérêt public.",
+            "es": "La música de odio propagándose por plataformas a pesar de la política muestra captura regulatoria y abuso de plataforma; instituciones fracasando en hacer cumplir el bien público.",
+            "de": "Hasmusik verbreitet sich über Plattformen trotz Politik, zeigt regulatorische Erfassung und Plattformmissbrauch; Institutionen scheitern beim Durchsetzen des öffentlichen Wohls."
           }
         }
       ],
       "axes": {
         "SCI": 62,
-        "SPECTACLE": 58,
+        "SPECTACLE": 61,
         "PUBLIC": 64,
         "KNOW": 59,
-        "CRIT": 61,
+        "CRIT": 60,
         "FUTURE": 60
       }
     },
@@ -800,54 +686,54 @@
       "trend": 0,
       "gdp_adjusted": 29,
       "headline": {
-        "en": "France hosts G7 while Macron gambles on Trump diplomacy amid trade threats and mass protest.",
-        "fr": "La France accueille le G7 tandis que Macron joue son va-tout sur la diplomatie trumpienne face aux menaces commerciales et aux manifestations massives.",
-        "es": "Francia acoge la cumbre del G7 mientras Macron apuesta por la diplomacia trumpista ante amenazas comerciales y protestas masivas.",
-        "de": "Frankreich ist Gastgeber des G7-Gipfels, während Macron auf Trump-Diplomatie setzt, angesichts von Handelsdrohen und Massenprotesten."
+        "en": "France hosts G7 summit while Trump threatens trade war over tech tax, spectacle over substance.",
+        "fr": "La France accueille le sommet du G7 tandis que Trump menace une guerre commerciale sur la taxe tech, du spectacle plutôt que du fond.",
+        "es": "Francia alberga la cumbre del G7 mientras Trump amenaza con una guerra comercial por el impuesto tecnológico, espectáculo sobre sustancia.",
+        "de": "Frankreich veranstaltet G7-Gipfel, während Trump einen Handelskrieg über Tech-Steuer androht, Schauspiel statt Substanz."
       },
       "why": {
-        "en": "A competent, multilingual democratic state still functioning, but increasingly hostage to a volatile US president and domestic populist pressure, testing whether liberal institutions survive American chaos.",
-        "fr": "Un État démocratique compétent et multilingue fonctionnant encore, mais de plus en plus otage d'un président américain volatil et des pressions populistes nationales, testant si les institutions libérales survivent au chaos américain.",
-        "es": "Un Estado democrático competente y multilingüe que aún funciona, pero cada vez más rehén de un presidente estadounidense volátil y de presiones populistas internas, poniendo a prueba si las instituciones liberales sobreviven al caos americano.",
-        "de": "Ein funktionierender, kompetenter und mehrsprachiger Demokratischer Staat, aber zunehmend Geisel eines volatilen US-Präsidenten und innenpolitischen populistischen Drucks, was testet, ob liberale Institutionen das amerikanische Chaos überstehen."
+        "en": "Macron's diplomatic choreography (managing Trump, Ukraine on agenda) is competent governance, but overshadowed by Trump's crude tariff threats, which France can't control, a net wash for France itself.",
+        "fr": "La chorégraphie diplomatique de Macron (gérer Trump, l'Ukraine à l'agenda) est une gouvernance compétente, mais éclipsée par les menaces tarifaires brutes de Trump, que la France ne peut pas contrôler, un match nul pour la France elle-même.",
+        "es": "La coreografía diplomática de Macron (gestionar a Trump, Ucrania en la agenda) es gobernanza competente, pero opacada por las amenazas arancelarias brutales de Trump, que Francia no puede controlar, un empate neto para Francia misma.",
+        "de": "Macrons diplomatische Choreografie (Trump managen, Ukraine auf der Agenda) ist kompetente Governance, wird aber von Trumps rohen Zolldrohungen überschattet, die Frankreich nicht kontrollieren kann, ein Unentschieden für Frankreich selbst."
       },
       "articles": [
         {
           "title": {
-            "en": "Trump warns France in exclusive interview with The Post: Kill tech tax or face 100% wine tariffs: ‘I have no choice’",
-            "fr": "Trump avertit la France dans une interview exclusive avec The Post : Supprimez la taxe tech ou affrontez 100% de droits sur le vin : « Je n'ai pas le choix »",
-            "es": "Trump advierte a Francia en entrevista exclusiva con The Post: Eliminen el impuesto tecnológico o enfrentan aranceles del 100% en vino: 'No tengo otra opción'",
-            "de": "Trump warnt Frankreich in exklusivem Interview mit The Post: Schafft die Tech-Steuer ab oder sieht 100%-ige Weintarife: 'Mir bleibt keine Wahl'"
-          },
-          "source": "New York Post",
-          "date": "Jun 15, 2026",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQbFRoUWI4eGN5OFN5Z3pmLUIydmh2NmpKay1FSi11MS1ULVlkaE9TM2pBZzNjYVFvYW9odEhjYXRWWkFQVkNfNE1UT1ZVMDhaUFVjYmcxMjBrWVhyT2xHZnNaeldoQVE1bTk2bGNsLUdHTzk5VW1DcmltTTVra3Eyb3Y4YVJvcGxCemZSLWJRQThJRjN5dmVsSkZRdF9rbF80WHNMblFXc1EtbUtKVGVsQTUycU93eUVrR3JMaG1USUVpYTIyZUktTmp1bWhMNVU?oc=5",
-          "axis": "SPECTACLE",
-          "impact": 2,
-          "note": {
-            "en": "Macron hosting G7 while Trump threatens wine tariffs is high-stakes theater masking weak negotiating leverage; spectacle over substance.",
-            "fr": "Macron accueille le G7 tandis que Trump menace de droits de douane sur le vin, c'est du théâtre à enjeu élevé masquant une faible marge de négociation ; du spectacle plutôt que de la substance.",
-            "es": "Macron acogiendo el G7 mientras Trump amenaza con aranceles al vino es teatro de alto riesgo que oculta un poder de negociación débil; espectáculo en lugar de sustancia.",
-            "de": "Macron empfängt G7 während Trump mit Weintarifen droht, hochkarätiges Theater, das schwache Verhandlungsstärke kaschiert; Spektakel statt Substanz."
-          }
-        },
-        {
-          "title": {
             "en": "Macron once had a knack for managing Trump. The G7 may test it",
-            "fr": "Macron avait autrefois un don pour gérer Trump. Le G7 pourrait le tester",
-            "es": "Macron una vez supo cómo manejar a Trump. La cumbre del G7 podría ponerlo a prueba",
-            "de": "Macron hatte einmal einen Dreh für den Umgang mit Trump. Der G7-Gipfel könnte ihn auf die Probe stellen"
+            "fr": "Macron avait autrefois le chic pour gérer Trump. Le G7 pourrait bien le tester",
+            "es": "Macron una vez tuvo el don de gestionar a Trump. La cumbre del G7 podría ponerlo a prueba",
+            "de": "Macron hatte einmal die Gabe, Trump zu managen. Der G7-Gipfel könnte ihn testen"
           },
           "source": "AP News",
           "date": "Jun 12, 2026",
           "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVTkxejd2aXZQX21kNUt0UGNlYnpacFY2T3E1M3F5dkw3SU93WTFGQUJwNWNNY29oa1g2NVdsMTdneGRuaDh5VGtRWDJXZG1vVnJsampFUXZmMFBDdkhlWXBiYi1CQUlIVHNhWnl6UEttS3FyV0lJcUk2MGR1R1FSeFdBWThTRm9TYjkyRThyMUJ2aElzbUFNRkdjUTdoYnNTd29JYw?oc=5",
-          "axis": "CRIT",
+          "axis": "SPECTACLE",
+          "impact": 1,
+          "note": {
+            "en": "Macron must 'manage' Trump at a summit meant to coordinate global crises, governance reduced to personal charm theater.",
+            "fr": "Macron doit « gérer » Trump lors d'un sommet censé coordonner les crises mondiales, la gouvernance réduite au théâtre du charme personnel.",
+            "es": "Macron debe 'gestionar' a Trump en una cumbre destinada a coordinar crisis globales, la gobernanza reducida al teatro del encanto personal.",
+            "de": "Macron muss Trump auf einem Gipfel, der globale Krisen koordinieren soll, 'managen', Governance reduziert auf persönliches Charme-Theater."
+          }
+        },
+        {
+          "title": {
+            "en": "G7 allies scramble to put Ukraine back atop Trump's agenda as war drags on",
+            "fr": "Les alliés du G7 se démènent pour remettre l'Ukraine au sommet de l'agenda de Trump alors que la guerre s'éternise",
+            "es": "Los aliados del G7 se apresuran a poner a Ucrania de nuevo en la agenda de Trump mientras la guerra se prolonga",
+            "de": "G7-Verbündete beeilen sich, die Ukraine auf Trumps Agenda zurückzusetzen, während sich der Krieg hinzieht"
+          },
+          "source": "NPR",
+          "date": "Jun 16, 2026",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE52ZElnRWdmX3J1a0JOLWpJMTBzUG5qQmdlQ0ZvaXBnQjQySkpMVlM2RWx1OS1lTkEtS1NLQmdxbExaVkJVZlFYV1BYQU0zVl9DdW94OUptWm14UHJiRktLQThQNEEyNHBLemN5bg?oc=5",
+          "axis": "FUTURE",
           "impact": -2,
           "note": {
-            "en": "Macron's reputation for diplomatic problem-solving and willingness to engage Trump directly shows critical thinking and pragmatism rather than reflexive conformity.",
-            "fr": "La réputation de Macron pour la résolution diplomatique et sa volonté d'engager Trump directement démontrent la pensée critique et le pragmatisme plutôt qu'une conformité réflexe.",
-            "es": "La reputación de Macron por resolver problemas diplomáticos y su disposición a enfrentar a Trump directamente demuestran pensamiento crítico y pragmatismo en lugar de conformidad refleja.",
-            "de": "Macrons Ruf für diplomatische Problemlösung und seine Bereitschaft, Trump direkt zu konfrontieren, zeigen kritisches Denken und Pragmatismus statt reflexiver Konformität."
+            "en": "France pushing Ukraine back onto the agenda shows institutional commitment to long-term geopolitical stability over short-term spectacle.",
+            "fr": "La France remet l'Ukraine à l'agenda montre un engagement institutionnel envers la stabilité géopolitique long terme plutôt que le spectacle à court terme.",
+            "es": "Francia reponiendo a Ucrania en la agenda muestra compromiso institucional con la estabilidad geopolítica a largo plazo sobre el espectáculo a corto plazo.",
+            "de": "Frankreich setzt die Ukraine wieder auf die Agenda zurück, institutionelles Engagement für langfristige geopolitische Stabilität statt kurzfristiges Spektakel."
           }
         },
         {
@@ -855,7 +741,7 @@
             "en": "Clashes as thousands protest in Geneva ahead of G7 summit in France",
             "fr": "Affrontements alors que des milliers de manifestants protestent à Genève avant le sommet du G7 en France",
             "es": "Enfrentamientos mientras miles protestan en Ginebra antes de la cumbre del G7 en Francia",
-            "de": "Auseinandersetzungen, während Tausende in Genf vor dem G7-Gipfel in Frankreich protestieren"
+            "de": "Zusammenstöße, während Tausende in Genf vor dem G7-Gipfel in Frankreich protestieren"
           },
           "source": "RFI",
           "date": "Jun 14, 2026",
@@ -863,20 +749,20 @@
           "axis": "CRIT",
           "impact": -1,
           "note": {
-            "en": "50,000-person protest in Geneva (French-adjacent) suggests free press and open dissent still functioning; no crackdown reported.",
-            "fr": "Une manifestation de 50 000 personnes à Genève (à proximité de la France) suggère que la presse libre et la dissidence ouverte fonctionnent encore ; aucune répression signalée.",
-            "es": "Una protesta de 50 000 personas en Ginebra (cercana a Francia) sugiere que la prensa libre y la disidencia abierta aún funcionan; sin represión reportada.",
-            "de": "Eine 50.000-köpfige Demonstration in Genf (französischen Gefilden nahe) deutet darauf hin, dass freie Presse und offener Widerspruch noch funktionieren; keine Unterdrückung berichtet."
+            "en": "Thousands protesting near the summit: free press, street dissent, democratic friction, the annoying sound of a functioning civil society.",
+            "fr": "Des milliers de manifestants près du sommet : presse libre, dissension de rue, friction démocratique, le bruit ennuyeux d'une société civile qui fonctionne.",
+            "es": "Miles protestando cerca de la cumbre: prensa libre, disensión callejera, fricción democrática, el ruido molesto de una sociedad civil que funciona.",
+            "de": "Tausende protestieren neben dem Gipfel: freie Presse, Straßendissident, demokratische Reibung, das nervige Geräusch einer funktionierenden Zivilgesellschaft."
           }
         }
       ],
       "axes": {
         "SCI": 28,
-        "SPECTACLE": 35,
+        "SPECTACLE": 36,
         "PUBLIC": 32,
         "KNOW": 26,
-        "CRIT": 31,
-        "FUTURE": 34
+        "CRIT": 30,
+        "FUTURE": 32
       }
     },
     {
@@ -995,61 +881,61 @@
       "trend": 0,
       "gdp_adjusted": 56,
       "headline": {
-        "en": "Italy's far-right government lurches between migration spectacle and institutional legitimacy while far-right splinter groups threaten to outflank Meloni from the right.",
-        "fr": "Le gouvernement d'extrême droite italien zigzague entre spectacle migratoire et légitimité institutionnelle, tandis que des groupes scissionnistes menacent de dépasser Meloni par la droite.",
-        "es": "El gobierno ultraderechista italiano tambalea entre espectáculo migratorio y legitimidad institucional, mientras grupos escisionistas amenazan con desbordar a Meloni por la derecha.",
-        "de": "Italiens rechtsextreme Regierung laviert zwischen Migrationsspektakel und institutioneller Legitimität, während rechtsextreme Abspaltungsgruppen drohen, Meloni von rechts zu überflügeln."
+        "en": "Italy's far-right fractures as Vannacci splinters Meloni's coalition, while migration spectacle dominates Rome's streets.",
+        "fr": "L'extrême-droite italienne s'émiette quand Vannacci fracture la coalition de Meloni, tandis que le cirque migratoire domine les rues de Rome.",
+        "es": "La extrema derecha italiana se fractura cuando Vannacci astilla la coalición de Meloni, mientras el circo migratorio domina las calles de Roma.",
+        "de": "Italiens extreme Rechte zerfällt, während Vannacci Melonis Koalition sprengt und das Migrations-Spektakel Roms Straßen beherrscht."
       },
       "why": {
-        "en": "Meloni governs by rallies and culture wars, not policy; her coalition fractures as Vannacci's group becomes a party; yet Italy retains UNESCO cooperation and semiconductor ambitions, a country stuck between competence and chaos.",
-        "fr": "Meloni gouverne par meetings et guerres culturelles, pas par des politiques ; sa coalition se fissure alors que le groupe de Vannacci devient un parti ; pourtant l'Italie conserve ses coopérations UNESCO et ambitions semiconducteurs, un pays coincé entre compétence et chaos.",
-        "es": "Meloni gobierna con mítines y guerras culturales, no con políticas; su coalición se fractura cuando el grupo de Vannacci se convierte en partido; aun así Italia mantiene cooperación UNESCO y ambiciones semiconductoras, un país atrapado entre competencia y caos.",
-        "de": "Meloni regiert über Kundgebungen und Kulturkriege, nicht Politikgestaltung; ihre Koalition zerbröckelt, während Vannaccis Gruppe zur Partei wird; dennoch behält Italien UNESCO-Kooperation und Halbleiter-Ambitionen, ein Land zwischen Kompetenz und Chaos eingeklemmt."
+        "en": "Governance implodes into tribal theater while substantive policy (education, institutions, long-term planning) vanishes offstage.",
+        "fr": "La gouvernance s'effondre en théâtre tribal pendant que les vraies politiques (éducation, institutions, planification à long terme) disparaissent des coulisses.",
+        "es": "La gobernanza se derrumba en teatro tribal mientras que las políticas sustantivas (educación, instituciones, planificación a largo plazo) desaparecen entre bastidores.",
+        "de": "Governance kollabiert zu stammesbeherrschtem Theater, während substantielle Politik (Bildung, Institutionen, Langzeitplanung) hinter den Kulissen verschwindet."
       },
       "articles": [
         {
           "title": {
-            "en": "Thousands rally in Rome, Italy for rival pro- and anti-migration marches",
-            "fr": "Des milliers de manifestants à Rome pour des marches rivales pro- et anti-migration",
-            "es": "Miles de manifestantes en Roma en marchas rivales a favor y en contra de la migración",
-            "de": "Tausende demonstrieren in Rom bei rivalisierenden Pro- und Anti-Migrations-Märschen"
+            "en": "Italy’s Meloni faces a far-right dilemma as 'Il Generale' Vannacci rises",
+            "fr": "Meloni face à un dilemme d'extrême-droite alors que « Il Generale » Vannacci monte en puissance",
+            "es": "Meloni enfrenta un dilema de extrema derecha mientras « Il Generale » Vannacci asciende",
+            "de": "Meloni steht vor extremistischem Dilemma, während « Il Generale » Vannacci aufsteigt"
           },
-          "source": "Al Jazeera",
-          "date": "Jun 13, 2026",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQjVCVHZoOS1yQUh1MEJDdXpwc2ZqVGladWVyWHVBblV1cVd1MVpsY1ZMRnotTWotdXJEUVRkMUhFTjVXc3E4QU40UFI1RW9jVE5iU3AxM19LaDBuSEVwMmZUVVFXUHJhWS1RYjRuVkJEVGRsVUE5V2JmaE9XNXFOOUNsY0pJeVhvS0dKeFFVampxTkZXVlRkcmxOamw1b0NEQ1VCV09wbW1MSlFVazBQadIBtgFBVV95cUxOdS1hZm5vTDlNQmpTVnFST0lzR3dQS1JsUGk3QXdjZFNJa3pldVlWcUVBTk5GM0xBZk1mMldSM3J0aWE5ai1WbkNRWU1IeXppemt6UHNiUk81YTFkU2ZnbzVFSmVmYnBkZTVNT3VHMUF2MFowZnc2bGh6SC11VVVZN1NNbkxKR2dFdlZucWtBN0NXc3ljVmxOR1ZSMEZPREtBNjVGYnJoTjZMaGdpanFMRHd5UTdIdw?oc=5",
+          "source": "ABC News - Breaking News, Latest News and Videos",
+          "date": "Jun 14, 2026",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNeHJxcUFtVTlwaHdOaFNBWll4bFlmT01oejVfb1pwdmhQY09vVTZTMGdrdjVfRlVOZmhKckJ6M3lSQ1ExOVg2aU1KdjdPNFdGWlctTllpYmd4Y25wX21uSXlkcHJWQ041U0otNDk2RHcyc1JvWmZXMkx5WV9NZG14czJrZEIxNVlvWjBBTlZFQVItcmJBVHZTbDhvR3lqMUc4VDl3N3VxaHkydjYy0gGyAUFVX3lxTFA3WUw3ZGNLRUFiMHNZTXZqNzNVQ1JkLWFfX0Y5bFFBOUo3Q3g1NVNFNXNjR2ZLNlFKWkotalc5MnNCMG1sWk1HOFJaTW43aDFiSUZnSnh2Mkc1WkIyMkk0czFTTGE3S2M0TlZvbnpSMlVyNW8tVVd3eVVUZXUtZ3hTU003VUxJbmpwRDNaSDFGY3hfT25hdGV6dVJVWUpLRzNfRjY5aFpJM0lOd2tGWnpTRXc?oc=5",
           "axis": "SPECTACLE",
-          "impact": 3,
+          "impact": 2,
           "note": {
-            "en": "Thousands of rival marches in Rome, migration used as rally sport, not solved problem; performative polarization replaces deliberation.",
-            "fr": "Des milliers de marches rivales à Rome, la migration devient sport de rassemblement, pas problème à résoudre ; la polarisation performative remplace la délibération.",
-            "es": "Miles de marchas rivales en Roma, la migración se convierte en deporte de mítines, no en problema resuelto; la polarización performativa reemplaza el debate.",
-            "de": "Tausende rivalisierende Märsche in Rom, Migration wird zum Kundgebungssport, nicht zum gelösten Problem; performative Polarisierung ersetzt Diskurs."
+            "en": "Meloni's coalition cracking under far-right pressure from 'Il Generale' Vannacci, internecine strongman jockeying replaces actual governance.",
+            "fr": "La coalition de Meloni se fissure sous la pression de l'extrême-droite ; « Il Generale » Vannacci remplace la gouvernance véritable par des jeux de coudes entre strongmen.",
+            "es": "La coalición de Meloni se agrieta bajo presión de la extrema derecha; « Il Generale » Vannacci reemplaza la verdadera gobernanza con pugilatos entre caudillos.",
+            "de": "Melonis Koalition bröckelt unter Druck von rechts; « Il Generale » Vannacci ersetzt echte Regierungsführung durch Strongman-Gezänk."
           }
         },
         {
           "title": {
-            "en": "Italy’s Far-Right Group Becomes Party in Fresh Threat to Meloni",
-            "fr": "Le groupe d'extrême droite italien devient parti, nouvelle menace pour Meloni",
-            "es": "El grupo ultraderechista italiano se convierte en partido, nueva amenaza para Meloni",
-            "de": "Italiens rechtsextreme Gruppe wird Partei, neue Bedrohung für Meloni"
+            "en": "Thousands rally in Rome, Italy for rival pro- and anti-migration marches",
+            "fr": "Des milliers de manifestants à Rome pour des marches rivales pro- et anti-migration",
+            "es": "Miles se manifiestan en Roma en marchas rivales pro- y anti-migración",
+            "de": "Tausende marschieren in Rom für rivalisierende Pro- und Anti-Migrations-Demonstrationen"
           },
-          "source": "Bloomberg.com",
-          "date": "Jun 14, 2026",
-          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPUmlRY0tWSHlDU0NVczRmT0NVaU94dkR6TU15SjNDU1FEYmVIQ1ZnS05zVTBvNzlPNVpDZ1JvR1pGX2ZVRVZUTnZONjJIZlJPWWU0ZVU2SmJFd0VCYmV6Z0VhZXRPRkFrWjRZaWR1RUZiRXRGYWJoZVN1UVl6amVNc1owY29zcWNJOUFnTVphNDBDVmF0QlFsVjFIbVpIaXRmWWxzZG1uZ1lQd3U1WHloS2ZOd1p1WVpzNk5DZmJHS0l6S2FHWlh2LXA0QQ?oc=5",
-          "axis": "SPECTACLE",
-          "impact": 4,
+          "source": "Al Jazeera",
+          "date": "Jun 13, 2026",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQjVCVHZoOS1yQUh1MEJDdXpwc2ZqVGladWVyWHVBblV1cVd1MVpsY1ZMRnotTWotdXJEUVRkMUhFTjVXc3E4QU40UFI1RW9jVE5iU3AxM19LaDBuSEVwMmZUVVFXUHJhWS1RYjRuVkJEVGRsVUE5V2JmaE9XNXFOOUNsY0pJeVhvS0dKeFFVampxTkZXVlRkcmxOamw1b0NEQ1VCV09wbW1MSlFVazBQadIBtgFBVV95cUxOdS1hZm5vTDlNQmpTVnFST0lzR3dQS1JsUGk3QXdjZFNJa3pldVlWcUVBTk5GM0xBZk1mMldSM3J0aWE5ai1WbkNRWU1IeXppemt6UHNiUk81YTFkU2ZnbzVFSmVmYnBkZTVNT3VHMUF2MFowZnc2bGh6SC11VVVZN1NNbkxKR2dFdlZucWtBN0NXc3ljVmxOR1ZSMEZPREtBNjVGYnJoTjZMaGdpanFMRHd5UTdIdw?oc=5",
+          "axis": "CRIT",
+          "impact": 2,
           "note": {
-            "en": "Far-right splinter becoming party: Vannacci's rise shows Meloni's coalition collapsing into ever-more theatrical extremism and internal power plays.",
-            "fr": "Une scission d'extrême droite devient parti : l'ascension de Vannacci prouve l'effondrement de la coalition de Meloni en extrémisme de plus en plus théâtral et jeux de pouvoir internes.",
-            "es": "Escisión ultraderechista convirtiéndose en partido: el ascenso de Vannacci demuestra el colapso de la coalición de Meloni hacia un extremismo cada vez más teatral y juegos de poder internos.",
-            "de": "Rechtsextreme Abspaltung wird Partei: Vannaccis Aufstieg zeigt Melonis Koalition, die in immer theatralischeren Extremismus und interne Machtkämpfe zerfällt."
+            "en": "Thousands of dueling migration marches dominate headlines; substance of policy buried under raw polarization and chant-based politics.",
+            "fr": "Des milliers de marches migratoires antagonistes monopolisent les gros titres ; la substance des politiques est enterrée sous la polarisation brute et une politique de slogans.",
+            "es": "Miles de marchas migratorias antagónicas dominan los titulares; la sustancia de las políticas queda enterrada bajo polarización cruda y política de consignas.",
+            "de": "Tausende gegnerischer Migrations-Märsche dominieren Schlagzeilen; politische Substanz wird von roher Polarisierung und Spruch-basierter Politik begraben."
           }
         },
         {
           "title": {
             "en": "UNESCO Director-General reinforces strategic cooperation with Italy",
-            "fr": "La directrice générale de l'UNESCO renforce la coopération stratégique avec l'Italie",
-            "es": "La directora general de UNESCO refuerza cooperación estratégica con Italia",
+            "fr": "La Directrice générale de l'UNESCO renforce la coopération stratégique avec l'Italie",
+            "es": "La Directora General de la UNESCO refuerza la cooperación estratégica con Italia",
             "de": "UNESCO-Generaldirektorin verstärkt strategische Zusammenarbeit mit Italien"
           },
           "source": "UNESCO",
@@ -1058,39 +944,39 @@
           "axis": "KNOW",
           "impact": -2,
           "note": {
-            "en": "UNESCO reinforces cooperation with Italy, institutional respect for expertise and cultural heritage still intact; soft counterweight to anti-intellectual drift.",
-            "fr": "L'UNESCO renforce la coopération avec l'Italie, respect institutionnel pour l'expertise et le patrimoine culturel toujours intacts ; contrepoids discret à la dérive anti-intellectuelle.",
-            "es": "UNESCO refuerza cooperación con Italia, respeto institucional por la expertise y patrimonio cultural intacto; contrapeso discreto a la deriva anti-intelectual.",
-            "de": "UNESCO verstärkt Zusammenarbeit mit Italien, institutionelle Wertschätzung für Fachkompetenz und Kulturerbe bleiben intakt; stiller Gegengewicht zur anti-intellektuellen Drift."
+            "en": "UNESCO reinforces Italy's role in global knowledge cooperation, a quiet, sober institutional win against the noise.",
+            "fr": "L'UNESCO renforce le rôle de l'Italie dans la coopération mondiale du savoir, une victoire institutionnelle discrète et sérieuse au milieu du vacarme.",
+            "es": "La UNESCO refuerza el papel de Italia en la cooperación mundial del conocimiento, una victoria institucional discreta y seria contra el ruido.",
+            "de": "UNESCO stärkt Italiens Rolle in globaler Wissenszusammenarbeit, ein ruhiger, nüchterner institutioneller Erfolg inmitten des Lärms."
           }
         },
         {
           "title": {
             "en": "Rapidus Signs MoU with Fondazione Chips-IT in Italy for Future Semiconductor Manufacturing",
-            "fr": "Rapidus signe un protocole d'accord avec la Fondazione Chips-IT en Italie pour la fabrication semiconducteurs future",
-            "es": "Rapidus firma protocolo de entendimiento con Fondazione Chips-IT en Italia para manufacturación semiconductora futura",
-            "de": "Rapidus unterzeichnet Absichtserklärung mit Fondazione Chips-IT in Italien für zukünftige Halbleiterproduktion"
+            "fr": "Rapidus signe un protocole d'accord avec Fondazione Chips-IT en Italie pour la fabrication future de semi-conducteurs",
+            "es": "Rapidus firma memorándum de entendimiento con Fondazione Chips-IT en Italia para fabricación futura de semiconductores",
+            "de": "Rapidus unterzeichnet Absichtserklärung mit Fondazione Chips-IT in Italien für zukünftige Halbleiterherstellung"
           },
           "source": "PR Newswire",
           "date": "Jun 16, 2026",
           "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNYlhya2hIdE5lOEtONmw4Nzh5blZmM2N5Vk5KcW5Xb1BfcFVtM1JtalgyZHNDRHUyelVaVGVIdVRva3JTcGtoeWU5SENwOTlsY3IzbG5UT191VUpRTUU3cnE0MjM5V3NLdFNpOWF5RmNXZUxybllaTy1aUlpreTFNRTVHUjl5dUYwR2ZQMFFUampzNDlPbnkyalNTaThxRllSVWdCdEFoYVdxT2xrSWZaakdpR1Q3aXZxamVZZU02VVcyOG5ydTVtdkJ4S0lVLTVJeFB2a0JyeWpGdG5SMFpv?oc=5",
           "axis": "FUTURE",
-          "impact": -3,
+          "impact": -1,
           "note": {
-            "en": "Japan-Italy semiconductor partnership (Rapidus MoU) signals long-term industrial investment and forward-looking tech ambition; rare competence signal.",
-            "fr": "Partenariat nippo-italien semiconducteurs (protocole Rapidus) signale un investissement industriel long terme et une ambition technologique tournée vers l'avenir ; signal rare de compétence.",
-            "es": "Asociación nipona-italiana de semiconductores (protocolo Rapidus) señala inversión industrial a largo plazo y ambición tecnológica progresista; señal rara de competencia.",
-            "de": "Japanisch-italienische Halbleiterpartnerschaft (Rapidus-Absichtserklärung) signalisiert langfristige Industrieinvestition und zukunftsorientierte Tech-Ambition; seltenes Zeichen von Kompetenz."
+            "en": "Rapidus-Fondazione Chips-IT semiconductor partnership signals Italy betting on advanced manufacturing, not just spectacle.",
+            "fr": "Le partenariat Rapidus-Fondazione Chips-IT en semi-conducteurs montre que l'Italie parie sur la fabrication de pointe, pas juste sur le spectacle.",
+            "es": "La asociación Rapidus-Fondazione Chips-IT en semiconductores señala que Italia apuesta por la fabricación avanzada, no solo por el espectáculo.",
+            "de": "Rapidus-Fondazione Chips-IT Halbleiter-Partnerschaft zeigt: Italien setzt auf hochwertige Fertigung, nicht nur auf Spektakel."
           }
         }
       ],
       "axes": {
         "SCI": 58,
-        "SPECTACLE": 62,
+        "SPECTACLE": 64,
         "PUBLIC": 61,
-        "KNOW": 54,
-        "CRIT": 59,
-        "FUTURE": 60
+        "KNOW": 52,
+        "CRIT": 61,
+        "FUTURE": 59
       }
     },
     {
@@ -1420,25 +1306,25 @@
       "flag": "🇨🇦",
       "continent": "North America",
       "score": 47,
-      "trend": -7,
+      "trend": 0,
       "gdp_adjusted": 45,
       "headline": {
-        "en": "Justin Trudeau skipped Canada World Cup opener because girlfriend Katy Perry performed at U.S. game",
-        "fr": "Justin Trudeau a raté l'ouverture de la Coupe du monde du Canada parce que sa petite amie Katy Perry a performé au match américain",
-        "es": "Justin Trudeau se saltó la apertura de la Copa del Mundo de Canadá porque su novia Katy Perry actuó en el partido estadounidense",
-        "de": "Justin Trudeau verpasste Kanadas Eröffnungsspiel der Weltmeisterschaft, weil seine Freundin Katy Perry beim US-Spiel auftrat"
+        "en": "Trudeau ditches Canada's World Cup opener to watch his girlfriend perform in the US, peak spectacle over substance.",
+        "fr": "Trudeau abandonne le match d'ouverture de la Coupe du monde du Canada pour regarder sa copine se produire aux États-Unis, le spectaculaire plutôt que l'essentiel, évidemment.",
+        "es": "Trudeau abandona el primer partido de Canadá en la Copa del Mundo para ver actuar a su novia en EE.UU., lo espectacular antes que lo sustancial, obvio.",
+        "de": "Trudeau lässt Kanadas Eröffnungsspiel der Weltmeisterschaft sausen, um seiner Freundin bei einem Auftritt in den USA zuzuschauen, Spektakel vor Substanz, wie erwartet."
       },
       "why": {
-        "en": "The Prime Minister of a G7 nation chose celebrity gossip over representing his country at a major sporting event, peak spectacle governance.",
-        "fr": "Le Premier ministre d'une nation du G7 a choisi les potins de célébrités plutôt que de représenter son pays à un grand événement sportif, gouvernance du spectaculaire à l'état pur.",
-        "es": "El Primer Ministro de una nación del G7 eligió chismes de celebridades sobre representar a su país en un gran evento deportivo, gobernanza del espectáculo puro.",
-        "de": "Der Premierminister einer G7-Nation wählte Celebrity-Klatsch über die Vertretung seines Landes bei einem großen Sportereignis, reine Spektakel-Governance."
+        "en": "When the PM's personal celebrity romance takes priority over national sporting moments, you're living in a Camacho presidency.",
+        "fr": "Quand la romance de célébrité personnelle du PM prime sur les grands moments sportifs nationaux, vous vivez dans une présidence Camacho.",
+        "es": "Cuando el romance de celebridad personal del PM se antepone a los momentos deportivos nacionales, estás viviendo en una presidencia Camacho.",
+        "de": "Wenn die persönliche Promi-Romanze des PM nationale Sportmomente übertrumpft, lebst du in einer Camacho-Präsidentschaft."
       },
       "articles": [
         {
           "title": {
             "en": "Justin Trudeau skipped Canada World Cup opener because girlfriend Katy Perry performed at U.S. game",
-            "fr": "Justin Trudeau a raté l'ouverture de la Coupe du monde du Canada parce que sa petite amie Katy Perry a performé au match américain",
+            "fr": "Justin Trudeau a raté l'ouverture de la Coupe du monde du Canada parce que sa copine Katy Perry s'est produite au match américain",
             "es": "Justin Trudeau se saltó la apertura de la Copa del Mundo de Canadá porque su novia Katy Perry actuó en el partido estadounidense",
             "de": "Justin Trudeau verpasste Kanadas Eröffnungsspiel der Weltmeisterschaft, weil seine Freundin Katy Perry beim US-Spiel auftrat"
           },
@@ -1446,79 +1332,60 @@
           "date": "Jun 14, 2026",
           "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOelBRQVZrc0RxZG1IOW9vLWt5RFJ2S0NqUExRNXZsWmVFOHlRNkRWVVJKRC15QmJZVHBTekRqV2d0OXotSG1QWGdLRGRDSU9SM3hkVU1iZ19xdmFHR2Nka2hheU9WSlFXeHVwdHptNE00SG43T1VqMmIzeUlCQjJhQ0NLUkZxMzJDWnNabmJSTkJEaTNOVjRCY21VYTF1bE5I0gGoAUFVX3lxTE1CdUlVemtnRVlvZFcwVlV2bmZNMndWSUwxYnpNeXluQzJnLUpoakVSVUtSZ0RZeWQ2Y1J5U0ttdF9qelhLQUdpY1ZiTnFwUmVWRzJZMlBkX2hyN1dYTVNPRU4yX0dwVWdWZkU1NUQ3ZHcyLXBUQlQzb3dHYWluQ014VTEyT053MU01Ni1tdFRkU0dzVl8tZWwtR2lHdUFlR19qQ2tGM1RqNA?oc=5",
           "axis": "SPECTACLE",
-          "impact": 4,
+          "impact": 3,
           "note": {
-            "en": "Leader prioritizes girlfriend's pop performance over national duty; optics over substance.",
-            "fr": "Un leader priorise la performance pop de sa copine plutôt que son devoir national ; l'apparence plutôt que la substance.",
-            "es": "Un líder prioriza la actuación pop de su novia sobre el deber nacional ; apariencia sobre sustancia.",
-            "de": "Anführer priorisiert die Pop-Performance seiner Freundin über nationale Pflicht ; Optik über Substanz."
+            "en": "Prime minister choosing girlfriend's US concert over Canada's World Cup match is Brawndo-level priorities.",
+            "fr": "Un premier ministre qui choisit le concert américain de sa copine plutôt que le match de Coupe du monde du Canada, c'est des priorités digne de Brawndo.",
+            "es": "Un primer ministro eligiendo el concierto estadounidense de su novia sobre el partido de la Copa del Mundo de Canadá es tener prioridades de nivel Brawndo.",
+            "de": "Ein Premierminister, der das US-Konzert seiner Freundin dem WM-Spiel Kanadas vorzieht, hat Brawndo-Prioritäten."
           }
         },
         {
           "title": {
             "en": "Canada Prime Minister Mark Carney highlights seafood independence in new food strategy",
-            "fr": "Le Premier ministre canadien Mark Carney met en avant l'indépendance des fruits de mer dans sa nouvelle stratégie alimentaire",
-            "es": "El Primer Ministro canadiense Mark Carney destaca la independencia de mariscos en su nueva estrategia alimentaria",
+            "fr": "Le premier ministre du Canada Mark Carney souligne l'indépendance des fruits de mer dans sa nouvelle stratégie alimentaire",
+            "es": "El primer ministro de Canadá Mark Carney destaca la independencia de mariscos en la nueva estrategia alimentaria",
             "de": "Kanadas Premierminister Mark Carney hebt Meeresfrüchte-Unabhängigkeit in neuer Lebensmittelstrategie hervor"
           },
           "source": "SeafoodSource",
           "date": "Jun 15, 2026",
           "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPOU5KU094WVdxZXNFSW1yaFRvZk9jQ21GT0lTWFBXdWs5aGwwaEc2algxQ2g1cV8xOXFTc0dwUlptTDJGQkRNRVJzMFEyY2x2aGdrRFU3NHEtRkNSbUxDTEotcWVJYVMtTnpscElMdzF3Sjd2SEE3QVprYk04eFR3QUFhY1p6ZGlYVWlCZ2dkNlQ5bXBxcUJrOEJWaThOZW1TbWNZaG5SZXY2YTBiMmdlRWlQZTc3ODdYWGpON3dRdHV4YkpLdmV5MTQ5SGlZV2s?oc=5",
           "axis": "FUTURE",
-          "impact": -3,
+          "impact": -2,
           "note": {
-            "en": "Food security strategy signals long-term planning and climate-aware governance; solid.",
-            "fr": "La stratégie de sécurité alimentaire signale une planification à long terme et une gouvernance sensible au climat ; solide.",
-            "es": "La estrategia de seguridad alimentaria señala planificación a largo plazo y gobernanza consciente del clima ; sólida.",
-            "de": "Lebensmittelsicherheitsstrategie signalisiert langfristige Planung und klimabewusste Governance ; solide."
+            "en": "Food security strategy with actual long-term planning (seafood independence) is competent, boring governance, push back toward sanity.",
+            "fr": "Une stratégie de sécurité alimentaire avec une véritable planification à long terme (indépendance des fruits de mer) est de la gouvernance compétente et barbante, un retour vers la santé mentale.",
+            "es": "Una estrategia de seguridad alimentaria con planificación a largo plazo real (independencia de mariscos) es gobernanza competente y aburrida, un paso hacia la cordura.",
+            "de": "Eine Lebensmittelsicherheitsstrategie mit echter Langzeitplanung (Meeresfrüchte-Unabhängigkeit) ist kompetente, langweilige Regierungsführung, ein Schritt zurück zur Vernunft."
           }
         },
         {
           "title": {
-            "en": "Bank of Canada Holds Interest Rates Steady as Officials Grapple With Policy Dilemma",
-            "fr": "La Banque du Canada maintient les taux d'intérêt stables alors que les responsables font face à un dilemme politique",
-            "es": "El Banco de Canadá mantiene los tipos de interés estables mientras los funcionarios lidian con un dilema político",
-            "de": "Bank of Canada hält Leitzinsen stabil, während Beamte mit politischem Dilemma ringen"
+            "en": "U.S. and Canada Sign Agreement to Enhance Collaboration in Civilian Nuclear Energy Research and Development",
+            "fr": "Les États-Unis et le Canada signent un accord pour améliorer la collaboration en recherche et développement de l'énergie nucléaire civile",
+            "es": "EE.UU. y Canadá firman acuerdo para mejorar la colaboración en investigación y desarrollo de energía nuclear civil",
+            "de": "USA und Kanada unterzeichnen Vereinbarung zur Verbesserung der Zusammenarbeit in Forschung und Entwicklung ziviler Kernenergie"
           },
-          "source": "WSJ",
+          "source": "Department of Energy (.gov)",
           "date": "Jun 10, 2026",
-          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOb0xQSEJfV09JVWJEczIwa3VTX0E4NENfemduam93VzJFRXNodTFxaXJTSzFkT0M1WlNwNkhOS3dLdzRvWHF2eUYyNVZIRW1maTg4RUhYMWhOcVBrX0hoNHhROVc0dXNhM3psYUdkak5QalVERVZrTWlsMUZjektRV3RQd1h1OThHclZqY3J0V0FleDRTTFFycFdyWll4Q1lOR3lZdmQ4Y3h3QjhRblctWkh5Vzg0SGtqblRKMThWc2hqbk1WYzhMY1NqRXk0RjY0emc?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQMzA0cHRPcTNsRjZqYnhGZmRhcm41Z1dQWjlwWElPRklsMTY0bVkwU3lwZEZtX1ZVNk1ETTNYbS1veDFadjlrdzRoWWJWNzNBelkzNEJmNUNaT1lKeEp3dkNCdUdIa0lqS1B5eUF2VUVCT1Q2b1M5ZjhaVXQ2ZmF6WVg1MXMwVEF2QnFKSlFqS2RySlRJWUxzV1M5a093RUtJR0w4NjRGbk5rMktUWU1yNjZaTWJTemhucFEtSl81cw?oc=5",
           "axis": "SCI",
           "impact": -2,
           "note": {
-            "en": "Central bank wrestling openly with monetary policy dilemmas shows evidence-based deliberation, not dogma.",
-            "fr": "La banque centrale qui lutte ouvertement avec les dilemmes de politique monétaire montre une délibération fondée sur des preuves, pas du dogme.",
-            "es": "El banco central lidiando abiertamente con dilemas de política monetaria muestra deliberación basada en evidencia, no dogma.",
-            "de": "Zentralbank kämpft offen mit geldpolitischen Dilemmata und zeigt evidenzbasierte Überlegung, keinen Dogmatismus."
-          }
-        },
-        {
-          "title": {
-            "en": "ITI: Canada’s New 15% Tax on Streamers Will Strain U.S.-Canada Relationship",
-            "fr": "ITI : La nouvelle taxe de 15 % du Canada sur les streamers va tendre les relations Canada-États-Unis",
-            "es": "ITI: El nuevo impuesto del 15 % de Canadá a los streamers tensará la relación Canada-Estados Unidos",
-            "de": "ITI: Kanadas neue 15%-Steuer auf Streamer belastet die Canada-USA-Beziehungen"
-          },
-          "source": "Information Technology Industry Council (ITI)",
-          "date": "Jun 15, 2026",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQejZqVWljWkllcFBGRUk3UGlqTlRKZXBkWGxhVjdFbGl3aGVDWXBrX3E4aXNaWW5VZFh5S0pYZEFSamFPbkhMNVFmYVg5c3ZsZHAyYlJla2VBRjROYzBES2ItTjE2YlMzYVdEZVhEQjhGVUN4VmlwejEwajRhZndVZFBFbW01N0VrYWVpMXBLcWlpLXdoNWpPbkdURDc2OFZQWXlvQmpWOXFNY2xIWjBIMkxPZWx0N2IxWHcw?oc=5",
-          "axis": "PUBLIC",
-          "impact": 3,
-          "note": {
-            "en": "Taxing streamers strains U.S. relations; protectionism over global coordination suggests parochial corporate capture.",
-            "fr": "Taxer les streamers tend les relations américaines ; le protectionnisme plutôt que la coordination mondiale suggère une capture corporative étroite d'esprit.",
-            "es": "Gravar a los streamers tensa las relaciones estadounidenses ; proteccionismo sobre coordinación global sugiere captura corporativa provinciana.",
-            "de": "Streamer-Besteuerung belastet US-Beziehungen ; Protektionismus statt globaler Koordination deutet auf engstirnige Unternehmenseinflusnahme hin."
+            "en": "US-Canada civilian nuclear R&D collaboration is evidence-based energy policy, no Brawndo in sight.",
+            "fr": "La collaboration US-Canada en R&D nucléaire civile est une politique énergétique fondée sur les faits, zéro Brawndo en vue.",
+            "es": "La colaboración EE.UU.-Canadá en I+D de energía nuclear civil es política energética basada en evidencia, cero Brawndo a la vista.",
+            "de": "Die USA-Kanada-Zusammenarbeit in ziviler Kern-F&E ist faktengestützte Energiepolitik, kein Brawndo in Sicht."
           }
         }
       ],
       "axes": {
-        "SCI": 38,
-        "SPECTACLE": 52,
+        "SCI": 36,
+        "SPECTACLE": 55,
         "PUBLIC": 48,
         "KNOW": 45,
         "CRIT": 50,
-        "FUTURE": 52
+        "FUTURE": 50
       }
     },
     {
@@ -1526,85 +1393,47 @@
       "name": "Sweden",
       "flag": "🇸🇪",
       "continent": "Europe",
-      "score": 36,
-      "trend": 0,
-      "gdp_adjusted": 34,
+      "score": 37,
+      "trend": 1,
+      "gdp_adjusted": 35,
       "headline": {
-        "en": "Sweden lurches right on immigration with 'snitch laws' and behavior policing, while sensibly ditching jailing 13-year-olds and investing in nuclear SMRs.",
-        "fr": "La Suède vire à droite sur l'immigration avec des « lois de délation » et une police des comportements, tout en abandonnant intelligemment l'emprisonnement des enfants de 13 ans et en investissant dans les SMR nucléaires.",
-        "es": "Suecia gira a la derecha en inmigración con 'leyes de delación' y vigilancia de conducta, mientras que sensatamente abandona encarcelar a niños de 13 años e invierte en SMR nucleares.",
-        "de": "Schweden rückt bei Migration nach rechts mit 'Denunziationsgesetzen' und Verhaltenspolizei, während es vernünftigerweise davon absieht, 13-Jährige einzusperren und in nukleare SMR investiert."
+        "en": "Sweden trades civil liberties for immigration hardline: public workers now mandatory informants on undocumented migrants.",
+        "fr": "La Suède échange les libertés civiles contre une ligne dure sur l'immigration : les agents publics deviennent des informateurs obligatoires sur les migrants en situation irrégulière.",
+        "es": "Suecia cambia libertades civiles por una línea dura en inmigración: los funcionarios públicos ahora son informantes obligatorios sobre migrantes indocumentados.",
+        "de": "Schweden tauscht Bürgerrechte gegen harte Immigrationslinie: Staatliche Arbeitnehmer jetzt zwangsweise Denunzianten von undokumentierten Migranten."
       },
       "why": {
-        "en": "A competent Nordic state wrestling with populist pressure: some genuinely smart moves (child justice, clean energy), undercut by creeping authoritarianism (mandatory migrant informant culture) that treats policy as spectacle rather than justice.",
-        "fr": "Un État nordique compétent aux prises avec la pression populiste : quelques mesures réellement intelligentes (justice des mineurs, énergie propre), minées par un autoritarisme rampant (culture obligatoire de délation des migrants) qui traite la politique comme un spectacle plutôt que comme de la justice.",
-        "es": "Un Estado nórdico competente bajo presión populista: algunos movimientos genuinamente inteligentes (justicia de menores, energía limpia), socavados por autoritarismo creciente (cultura obligatoria de delación de migrantes) que trata la política como espectáculo en lugar de justicia.",
-        "de": "Ein kompetenter nordischer Staat unter populistischem Druck: einige wirklich intelligente Maßnahmen (Jugendgerechtigkeit, saubere Energie), unterminiert durch schleichenden Autoritarismus (obligatorische Denunziationskultur gegen Migranten), die Politik als Spektakel statt Gerechtigkeit behandelt."
+        "en": "A surveillance state creep wrapped in tough-on-immigration policy, the kind of institutional capture and anti-liberty move that makes Idiocracy's corporate dystopia look quaint.",
+        "fr": "Un glissement progressif vers l'État surveillance enrobé dans une politique restrictive, le genre de capture institutionnelle et d'atteinte aux libertés qui fait ressembler la dystopie corporatiste d'Idiocracy à un conte de fées.",
+        "es": "Una expansión del Estado surveillance envuelto en política restrictiva, el tipo de captura institucional y ataque a las libertades que hace parecer quaint la distopía corporativa de Idiocracy.",
+        "de": "Schleichende Überwachungsstaaterei in härtere Immigrationspolitik verpackt, genau die institutionelle Vereinnahmung und Freiheitsattacke, die Idiocracy's Unternehmens-Dystopie geradezu niedlich wirken lässt."
       },
       "articles": [
         {
           "title": {
-            "en": "Sweden votes on controversial 'snitch law' for undocumented migrants",
-            "fr": "La Suède vote une loi de délation controversée pour les migrants sans papiers",
-            "es": "Suecia vota polémico proyecto de 'ley de delación' para migrantes indocumentados",
-            "de": "Schweden stimmt über umstrittenes 'Denunziationsgesetz' für undokumentierte Migranten ab"
+            "en": "Sweden requires public workers to report migrants not authorized to live there",
+            "fr": "La Suède oblige les agents publics à signaler les migrants sans droit de résidence",
+            "es": "Suecia obliga a funcionarios públicos a denunciar migrantes sin autorización de residencia",
+            "de": "Schweden verpflichtet Beamte, nicht autorisierte Migranten zu melden"
           },
-          "source": "InfoMigrants",
+          "source": "Los Angeles Times",
           "date": "Jun 15, 2026",
-          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQX3RtcGUydW9MVHVXNHhwSnh1V2MzMjdZbjB3NmhYZU9fNW5ZV2llbzZjS2xiTk9mZmlHYjMtai0xa3V6Ujk4LXFXNkctTURQR1hSUE5YdXBORlhIX0VSb3otRlZrajFJRDhvdTA0OTJObzROVmtuTHA2ZGZacWNfaHp0SWRnWURWWEpvZEpyR3Y4QTRrRC1TZjN4dmctMGVUb2ktcVhEYW1VcUVZeEE?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNcHI2YjBYV1BCcWxvZlFIbkpVdE5aSndfcG1QejRZbmJNT2p2RGJGenY0QTBjOGlLSE45MDVhRERsY0ctY3R5T3RjaHZVY2c3NjNUM2NNdVBrbWRSUjNpOEgxMmxfSV9GX1kyQld6TDBfUnl3S1FLN0tYeFZLNUVCYVdtb2xYa3Z6eVUwSjhnMkE2a0pCT0JCRnJZSm1kUjh0bGZEdE12VWViQW13eWlzb3pvdURwT296ZHRXWHd1eHpfTjVPWU5hZVlRLVU?oc=5",
           "axis": "PUBLIC",
           "impact": 4,
           "note": {
-            "en": "Mandatory 'snitch' reporting of undocumented migrants by public workers corrodes trust in public institutions; Brawndo-grade mission creep.",
-            "fr": "L'obligation pour les agents publics de signaler les migrants sans papiers corrode la confiance dans les institutions ; dérive de mission digne de Brawndo.",
-            "es": "La obligación de los funcionarios públicos de denunciar a migrantes indocumentados erosiona la confianza en las instituciones; expansión de misión digna de Brawndo.",
-            "de": "Obligatorische Denunziation von undokumentierten Migranten durch Behördenmitarbeiter erodiert das Vertrauen in öffentliche Institutionen; Brawndo-würdige Aufgabenausweitung."
-          }
-        },
-        {
-          "title": {
-            "en": "Sweden ditches plan to imprison 13-year-old serious offenders",
-            "fr": "La Suède abandonne le projet d'emprisonner les délinquants graves de 13 ans",
-            "es": "Suecia abandona plan de encarcelar a delincuentes graves de 13 años",
-            "de": "Schweden verwerfen Plan zur Inhaftierung schwerkrimineller 13-Jähriger"
-          },
-          "source": "BBC",
-          "date": "Jun 11, 2026",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE91OW95NVZHMWFjdGtqZGdGaDdLMFdSdnppZzRzOXVGOXNWV0Zlb1U3WFg3alpDdnNnSV9XcmRQSTZNdDZxUlZNWldub3Rua3lLb3BsV0t1dWNVdw?oc=5",
-          "axis": "KNOW",
-          "impact": -3,
-          "note": {
-            "en": "Ditching plan to imprison 13-year-olds shows evidence-based juvenile justice; competent pushback against tough-on-crime theater.",
-            "fr": "Abandonner l'emprisonnement des enfants de 13 ans témoigne d'une justice des mineurs basée sur les preuves ; riposte compétente au théâtre répressif.",
-            "es": "Abandonar el encarcelamiento de menores de 13 años demuestra justicia de menores basada en evidencia; contrapeso competente contra el teatro de mano dura.",
-            "de": "Verzicht auf Inhaftierung von 13-Jährigen zeigt evidenzgestützte Jugendgerichtsbarkeit; kompetente Gegenwehr gegen Hardline-Theater."
-          }
-        },
-        {
-          "title": {
-            "en": "Sweden's Vattenfall picks Rolls-Royce SMR for nuclear power project",
-            "fr": "Vattenfall en Suède choisit le SMR Rolls-Royce pour un projet nucléaire",
-            "es": "Vattenfall sueca elige SMR Rolls-Royce para proyecto de energía nuclear",
-            "de": "Schwedens Vattenfall wählt Rolls-Royce SMR für Kernkraftprojekt"
-          },
-          "source": "Reuters",
-          "date": "Jun 15, 2026",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNOWxvSjl2RGlOZkk3TzhiMllrdVpSd2RMUkZwRmpFcUJONjhTYWpuVVFOQWVzU0hOUzZjdHZtMWpXNVMyd1NGSHZHTGxaRlNKeGRlaXB2UHlOeDlZS0V4THAyMFU2YVJ2bHllUGM0NUZ2RHd0azN6a2VGRjJsNWdWMkIzams2b3lLTHd2b3JsUTNSY0JoYXJBSXZCYVhkVk1xclZjVXhmWXlQZGc?oc=5",
-          "axis": "FUTURE",
-          "impact": -4,
-          "note": {
-            "en": "Picking Rolls-Royce SMR for nuclear modernization is long-term, science-backed energy planning; exactly the boring competence that works.",
-            "fr": "Choisir le SMR Rolls-Royce pour la modernisation nucléaire, c'est une planification énergétique à long terme et basée sur la science ; exactement la compétence ennuyeuse qui fonctionne.",
-            "es": "Elegir SMR Rolls-Royce para modernización nuclear es planificación energética a largo plazo y respaldada por ciencia; exactamente la competencia aburrida que funciona.",
-            "de": "Die Wahl des Rolls-Royce SMR für Kernenergie-Modernisierung ist langfristige, wissenschaftlich fundierte Energieplanung; genau die langweilige Kompetenz, die funktioniert."
+            "en": "Turning public servants into police informants erodes institutional independence and turns the state into a surveillance apparatus, textbook Brawndo logic.",
+            "fr": "Transformer les serviteurs publics en mouches du coche érode l'indépendance institutionnelle et transforme l'État en machine de surveillance, pur Brawndo.",
+            "es": "Convertir a los servidores públicos en delatores erosiona la independencia institucional y transforma el Estado en un aparato de vigilancia, lógica pura de Brawndo.",
+            "de": "Staatsbedienstete in Polizeispitzel zu verwandeln untergräbt institutionelle Unabhängigkeit und macht den Staat zur Überwachungsmaschinerie, Brawndo-Logik im Lehrbuch."
           }
         },
         {
           "title": {
             "en": "Sweden passes 'good behaviour' law to kick out misbehaving immigrants",
-            "fr": "La Suède adopte une loi de « bonne conduite » pour expulser les immigrants mal comportés",
-            "es": "Suecia aprueba ley de 'buen comportamiento' para expulsar inmigrantes conflictivos",
-            "de": "Schweden verabschiedet 'Gutes-Verhalten'-Gesetz zur Ausweisung widerspenstiger Migranten"
+            "fr": "La Suède adopte une loi de « bonne conduite » pour expulser les immigrants mal-embouchés",
+            "es": "Suecia aprueba ley de «buena conducta» para expulsar inmigrantes mal portados",
+            "de": "Schweden verabschiedet «Wohlverhalten»-Gesetz zur Ausweisung unartiger Migranten"
           },
           "source": "Reuters",
           "date": "Jun 15, 2026",
@@ -1612,20 +1441,58 @@
           "axis": "SPECTACLE",
           "impact": 3,
           "note": {
-            "en": "'Good behaviour' deportation law is populist theater: vague moral enforcement dressed as policy, not serious governance.",
-            "fr": "La loi d'expulsion pour « bonne conduite » est du théâtre populiste : une application morale vague déguisée en politique, pas de la gouvernance sérieuse.",
-            "es": "La ley de deportación por 'buen comportamiento' es teatro populista: aplicación moral vaga disfrazada de política, no gobernanza seria.",
-            "de": "Das 'Gutes-Verhalten'-Ausweisungsgesetz ist populistisches Theater: vage moralische Durchsetzung in Politikgewand, keine ernsthafte Regierungsführung."
+            "en": "Performative 'bad behaviour' expulsions play well on cable news but signal governing by spectacle rather than evidence-based policy.",
+            "fr": "Les expulsions théâtrales pour « mauvaise conduite » font du bruit à la télévision, mais signalent une gouvernance par le spectacle plutôt que par des politiques fondées sur les preuves.",
+            "es": "Las expulsiones performáticas por «mala conducta» suenan bien en los noticieros, pero señalan un gobierno por espectáculo más que por políticas basadas en evidencia.",
+            "de": "Performative Ausweisungen für «Fehlverhalten» sehen gut im Kabelfernsehen aus, signalisieren aber Regieren durch Spektakel statt evidenzbasierter Politik."
+          }
+        },
+        {
+          "title": {
+            "en": "Sweden ditches plan to imprison 13-year-old serious offenders",
+            "fr": "La Suède abandonne le projet d'emprisonner les délinquants graves de 13 ans",
+            "es": "Suecia desecha el plan de encarcelar a delincuentes graves de 13 años",
+            "de": "Schweden verwirft Plan, schwer straffällige 13-Jährige einzusperren"
+          },
+          "source": "BBC",
+          "date": "Jun 11, 2026",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE91OW95NVZHMWFjdGtqZGdGaDdLMFdSdnppZzRzOXVGOXNWV0Zlb1U3WFg3alpDdnNnSV9XcmRQSTZNdDZxUlZNWldub3Rua3lLb3BsV0t1dWNVdw?oc=5",
+          "axis": "FUTURE",
+          "impact": -2,
+          "note": {
+            "en": "Abandoning the plan to imprison violent 13-year-olds shows some pushback against draconian short-termism; juvenile justice works better with rehabilitation.",
+            "fr": "Renoncer à emprisonner des enfants de 13 ans violents montre une certaine résistance au maximalisme pénal ; la justice juvénile fonctionne mieux avec la réinsertion.",
+            "es": "Abandonar el plan de encarcelar menores violentos de 13 años muestra cierta resistencia al cortoplacismo draconiano; la justicia juvenil funciona mejor con rehabilitación.",
+            "de": "Den Plan aufzugeben, gewalttätige 13-Jährige einzusperren, zeigt etwas Widerstand gegen drakonischen Kurzfristdenken; Jugendgerichtsbarkeit funktioniert besser mit Reintegration."
+          }
+        },
+        {
+          "title": {
+            "en": "Sweden's Vattenfall picks Rolls-Royce SMR for nuclear power project",
+            "fr": "Vattenfall suédois choisit les SMR Rolls-Royce pour son projet nucléaire",
+            "es": "Vattenfall sueco elige SMR Rolls-Royce para proyecto de energía nuclear",
+            "de": "Schwedens Vattenfall wählt Rolls-Royce SMR für Kernkraftprojekt"
+          },
+          "source": "Reuters",
+          "date": "Jun 15, 2026",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNOWxvSjl2RGlOZkk3TzhiMllrdVpSd2RMUkZwRmpFcUJONjhTYWpuVVFOQWVzU0hOUzZjdHZtMWpXNVMyd1NGSHZHTGxaRlNKeGRlaXB2UHlOeDlZS0V4THAyMFU2YVJ2bHllUGM0NUZ2RHd0azN6a2VGRjJsNWdWMkIzams2b3lLTHd2b3JsUTNSY0JoYXJBSXZCYVhkVk1xclZjVXhmWXlQZGc?oc=5",
+          "axis": "FUTURE",
+          "impact": -3,
+          "note": {
+            "en": "Picking Rolls-Royce SMRs for nuclear expansion is serious long-term energy planning; Sweden keeping one foot in the sane future.",
+            "fr": "Choisir les SMR Rolls-Royce pour l'expansion nucléaire, c'est une vraie planification énergétique à long terme ; la Suède garde un pied dans un avenir sensé.",
+            "es": "Elegir SMR Rolls-Royce para expansión nuclear es planificación energética seria a largo plazo; Suecia mantiene un pie en un futuro cuerdo.",
+            "de": "Rolls-Royce-SMRs für Kernexpansion zu wählen ist ernsthafte Langzeit-Energieplanung; Schweden behält einen Fuß in einer vernünftigen Zukunft."
           }
         }
       ],
       "axes": {
         "SCI": 28,
-        "SPECTACLE": 32,
-        "PUBLIC": 48,
+        "SPECTACLE": 35,
+        "PUBLIC": 52,
         "KNOW": 31,
         "CRIT": 42,
-        "FUTURE": 35
+        "FUTURE": 30
       }
     },
     {
@@ -1633,58 +1500,77 @@
       "name": "Finland",
       "flag": "🇫🇮",
       "continent": "Europe",
-      "score": 20,
-      "trend": 0,
-      "gdp_adjusted": 19,
+      "score": 18,
+      "trend": -2,
+      "gdp_adjusted": 17,
       "headline": {
-        "en": "Finland stockpiles, defends, funds research, and builds wind farms while the world burns, a relentlessly boring beacon of competence.",
-        "fr": "La Finlande stocke, se défend, finance la recherche et construit des éoliennes tandis que le monde brûle, un phare implacablement ennuyeux de compétence.",
-        "es": "Finlandia almacena, se defiende, financia investigación y construye parques eólicos mientras el mundo arde, un faro implacablemente aburrido de competencia.",
-        "de": "Finnland lagert ein, verteidigt sich, finanziert Forschung und baut Windkraftanlagen, während die Welt brennt, ein erbarmungslos langweiliger Leuchtturm der Kompetenz."
+        "en": "Finland boosts defence spending, green energy, and research while keeping workers paid during air raids, competent long-term governance in a crisis.",
+        "fr": "La Finlande augmente ses dépenses de défense, investit dans l'énergie verte et la recherche, tout en payant les travailleurs pendant les raids aériens, une gouvernance à long terme compétente en période de crise.",
+        "es": "Finlandia aumenta el gasto en defensa, energía verde e investigación mientras mantiene los salarios durante ataques aéreos, gobernanza competente a largo plazo en crisis.",
+        "de": "Finnland erhöht Rüstungsausgaben, grüne Energie und Forschung und zahlt Arbeitern während Luftangriffen, kompetente langfristige Regierungsführung in der Krise."
       },
       "why": {
-        "en": "Finland is doing exactly what a functional state does: planning for threats (defence, climate), investing in knowledge (higher ed), and deploying evidence-based policy, the opposite of Idiocracy.",
-        "fr": "La Finlande fait exactement ce qu'un État fonctionnel fait : planifier les menaces (défense, climat), investir dans le savoir (enseignement supérieur), et déployer des politiques fondées sur les preuves, le contraire de Idiocracy.",
-        "es": "Finlandia hace exactamente lo que hace un Estado funcional: planificar amenazas (defensa, clima), invertir en conocimiento (educación superior) e implementar políticas basadas en evidencia, lo opuesto a Idiocracy.",
-        "de": "Finnland tut genau das, was ein funktionsfähiger Staat tut: Bedrohungen planen (Verteidigung, Klima), in Wissen investieren (Hochschulbildung) und faktengestützte Politik umsetzen, das Gegenteil von Idiocracy."
+        "en": "A wealthy democracy deploying brains, not theatre: science-backed policy, public good prioritized, and actual planning for an uncertain future.",
+        "fr": "Une démocratie riche qui utilise son cerveau, pas du spectacle : politiques fondées sur la science, bien public priorisé, et vrai planning pour un avenir incertain.",
+        "es": "Una democracia rica que usa el cerebro, no teatro: política basada en ciencia, bien público priorizado, y planificación real para un futuro incierto.",
+        "de": "Eine wohlhabende Demokratie, die ihr Gehirn nutzt, nicht Theater: wissenschaftsgestützte Politik, öffentliches Wohl priorisiert, und echte Planung für eine unsichere Zukunft."
       },
       "articles": [
         {
           "title": {
-            "en": "Axpo opens its first Finnish wind farm in Vörå with 24.8 MW capacity and output for 5,400 homes",
-            "fr": "Axpo ouvre sa première ferme éolienne finlandaise à Vörå avec une capacité de 24,8 MW et une production pour 5 400 foyers",
-            "es": "Axpo abre su primer parque eólico finlandés en Vörå con capacidad de 24,8 MW y producción para 5.400 hogares",
-            "de": "Axpo eröffnet seinen ersten finnischen Windpark in Vörå mit 24,8 MW Kapazität und Leistung für 5.400 Haushalte"
+            "en": "Finland confronts drone incursions as defence spending set to soar",
+            "fr": "La Finlande fait face aux incursions de drones et prépare une envolée des dépenses de défense",
+            "es": "Finlandia se enfrenta a incursiones de drones mientras el gasto en defensa se dispara",
+            "de": "Finnland konfrontiert Drohnenüberflüge während Rüstungsbudget explodiert"
           },
-          "source": "Energies Media",
+          "source": "Euractiv",
           "date": "Jun 12, 2026",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB3eUg5cmpsYkk1MjE4ajhQNG5KQ3JZYXlzV2lTLXY2dFo2anV2ZHpFeW1ldjNZRms0bFFKWFIydDBhTGFLbG9scjIyaUtXNVdycG1LRTRBMTZZS08yb3pNRVNUc1JBcjZjWHllSVdQbFduTU5VRnc?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPalhuejNtdnFfUlpKR2hhZHJhY3FpdHNub0prY25TMG1ZcjJxMm1nWDE2OGNXWXlvcmtsNDNGVDN6OFBhUVFBc2ttVWRldHJtd3lmd1hrZWUtTi1qbWNpemM5bmVaRFh6TFd1LVlHVHAwbkxTNHFKV05QUDJidk9TSnZEWEJOcjJ4VGJHeXlIUGswdHFITmZQSDg1SlROZw?oc=5",
           "axis": "FUTURE",
           "impact": -3,
           "note": {
-            "en": "Wind farm expansion = long-term energy security over short-term fossil capture; the dull opposite of Brawndo.",
-            "fr": "L'expansion éolienne = la sécurité énergétique à long terme plutôt que la captation des énergies fossiles à court terme ; l'ennuyeux contraire de Brawndo.",
-            "es": "La expansión eólica = seguridad energética a largo plazo sobre captura de combustibles fósiles a corto plazo; el aburrido opuesto de Brawndo.",
-            "de": "Windpark-Expansion = langfristige Energiesicherheit statt kurzfristiger Fossilien-Abschöpfung; das langweilige Gegenteil von Brawndo."
+            "en": "Rising defence spending tied to rational threat assessment, not panic-buying spectacle; forward planning in a real security environment.",
+            "fr": "Augmentation des dépenses de défense basée sur une évaluation rationnelle des menaces, pas une frénésie d'achats médiatisée ; planification intelligente face à une vraie menace de sécurité.",
+            "es": "Aumento de gasto en defensa basado en evaluación racional de amenazas, no pánico compulsivo; planificación inteligente en un entorno de seguridad real.",
+            "de": "Erhöhte Rüstungsausgaben basierend auf rationaler Bedrohungsanalyse, nicht Panikkäufe für die Schlagzeilen; vorausschauende Planung in echter Sicherheitslage."
           }
         },
         {
           "title": {
-            "en": "Inside Finland's stockpiling strategy",
-            "fr": "À l'intérieur de la stratégie de stockage finlandaise",
-            "es": "Dentro de la estrategia de almacenamiento de Finlandia",
-            "de": "Finnlands Lagerhaltungsstrategie von innen"
+            "en": "Axpo opens its first Finnish wind farm in Vörå with 24.8 MW capacity and output for 5,400 homes",
+            "fr": "Axpo inaugure son premier parc éolien finlandais à Vörå avec une capacité de 24,8 MW et une production pour 5 400 foyers",
+            "es": "Axpo abre su primer parque eólico finlandés en Vörå con capacidad de 24,8 MW y energía para 5.400 hogares",
+            "de": "Axpo eröffnet seinen ersten finnischen Windpark in Vörå mit 24,8 MW Kapazität und Strom für 5.400 Haushalte"
           },
-          "source": "Euractiv",
-          "date": "Jun 15, 2026",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8zTXZxNS16UXRETzNKWW5aMVd2TnVuRTVNQW5ETEZDZm10WjRyM2dxVTFVWnQ2VV80Zmk5T1drNGRaaXAxM3hBSk5GMU9uTU1Kc29sWk41aWgwaHk5QmxJMDhmY0VOZnM1T3JLSHpQX29FZlhsSUE?oc=5",
-          "axis": "FUTURE",
+          "source": "Energies Media",
+          "date": "Jun 12, 2026",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB3eUg5cmpsYkk1MjE4ajhQNG5KQ3JZYXlzV2lTLXY2dFo2anV2ZHpFeW1ldjNZRms0bFFKWFIydDBhTGFLbG9scjIyaUtXNVdycG1LRTRBMTZZS08yb3pNRVNUc1JBcjZjWHllSVdQbFduTU5VRnc?oc=5",
+          "axis": "SCI",
+          "impact": -3,
+          "note": {
+            "en": "Wind farm expansion: evidence-based energy policy, not fossil-fuel culture-war nonsense.",
+            "fr": "Expansion éolienne : une politique énergétique basée sur les preuves, pas des guerres culturelles fossiles.",
+            "es": "Expansión eólica: política energética basada en evidencia, no tonterías de guerra cultural fósil.",
+            "de": "Windpark-Expansion: evidenzgestützte Energiepolitik, nicht fossile Kulturkriegsnonsense."
+          }
+        },
+        {
+          "title": {
+            "en": "Finland allows employees to stop working during air raid alerts without loss of pay",
+            "fr": "La Finlande permet aux salariés d'arrêter de travailler lors des alertes de raid aérien sans perte de salaire",
+            "es": "Finlandia permite a los empleados dejar de trabajar durante alertas de ataque aéreo sin pérdida de paga",
+            "de": "Finnland erlaubt Arbeitern, während Luftalarm die Arbeit zu unterbrechen, ohne Lohnverlust"
+          },
+          "source": "Українські Національні Новини (УНН)",
+          "date": "Jun 13, 2026",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPei1qTmpaUmhER0UzNkVhdDJkaXZINjdRRFhEMFNwSVA0a3RCZ2Uwdlp4aEk5eEhOYk9RcU83TzFZLTNGd21NNkVheWpDc0VQYUhtbk9YNkNhSUtkWURPV1VLVXFSNTJ1VDFPSE1hd3daVUphTWtodVFHMDZ2VEV2LTlVWkk5Ykg0d2ZkU2FPQXZ1YjFVUTV5UkIzLURoa1VWV29yODE4LUkyZ9IBqAFBVV95cUxOOC12YTR2Q1hrSlREWGdiZnBqNExGRFdTRHo5QkJWVkZlZDVJN2lqUjI0SWRxdGVrWGJBUjlrQWZLYlF0RjRCZVlIT01rVHNiNnl4SGFBWjc2TDJJQlZTLUdxT25uTk9EOFZkYmRDUkpMZTJNVlU1SHA2TUszbEMtQTVLX0o4SW5RZXB6RVNtaGdqaFZ0WTFMSFY4M1ZtNWlCTmRRSE95YXU?oc=5",
+          "axis": "PUBLIC",
           "impact": -2,
           "note": {
-            "en": "Strategic stockpiling during geopolitical instability shows boring, serious planning for consequences.",
-            "fr": "Le stockage stratégique en période d'instabilité géopolitique montre une planification ennuyeuse et sérieuse des conséquences.",
-            "es": "El almacenamiento estratégico durante la inestabilidad geopolítica muestra planificación aburrida y seria de las consecuencias.",
-            "de": "Strategische Lagerhaltung während geopolitischer Instabilität zeigt langweilige, ernsthafte Planung der Konsequenzen."
+            "en": "Paying workers during air raids = state protecting citizens' welfare over corporate margin squeeze; sanity.",
+            "fr": "Payer les travailleurs pendant les raids aériens = l'État protège le bien-être des citoyens plutôt que les marges des entreprises ; de la raison.",
+            "es": "Pagar a los trabajadores durante ataques aéreos = el Estado protege el bienestar ciudadano antes que los márgenes corporativos; sentido común.",
+            "de": "Arbeitern während Luftangriffen zahlen = Staat schützt Bürgerwohl statt Konzerngewinne; Verstand."
           }
         },
         {
@@ -1692,7 +1578,7 @@
             "en": "New vision for higher education and research for Finland",
             "fr": "Nouvelle vision pour l'enseignement supérieur et la recherche en Finlande",
             "es": "Nueva visión para la educación superior e investigación en Finlandia",
-            "de": "Neue Vision für Hochschulbildung und Forschung in Finnland"
+            "de": "Neue Strategie für Hochschulbildung und Forschung in Finnland"
           },
           "source": "Valtioneuvosto",
           "date": "Jun 15, 2026",
@@ -1700,39 +1586,39 @@
           "axis": "KNOW",
           "impact": -2,
           "note": {
-            "en": "New higher-ed/research vision prioritizes expertise and long-term human capital over TikTok-driven cuts.",
-            "fr": "La nouvelle vision de l'enseignement supérieur/recherche privilégie l'expertise et le capital humain à long terme plutôt que les coupes guidées par TikTok.",
-            "es": "La nueva visión de educación superior/investigación prioriza la experiencia y el capital humano a largo plazo sobre recortes impulsados por TikTok.",
-            "de": "Die neue Hochschul-/Forschungsvision priorisiert Fachkompetenz und langfristiges Humankapital gegenüber TikTok-getriebenen Kürzungen."
+            "en": "New higher education vision: investing in expertise and research, not defunding universities to own the libs.",
+            "fr": "Nouvelle vision pour l'éducation supérieure : investir dans l'expertise et la recherche, pas défendre les universités pour le spectacle idéologique.",
+            "es": "Nueva visión educativa: invertir en pericia e investigación, no desfinanciar universidades para la política de espectáculo.",
+            "de": "Neue Hochschulvision: in Expertise und Forschung investieren, nicht Universitäten für ideologisches Theater kaputt sparen."
           }
         },
         {
           "title": {
-            "en": "Finland confronts drone incursions as defence spending set to soar",
-            "fr": "La Finlande fait face aux intrusions de drones alors que les dépenses de défense s'envolent",
-            "es": "Finlandia enfrenta intrusiones de drones mientras el gasto en defensa se dispara",
-            "de": "Finnland konfrontiert mit Drohnenangriffen, während Verteidigungsausgaben in die Höhe schießen"
+            "en": "Finland's defence exports increased by 241 per cent in 2025",
+            "fr": "Les exportations de défense de la Finlande ont augmenté de 241 % en 2025",
+            "es": "Las exportaciones de defensa de Finlandia aumentaron un 241 % en 2025",
+            "de": "Finnlands Rüstungsexporte stiegen 2025 um 241 Prozent"
           },
-          "source": "Euractiv",
-          "date": "Jun 12, 2026",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPalhuejNtdnFfUlpKR2hhZHJhY3FpdHNub0prY25TMG1ZcjJxMm1nWDE2OGNXWXlvcmtsNDNGVDN6OFBhUVFBc2ttVWRldHJtd3lmd1hrZWUtTi1qbWNpemM5bmVaRFh6TFd1LVlHVHAwbkxTNHFKV05QUDJidk9TSnZEWEJOcjJ4VGJHeXlIUGswdHFITmZQSDg1SlROZw?oc=5",
-          "axis": "SPECTACLE",
+          "source": "Nordic Defence Sector",
+          "date": "Jun 16, 2026",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOWUl4TWp0dUFrblVfcmJmVUJrUGJhdzlzQlFmTERVUUxJQmVPanVGOWtiM2NJVVJNZVp4eTNseFVpZ0xIZGhOMEVXdmpDMnprMWUtcW1TTG5tWm9oRFdiMnpBQTloS0hnNVY0N2ZadW1GdmMyNjNXMENwTDBLdGlEcW5FMjRTaVpGSERUMllEd3ZyQ0N2SER3Ym5kbVQ4RkZCRUpN?oc=5",
+          "axis": "FUTURE",
           "impact": -1,
           "note": {
-            "en": "Defence spending rise driven by threat assessment, not strongman posturing; rational, unglamorous.",
-            "fr": "L'augmentation des dépenses de défense est motivée par l'évaluation des menaces, pas par la posture de strongman ; rationnel, sans glamour.",
-            "es": "El aumento del gasto en defensa impulsado por evaluación de amenazas, no por posturing de hombre fuerte; racional, sin glamour.",
-            "de": "Verteidigungsausgabensteigerung durch Bedrohungsbewertung, nicht Möchtegern-Starke; rational, unspektakulär."
+            "en": "Defence export growth shows export economy diversifying and adapting; not complacent.",
+            "fr": "La croissance des exportations de défense montre une économie d'exportation qui se diversifie et s'adapte ; pas d'autosatisfaction.",
+            "es": "El crecimiento de exportaciones de defensa muestra una economía de exportación que se diversifica y se adapta; nada de complacencia.",
+            "de": "Rüstungsexportwachstum zeigt diversifizierende und sich anpassende Exportwirtschaft; keine Selbstzufriedenheit."
           }
         }
       ],
       "axes": {
-        "SCI": 18,
+        "SCI": 15,
         "SPECTACLE": 22,
-        "PUBLIC": 20,
-        "KNOW": 19,
+        "PUBLIC": 18,
+        "KNOW": 17,
         "CRIT": 21,
-        "FUTURE": 16
+        "FUTURE": 12
       }
     }
   ],
