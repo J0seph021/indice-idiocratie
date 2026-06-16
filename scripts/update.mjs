@@ -175,10 +175,20 @@ export const AXES = [
 const weightedScore = (axes) =>
   clamp(Math.round(AXES.reduce((s, a) => s + (Number(axes && axes[a.key]) || 50) * a.w, 0) / 100), 5, 99);
 
-const RUBRIC = `You are the editor-in-chief of "The Idiocracy Index", a SATIRE site that rates
-civilizational stupidity in the spirit of the film Idiocracy (2006). For a country you score
-SIX axes drawn from the film. Each axis is 0-100, where 0 = strongly RESISTING idiocracy and
-100 = FULL idiocracy on that axis:
+// Lissage : moyenne mobile exponentielle. Chaque jour le score ne se déplace que
+// d'une fraction ALPHA vers la nouvelle lecture → pas de sauts brutaux.
+// 0.3 = prudent (≈ converge en ~1 semaine) ; 1 = pas de lissage. Réglable par secret.
+const ALPHA = clamp(Number(process.env.SCORE_SMOOTHING) || 0.3, 0.05, 1);
+
+const RUBRIC = `You are the editor-in-chief of "The Idiocracy Index", a SATIRE site that measures how far
+a country's CURRENT trajectory has drifted toward the world of the film Idiocracy (2006).
+Score SIX axes, each 0-100, on this FIXED scale:
+  0   = a sane, well-functioning society — the relative normalcy of the mid-2000s (~2006), before
+        things got stupid: problems exist, but institutions, science and reason mostly work.
+  100 = the full dystopia of the film Idiocracy (President Camacho, Brawndo runs the FDA).
+A LOWER score is BETTER. This is NOT only about stupidity: GOOD, competent, evidence-based,
+forward-looking decisions must pull the relevant axis DOWN (toward 0). Credit the good moves as
+seriously as you penalize the dumb ones — the index must rise AND fall.
 
 - SCI       — Science vs. pseudoscience. UP: anti-science decisions, pseudoscience as policy, ignoring experts (Brawndo "has electrolytes"). DOWN: evidence-based, science-funded policy.
 - SPECTACLE — Substance vs. spectacle. UP: governing by show, meme, strongman theatrics, brute force (President Camacho). DOWN: competent, sober, "boring" governance.
@@ -190,8 +200,9 @@ SIX axes drawn from the film. Each axis is 0-100, where 0 = strongly RESISTING i
 RULES:
 - Judge DECISIONS and BEHAVIORS reported in the news, never peoples/ethnicities/religions.
 - NEVER use the film's dysgenic premise or any "national IQ" (racist pseudoscience).
-- Be HARDER on wealthy countries (especially the USA) than on poor ones.
-- Anchor: 40 = sensible, 69 = critical threshold, 90+ = Brawndo won.
+- Weigh good news and bad news fairly: a week of sensible, competent governance should LOWER the score.
+- Be a bit HARDER on wealthy countries (more resources = less excuse) than on poor ones.
+- Anchors: 0-25 = sane / 2006-ish · 40 = cracks showing · 69 = critical threshold, the film starts to rhyme · 90+ = Brawndo won.
 - Tone: biting, funny, hyperbolic, never hateful. Short and punchy.
 
 Respond STRICTLY in valid JSON, no surrounding text.`;
@@ -210,9 +221,9 @@ Recent REAL news headlines (index. title [source]):
 ${list}
 
 1) Rate ${country.name} TODAY on the SIX axes (each 0-100): SCI, SPECTACLE, PUBLIC, KNOW, CRIT, FUTURE.
-2) Pick ONLY headlines genuinely about ${country.name}'s OWN government/politics/society in clear English (skip tangential/foreign/duplicate/non-English). Aim for 4-5, fewer is fine.
-   For EACH kept headline give: "i" (index), "axis" (one of SCI/SPECTACLE/PUBLIC/KNOW/CRIT/FUTURE — which axis it illustrates), "impact" (signed int -6..+6, + = toward idiocracy), "note" (one short biting sentence).
-3) Give a 1-sentence "headline" (the dumbest item) and a 1-sentence "why".
+2) Pick ONLY headlines genuinely about ${country.name}'s OWN government/politics/society in clear English (skip tangential/foreign/duplicate/non-English). Aim for 4-5, fewer is fine. Include notable GOOD/competent moves (negative impact), not only failures.
+   For EACH kept headline give: "i" (index), "axis" (one of SCI/SPECTACLE/PUBLIC/KNOW/CRIT/FUTURE — which axis it illustrates), "impact" (signed int -6..+6, + = toward idiocracy, - = away from it / a good move), "note" (one short biting sentence).
+3) Give a 1-sentence "headline" (the single most telling item — a dumb move, or a strikingly good one) and a 1-sentence "why".
 
 Return JSON: {"axes":{"SCI":<0-100>,"SPECTACLE":<0-100>,"PUBLIC":<0-100>,"KNOW":<0-100>,"CRIT":<0-100>,"FUTURE":<0-100>},"headline":"<1 sentence>","why":"<1 biting sentence>","articles":[{"i":<idx>,"axis":"<AXIS>","impact":<int>,"note":"<short>"}]}`;
 
@@ -220,8 +231,15 @@ Return JSON: {"axes":{"SCI":<0-100>,"SPECTACLE":<0-100>,"PUBLIC":<0-100>,"KNOW":
     const out = PROVIDER === 'anthropic' ? await callAnthropic(RUBRIC, user) : await callOpenAI(RUBRIC, user);
     const parsed = JSON.parse(extractJSON(out));
     const valid = AXES.map(a => a.key);
+    // Lecture brute du jour, puis lissage vers les axes de la veille (moyenne mobile).
+    const prevAxes = country.axes;
     const axes = {};
-    for (const a of AXES) axes[a.key] = clamp(Math.round(Number(parsed.axes && parsed.axes[a.key]) || 50), 0, 100);
+    for (const a of AXES) {
+      const raw = clamp(Math.round(Number(parsed.axes && parsed.axes[a.key]) || 50), 0, 100);
+      axes[a.key] = (prevAxes && Number.isFinite(prevAxes[a.key]))
+        ? Math.round(prevAxes[a.key] * (1 - ALPHA) + raw * ALPHA)
+        : raw; // 1er passage sans historique : on prend la lecture brute
+    }
     const score = weightedScore(axes);
     const arts = (parsed.articles || [])
       .map(x => {
