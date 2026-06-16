@@ -3,7 +3,12 @@ name: Mise a jour quotidienne de l'Idiocratie
 on:
   schedule:
     - cron: '0 11 * * *'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      baseline:
+        description: "Recalibrer le point de depart de chaque pays (calibration unique)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -21,6 +26,7 @@ jobs:
       - name: Recalculer les scores
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BASELINE: ${{ (inputs.baseline == true) && '1' || '0' }}
         run: node scripts/update.mjs
       - name: Commit
         run: |

@@ -179,7 +179,12 @@ const weightedScore = (axes) =>
 // aux axes la somme des impacts des actus (− = bon coup, + = connerie), × un gain.
 // Pas de remise à zéro : c'est une trajectoire. GAIN dose l'ampleur d'un coup.
 // 1 = impacts bruts (−6..+6 par article) ; <1 = plus lent ; réglable par secret.
-const GAIN = clamp(Number(process.env.SCORE_GAIN) || 1, 0.1, 3);
+const GAIN = Math.max(0.1, Math.min(3, Number(process.env.SCORE_GAIN) || 1));
+
+// Mode CALIBRATION (une seule fois) : au lieu d'accumuler, l'IA évalue le niveau
+// ABSOLU actuel de chaque pays sur les 6 axes (0 = ~2006 sain, 100 = le film).
+// Ça (re)pose le point de départ propre. Activé par BASELINE=1 ou --baseline.
+const BASELINE = process.env.BASELINE === '1' || process.argv.includes('--baseline');
 
 const RUBRIC = `You are the editor-in-chief of "The Idiocracy Index", a SATIRE site tracking how far a
 country has drifted toward the world of the film Idiocracy (2006). The index runs 0-100:
@@ -210,13 +215,24 @@ RULES:
 Respond STRICTLY in valid JSON, no surrounding text.`;
 
 async function scoreCountry(country, articles, prevScore) {
-  if (PROVIDER === 'none' || articles.length === 0) {
-    // pas d'IA ou pas d'actu : on ne touche à rien (le score ne bouge que sur une nouvelle)
+  if (PROVIDER === 'none' || (!BASELINE && articles.length === 0)) {
+    // pas d'IA, ou pas d'actu hors calibration : on ne touche à rien
     return { score: prevScore, trend: 0, axes: country.axes, headline: country.headline, why: country.why, articles: country.articles || [], refreshed: false };
   }
 
   const list = articles.map((a, i) => `${i}. ${a.title}  [${a.source}]`).join('\n');
-  const user = `COUNTRY: ${country.name}
+  const user = BASELINE ? `COUNTRY: ${country.name}
+ONE-TIME CALIBRATION — set this country's STARTING position, not a daily nudge.
+
+Recent REAL news headlines (index. title [source]):
+${list}
+
+1) Assess ${country.name}'s CURRENT absolute standing on the SIX axes (each 0-100) on the fixed scale (0 = sane, ~2006 normalcy; 100 = full Idiocracy). Use your general knowledge of the country in 2026 PLUS these headlines. Be calibrated and fair across countries.
+2) Pick ONLY headlines genuinely about ${country.name}'s OWN government/politics/society in clear English (skip tangential/foreign/duplicate/non-English). Aim for 3-5. Include good moves too.
+   For EACH kept headline give: "i", "axis" (SCI/SPECTACLE/PUBLIC/KNOW/CRIT/FUTURE), "impact" (signed int -6..+6, + = toward idiocracy, - = good move), "note" (one short biting sentence).
+3) Give a 1-sentence "headline" (most telling item) and a 1-sentence "why".
+
+Return JSON: {"axes":{"SCI":<0-100>,"SPECTACLE":<0-100>,"PUBLIC":<0-100>,"KNOW":<0-100>,"CRIT":<0-100>,"FUTURE":<0-100>},"headline":"<1 sentence>","why":"<1 biting sentence>","articles":[{"i":<idx>,"axis":"<AXIS>","impact":<int>,"note":"<short>"}]}` : `COUNTRY: ${country.name}
 Previous overall score (today's baseline): ${prevScore}
 
 The index is CUMULATIVE: we start from the baseline and add ONLY today's moves. You do NOT
@@ -246,18 +262,24 @@ Return JSON: {"headline":"<1 sentence>","why":"<1 biting sentence>","articles":[
       })
       .filter(Boolean)
       .slice(0, 5);
-    // ACCUMULATEUR : on part des axes de la veille et on ajoute les impacts du jour × gain.
     const prevAxes = country.axes || {};
     const axes = {};
-    for (const a of AXES) {
-      const base = Number.isFinite(prevAxes[a.key]) ? prevAxes[a.key] : 50;
-      const dayDelta = arts.filter(x => x.axis === a.key).reduce((s, x) => s + x.impact, 0);
-      axes[a.key] = clamp(Math.round(base + GAIN * dayDelta), 0, 100);
+    if (BASELINE) {
+      // CALIBRATION : niveau absolu donné par l'IA (pas d'accumulation).
+      for (const a of AXES) axes[a.key] = clamp(Math.round(Number(parsed.axes && parsed.axes[a.key]) || 50), 0, 100);
+    } else {
+      // ACCUMULATEUR : axes de la veille + somme des impacts du jour × gain.
+      for (const a of AXES) {
+        const base = Number.isFinite(prevAxes[a.key]) ? prevAxes[a.key] : 50;
+        const dayDelta = arts.filter(x => x.axis === a.key).reduce((s, x) => s + x.impact, 0);
+        axes[a.key] = clamp(Math.round(base + GAIN * dayDelta), 0, 100);
+      }
     }
     const score = weightedScore(axes);
-    const refreshed = arts.length >= 1;
+    // En calibration on accepte même sans article gardé (les axes suffisent).
+    const refreshed = BASELINE ? (parsed.axes && AXES.some(a => Number.isFinite(parsed.axes[a.key]))) : arts.length >= 1;
     return refreshed
-      ? { score, trend: score - (prevScore ?? score), axes, headline: parsed.headline || country.headline, why: parsed.why || country.why, articles: arts, refreshed: true }
+      ? { score, trend: BASELINE ? 0 : score - (prevScore ?? score), axes, headline: parsed.headline || country.headline, why: parsed.why || country.why, articles: arts.length ? arts : (country.articles || []), refreshed: true }
       : { score: prevScore, trend: 0, axes: country.axes, headline: country.headline, why: country.why, articles: country.articles || [], refreshed: false };
   } catch (e) {
     console.warn(`  ⚠️  scoring échoué pour ${country.name}: ${e.message}`);
