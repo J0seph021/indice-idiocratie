@@ -78,11 +78,43 @@ relier la Page).
 
 ---
 
+## B-bis. X / Twitter (optionnel, palier gratuit)
+
+X facture la plupart des accès API, **mais** le palier gratuit autorise encore
+l'**écriture** (~1 500 posts/mois — 1/jour est très en dessous), donc à **0 $**.
+On ne joint pas d'image (l'API média est hors gratuit) : le tweet contient le
+**lien vers la page du pays**, et X affiche l'image via la **carte de
+prévisualisation** (balises OG déjà en place). Résultat visuel identique.
+
+1. Crée un compte développeur : https://developer.x.com → projet + app.
+2. Dans les réglages de l'app → **User authentication settings** : active OAuth 1.0a,
+   permission **Read and write**.
+3. Onglet **Keys and tokens** → génère et copie :
+   - **API Key** + **API Key Secret** (= consumer key/secret)
+   - **Access Token** + **Access Token Secret** (avec la permission *write*).
+4. Ajoute 4 secrets GitHub :
+
+| Nom du secret | Valeur |
+|---|---|
+| `X_API_KEY` | API Key |
+| `X_API_SECRET` | API Key Secret |
+| `X_ACCESS_TOKEN` | Access Token |
+| `X_ACCESS_SECRET` | Access Token Secret |
+
+> ⚠️ Si tu régénères tes Access Token après avoir changé la permission en
+> *write*, regénère-les **après** sinon le tweet est refusé (403). Garde le
+> lien dans le tweet : c'est lui qui déclenche l'image. Le palier gratuit
+> peut être restreint par X à tout moment — voir `docs/AUTO-POST.md` pour
+> basculer en payant si besoin.
+
+---
+
 ## C. Tester sans rien publier
 
 ```bash
 npm run posts          # génère le post du jour (marketing/social/latest.json)
-npm run publish:dry    # affiche EXACTEMENT ce qui serait posté — ne publie rien
+npm run publish:dry    # Facebook/Instagram : affiche ce qui serait posté
+npm run publish:x:dry  # X/Twitter : affiche le tweet — ne publie rien
 ```
 
 Pour déclencher une vraie publication à la demande : onglet **Actions** du repo →

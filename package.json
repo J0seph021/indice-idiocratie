@@ -11,6 +11,8 @@
     "posts": "node scripts/build-posts.mjs",
     "publish": "node scripts/publish-social.mjs",
     "publish:dry": "cross-env DRY_RUN=1 node scripts/publish-social.mjs",
+    "publish:x": "node scripts/publish-x.mjs",
+    "publish:x:dry": "cross-env DRY_RUN=1 node scripts/publish-x.mjs",
     "country": "node scripts/build-country.mjs",
     "icons": "node scripts/build-icons.mjs",
     "serve": "node scripts/serve.mjs"

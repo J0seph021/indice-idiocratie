@@ -80,16 +80,18 @@ const articlesOf = (c) => [...((c && c.articles) || [])].sort((a, b) => (b.impac
 const imgFor = (c) => (code(c) ? `assets/og/${code(c)}.png` : 'assets/og.png');
 const newsLines = (c, n = 2) => articlesOf(c).filter((a) => (a.impact || 0) >= 0).slice(0, n)
   .map((a) => `• ${T(a.title)} (${a.source})`).join('\n');
+// Lien profond vers la page du pays (pour que X affiche la bonne carte OG).
+const pageLink = (c) => (code(c) && existsSync(join(ROOT, 'c', `${code(c)}.html`)) ? `${URL}/c/${code(c)}.html` : URL);
 
 // X/Twitter ≤ 280 : on assemble et on coupe le superflu si ça déborde.
-function fitX(parts, tags) {
+function fitX(parts, tags, link = SITE) {
   for (let drop = 0; drop <= 2; drop++) {
     const body = parts.slice(0, parts.length - drop).filter(Boolean).join('\n\n');
-    const txt = `${body}\n\n👉 ${SITE} ${tags}`;
+    const txt = `${body}\n\n👉 ${link} ${tags}`;
     if (txt.length <= 280) return txt;
   }
   const body = parts.slice(0, 2).filter(Boolean).join('\n\n');
-  return `${body}\n\n👉 ${SITE}`.slice(0, 277).replace(/\s+\S*$/, '') + '…';
+  return `${body}\n\n👉 ${link}`.slice(0, 277).replace(/\s+\S*$/, '') + '…';
 }
 
 // --- générateurs ------------------------------------------------------------
@@ -97,22 +99,22 @@ function postSpotlight() {
   const sp = data.spotlight, c = byName(sp.country);
   const sc = sp.score ?? (c && c.score) ?? data.world.score;
   const head = T(sp.headline), flag = sp.flag || (c && c.flag) || '';
-  const news = newsLines(c, 2), kick = kicker(sc);
-  const x = fitX([`${S.spotHook}`, `${flag} ${head}`, `📰 ${S.real}.`, kick], tagLine());
+  const news = newsLines(c, 2), kick = kicker(sc), link = pageLink(c);
+  const x = fitX([`${S.spotHook}`, `${flag} ${head}`, `📰 ${S.real}.`, kick], tagLine(), link);
   const ig =
     `${S.spotHook} — ${date}\n\n${flag} ${(sp.country || '').toUpperCase()} : ${sc}/100\n\n« ${head} »\n\n` +
     (news ? `📰 ${S.realNews}\n${news}\n\n` : '') +
     `${kick}\n\n${S.disclaimer}\n👉 ${URL}\n.\n.\n${tagLine(['#' + (sp.country || '').replace(/\s+/g, '')])}`;
-  return { title: LANG === 'fr' ? 'Connerie du jour ⭐' : 'Stupidity of the day ⭐', img: imgFor(c), x, ig };
+  return { title: LANG === 'fr' ? 'Connerie du jour ⭐' : 'Stupidity of the day ⭐', img: imgFor(c), link, x, ig };
 }
 
 function postWorld() {
   const sc = data.world.score, head = T(data.world.headline);
-  const x = fitX([pick(S.worldHooks), `${sc}/100 — ${lineWord(sc)}`, head, kicker(sc)], tagLine());
+  const x = fitX([pick(S.worldHooks), `${sc}/100 — ${lineWord(sc)}`, head, kicker(sc)], tagLine(), URL);
   const ig =
     `${pick(S.worldHooks)}\n\n🌍 ${sc}/100 — ${lineWord(sc)}\n\n${head}\n\n${kicker(sc)}\n\n` +
     `${S.disclaimer}\n👉 ${URL}\n.\n.\n${tagLine(['#Monde', '#World'])}`;
-  return { title: LANG === 'fr' ? 'Score mondial' : 'World score', img: 'assets/og.png', x, ig };
+  return { title: LANG === 'fr' ? 'Score mondial' : 'World score', img: 'assets/og.png', link: URL, x, ig };
 }
 
 function postPodium() {
@@ -122,20 +124,22 @@ function postPodium() {
     const a = articlesOf(c).find((x) => (x.impact || 0) >= 0);
     return `${medals[i]} ${c.flag} ${c.name} (${c.score}/100)\n   « ${T(c.headline)} »` + (a ? `\n   📰 ${a.source}` : '');
   }).join('\n\n');
-  const x = fitX([S.podiumHook, short], tagLine());
+  const link = pageLink(top[0]);
+  const x = fitX([S.podiumHook, short], tagLine(), link);
   const ig = `${S.podiumHook} — ${date}\n\n${long}\n\n${S.disclaimer}\n👉 ${URL}\n.\n.\n${tagLine()}`;
-  return { title: LANG === 'fr' ? 'Podium' : 'Podium', img: imgFor(top[0]), x, ig };
+  return { title: LANG === 'fr' ? 'Podium' : 'Podium', img: imgFor(top[0]), link, x, ig };
 }
 
 function postMover() {
   const m = [...data.countries].sort((a, b) => (b.trend || 0) - (a.trend || 0))[0];
   if (!m || (m.trend || 0) <= 0) return null;
   const a = articlesOf(m).find((x) => (x.impact || 0) >= 0);
-  const x = fitX([S.moverHook, `${m.flag} ${m.name} +${m.trend} → ${m.score}/100`, `« ${T(m.headline)} »`, kicker(m.score)], tagLine());
+  const link = pageLink(m);
+  const x = fitX([S.moverHook, `${m.flag} ${m.name} +${m.trend} → ${m.score}/100`, `« ${T(m.headline)} »`, kicker(m.score)], tagLine(), link);
   const ig =
     `${S.moverHook} — ${date}\n\n${m.flag} ${m.name} : +${m.trend} aujourd’hui → ${m.score}/100\n\n« ${T(m.headline)} »\n\n` +
     (a ? `📰 ${S.real} (${a.source}).\n\n` : '') + `${kicker(m.score)}\n\n${S.disclaimer}\n👉 ${URL}\n.\n.\n${tagLine()}`;
-  return { title: LANG === 'fr' ? 'Plus forte hausse' : 'Biggest mover', img: imgFor(m), x, ig };
+  return { title: LANG === 'fr' ? 'Plus forte hausse' : 'Biggest mover', img: imgFor(m), link, x, ig };
 }
 
 const KEYS = ['spotlight', 'world', 'podium', 'mover'];
@@ -178,8 +182,9 @@ const json = {
     key: p.key, title: p.title,
     image: p.img,                              // chemin local servi par le site
     image_url: `${URL}/${p.img}`,              // URL publique (requise par Instagram)
+    link: p.link || URL,                       // lien profond (carte OG sur X)
     caption: p.ig,                             // légende longue (FB/IG)
-    tweet: p.x,                                // version courte (X)
+    tweet: p.x,                                // version courte (X, lien inclus)
   })),
 };
 writeFileSync(join(OUT, `latest-${LANG}.json`), JSON.stringify(json, null, 2));
