@@ -14,6 +14,7 @@ assets/style.css        Thème
 assets/app.js           Affichage (lit data/scores.json)
 data/scores.json        Les scores (mis à jour par le script)
 scripts/update.mjs      ⭐ La routine quotidienne : actu GDELT → scoring LLM → JSON
+scripts/build-posts.mjs Brouillons de posts réseaux sociaux (FR/EN) → marketing/social/
 scripts/serve.mjs       Serveur local de test
 scripts/install-windows-task.ps1   Routine quotidienne via Windows
 .github/workflows/daily-update.yml Routine quotidienne via GitHub Actions
@@ -44,6 +45,23 @@ Sans clé API, le script tourne quand même (mode démo : dérive aléatoire des
 |---|---|---|
 | **GitHub Actions** *(recommandé si hébergé sur GitHub Pages)* | Site sur GitHub | Pousser le repo, ajouter le secret `ANTHROPIC_API_KEY` dans *Settings → Secrets*, c'est tout. Le workflow tourne à 11h UTC et committe `data/scores.json`. |
 | **Windows Task Scheduler** *(si vous hébergez vous-même)* | PC toujours allumé | `.\scripts\install-windows-task.ps1` |
+
+## 📣 Posts réseaux sociaux (semi-automatique)
+
+Le contenu se prête parfaitement aux réseaux (un « score du jour » + une « connerie du jour »).
+Le script ne **publie rien** tout seul — il te prépare des brouillons prêts à copier-coller, et
+**toi** tu gardes le doigt sur le bouton « publier » (le 100 % auto = spam = comptes bannis).
+
+```powershell
+npm run posts                 # version FR → marketing/social/latest.md
+node scripts/build-posts.mjs --lang=en   # version anglaise
+```
+
+Quatre angles sont générés à chaque fois (score mondial, connerie du jour, podium, plus forte
+hausse), formatés pour X/Threads (≤ 280 car.) et pour Instagram/Facebook/TikTok/LinkedIn.
+La routine quotidienne (`update.mjs` + GitHub Actions) les régénère automatiquement : en local
+ils atterrissent dans `marketing/social/`, et dans GitHub Actions ils sont téléchargeables en
+**artifact `social-posts`** (dossier `marketing/` gitignoré → jamais publié sur le site).
 
 ## 🌐 Déploiement (gratuit)
 

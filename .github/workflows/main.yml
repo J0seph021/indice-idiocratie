@@ -29,3 +29,9 @@ jobs:
           git add data/scores.json assets/og.png assets/og c
           git diff --staged --quiet || git commit -m "Conneries du jour"
           git push
+      - name: Brouillons de posts (artifact prive, non publie sur le site)
+        uses: actions/upload-artifact@v4
+        with:
+          name: social-posts
+          path: marketing/social/
+          if-no-files-found: ignore

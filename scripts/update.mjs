@@ -320,6 +320,17 @@ async function main() {
   } catch (e) {
     console.warn(`  ⚠️  cartes pays non régénérées : ${e.message}`);
   }
+
+  // Génère les brouillons de posts réseaux sociaux (FR + EN) → marketing/social/.
+  // Rien n'est publié : ce sont des textes prêts à copier-coller.
+  try {
+    const { execFileSync } = await import('node:child_process');
+    for (const lang of ['fr', 'en']) {
+      execFileSync(process.execPath, ['scripts/build-posts.mjs', `--lang=${lang}`], { stdio: 'inherit' });
+    }
+  } catch (e) {
+    console.warn(`  ⚠️  brouillons de posts non générés : ${e.message}`);
+  }
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) main().catch(e => { console.error('💥', e); process.exit(1); });
