@@ -175,20 +175,22 @@ export const AXES = [
 const weightedScore = (axes) =>
   clamp(Math.round(AXES.reduce((s, a) => s + (Number(axes && axes[a.key]) || 50) * a.w, 0) / 100), 5, 99);
 
-// Lissage : moyenne mobile exponentielle. Chaque jour le score ne se déplace que
-// d'une fraction ALPHA vers la nouvelle lecture → pas de sauts brutaux.
-// 0.3 = prudent (≈ converge en ~1 semaine) ; 1 = pas de lissage. Réglable par secret.
-const ALPHA = clamp(Number(process.env.SCORE_SMOOTHING) || 0.3, 0.05, 1);
+// Modèle ACCUMULATEUR : le score part TOUJOURS de la veille. Chaque jour on ajoute
+// aux axes la somme des impacts des actus (− = bon coup, + = connerie), × un gain.
+// Pas de remise à zéro : c'est une trajectoire. GAIN dose l'ampleur d'un coup.
+// 1 = impacts bruts (−6..+6 par article) ; <1 = plus lent ; réglable par secret.
+const GAIN = clamp(Number(process.env.SCORE_GAIN) || 1, 0.1, 3);
 
-const RUBRIC = `You are the editor-in-chief of "The Idiocracy Index", a SATIRE site that measures how far
-a country's CURRENT trajectory has drifted toward the world of the film Idiocracy (2006).
-Score SIX axes, each 0-100, on this FIXED scale:
+const RUBRIC = `You are the editor-in-chief of "The Idiocracy Index", a SATIRE site tracking how far a
+country has drifted toward the world of the film Idiocracy (2006). The index runs 0-100:
   0   = a sane, well-functioning society — the relative normalcy of the mid-2000s (~2006), before
         things got stupid: problems exist, but institutions, science and reason mostly work.
   100 = the full dystopia of the film Idiocracy (President Camacho, Brawndo runs the FDA).
-A LOWER score is BETTER. This is NOT only about stupidity: GOOD, competent, evidence-based,
-forward-looking decisions must pull the relevant axis DOWN (toward 0). Credit the good moves as
-seriously as you penalize the dumb ones — the index must rise AND fall.
+A LOWER score is BETTER. The index is CUMULATIVE: it carries over day to day. Your job is NOT to
+re-rate the country from scratch — it is to judge how TODAY's news NUDGES each axis up or down
+(a signed impact). GOOD, competent, evidence-based, forward-looking moves nudge DOWN (toward 0);
+dumb, anti-science, short-term, spectacle-driven moves nudge UP. Credit the good as seriously as
+you penalize the dumb — the index must rise AND fall. The six axes:
 
 - SCI       — Science vs. pseudoscience. UP: anti-science decisions, pseudoscience as policy, ignoring experts (Brawndo "has electrolytes"). DOWN: evidence-based, science-funded policy.
 - SPECTACLE — Substance vs. spectacle. UP: governing by show, meme, strongman theatrics, brute force (President Camacho). DOWN: competent, sober, "boring" governance.
@@ -215,32 +217,25 @@ async function scoreCountry(country, articles, prevScore) {
 
   const list = articles.map((a, i) => `${i}. ${a.title}  [${a.source}]`).join('\n');
   const user = `COUNTRY: ${country.name}
-Previous overall score: ${prevScore}
+Previous overall score (today's baseline): ${prevScore}
+
+The index is CUMULATIVE: we start from the baseline and add ONLY today's moves. You do NOT
+re-rate the country from scratch — you only judge how today's news nudges it up or down.
 
 Recent REAL news headlines (index. title [source]):
 ${list}
 
-1) Rate ${country.name} TODAY on the SIX axes (each 0-100): SCI, SPECTACLE, PUBLIC, KNOW, CRIT, FUTURE.
-2) Pick ONLY headlines genuinely about ${country.name}'s OWN government/politics/society in clear English (skip tangential/foreign/duplicate/non-English). Aim for 4-5, fewer is fine. Include notable GOOD/competent moves (negative impact), not only failures.
-   For EACH kept headline give: "i" (index), "axis" (one of SCI/SPECTACLE/PUBLIC/KNOW/CRIT/FUTURE — which axis it illustrates), "impact" (signed int -6..+6, + = toward idiocracy, - = away from it / a good move), "note" (one short biting sentence).
+1) Pick ONLY headlines genuinely about ${country.name}'s OWN government/politics/society in clear English (skip tangential/foreign/duplicate/non-English). Aim for 3-5, fewer is fine. Include notable GOOD/competent moves, not only failures.
+2) For EACH kept headline give: "i" (index), "axis" (one of SCI/SPECTACLE/PUBLIC/KNOW/CRIT/FUTURE — which axis it touches), "impact" (signed int -6..+6 = the day's nudge: + = a step TOWARD idiocracy / dumb move, - = a step AWAY / good move, 0 = noise), "note" (one short biting sentence).
+   Most ordinary days are small (±1..±3). Reserve ±5/±6 for genuinely historic moves.
 3) Give a 1-sentence "headline" (the single most telling item — a dumb move, or a strikingly good one) and a 1-sentence "why".
 
-Return JSON: {"axes":{"SCI":<0-100>,"SPECTACLE":<0-100>,"PUBLIC":<0-100>,"KNOW":<0-100>,"CRIT":<0-100>,"FUTURE":<0-100>},"headline":"<1 sentence>","why":"<1 biting sentence>","articles":[{"i":<idx>,"axis":"<AXIS>","impact":<int>,"note":"<short>"}]}`;
+Return JSON: {"headline":"<1 sentence>","why":"<1 biting sentence>","articles":[{"i":<idx>,"axis":"<AXIS>","impact":<int>,"note":"<short>"}]}`;
 
   try {
     const out = PROVIDER === 'anthropic' ? await callAnthropic(RUBRIC, user) : await callOpenAI(RUBRIC, user);
     const parsed = JSON.parse(extractJSON(out));
     const valid = AXES.map(a => a.key);
-    // Lecture brute du jour, puis lissage vers les axes de la veille (moyenne mobile).
-    const prevAxes = country.axes;
-    const axes = {};
-    for (const a of AXES) {
-      const raw = clamp(Math.round(Number(parsed.axes && parsed.axes[a.key]) || 50), 0, 100);
-      axes[a.key] = (prevAxes && Number.isFinite(prevAxes[a.key]))
-        ? Math.round(prevAxes[a.key] * (1 - ALPHA) + raw * ALPHA)
-        : raw; // 1er passage sans historique : on prend la lecture brute
-    }
-    const score = weightedScore(axes);
     const arts = (parsed.articles || [])
       .map(x => {
         const src = articles[x.i];
@@ -251,6 +246,15 @@ Return JSON: {"axes":{"SCI":<0-100>,"SPECTACLE":<0-100>,"PUBLIC":<0-100>,"KNOW":
       })
       .filter(Boolean)
       .slice(0, 5);
+    // ACCUMULATEUR : on part des axes de la veille et on ajoute les impacts du jour × gain.
+    const prevAxes = country.axes || {};
+    const axes = {};
+    for (const a of AXES) {
+      const base = Number.isFinite(prevAxes[a.key]) ? prevAxes[a.key] : 50;
+      const dayDelta = arts.filter(x => x.axis === a.key).reduce((s, x) => s + x.impact, 0);
+      axes[a.key] = clamp(Math.round(base + GAIN * dayDelta), 0, 100);
+    }
+    const score = weightedScore(axes);
     const refreshed = arts.length >= 1;
     return refreshed
       ? { score, trend: score - (prevScore ?? score), axes, headline: parsed.headline || country.headline, why: parsed.why || country.why, articles: arts, refreshed: true }
