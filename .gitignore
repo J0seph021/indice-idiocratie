@@ -1,12 +1,68 @@
-node_modules/
-.env
-*.log
-.DS_Store
-Thumbs.db
+# ============================================================================
+#  RAPPEL : ce repo est PUBLIC. .gitignore empêche de committer ACCIDENTELLEMENT
+#  des fichiers sensibles — il ne cache PAS ce qui est déjà publié, ni les
+#  fichiers du site (HTML/CSS/JS/data) que GitHub Pages doit servir.
+#  Pour vraiment cacher le code source : passer le repo en privé.
+# ============================================================================
 
-# Doc de recherche/strategie interne — non publie
+# --- Dépendances / build ---
+node_modules/
+dist/
+build/
+.cache/
+tmp/
+.tmp/
+coverage/
+
+# --- Secrets & clés API (NE JAMAIS committer) ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cert
+secrets.*
+*secret*
+*credentials*
+*token*
+*.apikey
+auth.json
+service-account*.json
+gcp-*.json
+
+# --- Codes de secours / 2FA / mots de passe ---
+*2fa*
+*backup_code*
+*recovery_code*
+etsy_2fa_backup_codes.txt
+*.kdbx
+passwords.*
+
+# --- Docs internes / stratégie (non publiées) ---
 compass_artifact_*.md
 marketing/
+internal/
+private/
+notes/
+*.private.md
+TODO.private*
 
-# SECRET — codes de secours 2FA Etsy. NE JAMAIS committer/pousser (repo public).
-etsy_2fa_backup_codes.txt
+# --- Logs ---
+*.log
+logs/
+npm-debug.log*
+yarn-error.log*
+
+# --- OS / éditeurs ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.history/
