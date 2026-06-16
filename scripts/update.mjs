@@ -50,15 +50,59 @@ const DRY_RUN = process.env.DRY_RUN === '1';
 const today = new Date().toISOString().slice(0, 10);
 
 // ---------------------------------------------------------------------------
-// 1. ACTUALITÉS — GDELT (gratuit, pas de clé)
+// 1. ACTUALITÉS — Google News RSS (principal) + GDELT (filet de secours)
+//    Tous deux gratuits, sans clé. Google News est fiable, ciblé et peu limité ;
+//    GDELT ne sert que si Google ne ramène rien pour un pays.
 // ---------------------------------------------------------------------------
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+// Décode entités HTML + CDATA d'un flux RSS.
+const decodeXml = (s = '') => s
+  .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
+  .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+  .replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&#39;/g, "'")
+  .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n))
+  .trim();
+// "Mon, 16 Jun 2026 10:00:00 GMT" -> "20260616"
+const toYmd = (s) => { const d = new Date(s); return isNaN(+d) ? '' : d.toISOString().slice(0, 10).replace(/-/g, ''); };
 
 // Requêtes sur-mesure pour les pays où le nom seul ramène trop de bruit
 // (les USA captent surtout de la géopolitique → on cible le domestique).
 const QUERY_OVERRIDES = {
-  'United States': '(Trump OR "White House" OR Congress OR "U.S. Senate" OR "Supreme Court" OR governor) (order OR ban OR cut OR scandal OR lawsuit OR bill OR tariff OR firing OR pardon OR ruling OR protest) sourcelang:eng',
+  'United States': '(Trump OR "White House" OR Congress OR "U.S. Senate" OR "Supreme Court" OR governor) (order OR ban OR scandal OR lawsuit OR bill OR tariff OR pardon OR ruling OR protest)',
 };
+
+async function fetchGoogleNews(countryName, maxRecords = 15) {
+  // Google News RSS — gratuit, sans clé. Édition US/EN → titres en anglais,
+  // ciblés sur le pays via la requête. Opérateur "when:7d" = 7 derniers jours.
+  const topic = QUERY_OVERRIDES[countryName] ||
+    `"${countryName}" (government OR president OR parliament OR election OR minister OR policy OR protest OR scandal)`;
+  const q = encodeURIComponent(`${topic} when:7d`);
+  const url = `https://news.google.com/rss/search?q=${q}&hl=en-US&gl=US&ceid=US:en`;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch(url, { headers: { 'User-Agent': 'IdiocracyIndex/1.0' } });
+      if (res.status === 429 || res.status >= 500) { await sleep(3000 * (attempt + 1)); continue; }
+      if (!res.ok) return [];
+      const xml = await res.text();
+      const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(m => m[1]);
+      const out = [], seen = new Set();
+      for (const it of items) {
+        const link = decodeXml((it.match(/<link>([\s\S]*?)<\/link>/) || [])[1] || '');
+        const srcM = it.match(/<source[^>]*>([\s\S]*?)<\/source>/);
+        const source = decodeXml(srcM ? srcM[1] : '');
+        let title = decodeXml((it.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '');
+        if (source && title.endsWith(` - ${source}`)) title = title.slice(0, -(source.length + 3)).trim();
+        if (!title || !link || seen.has(title)) continue;
+        seen.add(title);
+        out.push({ title, url: link, source, date: toYmd(decodeXml((it.match(/<pubDate>([\s\S]*?)<\/pubDate>/) || [])[1] || '')) });
+        if (out.length >= maxRecords) break;
+      }
+      return out;
+    } catch { await sleep(2000); }
+  }
+  return [];
+}
 
 async function gdeltRequest(rawQuery, maxRecords, timespan = '3d') {
   // Un appel GDELT DOC 2.0 avec backoff patient (GDELT rate-limite agressivement,
@@ -85,11 +129,11 @@ async function gdeltRequest(rawQuery, maxRecords, timespan = '3d') {
   return [];
 }
 
-async function fetchHeadlines(countryName, maxRecords = 15) {
-  // Requêtes en cascade : de la plus ciblée à la plus large. On s'arrête dès qu'on
-  // a des articles → garantit au moins 1 actu par pays (sinon GDELT laisse des trous).
-  const strict = QUERY_OVERRIDES[countryName] ||
-    `"${countryName}" (government OR president OR parliament OR law OR minister OR policy OR election) sourcelang:eng`;
+async function gdeltHeadlines(countryName, maxRecords = 15) {
+  // Filet de secours : GDELT en cascade (ciblée 3j → large 7j → nom seul 7j).
+  const override = QUERY_OVERRIDES[countryName];
+  const strict = override ? `${override} sourcelang:eng`
+    : `"${countryName}" (government OR president OR parliament OR law OR minister OR policy OR election) sourcelang:eng`;
   const queries = [
     { q: strict, t: '3d' },
     { q: `"${countryName}" (politics OR government OR election OR protest OR scandal OR minister) sourcelang:eng`, t: '7d' },
@@ -98,9 +142,16 @@ async function fetchHeadlines(countryName, maxRecords = 15) {
   for (const { q, t } of queries) {
     const arts = await gdeltRequest(q, maxRecords, t);
     if (arts.length) return arts;
-    await sleep(2000); // petite pause entre les essais pour ménager GDELT
+    await sleep(2000);
   }
   return [];
+}
+
+async function fetchHeadlines(countryName, maxRecords = 15) {
+  // Google News d'abord (fiable, ciblé, peu limité) ; GDELT seulement si rien.
+  const g = await fetchGoogleNews(countryName, maxRecords);
+  if (g.length) return g;
+  return gdeltHeadlines(countryName, maxRecords);
 }
 
 function fmtGdeltDate(d) { // "20260615" -> "Jun 15, 2026"
