@@ -148,7 +148,7 @@ async function postToThreads(message, imageUrl) {
 }
 
 // ---------------------------------------------------------------------------
-// INSTAGRAM (compte Business relié à la Page Facebook)
+// INSTAGRAM (Instagram Business Account lié à la Page Facebook)
 // ---------------------------------------------------------------------------
 async function postToInstagram(message, imageUrl) {
   const userId = process.env.INSTAGRAM_USER_ID;
