@@ -35,29 +35,22 @@ jobs:
           git add data/scores.json assets/og.png assets/og c
           git diff --staged --quiet || git commit -m "Conneries du jour"
           git push
-      - name: Publier sur Facebook / Instagram (si les secrets sont configures)
+      - name: Publier sur Facebook, Threads et Instagram
         continue-on-error: true
         env:
-          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
-          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
-          IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          IG_TOKEN: ${{ secrets.IG_TOKEN }}
-          POST_ANGLE: spotlight
-          POST_LANG: en
-        run: node scripts/publish-social.mjs
-      - name: Publier sur X / Twitter (si les secrets sont configures)
-        continue-on-error: true
-        env:
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-          POST_ANGLE: spotlight
-          POST_LANG: en
-        run: node scripts/publish-x.mjs
-      - name: Brouillons de posts (artifact prive, non publie sur le site)
-        uses: actions/upload-artifact@v4
-        with:
-          name: social-posts
-          path: marketing/social/
-          if-no-files-found: ignore
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_USER_TOKEN: ${{ secrets.THREADS_USER_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+        run: node scripts/post-social.mjs
+      # X/Twitter — à activer une fois les secrets X_API_KEY etc. configurés
+      # - name: Publier sur X / Twitter
+      #   continue-on-error: true
+      #   env:
+      #     X_API_KEY: ${{ secrets.X_API_KEY }}
+      #     X_API_SECRET: ${{ secrets.X_API_SECRET }}
+      #     X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+      #     X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+      #   run: node scripts/post-x.mjs
