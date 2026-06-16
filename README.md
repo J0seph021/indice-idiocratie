@@ -57,6 +57,12 @@ npm run posts                 # version FR → marketing/social/latest.md
 node scripts/build-posts.mjs --lang=en   # version anglaise
 ```
 
+**Publication 100 % automatique (gratuit) :** une fois un jeton Meta configuré,
+la routine quotidienne publie seule l'image + la légende sur ta Page Facebook
+(et Instagram en option), via l'API Graph — sans Buffer ni frais. Setup unique
+détaillé dans **[`docs/AUTO-POST.md`](docs/AUTO-POST.md)**. Tester sans publier :
+`npm run publish:dry`.
+
 Quatre angles sont générés à chaque fois (score mondial, connerie du jour, podium, plus forte
 hausse), formatés pour X/Threads (≤ 280 car.) et pour Instagram/Facebook/TikTok/LinkedIn.
 La routine quotidienne (`update.mjs` + GitHub Actions) les régénère automatiquement : en local

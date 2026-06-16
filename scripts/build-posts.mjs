@@ -138,7 +138,10 @@ function postMover() {
   return { title: LANG === 'fr' ? 'Plus forte hausse' : 'Biggest mover', img: imgFor(m), x, ig };
 }
 
-const posts = [postSpotlight(), postWorld(), postPodium(), postMover()].filter(Boolean);
+const KEYS = ['spotlight', 'world', 'podium', 'mover'];
+const posts = [postSpotlight(), postWorld(), postPodium(), postMover()]
+  .map((p, i) => (p ? { key: KEYS[i], ...p } : null))
+  .filter(Boolean);
 
 // --- copie des images du jour dans le bundle de brouillons ------------------
 const OUT = join(ROOT, 'marketing', 'social');
@@ -167,6 +170,20 @@ md += `_${S.disclaimer}_\n`;
 
 writeFileSync(join(OUT, `posts-${date}-${LANG}.md`), md);
 writeFileSync(join(OUT, 'latest.md'), md);
+
+// Sortie machine pour l'auto-publication (scripts/publish-social.mjs).
+const json = {
+  date, lang: LANG, site: SITE,
+  posts: posts.map((p) => ({
+    key: p.key, title: p.title,
+    image: p.img,                              // chemin local servi par le site
+    image_url: `${URL}/${p.img}`,              // URL publique (requise par Instagram)
+    caption: p.ig,                             // légende longue (FB/IG)
+    tweet: p.x,                                // version courte (X)
+  })),
+};
+writeFileSync(join(OUT, `latest-${LANG}.json`), JSON.stringify(json, null, 2));
+if (LANG === 'fr') writeFileSync(join(OUT, 'latest.json'), JSON.stringify(json, null, 2));
 
 console.log(`✓ ${posts.length} angles (${LANG.toUpperCase()}) avec vraies actus + punchlines`);
 console.log(`✓ ${copied.size} image(s) du jour → marketing/social/img/`);
