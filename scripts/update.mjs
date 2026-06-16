@@ -306,7 +306,7 @@ async function main() {
     if (i > 0) await sleep(5000);
     const arts = await fetchHeadlines(c.name);
     const r = await scoreCountry(c, arts, c.score);
-    console.log(`  ${c.flag} ${c.name} — ${arts.length} GDELT → ${r.refreshed ? r.articles.length + ' frais · score ' + r.score : 'inchangé (curés)'}`);
+    console.log(`  ${c.flag} ${c.name} — ${arts.length} actus → ${r.refreshed ? r.articles.length + ' frais · score ' + r.score : 'inchangé (curés)'}`);
     if (r.refreshed) { // on ne change le score/axes que s'il y a du neuf
       c.axes = r.axes;
       c.score = r.score;
