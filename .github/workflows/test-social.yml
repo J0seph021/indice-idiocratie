@@ -6,7 +6,7 @@ on:
       platform:
         description: "Plateforme à tester"
         type: choice
-        options: [all, facebook, threads, instagram]
+        options: [all, facebook, x, instagram]
         default: all
 
 jobs:
@@ -21,8 +21,10 @@ jobs:
         env:
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
-          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
-          THREADS_USER_TOKEN: ${{ secrets.THREADS_USER_TOKEN }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           TEST_PLATFORM: ${{ inputs.platform }}
