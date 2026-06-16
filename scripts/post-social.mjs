@@ -23,6 +23,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = join(__dirname, '..', 'data', 'scores.json');
 
 const DRY_RUN = process.env.DRY_RUN === '1';
+const PLATFORM = (process.env.TEST_PLATFORM || 'all').toLowerCase();
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 const pickEn = (v) =>
   v && typeof v === 'object' && !Array.isArray(v)
@@ -201,11 +202,12 @@ async function main() {
   console.log(long);
   console.log(`\n── Image URL ──\n${imageUrl || '(aucune — GITHUB_REPOSITORY non défini)'}\n`);
 
-  const results = await Promise.allSettled([
-    postToFacebook(long, imageUrl),
-    postToThreads(short, imageUrl),
-    postToInstagram(long, imageUrl),
-  ]);
+  const tasks = [];
+  if (PLATFORM === 'all' || PLATFORM === 'facebook')  tasks.push(postToFacebook(long, imageUrl));
+  if (PLATFORM === 'all' || PLATFORM === 'threads')   tasks.push(postToThreads(short, imageUrl));
+  if (PLATFORM === 'all' || PLATFORM === 'instagram') tasks.push(postToInstagram(long, imageUrl));
+
+  const results = await Promise.allSettled(tasks);
 
   const errors = results.filter(r => r.status === 'rejected');
   if (errors.length) {
