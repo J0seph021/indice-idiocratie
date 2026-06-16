@@ -1,36 +1,36 @@
 {
-  "updated": "2026-06-15",
+  "updated": "2026-06-16",
   "scale_note": "Scale 0-100. 69 = the critical stupidity line. The higher, the more Idiocracy.",
   "world": {
     "score": 60,
-    "trend": 2,
+    "trend": 0,
     "label": {
-      "en": "Still under the 69 line, but the year is young.",
-      "fr": "Encore sous la ligne des 69, mais l'année est jeune.",
-      "es": "Aún bajo la línea de 69, pero el año es joven.",
-      "de": "Noch unter der 69er-Linie, aber das Jahr ist jung."
+      "en": "Still under the 69 line. Enjoy it while it lasts.",
+      "fr": "Toujours sous la ligne 69. Profitez-en tant que ça dure.",
+      "es": "Aún por debajo de la línea 69. Disfrútalo mientras dure.",
+      "de": "Noch immer unter der 69er-Linie. Genießt es, solange es dauert."
     },
     "headline": {
-      "en": "The planet sets a new record: cage fights, viral conspiracies, and leaders governing by meme.",
-      "fr": "La planète établit un nouveau record : combats de cage, conspirations virales, et dirigeants gouvernant par mème.",
-      "es": "El planeta establece un nuevo récord: peleas en jaula, conspiraciones virales y líderes gobernando por memes.",
-      "de": "Der Planet setzt einen neuen Rekord: Käfigkämpfe, virale Verschwörungen und Anführer, die mit Memes regieren."
+      "en": "Today's champion: United States. Trump plans a UFC fight on the White House lawn, staged around his 80th birthday.",
+      "fr": "Champion du jour : États-Unis. Trump prévoit un combat UFC sur la pelouse de la Maison-Blanche, orchestré autour de son 80e anniversaire.",
+      "es": "Campeón de hoy: Estados Unidos. Trump planea una pelea de UFC en el jardín de la Casa Blanca, organizada alrededor de su 80 cumpleaños.",
+      "de": "Heutiger Champion: Vereinigte Staaten. Trump plant einen UFC-Kampf auf dem Rasen des Weißen Hauses, inszeniert rund um seinen 80. Geburtstag."
     }
   },
   "spotlight": {
     "country": "United States",
     "flag": "🇺🇸",
     "headline": {
-      "en": "UFC fight staged on the White House lawn for Trump's 80th birthday",
-      "fr": "Combat de l'UFC organisé sur la pelouse de la Maison Blanche pour le 80e anniversaire de Trump",
-      "es": "Lucha de UFC montada en el césped de la Casa Blanca para el 80° cumpleaños de Trump",
-      "de": "UFC-Kampf auf dem Rasen des Weißen Hauses zum 80. Geburtstag von Trump inszeniert"
+      "en": "Trump plans a UFC fight on the White House lawn, staged around his 80th birthday.",
+      "fr": "Trump prévoit un combat de l'UFC dans le jardin de la Maison Blanche, mis en scène autour de son 80ème anniversaire.",
+      "es": "Trump planea una pelea de UFC en el jardín de la Casa Blanca, escenificada alrededor de su 80 cumpleaños.",
+      "de": "Trump plant ein UFC-Kampf auf dem Rasen des Weißen Hauses, inszeniert rund um seinen 80. Geburtstag."
     },
     "why": {
-      "en": "An octagon in front of the Oval Office, 'USA! USA!' chants, and a president hyping the bout. President Camacho couldn't have done it better.",
-      "fr": "Un octogone devant le Bureau ovale, des chants 'USA ! USA !', et un président qui hypait le combat. Le président Camacho n'aurait pas fait mieux.",
-      "es": "Un octágono frente a la Oficina Oval, gritos de '¡EE.UU.! ¡EE.UU.!', y un presidente animando la pelea. El presidente Camacho no lo podría haber hecho mejor.",
-      "de": "Ein Oktagon vor dem Oval Office, 'USA! USA!' Rufe und ein Präsident, der den Kampf anheizt. Präsident Camacho hätte es nicht besser machen können."
+      "en": "Governance as pay-per-view, science replaced by posts, brute-force spectacle worthy of President Camacho.",
+      "fr": "Gouvernance en mode pay-per-view, science remplacée par des posts, un spectacle brut digne du Président Camacho.",
+      "es": "Gobernanza como pago por evento, ciencia sustituida por publicaciones, espectáculo de fuerza bruta digno del presidente Camacho.",
+      "de": "Regierung als Pay-per-View, Wissenschaft ersetzt durch Posts, brutales Spektakel würdig des Präsidenten Camacho."
     },
     "score": 92
   },
@@ -39,24 +39,24 @@
       "name": "North America",
       "emoji": "🌎",
       "score": 73,
-      "trend": 3
+      "trend": 0
     },
     {
       "name": "Europe",
       "emoji": "🌍",
       "score": 54,
-      "trend": 1
+      "trend": 0
     },
     {
       "name": "Asia",
       "emoji": "🌏",
-      "score": 62,
-      "trend": 0
+      "score": 61,
+      "trend": -1
     },
     {
       "name": "South America",
       "emoji": "🌎",
-      "score": 66,
+      "score": 65,
       "trend": -1
     },
     {
@@ -311,106 +311,87 @@
       "name": "El Salvador",
       "flag": "🇸🇻",
       "continent": "South America",
-      "score": 72,
-      "trend": 2,
-      "gdp_adjusted": 71,
+      "score": 66,
+      "trend": -6,
+      "gdp_adjusted": 63,
       "headline": {
-        "en": "Bukele keeps buying one bitcoin a day as the crash erases hundreds of millions.",
-        "fr": "Bukele continue d'acheter un bitcoin par jour alors que l'effondrement efface des centaines de millions.",
-        "es": "Bukele sigue comprando un bitcoin al día mientras el colapso borra cientos de millones.",
-        "de": "Bukele kauft weiterhin jeden Tag einen Bitcoin, während der Crash Hunderte Millionen löscht."
+        "en": "El Salvador's judiciary caught in contempt spiral while government ignores medical catastrophe in detention system.",
+        "fr": "La justice salvadorienne prise dans une spirale de mépris tandis que le gouvernement ignore une catastrophe médicale dans le système carcéral.",
+        "es": "El poder judicial de El Salvador atrapado en una espiral de desacato mientras el gobierno ignora una catástrofe médica en el sistema de detención.",
+        "de": "Salvadors Justiz in einer Verachtungsspirale gefangen, während die Regierung eine medizinische Katastrophe im Haftungssystem ignoriert."
       },
       "why": {
-        "en": "The national treasury treated like a casino chip, doubling down mid-crash.",
-        "fr": "Le trésor national traité comme un jeton de casino, il double les mises au milieu de la débâcle.",
-        "es": "El tesoro nacional tratado como un fichaje de casino, apostando de nuevo mientras el desastre sucede.",
-        "de": "Die Staatskasse wird wie ein Casino-Chip behandelt, mitten im Crash verdoppelt er die Einsätze."
+        "en": "A country drowning in its own legal chaos while vulnerable detainees suffer medical neglect, peak Idiocracy: all spectacle and punishment, zero public good.",
+        "fr": "Un pays qui s'noie dans son propre chaos judiciaire pendant que les détenus vulnérables souffrent de négligence médicale, l'Idiocracy à l'état pur : du spectacle et de la punition, zéro service public.",
+        "es": "Un país que se ahoga en su propio caos legal mientras los detenidos vulnerables sufren negligencia médica, Idiocracy en su máxima expresión: todo espectáculo y castigo, cero bien público.",
+        "de": "Ein Land, das in seinem eigenen rechtlichen Chaos erstickt, während gefährdete Häftlinge unter medizinischer Vernachlässigung leiden, peak Idiocracy: Spektakel und Bestrafung, null öffentlicher Nutzen."
       },
       "articles": [
         {
           "title": {
-            "en": "Bitcoin slump shatters Bukele's digital utopia in El Salvador",
-            "fr": "La chute du Bitcoin ruine l'utopie numérique de Bukele au Salvador",
-            "es": "La caída del bitcoin destroza la utopía digital de Bukele en El Salvador",
-            "de": "Der Bitcoin-Absturz zertrümmert Bukeles digitale Utopie in El Salvador"
+            "en": "ICE detainees across the US describe medical neglect",
+            "fr": "Les détenus d'ICE aux États-Unis décrivent une négligence médicale systématique",
+            "es": "Detenidos de ICE en toda EE.UU. denuncian negligencia médica",
+            "de": "ICE-Häftlinge in den USA berichten von systematischer medizinischer Vernachlässigung"
           },
-          "source": "Bloomberg",
-          "date": "Mar 4, 2026",
-          "url": "https://www.bloomberg.com/opinion/articles/2026-03-04/bitcoin-slump-shatters-bukele-s-digital-utopia-in-el-salvador",
+          "source": "paradisepost.com",
+          "date": "Jun 16, 2026",
+          "url": "https://www.paradisepost.com/2026/06/02/ice-custody-medical-neglect/",
+          "axis": "PUBLIC",
+          "impact": 5,
+          "note": {
+            "en": "ICE detainees describe systematic medical neglect, El Salvador's outsourced carceral system profits over prisoner welfare.",
+            "fr": "Les détenus d'ICE dénoncent la négligence médicale systématique, le système carcéral externalisé du Salvador privilégie les profits au bien-être des prisonniers.",
+            "es": "Los detenidos de ICE denuncian negligencia médica sistémica, el sistema carcelario externalizado de El Salvador prioriza ganancias sobre el bienestar de los presos.",
+            "de": "ICE-Häftlinge prangern systematische medizinische Vernachlässigung an, Salvadors ausgelagertes Gefängnissystem bereichert sich auf Kosten der Häftlingsgesundheit."
+          }
+        },
+        {
+          "title": {
+            "en": "Judge has ample evidence to order a contempt trial for Todd Blanche : legal expert",
+            "fr": "Un juge possède des preuves suffisantes pour ordonner un procès pour mépris envers Todd Blanche : selon un expert juridique",
+            "es": "Juez tiene amplia evidencia para ordenar juicio por desacato contra Todd Blanche: según experto legal",
+            "de": "Richter hat reichlich Beweise für Verachtungsverfahren gegen Todd Blanche: sagt Rechtsexperte"
+          },
+          "source": "rawstory.com",
+          "date": "Jun 16, 2026",
+          "url": "https://www.rawstory.com/todd-blanche-2677042783/",
+          "axis": "CRIT",
           "impact": 4,
           "note": {
-            "en": "The utopia had a margin call.",
-            "fr": "L'utopie a reçu un appel de marge.",
-            "es": "La utopía recibió una llamada de margen.",
-            "de": "Die Utopie erhielt einen Margin Call."
-          },
-          "axis": "PUBLIC"
+            "en": "Contempt trials for legal staffers signals institutional capture by strongman authority, not rule of law.",
+            "fr": "Les procès pour mépris contre le personnel judiciaire témoignent d'une capture institutionnelle par l'autorité autoritaire, pas de l'État de droit.",
+            "es": "Los juicios por desacato contra personal jurídico señalan captura institucional por autoridad autoritaria, no estado de derecho.",
+            "de": "Verachtungsprozesse gegen Justizmitarbeiter signalisieren institutionelle Vereinnahmung durch autoritäre Macht, nicht Rechtsstaatlichkeit."
+          }
         },
         {
           "title": {
-            "en": "Bitcoin rout exposes Bukele's gamble and hits El Salvador's debt",
-            "fr": "La débâcle du Bitcoin expose le pari de Bukele et frappe la dette du Salvador",
-            "es": "El desplome del bitcoin expone la apuesta de Bukele y golpea la deuda de El Salvador",
-            "de": "Die Bitcoin-Pleite enthüllt Bukeles Spiel und trifft El Salvadors Schulden"
+            "en": "FEI : Three Candidates Confirmed For The 2026 Presidential Election",
+            "fr": "FEI : Trois candidats confirmés pour l'élection présidentielle de 2026",
+            "es": "FEI : Tres candidatos confirmados para la elección presidencial de 2026",
+            "de": "FEI : Drei Kandidaten für die Präsidentschaftswahl 2026 bestätigt"
           },
-          "source": "Bloomberg",
-          "date": "Feb 12, 2026",
-          "url": "https://www.bloomberg.com/news/articles/2026-02-12/bitcoin-rout-exposes-bukele-s-gamble-and-hits-el-salvador-debt",
-          "impact": 2,
+          "source": "chronofhorse.com",
+          "date": "Jun 15, 2026",
+          "url": "https://chronofhorse.com/en/news/FEI-Three-Candidates-Confirmed-For-The-2026-Presidential-Election/",
+          "axis": "SPECTACLE",
+          "impact": 3,
           "note": {
-            "en": "Bond markets are not amused.",
-            "fr": "Les marchés obligataires ne sont pas amusés.",
-            "es": "Los mercados de bonos no están divertidos.",
-            "de": "Die Anleihemärkte sind nicht amüsiert."
-          },
-          "axis": "PUBLIC"
-        },
-        {
-          "title": {
-            "en": "Finance chiefs tell the IMF the country hasn't bought BTC since February, contradicting Bukele",
-            "fr": "Les chefs financiers informent le FMI que le pays n'a pas acheté de BTC depuis février, contredisant Bukele",
-            "es": "Los jefes financieros dicen al FMI que el país no ha comprado BTC desde febrero, contradiciendo a Bukele",
-            "de": "Finanzchefs informieren den IWF, dass das Land seit Februar kein BTC mehr gekauft hat, was Bukele widerspricht"
-          },
-          "source": "The Block",
-          "date": "2026",
-          "url": "https://www.theblock.co/post/363483/el-salvador-hasnt-bought-bitcoin-since-february-finance-chiefs-tell-imf-contradicting-bukele-administration",
-          "impact": 1,
-          "note": {
-            "en": "Even the buying spree is fictional.",
-            "fr": "Même la frénésie d'achat est fictive.",
-            "es": "Incluso la locura de compras es ficticia.",
-            "de": "Sogar die Kaufrausch ist fiktiv."
-          },
-          "axis": "KNOW"
-        },
-        {
-          "title": {
-            "en": "Bukele's approval soars to ~92% despite little love for the bitcoin plan",
-            "fr": "L'approbation de Bukele grimpe à ~92% malgré peu d'enthousiasme pour le plan Bitcoin",
-            "es": "La aprobación de Bukele se dispara a ~92% a pesar de poco amor por el plan bitcoin",
-            "de": "Bukeles Zustimmungsrate steigt auf ~92% trotz wenig Liebe für den Bitcoin-Plan"
-          },
-          "source": "DL News",
-          "date": "2026",
-          "url": "https://www.dlnews.com/articles/people-culture/bitcoin-president-nayib-bukele-is-very-popular/",
-          "impact": -3,
-          "note": {
-            "en": "Wildly popular anyway.",
-            "fr": "Étrangement populaire quand même.",
-            "es": "Igualmente popular de forma salvaje.",
-            "de": "Trotzdem irgendwie extrem beliebt."
-          },
-          "axis": "SPECTACLE"
+            "en": "Election theater continues while underlying governance metrics suggest authoritarian consolidation.",
+            "fr": "Le spectacle électoral continue tandis que les indicateurs de gouvernance sous-jacents suggèrent une consolidation autoritaire.",
+            "es": "El teatro electoral continúa mientras las métricas de gobernanza subyacentes sugieren consolidación autoritaria.",
+            "de": "Wahltheater läuft weiter, während zugrundeliegende Governance-Metriken autoritäre Verfestigung andeuten."
+          }
         }
       ],
       "axes": {
-        "SCI": 60,
-        "SPECTACLE": 85,
+        "SCI": 62,
+        "SPECTACLE": 68,
         "PUBLIC": 75,
-        "KNOW": 70,
-        "CRIT": 65,
-        "FUTURE": 80
+        "KNOW": 58,
+        "CRIT": 64,
+        "FUTURE": 71
       }
     },
     {
@@ -525,106 +506,87 @@
       "name": "Brazil",
       "flag": "🇧🇷",
       "continent": "South America",
-      "score": 59,
-      "trend": -2,
-      "gdp_adjusted": 64,
+      "score": 63,
+      "trend": 4,
+      "gdp_adjusted": 60,
       "headline": {
-        "en": "Congress overrides Lula's veto to slash Bolsonaro's 27-year coup sentence.",
-        "fr": "Le Congrès passe outre le veto de Lula pour réduire la peine de 27 ans de Bolsonaro pour coup d'État.",
-        "es": "El Congreso anula el veto de Lula para reducir la sentencia de golpe de 27 años de Bolsonaro.",
-        "de": "Der Kongress überstimmt Lulas Veto, um Bolsonaros 27-jährige Staatsstreichstrafe zu kürzen."
+        "en": "AI Deepfakes Fuel a Surge in Brazil Election Lawsuits",
+        "fr": "Les deepfakes IA alimentent une vague de procès électoraux au Brésil",
+        "es": "Los deepfakes de IA alimentan una ola de demandas electorales en Brasil",
+        "de": "KI-Deepfakes heizen Welle von Wahlklagen in Brasilien an"
       },
       "why": {
-        "en": "Idiocracy's 'Extreme Court,' but with real lawmakers and real chairs.",
-        "fr": "La 'Cour Extrême' d'Idiocracy, mais avec de vrais législateurs et de vraies chaises.",
-        "es": "La 'Corte Extrema' de Idiocracy, pero con verdaderos legisladores y sillas de verdad.",
-        "de": "Idiocracy's 'Extrem Gericht', aber mit echten Gesetzgebern und echten Stühlen."
+        "en": "Democracy's immune system overwhelmed by synthetic disinformation; courts now playing whack-a-mole with reality itself.",
+        "fr": "Le système immunitaire de la démocratie submergé par la désinformation synthétique ; les tribunaux jouent désormais à la taupe avec la réalité elle-même.",
+        "es": "El sistema inmunológico de la democracia abrumado por la desinformación sintética; los tribunales ahora juegan al golpe de estado con la realidad misma.",
+        "de": "Immunsystem der Demokratie durch synthetische Desinformation überfordert; Gerichte spielen jetzt Whack-a-Mole mit der Realität selbst."
       },
       "articles": [
         {
           "title": {
-            "en": "Brazil's Congress overrides veto to cut Bolsonaro's 27-year coup sentence",
-            "fr": "Le Congrès brésilien passe outre le veto pour réduire la peine de coup d'État de 27 ans de Bolsonaro.",
-            "es": "El Congreso de Brasil anula el veto para recortar la sentencia de golpe de 27 años de Bolsonaro.",
-            "de": "Der brasilianische Kongress überstimmt das Veto, um Bolsonaros 27-jährige Staatsstreichstrafe zu verkürzen."
+            "en": "AI Deepfakes Fuel a Surge in Brazil Election Lawsuits",
+            "fr": "Les deepfakes IA alimentent une vague de procès électoraux au Brésil",
+            "es": "Los deepfakes de IA alimentan una ola de demandas electorales en Brasil",
+            "de": "KI-Deepfakes heizen Welle von Wahlklagen in Brasilien an"
           },
-          "source": "Euronews",
-          "date": "May 1, 2026",
-          "url": "https://www.euronews.com/2026/05/01/brazils-congress-passes-bill-to-reduce-former-president-jair-bolsonaros-27-year-prison-sen",
+          "source": "riotimesonline.com",
+          "date": "Jun 16, 2026",
+          "url": "https://www.riotimesonline.com/brazil-election-ai-deepfake-lawsuits-tse-lula-flavio-june-2026/",
+          "axis": "CRIT",
+          "impact": 5,
+          "note": {
+            "en": "Deepfakes weaponized at scale against electoral integrity; misinformation outpacing fact-checking capacity.",
+            "fr": "Deepfakes militarisés à grande échelle contre l'intégrité électorale ; la désinformation surpasse la capacité de vérification des faits.",
+            "es": "Deepfakes militarizados a escala contra la integridad electoral; la desinformación superando la capacidad de verificación de hechos.",
+            "de": "Deepfakes im großen Stil gegen Wahlintegrität bewaffnet; Desinformation überfordert Faktenchecking-Kapazität."
+          }
+        },
+        {
+          "title": {
+            "en": "Flávio Bolsonaro Economic Platform for 2026",
+            "fr": "Plateforme économique de Flávio Bolsonaro pour 2026",
+            "es": "Plataforma económica de Flávio Bolsonaro para 2026",
+            "de": "Flávio Bolsonaros Wirtschaftsplattform für 2026"
+          },
+          "source": "riotimesonline.com",
+          "date": "Jun 16, 2026",
+          "url": "https://www.riotimesonline.com/flavio-bolsonaro-economic-platform-bolsa-familia-daniella-marques-june-2026/",
+          "axis": "SPECTACLE",
           "impact": 3,
           "note": {
-            "en": "Accountability, optional.",
-            "fr": "Responsabilité, optionnelle.",
-            "es": "Responsabilidad, opcional.",
-            "de": "Rechenschaft, optional."
-          },
-          "axis": "PUBLIC"
+            "en": "Bolsonaro dynasty grooming next-gen political brand; 2026 circus already under tent setup.",
+            "fr": "La dynastie Bolsonaro prépare sa marque politique de nouvelle génération ; le cirque 2026 installe déjà ses chapiteaux.",
+            "es": "La dinastía Bolsonaro cultivando su marca política de próxima generación; el circo 2026 ya está levantando las carpas.",
+            "de": "Bolsonaro-Dynastie züchtet ihre nächste Medienmarke; der Zirkus 2026 richtet bereits seine Zelte auf."
+          }
         },
         {
           "title": {
-            "en": "A lawmaker occupies the chamber chair; brawl erupts with police and journalists",
-            "fr": "Un législateur occupe la chaise de la chambre ; une bagarre éclate avec la police et les journalistes.",
-            "es": "Un legislador ocupa la silla de la cámara; estalla una pelea con la policía y periodistas.",
-            "de": "Ein Abgeordneter nimmt den Platz im Plenarsaal ein; ein Handgemenge bricht mit der Polizei und Journalisten aus."
+            "en": "South America Rail Corridor Aims to Rival Panama Canal",
+            "fr": "Le corridor ferroviaire d'Amérique du Sud vise à rivaliser avec le canal de Panama",
+            "es": "El corredor ferroviario de América del Sur apunta a rivalizar con el Canal de Panamá",
+            "de": "Eisenbahnkorridor Südamerikas zielt darauf ab, den Panamakanal zu übertrumpfen"
           },
-          "source": "Al Jazeera",
-          "date": "Dec 10, 2025",
-          "url": "https://www.aljazeera.com/news/2025/12/10/brazils-chamber-of-deputies-passes-bill-to-lower-bolsonaros-sentence",
-          "impact": 2,
-          "note": {
-            "en": "The Extreme Court is in session.",
-            "fr": "La Cour Extrême est en session.",
-            "es": "La Corte Extrema está en sesión.",
-            "de": "Das Extrem Gericht ist in Sitzung."
-          },
-          "axis": "SPECTACLE"
-        },
-        {
-          "title": {
-            "en": "Coup fallout: courts and Congress weigh consequences for Bolsonaro",
-            "fr": "Conséquences du coup d'État : les tribunaux et le Congrès pèsent les conséquences pour Bolsonaro.",
-            "es": "Consecuencias del golpe: tribunales y Congreso evalúan las consecuencias para Bolsonaro.",
-            "de": "Nachwirkungen des Putsches: Gerichte und Kongress wägen die Konsequenzen für Bolsonaro ab."
-          },
-          "source": "Wikipedia",
-          "date": "2026",
-          "url": "https://en.wikipedia.org/wiki/Jair_Bolsonaro",
-          "impact": -3,
-          "note": {
-            "en": "Some accountability, finally.",
-            "fr": "Un peu de responsabilité, enfin.",
-            "es": "Un poco de responsabilidad, por fin.",
-            "de": "Ein wenig Rechenschaft, endlich."
-          },
-          "axis": "CRIT"
-        },
-        {
-          "title": {
-            "en": "2026 in Brazil: the institutions keep grinding forward",
-            "fr": "2026 au Brésil : les institutions continuent d'avancer.",
-            "es": "2026 en Brasil: las instituciones siguen avanzando.",
-            "de": "2026 in Brasilien: Die Institutionen mahlen weiter."
-          },
-          "source": "Wikipedia",
-          "date": "2026",
-          "url": "https://en.wikipedia.org/wiki/2026_in_Brazil",
+          "source": "riotimesonline.com",
+          "date": "Jun 16, 2026",
+          "url": "https://www.riotimesonline.com/longotoma-bioceanic-rail-corridor-andes-tunnel-grain-asia-june-2026/",
+          "axis": "FUTURE",
           "impact": -4,
           "note": {
-            "en": "Democracy survives the food fight.",
-            "fr": "La démocratie survit à la bataille alimentaire.",
-            "es": "La democracia sobrevive a la pelea de comida.",
-            "de": "Die Demokratie überlebt die Essensschlacht."
-          },
-          "axis": "FUTURE"
+            "en": "Long-term infrastructure ambition (rail corridor) shows strategic thinking beyond next election cycle.",
+            "fr": "L'ambition infrastructurelle à long terme (corridor ferroviaire) démontre une réflexion stratégique au-delà du prochain cycle électoral.",
+            "es": "La ambición infraestructural a largo plazo (corredor ferroviario) muestra pensamiento estratégico más allá del próximo ciclo electoral.",
+            "de": "Langfristige Infrastruktur-Ambitionen (Bahnkorridor) zeigen strategisches Denken jenseits des nächsten Wahlzyklus."
+          }
         }
       ],
       "axes": {
-        "SCI": 50,
-        "SPECTACLE": 75,
-        "PUBLIC": 65,
-        "KNOW": 60,
-        "CRIT": 50,
-        "FUTURE": 40
+        "SCI": 62,
+        "SPECTACLE": 68,
+        "PUBLIC": 61,
+        "KNOW": 58,
+        "CRIT": 64,
+        "FUTURE": 63
       }
     },
     {
@@ -632,106 +594,106 @@
       "name": "India",
       "flag": "🇮🇳",
       "continent": "Asia",
-      "score": 66,
-      "trend": 1,
+      "score": 61,
+      "trend": -5,
       "gdp_adjusted": 58,
       "headline": {
-        "en": "NEET medical exam cancelled after a massive paper leak, again.",
-        "fr": "Examen NEET annulé après une massive fuite de sujet, encore.",
-        "es": "Examen NEET cancelado tras una masiva filtración de papel, otra vez.",
-        "de": "NEET-Prüfung wegen einer massiven Themenleckung wieder abgesagt."
+        "en": "Baba Ramdev's Patanjali now selling UPSC exam prep courses, because yoga billionaires replacing civil service institutions.",
+        "fr": "Patanjali de Baba Ramdev vend désormais des cours de préparation à l'UPSC, parce que les milliardaires du yoga remplacent les institutions de la fonction publique.",
+        "es": "Patanjali de Baba Ramdev ahora vende cursos de preparación UPSC, porque los multimillonarios del yoga reemplazan las instituciones de servicio civil.",
+        "de": "Baba Ramdevs Patanjali verkauft jetzt UPSC-Vorbereitungskurse, weil Yoga-Milliardäre Behörden ersetzen."
       },
       "why": {
-        "en": "When the exam system collapses under repeated leaks, meritocracy becomes a lottery.",
-        "fr": "Quand le système d'examen s'effondre sous des fuites répétées, la méritocratie devient une loterie.",
-        "es": "Cuando el sistema de exámenes colapsa por filtraciones repetidas, la meritocracia se convierte en una lotería.",
-        "de": "Wenn das Prüfungssystem unter wiederholten Leaks zusammenbricht, wird Meritokratie zur Lotterie."
+        "en": "A corporate wellness empire with a history of regulatory evasion now positions itself as gatekeeper to India's elite bureaucracy, PUBLIC capture meets KNOW commodification.",
+        "fr": "Un empire du bien-être corporatif avec un passé d'esquive réglementaire se positionne désormais comme gardien de la bureaucratie élitiste indienne, capture du SECTEUR PUBLIC rencontre marchandisation du SAVOIR.",
+        "es": "Un imperio del bienestar corporativo con historial de evasión regulatoria se posiciona ahora como guardián de la burocracia élite india, CAPTURA ESTATAL encuentra MERCANTILIZACIÓN del conocimiento.",
+        "de": "Ein Unternehmenswohlfahrtsimperium mit Vergangenheit in Regulierungsflucht positioniert sich nun als Gatekeeper der indischen Elite-Bürokratie, STAATLICHE Kapture trifft WISSENS-Kommodifizierung."
       },
       "articles": [
         {
           "title": {
-            "en": "2026 NEET exam cancelled after paper leak; arrests follow",
-            "fr": "Examen NEET 2026 annulé après fuite de sujet ; des arrestations s'ensuivent",
-            "es": "Examen NEET 2026 cancelado tras filtración de papel; siguen arrestos",
-            "de": "NEET-Prüfung 2026 nach Themenleckung abgesagt; Festnahmen folgen"
+            "en": "Baba Ramdev Patanjali to now offer UPSC courses ; Awadh Ojha to lead",
+            "fr": "Baba Ramdev Patanjali propose désormais des cours UPSC ; Awadh Ojha à la tête",
+            "es": "Baba Ramdev Patanjali ofrecerá ahora cursos UPSC; Awadh Ojha liderará",
+            "de": "Baba Ramdev Patanjali bietet nun UPSC-Kurse an; Awadh Ojha führt"
           },
-          "source": "Wikipedia",
-          "date": "May 2026",
-          "url": "https://en.wikipedia.org/wiki/2026_NEET_controversy",
+          "source": "businesstoday.in",
+          "date": "Jun 16, 2026",
+          "url": "https://www.businesstoday.in/education/story/baba-ramdevs-patanjali-to-now-offer-upsc-courses-awadh-ojha-to-lead-537115-2026-06-16",
+          "axis": "PUBLIC",
+          "impact": 5,
+          "note": {
+            "en": "Unaccountable corporate brand (Patanjali) colonizing state exam prep; conflict-of-interest meets market capture.",
+            "fr": "Une marque corporatiste irresponsable (Patanjali) colonise la préparation à l'examen d'État ; conflits d'intérêts et capture de marché réunis.",
+            "es": "Una marca corporativa irresponsable (Patanjali) coloniza la preparación para examen estatal; conflicto de intereses más captura de mercado.",
+            "de": "Unverantwortliche Unternehmensmarke (Patanjali) kolonisiert Staatsprüfungsvorbereitung; Interessenskonflikte treffen Marktkapture."
+          }
+        },
+        {
+          "title": {
+            "en": "India  EV journey :  A strong foundation for the next phase of growth",
+            "fr": "Le parcours des véhicules électriques en Inde : une base solide pour la prochaine phase de croissance",
+            "es": "El recorrido de vehículos eléctricos en India: una base sólida para la próxima fase de crecimiento",
+            "de": "Indiens Elektrofahrzeug-Weg: Eine solide Grundlage für die nächste Wachstumsphase"
+          },
+          "source": "businesstoday.in",
+          "date": "Jun 16, 2026",
+          "url": "https://www.businesstoday.in/auto/story/indias-ev-journey-a-strong-foundation-for-the-next-phase-of-growth-537251-2026-06-16",
+          "axis": "FUTURE",
+          "impact": -4,
+          "note": {
+            "en": "Long-term EV infrastructure planning shows genuine forward-thinking on climate and energy transition.",
+            "fr": "La planification infrastructurelle des VE à long terme montre une véritable réflexion prospective sur le climat et la transition énergétique.",
+            "es": "La planificación de infraestructura de VE a largo plazo muestra pensamiento prospectivo genuino sobre transición climática y energética.",
+            "de": "Langfristige EV-Infrastrukturplanung zeigt echtes zukunftsorientiertes Denken zu Klima- und Energiewende."
+          }
+        },
+        {
+          "title": {
+            "en": "Stock Market Today Highlights , June 16 : Sensex gains 544 pts , Nifty settles at 23 , 989 on US - Iran peace deal",
+            "fr": "Bilan du marché boursier aujourd'hui, 16 juin : le Sensex gagne 544 pts, le Nifty termine à 23 989 sur l'accord de paix Iran-États-Unis",
+            "es": "Resumen del mercado de valores hoy, 16 de junio: Sensex sube 544 puntos, Nifty cierra en 23.989 por acuerdo de paz Irán-EE.UU.",
+            "de": "Börsenüberblick heute, 16. Juni: Sensex gewinnt 544 Punkte, Nifty schließt bei 23.989 im Iran-USA-Friedensabkommen"
+          },
+          "source": "thehindubusinessline.com",
+          "date": "Jun 16, 2026",
+          "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-highlights-16-june-2026/article71104678.ece",
+          "axis": "SPECTACLE",
           "impact": 3,
           "note": {
-            "en": "2.27M students, one leaked paper.",
-            "fr": "2,27 millions d'étudiants, une feuille de réponse fuitée.",
-            "es": "2,27 millones de estudiantes, un papel filtrado.",
-            "de": "2,27 Millionen Schüler, ein geleaktes Papier."
-          },
-          "axis": "PUBLIC"
+            "en": "Market moved by geopolitical theater (Iran peace deal rumor) rather than fundamentals; reactive herd behavior.",
+            "fr": "Le marché mû par le théâtre géopolitique (rumeur d'accord avec l'Iran) plutôt que par les fondamentaux ; comportement de troupeau réactif.",
+            "es": "Mercado impulsado por teatro geopolítico (rumor de acuerdo con Irán) en lugar de fundamentos; comportamiento reactivo de rebaño.",
+            "de": "Markt getrieben von geopolitischem Theater (Iran-Gerücht) statt Fundamentaldaten; reaktives Herdenverhalten."
+          }
         },
         {
           "title": {
-            "en": "Creeping spread of pseudoscience worries Indian scientists",
-            "fr": "La propagation rampante de la pseudoscience inquiète les scientifiques indiens",
-            "es": "La propagación silenciosa de la pseudociencia preocupa a los científicos indios",
-            "de": "Das schleichende Ausbreiten von Pseudowissenschaft sorgt für Sorgen bei indischen Wissenschaftlern"
+            "en": "  We have addressed our mistakes : Owaisi signals readiness for anti - BJP alliance ahead of 2027 UP polls",
+            "fr": "Nous avons reconnu nos erreurs : Owaisi signale sa volonté de former une alliance anti-BJP avant les élections UP 2027",
+            "es": "Hemos corregido nuestros errores: Owaisi señala disposición para alianza anti-BJP antes de comicios UP 2027",
+            "de": "Wir haben unsere Fehler korrigiert: Owaisi signalisiert Bereitschaft zu Anti-BJP-Allianz vor UP-Wahlen 2027"
           },
-          "source": "Chemistry World",
-          "date": "2026",
-          "url": "https://www.chemistryworld.com/news/creeping-spread-of-pseudoscience-worries-indian-scientists/3007951.article",
+          "source": "iraqsun.com",
+          "date": "Jun 16, 2026",
+          "url": "http://www.iraqsun.com/news/279126477/we-have-addressed-our-mistakes-owaisi-signals-readiness-for-anti-bjp-alliance-ahead-of-2027-up-polls",
+          "axis": "CRIT",
           "impact": 2,
           "note": {
-            "en": "Mythology vs. evidence in the syllabus.",
-            "fr": "Mythologie contre preuves dans le programme.",
-            "es": "Mitología vs. evidencia en el plan de estudios.",
-            "de": "Mythologie gegen Beweise im Lehrplan."
-          },
-          "axis": "SCI"
-        },
-        {
-          "title": {
-            "en": "India's scientific temper and education system under siege",
-            "fr": "Le tempérament scientifique et le système éducatif de l'Inde sous siège",
-            "es": "El temperamento científico y el sistema educativo de la India bajo ataque",
-            "de": "Indiens wissenschaftlicher Geist und Bildungssystem unter Beschuss"
-          },
-          "source": "The Friday Times",
-          "date": "May 23, 2026",
-          "url": "https://www.thefridaytimes.com/23-May-2026/india-s-scientific-temper-education-system-siege",
-          "impact": 1,
-          "note": {
-            "en": "Textbooks rewritten on the fly.",
-            "fr": "Manuels réécrits à la volée.",
-            "es": "Libros de texto reescritos sobre la marcha.",
-            "de": "Lehrbücher werden im Handumdrehen umgeschrieben."
-          },
-          "axis": "KNOW"
-        },
-        {
-          "title": {
-            "en": "Scientists organise against the intensifying attack on scientific temperament",
-            "fr": "Les scientifiques s'organisent contre l'attaque croissante sur le tempérament scientifique",
-            "es": "Los científicos se organizan contra el ataque creciente al temperamento científico",
-            "de": "Wissenschaftler organisieren sich gegen den sich verstärkenden Angriff auf den wissenschaftlichen Geist"
-          },
-          "source": "The Diplomat",
-          "date": "2026",
-          "url": "https://thediplomat.com/2024/08/indian-governments-intensifying-attack-on-scientific-temperament-worries-scientists/",
-          "impact": -5,
-          "note": {
-            "en": "The pushback is real and growing.",
-            "fr": "La résistance est réelle et en pleine expansion.",
-            "es": "La resistencia es real y va en aumento.",
-            "de": "Der Widerstand ist real und wächst."
-          },
-          "axis": "CRIT"
+            "en": "Opposition signaling willingness to challenge incumbency; multiparty contestation still alive, though polarized.",
+            "fr": "L'opposition signale sa volonté de défier les sortants ; la contestation multipartite persiste, bien que polarisée.",
+            "es": "Oposición señala voluntad de desafiar gobiernos salientes; contienda multipartidista aún viva, aunque polarizada.",
+            "de": "Opposition zeigt Bereitschaft, Amtsinhaber herauszufordern; Mehrparteienwettbewerb noch lebendig, wenn auch polarisiert."
+          }
         }
       ],
       "axes": {
-        "SCI": 70,
-        "SPECTACLE": 60,
-        "PUBLIC": 65,
-        "KNOW": 75,
-        "CRIT": 65,
-        "FUTURE": 60
+        "SCI": 62,
+        "SPECTACLE": 58,
+        "PUBLIC": 64,
+        "KNOW": 59,
+        "CRIT": 61,
+        "FUTURE": 65
       }
     },
     {
@@ -1554,6 +1516,10 @@
     {
       "date": "2026-06-15",
       "world": 71
+    },
+    {
+      "date": "2026-06-16",
+      "world": 60
     }
   ]
 }
