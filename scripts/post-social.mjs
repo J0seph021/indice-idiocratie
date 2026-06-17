@@ -21,6 +21,7 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { execSync } from 'node:child_process';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = join(__dirname, '..', 'data', 'scores.json');
@@ -133,11 +134,23 @@ Respond with ONLY a JSON object, no markdown, no explanation:
   return { short, long };
 }
 
-// URL publique de og.png (disponible après le git push du workflow)
-function getImageUrl() {
-  const repo = process.env.GITHUB_REPOSITORY; // fourni automatiquement par GitHub Actions
-  if (!repo) return null;
-  return `https://raw.githubusercontent.com/${repo}/main/assets/og.png`;
+// URLs publiques des images (disponibles après le git push du workflow).
+// IMPORTANT : on épingle l'URL au SHA du commit courant, PAS à `main`.
+// `raw.githubusercontent.com/.../main/assets/ig.png` est servi par un CDN qui
+// cache ~5 min, et l'URL est identique chaque jour : Instagram récupère alors
+// la version périmée de la veille pile pendant la fenêtre de cache. Une URL au
+// SHA n'a jamais été vue par le CDN → toujours fraîche, jamais de course.
+// (On lit HEAD localement, pas GITHUB_SHA qui pointe sur le commit parent du bot.)
+function getImageUrls() {
+  const repo = process.env.GITHUB_REPOSITORY;
+  if (!repo) return { og: null, ig: null };
+  let ref = 'main';
+  try {
+    const sha = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
+    if (/^[0-9a-f]{7,40}$/.test(sha)) ref = sha;
+  } catch { /* fallback sur main */ }
+  const base = `https://raw.githubusercontent.com/${repo}/${ref}/assets`;
+  return { og: `${base}/og.png`, ig: `${base}/ig.png` };
 }
 
 // ---------------------------------------------------------------------------
@@ -174,11 +187,11 @@ async function postToFacebook(message, imageUrl) {
 // ---------------------------------------------------------------------------
 // X (Twitter) — OAuth 1.0a + API v2
 // ---------------------------------------------------------------------------
-async function postToX(message) {
-  const apiKey        = process.env.X_API_KEY;
-  const apiSecret     = process.env.X_API_SECRET;
-  const accessToken   = process.env.X_ACCESS_TOKEN;
-  const accessSecret  = process.env.X_ACCESS_SECRET;
+async function postToX(message, imagePath) {
+  const apiKey       = process.env.X_API_KEY;
+  const apiSecret    = process.env.X_API_SECRET;
+  const accessToken  = process.env.X_ACCESS_TOKEN;
+  const accessSecret = process.env.X_ACCESS_SECRET;
   if (!apiKey || !apiSecret || !accessToken || !accessSecret) {
     console.log('⏭  X : secrets manquants (X_API_KEY / X_API_SECRET / X_ACCESS_TOKEN / X_ACCESS_SECRET), skip.');
     return;
@@ -186,41 +199,63 @@ async function postToX(message) {
 
   if (DRY_RUN) { console.log('🔵 [DRY] X post simulé.'); return; }
 
-  const url = 'https://api.twitter.com/2/tweets';
-  const method = 'POST';
-
-  // OAuth 1.0a signature
   const { createHmac } = await import('node:crypto');
   const enc = s => encodeURIComponent(s);
-  const nonce = Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
-  const ts = Math.floor(Date.now() / 1000).toString();
 
-  const oauthParams = {
-    oauth_consumer_key: apiKey,
-    oauth_nonce: nonce,
-    oauth_signature_method: 'HMAC-SHA1',
-    oauth_timestamp: ts,
-    oauth_token: accessToken,
-    oauth_version: '1.0',
-  };
+  function oauthSign(method, url, extraParams = {}) {
+    const nonce = Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
+    const ts = Math.floor(Date.now() / 1000).toString();
+    const base = {
+      oauth_consumer_key: apiKey,
+      oauth_nonce: nonce,
+      oauth_signature_method: 'HMAC-SHA1',
+      oauth_timestamp: ts,
+      oauth_token: accessToken,
+      oauth_version: '1.0',
+    };
+    const all = { ...base, ...extraParams };
+    const paramStr = Object.keys(all).sort().map(k => `${enc(k)}=${enc(all[k])}`).join('&');
+    const baseStr = `${method}&${enc(url)}&${enc(paramStr)}`;
+    const sigKey = `${enc(apiSecret)}&${enc(accessSecret)}`;
+    const sig = createHmac('sha1', sigKey).update(baseStr).digest('base64');
+    return 'OAuth ' + Object.entries({ ...base, oauth_signature: sig })
+      .map(([k, v]) => `${enc(k)}="${enc(v)}"`).join(', ');
+  }
 
-  const allParams = { ...oauthParams };
-  const paramStr = Object.keys(allParams).sort()
-    .map(k => `${enc(k)}=${enc(allParams[k])}`).join('&');
-  const baseStr = `${method}&${enc(url)}&${enc(paramStr)}`;
-  const sigKey = `${enc(apiSecret)}&${enc(accessSecret)}`;
-  const sig = createHmac('sha1', sigKey).update(baseStr).digest('base64');
+  // Upload image si disponible (API v1.1 media/upload)
+  let mediaId = null;
+  if (imagePath) {
+    try {
+      const imgBuf = readFileSync(imagePath);
+      const b64 = imgBuf.toString('base64');
+      const uploadUrl = 'https://upload.twitter.com/1.1/media/upload.json';
+      const form = new URLSearchParams({ media_data: b64, media_category: 'tweet_image' });
+      const auth = oauthSign('POST', uploadUrl);
+      const upRes = await fetch(uploadUrl, {
+        method: 'POST',
+        headers: { Authorization: auth, 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: form.toString(),
+      });
+      const upJson = await upRes.json();
+      if (!upRes.ok) throw new Error(JSON.stringify(upJson));
+      mediaId = upJson.media_id_string;
+      console.log(`🖼️  X media uploadé — id: ${mediaId}`);
+    } catch (e) {
+      console.warn(`⚠️  Upload image X échoué (${e.message}) → tweet sans image.`);
+    }
+  }
 
-  const authHeader = 'OAuth ' + Object.entries({ ...oauthParams, oauth_signature: sig })
-    .map(([k, v]) => `${enc(k)}="${enc(v)}"`).join(', ');
+  // Publier le tweet (API v2)
+  const tweetUrl = 'https://api.twitter.com/2/tweets';
+  const auth = oauthSign('POST', tweetUrl);
+  const txt = message.length > 280 ? message.slice(0, 277) + '…' : message;
+  const body = { text: txt };
+  if (mediaId) body.media = { media_ids: [mediaId] };
 
-  // Truncate to 280 chars
-  const text = message.length > 280 ? message.slice(0, 277) + '…' : message;
-
-  const res = await fetch(url, {
-    method,
-    headers: { 'Authorization': authHeader, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ text }),
+  const res = await fetch(tweetUrl, {
+    method: 'POST',
+    headers: { Authorization: auth, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
   });
   const json = await res.json();
   if (!res.ok) throw new Error(JSON.stringify(json));
@@ -282,18 +317,20 @@ async function main() {
     headline: pickEn(spot.headline) || '',
     why: pickEn(spot.why) || '',
   });
-  const imageUrl = getImageUrl();
+  const { og: ogUrl, ig: igUrl } = getImageUrls();
+  const ogPath = join(__dirname, '..', 'assets', 'og.png');
 
   console.log('── Message court (X) ──');
   console.log(short);
   console.log(`\n── Message long (FB/Insta) ──`);
   console.log(long);
-  console.log(`\n── Image URL ──\n${imageUrl || '(aucune — GITHUB_REPOSITORY non défini)'}\n`);
+  console.log(`\n── OG image ──\n${ogUrl || '(aucune — GITHUB_REPOSITORY non défini)'}`);
+  console.log(`── IG image ──\n${igUrl || '(aucune — GITHUB_REPOSITORY non défini)'}\n`);
 
   const tasks = [];
-  if (PLATFORM === 'all' || PLATFORM === 'facebook')  tasks.push(postToFacebook(long, imageUrl));
-  if (PLATFORM === 'all' || PLATFORM === 'x')         tasks.push(postToX(short));
-  if (PLATFORM === 'all' || PLATFORM === 'instagram') tasks.push(postToInstagram(long, imageUrl));
+  if (PLATFORM === 'all' || PLATFORM === 'facebook')  tasks.push(postToFacebook(long, ogUrl));
+  if (PLATFORM === 'all' || PLATFORM === 'x')         tasks.push(postToX(short, ogPath));
+  if (PLATFORM === 'all' || PLATFORM === 'instagram') tasks.push(postToInstagram(long, igUrl));
 
   const results = await Promise.allSettled(tasks);
 
