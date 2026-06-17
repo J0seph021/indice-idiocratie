@@ -226,19 +226,35 @@ async function postToX(message, imagePath) {
       .map(([k, v]) => `${enc(k)}="${enc(v)}"`).join(', ');
   }
 
-  // Upload image si disponible (API v1.1 media/upload)
+  // Upload image (API v1.1 media/upload) en multipart/form-data.
+  // Pourquoi multipart : avec x-www-form-urlencoded, les paramètres du corps
+  // (media_data, media_category) DOIVENT être inclus dans la base de signature
+  // OAuth, sinon X rejette avec « code 32 — Could not authenticate you ». En
+  // multipart, le corps binaire n'entre PAS dans la signature → l'auth est
+  // calculée sur les seuls params OAuth, c'est plus simple et fiable.
   let mediaId = null;
   if (imagePath) {
     try {
       const imgBuf = readFileSync(imagePath);
-      const b64 = imgBuf.toString('base64');
       const uploadUrl = 'https://upload.twitter.com/1.1/media/upload.json';
-      const form = new URLSearchParams({ media_data: b64, media_category: 'tweet_image' });
       const auth = oauthSign('POST', uploadUrl);
+      const boundary = '----IdiocracyBoundary' + Math.random().toString(36).slice(2);
+      const CRLF = '\r\n';
+      const head = Buffer.from(
+        `--${boundary}${CRLF}` +
+        `Content-Disposition: form-data; name="media"; filename="og.png"${CRLF}` +
+        `Content-Type: image/png${CRLF}${CRLF}`
+      );
+      const tail = Buffer.from(`${CRLF}--${boundary}--${CRLF}`);
+      const body = Buffer.concat([head, imgBuf, tail]);
       const upRes = await fetch(uploadUrl, {
         method: 'POST',
-        headers: { Authorization: auth, 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: form.toString(),
+        headers: {
+          Authorization: auth,
+          'Content-Type': `multipart/form-data; boundary=${boundary}`,
+          'Content-Length': String(body.length),
+        },
+        body,
       });
       const upJson = await upRes.json();
       if (!upRes.ok) throw new Error(JSON.stringify(upJson));
