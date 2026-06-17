@@ -91,51 +91,50 @@ function buildSquareSvg(data) {
   p.push(`<rect x="0" y="${S - 12}" width="${S}" height="12" fill="${COL.pink}"/>`);
 
   // en-tête
-  p.push(text('THE IDIOCRACY INDEX', { x: c, y: 108, size: 58, fill: COL.white, font: 'anton', anchor: 'middle', ls: 4 }));
-  p.push(text("TODAY'S STUPIDITY SCORE", { x: c, y: 158, size: 26, fill: COL.mute, anchor: 'middle', ls: 4 }));
+  p.push(text('THE IDIOCRACY INDEX', { x: c, y: 104, size: 58, fill: COL.white, font: 'anton', anchor: 'middle', ls: 4 }));
+  p.push(text("THE WORLD'S STUPIDITY SCOREBOARD", { x: c, y: 150, size: 24, fill: COL.mute, anchor: 'middle', ls: 3 }));
 
-  // ligne de séparation
-  p.push(`<rect x="80" y="180" width="${S - 160}" height="2" fill="${COL.mute}" opacity="0.3"/>`);
-
-  // pays (sans emoji — resvg ne supporte pas les emoji drapeaux)
-  const countryLines = wrap('anton', country, 72, S - 100).slice(0, 2);
-  let cy = 310;
-  for (const ln of countryLines) {
-    p.push(text(ln, { x: c, y: cy, size: 72, fill: COL.yellow, font: 'anton', anchor: 'middle', ls: 2 }));
-    cy += 82;
-  }
-
-  // score — gros chiffre centré
+  // ===== SCORE MONDIAL (en haut, clairement étiqueté GLOBAL) =====
+  // Important : ce chiffre est le score du MONDE, pas du pays vedette. On le pose
+  // tout en haut avec son libellé, AVANT et SÉPARÉ de la « connerie du jour »,
+  // pour qu'on ne lise jamais « United States = 50 ».
   const scoreStr = String(score);
-  const scoreSize = 240;
+  const scoreSize = 230;
   const scoreW = measure('anton', scoreStr, scoreSize, 4);
-  const slashW = measure('anton', '/100', 80, 2);
-  const totalW = scoreW + 16 + slashW;
-  const sx = c - totalW / 2;
-  p.push(text(scoreStr, { x: sx, y: 580, size: scoreSize, fill: scoreColor, font: 'anton', ls: 4 }));
-  p.push(text('/100', { x: sx + scoreW + 16, y: 580, size: 80, fill: COL.white, font: 'anton', ls: 2 }));
+  const slashW = measure('anton', '/100', 78, 2);
+  const sx = c - (scoreW + 16 + slashW) / 2;
+  p.push(text(scoreStr, { x: sx, y: 400, size: scoreSize, fill: scoreColor, font: 'anton', ls: 4 }));
+  p.push(text('/100', { x: sx + scoreW + 16, y: 400, size: 78, fill: COL.white, font: 'anton', ls: 2 }));
+  p.push(text('GLOBAL STUPIDITY · TODAY', { x: c, y: 452, size: 26, fill: COL.dim, anchor: 'middle', ls: 4 }));
 
-  // barre de progression
-  const barX = 100, barY = 610, barW = S - 200, barH = 14, barR = 7;
+  // barre de progression (repère du seuil 69)
+  const barX = 120, barY = 496, barW = S - 240, barH = 14, barR = 7;
   p.push(`<rect x="${barX}" y="${barY}" width="${barW}" height="${barH}" rx="${barR}" fill="${COL.mute}" opacity="0.2"/>`);
-  const fill = Math.round((score / 100) * barW);
-  p.push(`<rect x="${barX}" y="${barY}" width="${fill}" height="${barH}" rx="${barR}" fill="${scoreColor}" opacity="0.85"/>`);
-  p.push(`<line x1="${barX + Math.round(69 / 100 * barW)}" y1="${barY - 6}" x2="${barX + Math.round(69 / 100 * barW)}" y2="${barY + barH + 6}" stroke="${COL.yellow}" stroke-width="2" opacity="0.6"/>`);
+  const fillW = Math.round((score / 100) * barW);
+  p.push(`<rect x="${barX}" y="${barY}" width="${fillW}" height="${barH}" rx="${barR}" fill="${scoreColor}" opacity="0.85"/>`);
+  const m69 = barX + Math.round(69 / 100 * barW);
+  p.push(`<line x1="${m69}" y1="${barY - 6}" x2="${m69}" y2="${barY + barH + 6}" stroke="${COL.yellow}" stroke-width="2" opacity="0.6"/>`);
 
   // séparateur
-  p.push(`<rect x="80" y="646" width="${S - 160}" height="2" fill="${COL.mute}" opacity="0.3"/>`);
+  p.push(`<rect x="100" y="566" width="${S - 200}" height="2" fill="${COL.mute}" opacity="0.3"/>`);
 
-  // headline
-  const headLines = wrapClamp('mono', headline, 28, S - 160, 3);
-  let hy = 700;
-  for (const ln of headLines) {
-    p.push(text(ln, { x: c, y: hy, size: 28, fill: COL.white, anchor: 'middle' }));
-    hy += 42;
+  // ===== CONNERIE DU JOUR (section distincte, sous le score) =====
+  p.push(text("TODAY'S DUMBEST MOVE", { x: c, y: 632, size: 28, fill: COL.pink, anchor: 'middle', ls: 4 }));
+  const countryLines = wrap('anton', country, 64, S - 120).slice(0, 2);
+  let cy = 706;
+  for (const ln of countryLines) {
+    p.push(text(ln, { x: c, y: cy, size: 64, fill: COL.yellow, font: 'anton', anchor: 'middle', ls: 2 }));
+    cy += 72;
+  }
+  cy += 10;
+  for (const ln of wrapClamp('mono', headline, 27, S - 150, 3)) {
+    p.push(text(ln, { x: c, y: cy, size: 27, fill: COL.white, anchor: 'middle' }));
+    cy += 40;
   }
 
   // pied
-  p.push(text('IDIOCRACIES.COM', { x: c, y: 940, size: 54, fill: COL.yellow, font: 'anton', anchor: 'middle', ls: 2 }));
-  p.push(text('100% SATIRE · UPDATED DAILY', { x: c, y: 988, size: 22, fill: COL.mute, anchor: 'middle', ls: 4 }));
+  p.push(text('IDIOCRACIES.COM', { x: c, y: 984, size: 50, fill: COL.yellow, font: 'anton', anchor: 'middle', ls: 2 }));
+  p.push(text('100% SATIRE · UPDATED DAILY', { x: c, y: 1024, size: 22, fill: COL.mute, anchor: 'middle', ls: 3 }));
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${S}" viewBox="0 0 ${S} ${S}">${p.join('')}</svg>`;
 }
