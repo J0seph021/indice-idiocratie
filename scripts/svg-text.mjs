@@ -73,3 +73,18 @@ export function wrap(fontKey, str, size, maxW, ls = 0) {
   if (cur) lines.push(cur);
   return lines;
 }
+
+// Comme wrap(), mais borne à maxLines. Si le texte déborde, la dernière ligne
+// visible est raccourcie mot par mot et terminée par « … », pour signaler la
+// coupe au lieu de trancher la phrase en plein milieu (« …while a judge »).
+export function wrapClamp(fontKey, str, size, maxW, maxLines, ls = 0) {
+  const lines = wrap(fontKey, str, size, maxW, ls);
+  if (lines.length <= maxLines) return lines;
+  const kept = lines.slice(0, maxLines);
+  const words = kept[maxLines - 1].split(' ');
+  // on intègre aussi le 1er mot débordant pour combler la place laissée par « … »
+  words.push(lines[maxLines].split(' ')[0] || '');
+  while (words.length > 1 && measure(fontKey, words.join(' ') + '…', size, ls) > maxW) words.pop();
+  kept[maxLines - 1] = words.join(' ').replace(/[\s,.;:]+$/, '') + '…';
+  return kept;
+}

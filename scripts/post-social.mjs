@@ -166,13 +166,17 @@ async function postToFacebook(message, imageUrl) {
 
   if (DRY_RUN) { console.log('🔵 [DRY] Facebook post simulé.'); return; }
 
-  // On poste texte + lien (l'aperçu og.png s'affiche automatiquement via les balises Open Graph)
-  const url = `https://graph.facebook.com/${pageId}/feed`;
-  const body = {
-    message,
-    link: 'https://idiocracies.com',
-    access_token: token,
-  };
+  // On poste l'IMAGE directement (/photos) plutôt qu'un lien. Avec /feed + link,
+  // FB scrape og:image de l'URL constante idiocracies.com et garde ce cache des
+  // jours : il ressert l'image périmée de la veille. /photos + URL épinglée au
+  // SHA → FB récupère exactement l'image du jour. Le lien reste dans la légende.
+  // Sans URL d'image (GITHUB_REPOSITORY absent), on retombe sur un post texte.
+  const url = imageUrl
+    ? `https://graph.facebook.com/${pageId}/photos`
+    : `https://graph.facebook.com/${pageId}/feed`;
+  const body = imageUrl
+    ? { url: imageUrl, caption: message, access_token: token }
+    : { message, access_token: token };
 
   const res = await fetch(url, {
     method: 'POST',
