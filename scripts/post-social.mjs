@@ -51,11 +51,14 @@ function buildPost(data) {
   const countryTag = '#' + country.replace(/\s+/g, '');
   const hashtags = `${countryTag} #Satire #Politics #Idiocracy`;
 
-  // Version courte (≤ 280 chars pour X)
+  // Version courte (≤ 280 chars pour X). On NE tronque PAS la headline ici :
+  // elle est déjà plafonnée à ~110 caractères côté LLM (voir update.mjs), donc
+  // le post complet tient sous 280. Le filet de sécurité final dans postToX()
+  // re-coupe avec « … » si jamais ça dépasse (cas extrême : pays à nom très long).
   const short = [
     `${scoreEmoji} Stupidity Score: ${score}/100`,
     ``,
-    `${flag} ${country}: "${headline.slice(0, 100)}${headline.length > 100 ? '…' : ''}"`,
+    `${flag} ${country}: "${headline}"`,
     ``,
     `idiocracies.com`,
     ``,
