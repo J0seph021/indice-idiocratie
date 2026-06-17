@@ -230,9 +230,9 @@ ${list}
 1) Assess ${country.name}'s CURRENT absolute standing on the SIX axes (each 0-100) on the fixed scale (0 = sane, ~2006 normalcy; 100 = full Idiocracy). Use your general knowledge of the country in 2026 PLUS these headlines. Be calibrated and fair across countries.
 2) Pick ONLY headlines genuinely about ${country.name}'s OWN government/politics/society in clear English (skip tangential/foreign/duplicate/non-English). Aim for 3-5. Include good moves too.
    For EACH kept headline give: "i", "axis" (SCI/SPECTACLE/PUBLIC/KNOW/CRIT/FUTURE), "impact" (signed int -6..+6, + = toward idiocracy, - = good move), "note" (one short biting sentence).
-3) Give a 1-sentence "headline" (most telling item) and a 1-sentence "why".
+3) Give a punchy "headline": ONE COMPLETE sentence, MAX 110 characters, printed WHOLE on a graphic card (keep it tight, never cut off), about the most telling item. Then a "why": 1 biting sentence (may run a bit longer).
 
-Return JSON: {"axes":{"SCI":<0-100>,"SPECTACLE":<0-100>,"PUBLIC":<0-100>,"KNOW":<0-100>,"CRIT":<0-100>,"FUTURE":<0-100>},"headline":"<1 sentence>","why":"<1 biting sentence>","articles":[{"i":<idx>,"axis":"<AXIS>","impact":<int>,"note":"<short>"}]}` : `COUNTRY: ${country.name}
+Return JSON: {"axes":{"SCI":<0-100>,"SPECTACLE":<0-100>,"PUBLIC":<0-100>,"KNOW":<0-100>,"CRIT":<0-100>,"FUTURE":<0-100>},"headline":"<1 complete sentence, max 110 chars>","why":"<1 biting sentence>","articles":[{"i":<idx>,"axis":"<AXIS>","impact":<int>,"note":"<short>"}]}` : `COUNTRY: ${country.name}
 Previous overall score (today's baseline): ${prevScore}
 
 The index is CUMULATIVE: we start from the baseline and add ONLY today's moves. You do NOT
@@ -244,9 +244,9 @@ ${list}
 1) Pick ONLY headlines genuinely about ${country.name}'s OWN government/politics/society in clear English (skip tangential/foreign/duplicate/non-English). Aim for 3-5, fewer is fine. Include notable GOOD/competent moves, not only failures.
 2) For EACH kept headline give: "i" (index), "axis" (one of SCI/SPECTACLE/PUBLIC/KNOW/CRIT/FUTURE — which axis it touches), "impact" (signed int -6..+6 = the day's nudge: + = a step TOWARD idiocracy / dumb move, - = a step AWAY / good move, 0 = noise), "note" (one short biting sentence).
    Most ordinary days are small (±1..±3). Reserve ±5/±6 for genuinely historic moves.
-3) Give a 1-sentence "headline" (the single most telling item — a dumb move, or a strikingly good one) and a 1-sentence "why".
+3) Give a punchy "headline": ONE COMPLETE sentence, MAX 110 characters. It is printed WHOLE on a graphic card, so it must read complete and never be cut off, tighten the wording rather than run long. It is about the single most telling item (a dumb move, or a strikingly good one). Then a "why": 1 biting sentence of extra context for the caption (this one may run a bit longer).
 
-Return JSON: {"headline":"<1 sentence>","why":"<1 biting sentence>","articles":[{"i":<idx>,"axis":"<AXIS>","impact":<int>,"note":"<short>"}]}`;
+Return JSON: {"headline":"<1 complete sentence, max 110 chars>","why":"<1 biting sentence>","articles":[{"i":<idx>,"axis":"<AXIS>","impact":<int>,"note":"<short>"}]}`;
 
   try {
     const out = PROVIDER === 'anthropic' ? await callAnthropic(RUBRIC, user) : await callOpenAI(RUBRIC, user);

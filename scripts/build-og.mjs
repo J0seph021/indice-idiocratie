@@ -59,9 +59,11 @@ function buildSvg(data) {
     cy += 60;
   }
   cy += 6;
-  for (const ln of wrapClamp('mono', headline, 27, W - rx - 60, 4)) {
-    p.push(text(ln, { x: rx, y: cy, size: 27, fill: COL.white }));
-    cy += 38;
+  // 5 lignes (espacement resserré pour ne pas toucher le pied) → capacité ~125
+  // caractères. Avec le plafond LLM de ~110, la headline tient TOUJOURS en entier.
+  for (const ln of wrapClamp('mono', headline, 26, W - rx - 60, 5)) {
+    p.push(text(ln, { x: rx, y: cy, size: 26, fill: COL.white }));
+    cy += 34;
   }
 
   // bas
