@@ -343,6 +343,7 @@ async function main() {
   console.log(`🧠 L'Indice d'Idiocratie — mise à jour ${today} (provider: ${PROVIDER})\n`);
   const data = JSON.parse(await readFile(DATA_PATH, 'utf8'));
   const prevWorld = data.world.score;
+  const refreshedToday = []; // pays réellement mis à jour aujourd'hui (vraie actu fraîche)
 
   // Score chaque pays (avec pause anti-rate-limit GDELT entre chaque)
   for (let i = 0; i < data.countries.length; i++) {
@@ -359,6 +360,7 @@ async function main() {
       c.why = r.why;
       c.articles = r.articles;
       c.gdp_adjusted = clamp(Math.round(r.score * 0.95), 5, 99);
+      refreshedToday.push(c);
     }
   }
 
@@ -380,9 +382,14 @@ async function main() {
     ? "We crossed the 69 line. Brawndo won."
     : "Still under the 69 line. Enjoy it while it lasts.";
 
-  // Connerie du jour = plus gros score (ou plus forte hausse)
-  const top = [...data.countries].sort((a, b) =>
-    (b.score + b.trend * 2) - (a.score + a.trend * 2))[0];
+  // Connerie du jour = la PIRE décision UNIQUE rapportée AUJOURD'HUI.
+  // On ne regarde pas le score cumulatif (sinon le pays le plus haut gagne tous
+  // les jours, mécaniquement) mais l'article au plus fort impact positif du jour,
+  // parmi les seuls pays réellement rafraîchis. Départage : la gravité absolue.
+  const worstMove = (c) => Math.max(0, ...((c.articles || []).map(a => Number(a.impact) || 0)));
+  const pool = refreshedToday.length ? refreshedToday : data.countries;
+  const top = [...pool].sort((a, b) =>
+    (worstMove(b) - worstMove(a)) || (b.score - a.score))[0];
   data.spotlight = {
     country: top.name, flag: top.flag,
     headline: top.headline, why: top.why, score: top.score,
