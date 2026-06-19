@@ -12,7 +12,7 @@
  * (voir scripts/svg-text.mjs).  Usage : node scripts/build-og.mjs
  */
 import { Resvg } from '@resvg/resvg-js';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { text, measure, wrap, wrapClamp, RESVG_FONT } from './svg-text.mjs';
@@ -148,6 +148,82 @@ function buildPortraitSvg(data) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${H}" viewBox="0 0 ${S} ${H}">${p.join('')}</svg>`;
 }
 
+// ---------------------------------------------------------------------------
+// CARROUSEL Instagram — 3 slides 4:5 (1080×1350) : score mondial → connerie du
+// jour → top 5 du classement. Le carrousel est le format le plus performant sur
+// Instagram. Slides servies à des URLs publiques (assets/og/post-{1,2,3}.png).
+// ---------------------------------------------------------------------------
+function carouselSlides(data) {
+  const S = 1080, H = 1350, c = S / 2;
+  const world = data.world?.score ?? 0;
+  const spot = data.spotlight || {};
+  const ranked = [...(data.countries || [])].sort((a, b) => b.score - a.score);
+  const wrapSvg = (p) => `<svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${H}" viewBox="0 0 ${S} ${H}">${p.join('')}</svg>`;
+
+  // chrome commun : bandeau-titre + pied + indicateur n/3
+  function frame(idx) {
+    const p = [];
+    p.push(`<rect width="${S}" height="${H}" fill="${COL.paper}"/>`);
+    p.push(`<rect x="0" y="0" width="${S}" height="12" fill="${COL.red}"/>`);
+    p.push(text('The Idiocracy Index', { x: c, y: 104, size: 50, fill: COL.ink, font: 'serif', anchor: 'middle' }));
+    p.push(`<rect x="90" y="132" width="${S - 180}" height="2" fill="${COL.ink}"/>`);
+    p.push(`<rect x="90" y="${H - 92}" width="${S - 180}" height="1" fill="${COL.line}"/>`);
+    p.push(text('IDIOCRACIES.COM', { x: 90, y: H - 46, size: 30, fill: COL.ink, font: 'serif', ls: 1 }));
+    p.push(text(`${idx} / 3`, { x: S - 90, y: H - 46, size: 22, fill: COL.soft, anchor: 'end' }));
+    p.push(text('100% SATIRE · UPDATED DAILY', { x: 90, y: H - 22, size: 16, fill: COL.faint, ls: 1 }));
+    return p;
+  }
+
+  // Slide 1 — score mondial (accroche)
+  const sc1 = world >= 69 ? COL.red : COL.ink;
+  const s1 = frame(1);
+  s1.push(text('GLOBAL STUPIDITY · TODAY', { x: c, y: 330, size: 28, fill: COL.soft, anchor: 'middle', ls: 4 }));
+  const w1 = String(world), ww = measure('serif', w1, 360, 0), sw = measure('serif', '/100', 100, 0);
+  const sx1 = c - (ww + 22 + sw) / 2;
+  s1.push(text(w1, { x: sx1, y: 630, size: 360, fill: sc1, font: 'serif' }));
+  s1.push(text('/100', { x: sx1 + ww + 22, y: 630, size: 100, fill: COL.ink, font: 'serif' }));
+  const bX = 130, bY = 716, bW = S - 260, bH = 18;
+  s1.push(`<rect x="${bX}" y="${bY}" width="${bW}" height="${bH}" fill="none" stroke="${COL.line}" stroke-width="1.5"/>`);
+  s1.push(`<rect x="${bX}" y="${bY}" width="${Math.round(Math.min(100, Math.max(0, world)) / 100 * bW)}" height="${bH}" fill="${sc1}"/>`);
+  const mm = bX + Math.round(69 / 100 * bW);
+  s1.push(`<rect x="${mm - 1}" y="${bY - 7}" width="2" height="${bH + 14}" fill="${COL.red}"/>`);
+  s1.push(text('0', { x: bX, y: bY + 44, size: 16, fill: COL.faint }));
+  s1.push(text('69 · THE LINE', { x: mm, y: bY + 44, size: 16, fill: COL.red, anchor: 'middle', ls: 1 }));
+  s1.push(text('100', { x: bX + bW, y: bY + 44, size: 16, fill: COL.faint, anchor: 'end' }));
+  s1.push(text(world >= 69 ? 'We crossed the 69 line.' : 'Still under the 69 line — for now.', { x: c, y: 882, size: 28, fill: COL.ink, anchor: 'middle' }));
+  s1.push(text("SWIPE FOR TODAY'S DUMBEST MOVE", { x: c, y: 1090, size: 22, fill: COL.red, anchor: 'middle', ls: 2 }));
+
+  // Slide 2 — connerie du jour
+  const spScore = spot.score ?? 0, sc2 = spScore >= 69 ? COL.red : COL.ink;
+  const country = (spot.country || '').toUpperCase();
+  const headline = pickEn(spot.headline) || '', why = pickEn(spot.why) || '';
+  const s2 = frame(2);
+  s2.push(text("TODAY'S DUMBEST MOVE", { x: c, y: 250, size: 30, fill: COL.red, anchor: 'middle', ls: 3 }));
+  s2.push(text(String(spScore), { x: c, y: 480, size: 200, fill: sc2, font: 'serif', anchor: 'middle' }));
+  let cy = 596;
+  for (const ln of wrap('serif', country, 60, S - 130).slice(0, 2)) { s2.push(text(ln, { x: c, y: cy, size: 58, fill: COL.ink, font: 'serif', anchor: 'middle' })); cy += 64; }
+  cy += 24;
+  for (const ln of wrapClamp('mono', headline, 24, S - 130, 4)) { s2.push(text(ln, { x: c, y: cy, size: 28, fill: COL.ink, anchor: 'middle' })); cy += 40; }
+  cy += 16;
+  for (const ln of wrapClamp('mono', why, 32, S - 160, 3)) { s2.push(text(ln, { x: c, y: cy, size: 20, fill: COL.soft, anchor: 'middle' })); cy += 30; }
+
+  // Slide 3 — top 5 du classement
+  const s3 = frame(3);
+  s3.push(text("TODAY'S DUMBEST NATIONS", { x: c, y: 250, size: 30, fill: COL.red, anchor: 'middle', ls: 3 }));
+  let ry = 372;
+  for (let i = 0; i < Math.min(5, ranked.length); i++) {
+    const cc = ranked[i], crit = cc.score >= 69;
+    s3.push(text(String(i + 1), { x: 110, y: ry, size: 46, fill: crit ? COL.red : COL.faint, font: 'serif' }));
+    for (const ln of wrap('serif', cc.name, 36, S - 360).slice(0, 1)) s3.push(text(ln, { x: 200, y: ry - 4, size: 38, fill: COL.ink, font: 'serif' }));
+    s3.push(text(String(cc.score), { x: S - 110, y: ry, size: 58, fill: crit ? COL.red : COL.ink, font: 'serif', anchor: 'end' }));
+    s3.push(`<rect x="90" y="${ry + 28}" width="${S - 180}" height="1" fill="${COL.line}"/>`);
+    ry += 144;
+  }
+  s3.push(text('FULL RANKING AT IDIOCRACIES.COM', { x: c, y: H - 150, size: 24, fill: COL.ink, anchor: 'middle', ls: 2 }));
+
+  return [wrapSvg(s1), wrapSvg(s2), wrapSvg(s3)];
+}
+
 function main() {
   const data = JSON.parse(readFileSync(join(root, 'data', 'scores.json'), 'utf8'));
 
@@ -160,6 +236,14 @@ function main() {
   const igPng = new Resvg(igSvg, { background: COL.paper, font: RESVG_FONT, fitTo: { mode: 'width', value: 1080 } }).render().asPng();
   writeFileSync(join(root, 'assets', 'ig.png'), igPng);
   console.log(`✓ assets/ig.png (${(igPng.length / 1024).toFixed(0)} ko) — portrait 4:5 Instagram/Facebook 1080×1350`);
+
+  // Carrousel Instagram (3 slides 4:5) → assets/og/post-{1,2,3}.png
+  mkdirSync(join(root, 'assets', 'og'), { recursive: true });
+  carouselSlides(data).forEach((svg, i) => {
+    const png = new Resvg(svg, { background: COL.paper, font: RESVG_FONT, fitTo: { mode: 'width', value: 1080 } }).render().asPng();
+    writeFileSync(join(root, 'assets', 'og', `post-${i + 1}.png`), png);
+  });
+  console.log('✓ assets/og/post-1..3.png — carrousel Instagram 4:5 (score / connerie / classement)');
 }
 
 main();
