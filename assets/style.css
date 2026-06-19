@@ -350,3 +350,20 @@ img{ max-width:100%; display:block; }
   *,*::before,*::after{ animation-duration:.001ms !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
   .reveal{ opacity:1; transform:none; }
 }
+
+/* ---------- DARK MODE (auto — suit la préférence du navigateur) ---------- */
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#16140f;   /* papier sombre chaud */
+    --paper2:#211d16;
+    --card:#1c1813;
+    --ink:#f1ede3;     /* encre claire */
+    --soft:#a8a092;
+    --faint:#7d7566;
+    --line:#2f2a20;
+    --line2:#403a2d;
+    --red:#fa3b30;     /* rouge un peu plus vif pour rester lisible sur fond sombre */
+    --red-ink:#ff5a50;
+    --redzone:rgba(250,59,48,.12);
+  }
+}

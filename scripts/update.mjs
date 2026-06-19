@@ -382,19 +382,37 @@ async function main() {
     ? "We crossed the 69 line. Brawndo won."
     : "Still under the 69 line. Enjoy it while it lasts.";
 
-  // Connerie du jour = la PIRE décision UNIQUE rapportée AUJOURD'HUI.
-  // On ne regarde pas le score cumulatif (sinon le pays le plus haut gagne tous
-  // les jours, mécaniquement) mais l'article au plus fort impact positif du jour,
-  // parmi les seuls pays réellement rafraîchis. Départage : la gravité absolue.
-  const worstMove = (c) => Math.max(0, ...((c.articles || []).map(a => Number(a.impact) || 0)));
-  const pool = refreshedToday.length ? refreshedToday : data.countries;
-  const top = [...pool].sort((a, b) =>
-    (worstMove(b) - worstMove(a)) || (b.score - a.score))[0];
-  data.spotlight = {
-    country: top.name, flag: top.flag,
-    headline: top.headline, why: top.why, score: top.score,
-  };
-  data.world.headline = `Today's champion: ${top.name}. ${pickEn(top.headline)}`;
+  // Connerie du jour — DOIT reposer sur une actu de ≤ 3 jours, sinon la même
+  // nouvelle se répéterait pendant des jours. On regarde l'article au plus fort
+  // impact positif RÉCENT, en priorité parmi les pays rafraîchis aujourd'hui
+  // (donc à headline fraîche). Départage : le score cumulé.
+  const FRESH_DAYS = 3;
+  const todayMs = Date.parse(today + 'T00:00:00Z');
+  const ageDays = (a) => { const d = Date.parse(a && a.date); return Number.isFinite(d) ? (todayMs - d) / 86400000 : Infinity; };
+  const worstFresh = (c) => Math.max(0, ...((c.articles || []).filter(a => ageDays(a) <= FRESH_DAYS).map(a => Number(a.impact) || 0)));
+
+  let spotPool = refreshedToday.filter(c => worstFresh(c) > 0);
+  if (!spotPool.length) spotPool = data.countries.filter(c => worstFresh(c) > 0); // non rafraîchis mais article encore frais
+  let top = spotPool.sort((a, b) => (worstFresh(b) - worstFresh(a)) || (b.score - a.score))[0];
+
+  if (top) {
+    // l'article frais le plus marquant sert à DATER le spotlight (garde-fou des 3 j).
+    const lead = (top.articles || []).filter(a => ageDays(a) <= FRESH_DAYS)
+      .sort((a, b) => (Number(b.impact) || 0) - (Number(a.impact) || 0))[0];
+    data.spotlight = {
+      country: top.name, flag: top.flag,
+      headline: top.headline, why: top.why, score: top.score,
+      date: lead ? lead.date : today,
+    };
+    data.world.headline = `Today's champion: ${top.name}. ${pickEn(top.headline)}`;
+  } else if (data.spotlight && ageDays(data.spotlight) <= FRESH_DAYS) {
+    // Rien de neuf aujourd'hui : on garde le spotlight existant TANT QU'il a ≤ 3 jours.
+  } else {
+    // Dernier recours (plus aucune connerie fraîche depuis 3 j) : pays au plus haut score.
+    top = (refreshedToday.length ? refreshedToday : data.countries).slice().sort((a, b) => b.score - a.score)[0];
+    data.spotlight = { country: top.name, flag: top.flag, headline: top.headline, why: top.why, score: top.score, date: today };
+    data.world.headline = `Today's champion: ${top.name}. ${pickEn(top.headline)}`;
+  }
 
   // Historique
   data.updated = today;
@@ -405,7 +423,7 @@ async function main() {
   }
 
   console.log(`\n🌍 Score mondial : ${prevWorld} → ${worldScore} (${data.world.trend >= 0 ? '+' : ''}${data.world.trend})`);
-  console.log(`🏆 Connerie du jour : ${top.name} (${top.score})`);
+  console.log(`🏆 Connerie du jour : ${data.spotlight.country} (${data.spotlight.score})`);
 
   if (DRY_RUN) {
     // Aperçu : montre les articles générés pour les 2 premiers pays ayant des liens GDELT frais

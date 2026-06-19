@@ -83,69 +83,69 @@ function buildSvg(data) {
 }
 
 // ---------------------------------------------------------------------------
-// Image carrée 1080×1080 pour Instagram — centrée, lisible dans la grille
+// Image PORTRAIT 4:5 (1080×1350) pour Instagram ET Facebook — format vertical,
+// recommandé pour le feed mobile (prend plus de place, meilleure portée).
+// Hiérarchie : gros chiffre en haut, « connerie du jour » dessous.
 // ---------------------------------------------------------------------------
-function buildSquareSvg(data) {
-  const S = 1080, c = S / 2;
+function buildPortraitSvg(data) {
+  const S = 1080, H = 1350, c = S / 2;
   const score = data.world?.score ?? 0;
   const sc = score >= 69 ? COL.red : COL.ink;
   const country = (data.spotlight?.country || '').toUpperCase();
   const headline = pickEn(data.spotlight?.headline) || '';
 
   const p = [];
-  p.push(`<rect width="${S}" height="${S}" fill="${COL.paper}"/>`);
-  p.push(`<rect x="0" y="0" width="${S}" height="10" fill="${COL.red}"/>`);
+  p.push(`<rect width="${S}" height="${H}" fill="${COL.paper}"/>`);
+  p.push(`<rect x="0" y="0" width="${S}" height="12" fill="${COL.red}"/>`);
 
   // bandeau-titre
-  p.push(text('The Idiocracy Index', { x: c, y: 118, size: 62, fill: COL.ink, font: 'serif', anchor: 'middle' }));
-  p.push(text("THE WORLD'S STUPIDITY SCOREBOARD", { x: c, y: 156, size: 20, fill: COL.soft, anchor: 'middle', ls: 3 }));
-  p.push(`<rect x="90" y="182" width="${S - 180}" height="2" fill="${COL.ink}"/>`);
+  p.push(text('The Idiocracy Index', { x: c, y: 138, size: 66, fill: COL.ink, font: 'serif', anchor: 'middle' }));
+  p.push(text("THE WORLD'S STUPIDITY SCOREBOARD", { x: c, y: 180, size: 21, fill: COL.soft, anchor: 'middle', ls: 3 }));
+  p.push(`<rect x="90" y="208" width="${S - 180}" height="2" fill="${COL.ink}"/>`);
 
-  // ===== SCORE MONDIAL (en haut, clairement étiqueté GLOBAL) =====
-  // Ce chiffre est le score du MONDE, pas du pays vedette. On le pose tout en
-  // haut, SÉPARÉ de la « connerie du jour », pour qu'on ne lise jamais
-  // « United States = 50 ».
-  const scoreStr = String(score);
-  const scoreSize = 238;
+  // ===== SCORE MONDIAL (gros chiffre en haut) =====
+  p.push(text('GLOBAL STUPIDITY · TODAY', { x: c, y: 326, size: 26, fill: COL.soft, anchor: 'middle', ls: 4 }));
+  const scoreStr = String(score), scoreSize = 320;
   const scoreW = measure('serif', scoreStr, scoreSize, 0);
-  const slashW = measure('serif', '/100', 76, 0);
-  const sx = c - (scoreW + 16 + slashW) / 2;
-  p.push(text(scoreStr, { x: sx, y: 406, size: scoreSize, fill: sc, font: 'serif' }));
-  p.push(text('/100', { x: sx + scoreW + 16, y: 406, size: 76, fill: COL.ink, font: 'serif' }));
-  p.push(text('GLOBAL STUPIDITY · TODAY', { x: c, y: 456, size: 24, fill: COL.soft, anchor: 'middle', ls: 3 }));
+  const slashW = measure('serif', '/100', 92, 0);
+  const sx = c - (scoreW + 20 + slashW) / 2;
+  p.push(text(scoreStr, { x: sx, y: 580, size: scoreSize, fill: sc, font: 'serif' }));
+  p.push(text('/100', { x: sx + scoreW + 20, y: 580, size: 92, fill: COL.ink, font: 'serif' }));
 
   // cadran-seuil (repère de la ligne 69)
-  const barX = 130, barY = 502, barW = S - 260, barH = 14;
+  const barX = 130, barY = 646, barW = S - 260, barH = 16;
   p.push(`<rect x="${barX}" y="${barY}" width="${barW}" height="${barH}" fill="none" stroke="${COL.line}" stroke-width="1.5"/>`);
   const fillW = Math.round(Math.min(100, Math.max(0, score)) / 100 * barW);
   p.push(`<rect x="${barX}" y="${barY}" width="${fillW}" height="${barH}" fill="${sc}"/>`);
   const m69 = barX + Math.round(69 / 100 * barW);
-  p.push(`<rect x="${m69 - 1}" y="${barY - 6}" width="2" height="${barH + 12}" fill="${COL.red}"/>`);
-  p.push(text('69 · THE LINE', { x: m69, y: barY + 36, size: 15, fill: COL.red, anchor: 'middle', ls: 1 }));
+  p.push(`<rect x="${m69 - 1}" y="${barY - 7}" width="2" height="${barH + 14}" fill="${COL.red}"/>`);
+  p.push(text('0', { x: barX, y: barY + 42, size: 16, fill: COL.faint }));
+  p.push(text('69 · THE LINE', { x: m69, y: barY + 42, size: 16, fill: COL.red, anchor: 'middle', ls: 1 }));
+  p.push(text('100', { x: barX + barW, y: barY + 42, size: 16, fill: COL.faint, anchor: 'end' }));
 
   // séparateur
-  p.push(`<rect x="100" y="588" width="${S - 200}" height="1" fill="${COL.line}"/>`);
+  p.push(`<rect x="100" y="772" width="${S - 200}" height="1" fill="${COL.line}"/>`);
 
   // ===== CONNERIE DU JOUR (section distincte, sous le score) =====
-  p.push(text("TODAY'S DUMBEST MOVE", { x: c, y: 650, size: 26, fill: COL.red, anchor: 'middle', ls: 3 }));
-  const countryLines = wrap('serif', country, 62, S - 140).slice(0, 2);
-  let cy = 720;
+  p.push(text("TODAY'S DUMBEST MOVE", { x: c, y: 842, size: 30, fill: COL.red, anchor: 'middle', ls: 3 }));
+  const countryLines = wrap('serif', country, 64, S - 130).slice(0, 2);
+  let cy = 926;
   for (const ln of countryLines) {
-    p.push(text(ln, { x: c, y: cy, size: 60, fill: COL.ink, font: 'serif', anchor: 'middle' }));
-    cy += 66;
+    p.push(text(ln, { x: c, y: cy, size: 66, fill: COL.ink, font: 'serif', anchor: 'middle' }));
+    cy += 74;
   }
-  cy += 16;
-  for (const ln of wrapClamp('mono', headline, 24, S - 150, 3)) {
-    p.push(text(ln, { x: c, y: cy, size: 25, fill: COL.ink, anchor: 'middle' }));
-    cy += 36;
+  cy += 20;
+  for (const ln of wrapClamp('mono', headline, 26, S - 140, 4)) {
+    p.push(text(ln, { x: c, y: cy, size: 27, fill: COL.ink, anchor: 'middle' }));
+    cy += 38;
   }
 
   // pied
-  p.push(`<rect x="90" y="${S - 88}" width="${S - 180}" height="1" fill="${COL.line}"/>`);
-  p.push(text('IDIOCRACIES.COM', { x: c, y: S - 50, size: 46, fill: COL.ink, font: 'serif', anchor: 'middle', ls: 1 }));
-  p.push(text('100% SATIRE · UPDATED DAILY', { x: c, y: S - 22, size: 20, fill: COL.soft, anchor: 'middle', ls: 2 }));
+  p.push(`<rect x="90" y="${H - 96}" width="${S - 180}" height="1" fill="${COL.line}"/>`);
+  p.push(text('IDIOCRACIES.COM', { x: c, y: H - 52, size: 50, fill: COL.ink, font: 'serif', anchor: 'middle', ls: 1 }));
+  p.push(text('100% SATIRE · UPDATED DAILY', { x: c, y: H - 22, size: 21, fill: COL.soft, anchor: 'middle', ls: 2 }));
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${S}" viewBox="0 0 ${S} ${S}">${p.join('')}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${H}" viewBox="0 0 ${S} ${H}">${p.join('')}</svg>`;
 }
 
 function main() {
@@ -156,10 +156,10 @@ function main() {
   writeFileSync(join(root, 'assets', 'og.png'), ogPng);
   console.log(`✓ assets/og.png (${(ogPng.length / 1024).toFixed(0)} ko) — score mondial ${data.world?.score}, connerie du jour ${data.spotlight?.country}`);
 
-  const igSvg = buildSquareSvg(data);
+  const igSvg = buildPortraitSvg(data);
   const igPng = new Resvg(igSvg, { background: COL.paper, font: RESVG_FONT, fitTo: { mode: 'width', value: 1080 } }).render().asPng();
   writeFileSync(join(root, 'assets', 'ig.png'), igPng);
-  console.log(`✓ assets/ig.png (${(igPng.length / 1024).toFixed(0)} ko) — carré Instagram 1080×1080`);
+  console.log(`✓ assets/ig.png (${(igPng.length / 1024).toFixed(0)} ko) — portrait 4:5 Instagram/Facebook 1080×1350`);
 }
 
 main();
