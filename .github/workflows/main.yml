@@ -5,8 +5,8 @@ on:
     # GitHub decale/saute souvent les crons "pile a l'heure" (:00 = creneau le
     # plus charge). On vise une minute impaire hors :00, + un run de rattrapage
     # l'apres-midi au cas ou GitHub aurait saute celui du matin.
-    - cron: '23 11 * * *'   # principal — ~11h23 UTC
-    - cron: '23 14 * * *'   # rattrapage — ~14h23 UTC (ne republie que s'il y a du neuf)
+    - cron: '23 10 * * *'   # principal — 10h23 UTC = 6h23 a Toronto (ete/EDT ; 5h23 en hiver/EST)
+    - cron: '23 14 * * *'   # rattrapage — 14h23 UTC = 10h23 Toronto (ne republie que s'il y a du neuf)
   workflow_dispatch:
     inputs:
       baseline:
