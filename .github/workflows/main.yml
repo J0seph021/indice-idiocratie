@@ -2,7 +2,11 @@ name: Mise a jour quotidienne de l'Idiocratie
 
 on:
   schedule:
-    - cron: '0 11 * * *'
+    # GitHub decale/saute souvent les crons "pile a l'heure" (:00 = creneau le
+    # plus charge). On vise une minute impaire hors :00, + un run de rattrapage
+    # l'apres-midi au cas ou GitHub aurait saute celui du matin.
+    - cron: '23 11 * * *'   # principal — ~11h23 UTC
+    - cron: '23 14 * * *'   # rattrapage — ~14h23 UTC (ne republie que s'il y a du neuf)
   workflow_dispatch:
     inputs:
       baseline:
@@ -12,6 +16,11 @@ on:
 
 permissions:
   contents: write
+
+# Empeche deux executions simultanees (principal + rattrapage qui se chevauchent).
+concurrency:
+  group: idiocracy-daily
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -29,13 +38,27 @@ jobs:
           BASELINE: ${{ (inputs.baseline == true) && '1' || '0' }}
         run: node scripts/update.mjs
       - name: Commit
+        id: commit
         run: |
           git config user.name "Idiocracy Bot"
           git config user.email "bot@idiocratie.local"
-          git add data/scores.json assets/og.png assets/og c
-          git diff --staged --quiet || git commit -m "Conneries du jour"
-          git push
+          TODAY="$(date -u +%F)"
+          # On ne PUBLIE sur les reseaux qu'une fois par jour UTC (marqueur),
+          # meme si le run de rattrapage rafraichit encore les donnees l'apres-midi.
+          POST=false
+          if [ "$(cat data/.last-social 2>/dev/null)" != "$TODAY" ]; then POST=true; fi
+          git add data/scores.json assets/og.png assets/ig.png assets/og c
+          if git diff --staged --quiet; then
+            echo "post=false" >> "$GITHUB_OUTPUT"
+            echo "Rien de neuf aujourd'hui : pas de commit ni de publication."
+          else
+            if [ "$POST" = "true" ]; then printf '%s\n' "$TODAY" > data/.last-social; git add data/.last-social; fi
+            git commit -m "Conneries du jour"
+            git push
+            echo "post=$POST" >> "$GITHUB_OUTPUT"
+          fi
       - name: Publier sur Facebook, X et Instagram
+        if: steps.commit.outputs.post == 'true'
         continue-on-error: true
         env:
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
