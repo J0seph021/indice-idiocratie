@@ -17,7 +17,7 @@ import { Resvg } from '@resvg/resvg-js';
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { text, measure, wrap, RESVG_FONT } from './svg-text.mjs';
+import { text, measure, wrap, wrapClamp, RESVG_FONT } from './svg-text.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OG_DIR = join(root, 'assets', 'og');
@@ -26,9 +26,10 @@ mkdirSync(OG_DIR, { recursive: true });
 mkdirSync(C_DIR, { recursive: true });
 
 const W = 1200, H = 630;
-const COL = { bg: '#07070b', white: '#ffffff', yellow: '#ffd60a', pink: '#ff2e63', dim: '#a6a6c2', mute: '#6c6c86' };
-// mêmes zones que assets/app.js
-const zoneColor = (s) => s >= 85 ? '#ff2e63' : s >= 69 ? '#ff4d4d' : s >= 50 ? '#ffb02e' : '#34e5a0';
+// Palette éditoriale « faux quotidien » : papier, encre, UN rouge iconique.
+const COL = { paper: '#F7F5EF', ink: '#16130D', soft: '#6b6459', faint: '#8d8678', line: '#dcd6c8', red: '#E3120B' };
+// rouge = au-dessus de la ligne 69 (seuil critique) ; encre sinon. cf. assets/app.js
+const zoneColor = (s) => (s >= 69 ? COL.red : COL.ink);
 const pickEn = (v) => (v && typeof v === 'object' && !Array.isArray(v)) ? (v.en || Object.values(v)[0] || '') : (v || '');
 const slug = (c) => String(c.code || c.name).toLowerCase().replace(/[^a-z0-9]+/g, '-');
 const esc = (s) => String(s).replace(/[&<>"]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
@@ -41,45 +42,57 @@ function card(country, rank, total, date) {
   const headline = pickEn(country.headline);
   const t = country.trend || 0;
   const trendStr = t > 0 ? `▲ +${t} VS YESTERDAY` : t < 0 ? `▼ ${t} VS YESTERDAY` : 'NO CHANGE VS YESTERDAY';
-  const trendCol = t > 0 ? COL.pink : t < 0 ? '#34e5a0' : COL.mute;
+  const trendCol = t > 0 ? COL.red : COL.soft;
 
   const p = [];
-  p.push(`<rect width="${W}" height="${H}" fill="${COL.bg}"/>`);
-  p.push(`<rect x="0" y="0" width="${W}" height="10" fill="${COL.yellow}"/>`);
-  p.push(`<rect x="0" y="${H - 10}" width="${W}" height="10" fill="${zc}"/>`);
+  p.push(`<rect width="${W}" height="${H}" fill="${COL.paper}"/>`);
+  p.push(`<rect x="0" y="0" width="${W}" height="8" fill="${COL.red}"/>`);
 
-  p.push(text('THE IDIOCRACY INDEX', { x: 70, y: 100, size: 46, fill: COL.white, font: 'anton', ls: 6 }));
-  p.push(text('NATIONAL STUPIDITY INDEX', { x: 72, y: 140, size: 20, fill: COL.mute, ls: 4 }));
+  // bandeau-titre
+  p.push(text('The Idiocracy Index', { x: 60, y: 78, size: 46, fill: COL.ink, font: 'serif' }));
+  p.push(text('NATIONAL STUPIDITY INDEX · DAILY', { x: 62, y: 110, size: 17, fill: COL.soft, ls: 3 }));
+  p.push(`<rect x="60" y="128" width="${W - 120}" height="2" fill="${COL.ink}"/>`);
 
   // bloc score (gauche)
-  const numY = 400, numSize = 280, numX = 64;
-  p.push(text(String(score), { x: numX, y: numY, size: numSize, fill: zc, font: 'anton', ls: 4 }));
-  const numW = measure('anton', String(score), numSize, 4);
-  p.push(text('/100', { x: numX + numW + 22, y: numY, size: 88, fill: COL.white, font: 'anton', ls: 2 }));
-  p.push(text(`RANK #${rank} OF ${total} DUMBEST`, { x: 70, y: numY + 54, size: 24, fill: COL.dim, ls: 2 }));
-  p.push(text(trendStr, { x: 70, y: numY + 92, size: 22, fill: trendCol, ls: 2 }));
+  const numY = 372, numSize = 250, numX = 56;
+  p.push(text(String(score), { x: numX, y: numY, size: numSize, fill: zc, font: 'serif' }));
+  const numW = measure('serif', String(score), numSize, 0);
+  p.push(text('/100', { x: numX + numW + 18, y: numY, size: 66, fill: COL.ink, font: 'serif' }));
+  p.push(text(`RANK #${rank} OF ${total} DUMBEST`, { x: 60, y: numY + 48, size: 22, fill: COL.soft, ls: 2 }));
+  p.push(text(trendStr, { x: 60, y: numY + 82, size: 20, fill: trendCol, ls: 2 }));
+
+  // cadran-seuil (motif « horloge »)
+  const dlX = 60, dlY = numY + 112, dlW = 510, dlH = 12;
+  p.push(`<rect x="${dlX}" y="${dlY}" width="${dlW}" height="${dlH}" fill="none" stroke="${COL.line}" stroke-width="1.5"/>`);
+  p.push(`<rect x="${dlX}" y="${dlY}" width="${Math.round(Math.min(100, Math.max(0, score)) / 100 * dlW)}" height="${dlH}" fill="${zc}"/>`);
+  const m69 = dlX + Math.round(69 / 100 * dlW);
+  p.push(`<rect x="${m69 - 1}" y="${dlY - 5}" width="2" height="${dlH + 10}" fill="${COL.red}"/>`);
+  p.push(text('0', { x: dlX, y: dlY + 30, size: 14, fill: COL.faint }));
+  p.push(text('69 · THE LINE', { x: m69, y: dlY + 30, size: 14, fill: COL.red, anchor: 'middle', ls: 1 }));
+  p.push(text('100', { x: dlX + dlW, y: dlY + 30, size: 14, fill: COL.faint, anchor: 'end' }));
 
   // bloc pays (droite)
-  const rx = 624, maxW = W - rx - 56;
-  p.push(text('THE NATION', { x: rx, y: 232, size: 22, fill: zc, ls: 4 }));
-  let cy = 292;
-  for (const ln of wrap('anton', name, 58, maxW).slice(0, 2)) {
-    p.push(text(ln, { x: rx, y: cy, size: 58, fill: COL.yellow, font: 'anton', ls: 1 }));
-    cy += 62;
+  const rx = 640, maxW = W - rx - 56;
+  p.push(text('THE NATION', { x: rx, y: 174, size: 19, fill: COL.red, ls: 4 }));
+  let cy = 232;
+  for (const ln of wrap('serif', name, 56, maxW).slice(0, 2)) {
+    p.push(text(ln, { x: rx, y: cy, size: 56, fill: COL.ink, font: 'serif' }));
+    cy += 60;
   }
-  cy += 18;
-  p.push(text("TODAY'S DUMBEST MOVE", { x: rx, y: cy, size: 21, fill: COL.pink, ls: 3 }));
-  cy += 40;
-  for (const ln of wrap('mono', headline, 25, maxW).slice(0, 4)) {
-    p.push(text(ln, { x: rx, y: cy, size: 25, fill: COL.white }));
-    cy += 35;
+  cy += 24;
+  p.push(text("TODAY'S DUMBEST MOVE", { x: rx, y: cy, size: 18, fill: COL.red, ls: 3 }));
+  cy += 38;
+  for (const ln of wrapClamp('mono', headline, 22, maxW, 5)) {
+    p.push(text(ln, { x: rx, y: cy, size: 22, fill: COL.ink }));
+    cy += 31;
   }
 
-  p.push(text('IDIOCRACIES.COM', { x: 70, y: H - 40, size: 38, fill: COL.yellow, font: 'anton', ls: 2 }));
-  p.push(text(`100% SATIRE · ${date}`, { x: W - 70, y: H - 44, size: 20, fill: COL.mute, anchor: 'end', ls: 2 }));
+  p.push(`<rect x="60" y="${H - 56}" width="${W - 120}" height="1" fill="${COL.line}"/>`);
+  p.push(text('IDIOCRACIES.COM', { x: 60, y: H - 24, size: 30, fill: COL.ink, font: 'serif', ls: 1 }));
+  p.push(text(`100% SATIRE · ${date}`, { x: W - 60, y: H - 26, size: 18, fill: COL.soft, anchor: 'end', ls: 2 }));
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${p.join('')}</svg>`;
-  return new Resvg(svg, { background: COL.bg, font: RESVG_FONT, fitTo: { mode: 'width', value: W } }).render().asPng();
+  return new Resvg(svg, { background: COL.paper, font: RESVG_FONT, fitTo: { mode: 'width', value: W } }).render().asPng();
 }
 
 function page(country, rank, total) {
@@ -118,7 +131,7 @@ function page(country, rank, total) {
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
@@ -128,9 +141,11 @@ function page(country, rank, total) {
     <nav class="nav"><a href="/">Scoreboard</a><a href="/about.html">Methodology</a><a href="/merch.html">Shop</a></nav>
   </header>
 
-  <main class="page" style="max-width:920px;text-align:center">
-    <h1 style="font-size:1.5rem;margin-bottom:6px">${flag} ${esc(name)}, ${score}/100</h1>
-    <p style="color:var(--ink-dim);margin-top:0">Rank #${rank} of ${total} on today's global stupidity scoreboard.</p>
+  <main class="page-article" style="max-width:880px;text-align:center">
+    <p style="font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:6px">National Stupidity Index · Daily</p>
+    <h1 style="font-family:var(--serif);font-weight:900;font-size:clamp(30px,6vw,50px);line-height:1.02;letter-spacing:-.02em;margin:0 0 8px">${flag} ${esc(name)}</h1>
+    <div style="font-family:var(--serif);font-weight:900;font-size:clamp(76px,15vw,128px);line-height:.86;letter-spacing:-.03em;color:${score >= 69 ? 'var(--red)' : 'var(--ink)'}">${score}<span style="font-family:var(--mono);font-weight:700;font-size:20px;color:var(--faint)"> /100</span></div>
+    <p style="font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin:8px 0 0">Rank #${rank} of ${total} on today's global stupidity scoreboard</p>
     <img class="country-card-img" src="/assets/og/${s}.png" alt="${esc(title)}" width="1200" height="630" />
     <div class="share-cta-row">
       <a class="btn" href="/">See the full live scoreboard →</a>

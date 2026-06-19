@@ -46,39 +46,48 @@ function buildPost(data) {
   const why = pickEn(spot.why) || '';
 
   const scoreEmoji = score >= 69 ? '🔴' : score >= 50 ? '🟠' : '🟡';
+  const lineNote = score >= 69 ? 'We crossed the 69 line.' : 'Still under the 69 line.';
 
-  // Hashtags pour X
-  const countryTag = '#' + country.replace(/\s+/g, '');
-  const hashtags = `${countryTag} #Satire #Politics #Idiocracy`;
+  // Lien profond vers la page du pays vedette (carte OG fraîche) ; sinon l'accueil.
+  const cc = (data.countries || []).find((c) => c.name === country);
+  const code = cc && cc.code ? cc.code.toLowerCase() : '';
+  const link = code ? `https://idiocracies.com/c/${code}.html` : 'https://idiocracies.com';
 
-  // Version courte (≤ 280 chars pour X). On NE tronque PAS la headline ici :
-  // elle est déjà plafonnée à ~110 caractères côté LLM (voir update.mjs), donc
-  // le post complet tient sous 280. Le filet de sécurité final dans postToX()
-  // re-coupe avec « … » si jamais ça dépasse (cas extrême : pays à nom très long).
+  const countryTag = '#' + country.replace(/[^A-Za-z0-9]/g, '');
+  const tags = `${countryTag} #Idiocracy #Satire`;
+
+  // X (≤ 280) — PAS de lien dans le tweet : un lien externe écrase la portée
+  // (−50 à −90 %). Le lien part en RÉPONSE (voir postToX). L'image native porte
+  // le visuel ; le 1er vers est l'accroche. Filet final « … » dans postToX().
   const short = [
-    `${scoreEmoji} Stupidity Score: ${score}/100`,
+    `${scoreEmoji} Global Stupidity Index: ${score}/100. ${lineNote}`,
     ``,
-    `${flag} ${country}: "${headline}"`,
+    `Today's dumbest move — ${flag} ${country}:`,
+    `"${headline}"`,
     ``,
-    `idiocracies.com`,
-    ``,
-    hashtags,
+    tags,
   ].join('\n');
 
-  // Version longue pour Facebook / Instagram (pas de limite stricte)
+  // Facebook / Instagram — légende longue. Sur FB le lien reste cliquable (post
+  // photo natif) ; sur IG non → CTA « link in bio ».
   const long = [
-    `${scoreEmoji} Global Stupidity Score: ${score}/100`,
+    `${scoreEmoji} Global Stupidity Index: ${score}/100 — ${lineNote}`,
     ``,
-    `${flag} Today's Dumbest Move: ${country}`,
+    `📰 Today's Dumbest Move: ${flag} ${country}`,
     `"${headline}"`,
     ``,
     why,
     ``,
-    `100% satire. Updated daily.`,
-    `🌍 idiocracies.com`,
+    `Full daily scoreboard 👉 idiocracies.com (link in bio)`,
+    ``,
+    `100% satire. We score decisions, never peoples.`,
+    tags,
   ].join('\n');
 
-  return { short, long };
+  // Texte alternatif (accessibilité, ≤ 1000 pour X).
+  const alt = `Editorial score card — The Idiocracy Index. Global stupidity score ${score} out of 100, ${lineNote} Today's dumbest move: ${country}. ${headline}`.slice(0, 990);
+
+  return { short, long, link, alt };
 }
 
 // ---------------------------------------------------------------------------
@@ -98,9 +107,11 @@ Today's context:
 - Headline: "${context.headline}"
 - Why: "${context.why}"
 
-Rewrite the two posts below so they sound like a real person wrote them — someone with a dark sense of humor, not a template. Keep all factual info (country, score, headline, the link idiocracies.com, the "100% satire" disclaimer). Keep emojis but place them naturally. The short version must stay under 500 characters.
+Rewrite the two posts below so they sound like a real person wrote them — someone with a dark sense of humor, not a template. Keep all factual info (country, score, headline, the "100% satire" disclaimer). Keep emojis but place them naturally.
+The SHORT version is for X/Twitter: it MUST stay under 270 characters and must NOT contain any URL or link (the link is posted separately as a reply). Keep the hashtags.
+The LONG version is for Facebook & Instagram: keep the "link in bio / idiocracies.com" call to action.
 
-SHORT VERSION (for Threads, ≤500 chars):
+SHORT VERSION (for X/Twitter, <270 chars, NO link):
 ${short}
 
 LONG VERSION (for Facebook & Instagram):
@@ -146,14 +157,14 @@ Respond with ONLY a JSON object, no markdown, no explanation:
 // (On lit HEAD localement, pas GITHUB_SHA qui pointe sur le commit parent du bot.)
 function getImageUrls() {
   const repo = process.env.GITHUB_REPOSITORY;
-  if (!repo) return { og: null, ig: null };
+  if (!repo) return { og: null, ig: null, carousel: [] };
   let ref = 'main';
   try {
     const sha = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
     if (/^[0-9a-f]{7,40}$/.test(sha)) ref = sha;
   } catch { /* fallback sur main */ }
   const base = `https://raw.githubusercontent.com/${repo}/${ref}/assets`;
-  return { og: `${base}/og.png`, ig: `${base}/ig.png` };
+  return { og: `${base}/og.png`, ig: `${base}/ig.png`, carousel: [1, 2, 3].map((n) => `${base}/og/post-${n}.png`) };
 }
 
 // ---------------------------------------------------------------------------
@@ -194,7 +205,7 @@ async function postToFacebook(message, imageUrl) {
 // ---------------------------------------------------------------------------
 // X (Twitter) — OAuth 1.0a + API v2
 // ---------------------------------------------------------------------------
-async function postToX(message, imagePath) {
+async function postToX(message, imagePath, replyLink, altText) {
   const apiKey       = process.env.X_API_KEY;
   const apiSecret    = process.env.X_API_SECRET;
   const accessToken  = process.env.X_ACCESS_TOKEN;
@@ -263,6 +274,14 @@ async function postToX(message, imagePath) {
       if (!upRes.ok) throw new Error(JSON.stringify(upJson));
       mediaId = upJson.media_id_string;
       console.log(`🖼️  X media uploadé — id: ${mediaId}`);
+      // Texte alternatif (accessibilité) — best-effort, n'interrompt pas le post.
+      if (altText) {
+        try {
+          const metaUrl = 'https://upload.twitter.com/1.1/media/metadata/create.json';
+          const metaAuth = oauthSign('POST', metaUrl);
+          await fetch(metaUrl, { method: 'POST', headers: { Authorization: metaAuth, 'Content-Type': 'application/json' }, body: JSON.stringify({ media_id: mediaId, alt_text: { text: String(altText).slice(0, 1000) } }) });
+        } catch { /* alt text best-effort */ }
+      }
     } catch (e) {
       console.warn(`⚠️  Upload image X échoué (${e.message}) → tweet sans image.`);
     }
@@ -283,45 +302,73 @@ async function postToX(message, imagePath) {
   const json = await res.json();
   if (!res.ok) throw new Error(JSON.stringify(json));
   console.log(`✅ X — tweet id: ${json.data?.id}`);
+
+  // Le lien part en RÉPONSE au tweet (un lien dans le post principal écrase la
+  // portée sur X). Best-effort : un échec ici n'invalide pas le tweet publié.
+  if (replyLink && json.data?.id) {
+    try {
+      const replyAuth = oauthSign('POST', tweetUrl);
+      const rRes = await fetch(tweetUrl, {
+        method: 'POST',
+        headers: { Authorization: replyAuth, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: `Full daily scoreboard 👉 ${replyLink}`, reply: { in_reply_to_tweet_id: json.data.id } }),
+      });
+      if (rRes.ok) console.log('✅ X — lien posté en réponse');
+      else console.warn(`⚠️  Réponse-lien X refusée : ${JSON.stringify(await rRes.json())}`);
+    } catch (e) { console.warn(`⚠️  Réponse-lien X échouée (${e.message}).`); }
+  }
 }
 
 // ---------------------------------------------------------------------------
 // INSTAGRAM (Instagram Business Account lié à la Page Facebook)
 // ---------------------------------------------------------------------------
-async function postToInstagram(message, imageUrl) {
+async function postToInstagram(message, carouselUrls, fallbackUrl) {
   const userId = process.env.INSTAGRAM_USER_ID;
   const token = process.env.INSTAGRAM_ACCESS_TOKEN;
   if (!userId || !token) {
     console.log('⏭  Instagram : secrets manquants (INSTAGRAM_USER_ID / INSTAGRAM_ACCESS_TOKEN), skip.');
     return;
   }
-  if (!imageUrl) {
+  const slides = (carouselUrls || []).filter(Boolean);
+  const single = fallbackUrl || slides[0];
+  if (!slides.length && !single) {
     console.log('⏭  Instagram : pas d\'URL d\'image (GITHUB_REPOSITORY manquant ?), skip.');
     return;
   }
+  if (DRY_RUN) { console.log(`🔵 [DRY] Instagram ${slides.length >= 2 ? 'carrousel ' + slides.length + ' slides' : 'post'} simulé.`); return; }
 
-  if (DRY_RUN) { console.log('🔵 [DRY] Instagram post simulé.'); return; }
-
-  // Étape 1 — créer le container média
-  const containerRes = await fetch(`https://graph.facebook.com/${userId}/media`, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ image_url: imageUrl, caption: message, access_token: token }),
+  const api = (path, body) => fetch(`https://graph.facebook.com/${userId}/${path}`, {
+    method: 'POST', headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ ...body, access_token: token }),
   });
-  const container = await containerRes.json();
-  if (!containerRes.ok) throw new Error(`container: ${JSON.stringify(container)}`);
 
-  await sleep(8000); // Instagram prend plus de temps à traiter l'image
+  let creationId;
+  if (slides.length >= 2) {
+    // Carrousel : 1) un container par slide, 2) un container CAROUSEL, 3) publier.
+    const children = [];
+    for (const url of slides) {
+      const r = await api('media', { image_url: url, is_carousel_item: true });
+      const j = await r.json();
+      if (!r.ok) throw new Error(`carousel item: ${JSON.stringify(j)}`);
+      children.push(j.id);
+    }
+    const cr = await api('media', { media_type: 'CAROUSEL', children: children.join(','), caption: message });
+    const cj = await cr.json();
+    if (!cr.ok) throw new Error(`carousel container: ${JSON.stringify(cj)}`);
+    creationId = cj.id;
+  } else {
+    const r = await api('media', { image_url: single, caption: message });
+    const j = await r.json();
+    if (!r.ok) throw new Error(`container: ${JSON.stringify(j)}`);
+    creationId = j.id;
+  }
 
-  // Étape 2 — publier
-  const pubRes = await fetch(`https://graph.facebook.com/${userId}/media_publish`, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ creation_id: container.id, access_token: token }),
-  });
+  await sleep(8000); // Instagram met du temps à traiter le média
+
+  const pubRes = await api('media_publish', { creation_id: creationId });
   const published = await pubRes.json();
   if (!pubRes.ok) throw new Error(`publish: ${JSON.stringify(published)}`);
-  console.log(`✅ Instagram — post id: ${published.id}`);
+  console.log(`✅ Instagram — ${slides.length >= 2 ? 'carrousel' : 'post'} id: ${published.id}`);
 }
 
 // ---------------------------------------------------------------------------
@@ -340,7 +387,7 @@ async function main() {
     headline: pickEn(spot.headline) || '',
     why: pickEn(spot.why) || '',
   });
-  const { og: ogUrl, ig: igUrl } = getImageUrls();
+  const { og: ogUrl, ig: igUrl, carousel: carouselUrls } = getImageUrls();
   const ogPath = join(__dirname, '..', 'assets', 'og.png');
 
   console.log('── Message court (X) ──');
@@ -351,9 +398,9 @@ async function main() {
   console.log(`── IG image ──\n${igUrl || '(aucune — GITHUB_REPOSITORY non défini)'}\n`);
 
   const tasks = [];
-  if (PLATFORM === 'all' || PLATFORM === 'facebook')  tasks.push(postToFacebook(long, ogUrl));
-  if (PLATFORM === 'all' || PLATFORM === 'x')         tasks.push(postToX(short, ogPath));
-  if (PLATFORM === 'all' || PLATFORM === 'instagram') tasks.push(postToInstagram(long, igUrl));
+  if (PLATFORM === 'all' || PLATFORM === 'facebook')  tasks.push(postToFacebook(long, igUrl || ogUrl));
+  if (PLATFORM === 'all' || PLATFORM === 'x')         tasks.push(postToX(short, ogPath, raw.link, raw.alt));
+  if (PLATFORM === 'all' || PLATFORM === 'instagram') tasks.push(postToInstagram(long, carouselUrls, igUrl));
 
   const results = await Promise.allSettled(tasks);
 

@@ -83,6 +83,12 @@ Object.assign(I18N.fr, { shareScore: 'Partager', shareHero: '📤 Partage le sco
 Object.assign(I18N.es, { shareScore: 'Compartir', shareHero: '📤 Comparte la puntuación de tu país', footLinkPrivacy: 'Privacidad y cookies', pickCountry: 'Elige tu país' });
 Object.assign(I18N.de, { shareScore: 'Teilen', shareHero: '📤 Teile die Bewertung deines Landes', footLinkPrivacy: 'Datenschutz & Cookies', pickCountry: 'Wähle dein Land' });
 
+// Editorial redesign — nameplate, instrument, league-table column heads, critical tag.
+Object.assign(I18N.en, { motto: "The world's observatory of stupidity", edition: 'Daily edition', price: 'Price: free (you pay in dignity)', instrTitle: 'World stupidity clock', lineLabel: 'the line', colRank: 'Rk', colNation: 'Nation & headline', colMeasure: 'Measure · 0–100', colTrend: 'Trend', colScore: 'Score', critTag: 'Critical' });
+Object.assign(I18N.fr, { motto: "L'observatoire mondial de la bêtise", edition: 'Édition quotidienne', price: 'Prix : gratuit (vous payez en dignité)', instrTitle: 'Horloge mondiale de la bêtise', lineLabel: 'la ligne', colRank: 'Rg', colNation: 'Nation & une du jour', colMeasure: 'Mesure · 0–100', colTrend: 'Tend.', colScore: 'Score', critTag: 'Critique' });
+Object.assign(I18N.es, { motto: 'El observatorio mundial de la estupidez', edition: 'Edición diaria', price: 'Precio: gratis (pagas en dignidad)', instrTitle: 'Reloj mundial de la estupidez', lineLabel: 'la línea', colRank: 'Pos', colNation: 'Nación y titular', colMeasure: 'Medida · 0–100', colTrend: 'Tend.', colScore: 'Punt.', critTag: 'Crítico' });
+Object.assign(I18N.de, { motto: 'Die weltweite Beobachtungsstelle der Dummheit', edition: 'Tägliche Ausgabe', price: 'Preis: gratis (Sie zahlen mit Würde)', instrTitle: 'Welt-Dummheitsuhr', lineLabel: 'die Linie', colRank: 'Rg', colNation: 'Nation & Schlagzeile', colMeasure: 'Messung · 0–100', colTrend: 'Trend', colScore: 'Wert', critTag: 'Kritisch' });
+
 function detectLang() {
   const saved = localStorage.getItem('ii_lang');
   if (saved && window.LANGS.includes(saved)) return saved;

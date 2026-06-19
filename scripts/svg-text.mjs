@@ -17,15 +17,20 @@ const FONT_DIR = join(dirname(fileURLToPath(import.meta.url)), 'fonts');
 export const FONT_FILES = {
   anton: join(FONT_DIR, 'Anton-Regular.ttf'),
   mono: join(FONT_DIR, 'SpaceMono-Bold.ttf'),
+  serif: join(FONT_DIR, 'DMSerifDisplay-Regular.ttf'),
 };
 // Option `font` à passer à `new Resvg(svg, { font: RESVG_FONT, ... })`.
 export const RESVG_FONT = {
-  fontFiles: [FONT_FILES.anton, FONT_FILES.mono],
+  fontFiles: [FONT_FILES.anton, FONT_FILES.mono, FONT_FILES.serif],
   loadSystemFonts: false,
-  defaultFontFamily: 'Space Mono',
+  defaultFontFamily: 'DM Serif Display',
 };
 
-const FAMILY = { anton: { family: 'Anton', weight: 400 }, mono: { family: 'Space Mono', weight: 700 } };
+const FAMILY = {
+  anton: { family: 'Anton', weight: 400 },
+  mono: { family: 'Space Mono', weight: 700 },
+  serif: { family: 'DM Serif Display', weight: 400 },
+};
 
 // Polices opentype mises en cache, UNIQUEMENT pour mesurer.
 const _ot = {};

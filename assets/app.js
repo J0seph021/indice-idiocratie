@@ -3,10 +3,10 @@ const $ = (s) => document.querySelector(s);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const ZONES = [
-  { min: 85, cls: 's-extreme', hex: '#ff2e63' },
-  { min: 69, cls: 's-high',    hex: '#ff4d4d' },
-  { min: 50, cls: 's-warn',    hex: '#ffb02e' },
-  { min: 0,  cls: 's-safe',    hex: '#34e5a0' },
+  { min: 85, cls: 's-extreme', hex: '#E3120B' },
+  { min: 69, cls: 's-high',    hex: '#E3120B' },
+  { min: 50, cls: 's-warn',    hex: '#16130D' },
+  { min: 0,  cls: 's-safe',    hex: '#16130D' },
 ];
 const zone = (s) => ZONES.find(z => s >= z.min) || ZONES[ZONES.length - 1];
 const scoreClass = (s) => zone(s).cls;
@@ -67,24 +67,15 @@ async function load() {
   render();
 }
 
-/* ---------- GAUGE ---------- */
-const R = 100, C = 2 * Math.PI * R;
-function buildGauge(score) {
-  const svg = $('#gauge');
-  const color = scoreColor(score);
-  // 69-line tick, placed in the svg's rotated frame
-  const a = 0.69 * 2 * Math.PI;
-  const tx = (r) => (120 + r * Math.cos(a)).toFixed(1);
-  const ty = (r) => (120 + r * Math.sin(a)).toFixed(1);
-  svg.innerHTML = `
-    <circle class="gauge-track" cx="120" cy="120" r="${R}"/>
-    <circle class="gauge-fill" cx="120" cy="120" r="${R}"
-      style="stroke:${color};color:${color};stroke-dasharray:${C.toFixed(1)};stroke-dashoffset:${C.toFixed(1)}"/>
-    <line class="gauge-tick" x1="${tx(88)}" y1="${ty(88)}" x2="${tx(112)}" y2="${ty(112)}"/>`;
-  // animate fill after paint
-  const fill = svg.querySelector('.gauge-fill');
-  const offset = C * (1 - Math.max(0, Math.min(100, score)) / 100);
-  requestAnimationFrame(() => requestAnimationFrame(() => { fill.style.strokeDashoffset = offset.toFixed(1); }));
+/* ---------- DIAL (doomsday instrument) ---------- */
+function setDial(score) {
+  const fill = $('#world-fill');
+  if (!fill) return;
+  const pct = Math.max(0, Math.min(100, score));
+  fill.classList.toggle('over', score >= 69);
+  if (reduceMotion) { fill.style.width = pct + '%'; return; }
+  fill.style.width = '0%';
+  requestAnimationFrame(() => requestAnimationFrame(() => { fill.style.width = pct + '%'; }));
 }
 
 function countUp(el, target, dur = 1500) {
@@ -115,27 +106,29 @@ function render() {
   const w = DATA.world;
   const ws = $('#world-score');
   ws.className = 'gauge-num ' + scoreClass(w.score);
-  buildGauge(w.score);
+  setDial(w.score);
   countUp(ws, w.score);
   $('#world-trend').innerHTML = trendHTML(w.trend);
   $('#world-label').textContent = window.pick(w.label);
-  const wh = window.pick(w.headline);
+  // world.headline n'est qu'en anglais ; dans les autres langues, on bascule sur
+  // le headline (localisé) du spotlight pour ne pas afficher de l'anglais en FR/ES/DE.
+  const wh = (window.LANG !== 'en' && typeof w.headline === 'string' && DATA.spotlight && DATA.spotlight.headline && typeof DATA.spotlight.headline === 'object')
+    ? window.pick(DATA.spotlight.headline)
+    : window.pick(w.headline);
   $('#world-headline').innerHTML = `<b>${esc(wh.split('.')[0])}.</b> ${esc(wh.split('.').slice(1).join('.').trim())}`;
   $('#updated-date').textContent = fmtDate(DATA.updated);
+  const ud2 = $('#updated-date2'); if (ud2) ud2.textContent = fmtDate(DATA.updated);
   $('#year').textContent = (DATA.updated || '2026').slice(0, 4);
-
-  buildTicker(DATA.countries || []);
 
   const sp = DATA.spotlight;
   if (sp) {
     $('#spotlight-card').innerHTML = `
-      <div class="spotlight-flag">${sp.flag || '🌐'}</div>
-      <div class="spotlight-body">
-        <div class="spotlight-country">${esc(sp.country || '')}</div>
-        <div class="spotlight-headline">${esc(window.pick(sp.headline))}</div>
-        <div class="spotlight-why">${esc(window.pick(sp.why))}</div>
-      </div>
-      <div class="spotlight-score ${scoreClass(sp.score)}">${sp.score}<small>/ 100</small></div>`;
+      <div class="num tnum">${sp.score}<small>${esc(sp.country || '')} · /100</small></div>
+      <div class="body" style="grid-column:3/13">
+        <div class="ct">${sp.flag || '🌐'} ${esc(sp.country || '')}</div>
+        <div class="hd">${esc(window.pick(sp.headline))}</div>
+        <div class="why">${esc(window.pick(sp.why))}</div>
+      </div>`;
   }
 
   const cg = $('#continent-grid');
@@ -169,12 +162,11 @@ function renderCountries() {
   $('#country-list').innerHTML = list.map((c, i) => {
     const arts = c.articles || [];
     return `
-    <li class="country-row-wrap ${i < 3 ? 'top' + (i + 1) : ''}">
+    <li class="country-row-wrap ${c.score >= 69 ? 'crit' : ''}">
       <div class="country-row" role="button" tabindex="0" aria-expanded="false">
-        <span class="country-rank">${String(i + 1).padStart(2, '0')}</span>
-        <span class="country-flag">${c.flag || '🏳️'}</span>
+        <span class="country-rank">${i + 1}</span>
         <span class="country-info">
-          <div class="country-name">${esc(c.name)} <span class="country-chevron">▾</span></div>
+          <div class="country-name">${esc(c.name)}${c.score >= 69 ? ` <span class="crit-tag">⚠ ${esc(window.t('critTag'))}</span>` : ''} <span class="country-iso">${c.flag || ''} ${esc((c.code || '').toUpperCase())}</span> <span class="country-chevron">▾</span></div>
           <div class="country-headline">${esc(window.pick(c.headline))}</div>
         </span>
         <span class="country-bar"><span class="bar has69"><i data-w="${c.score}" style="background:${scoreColor(c.score)}"></i></span></span>
