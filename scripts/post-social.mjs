@@ -137,7 +137,8 @@ Respond with ONLY a JSON object, no markdown, no explanation:
     const data = await res.json();
     if (!res.ok) throw new Error(JSON.stringify(data.error));
     const text = data.content?.[0]?.text?.trim() || '';
-    const parsed = JSON.parse(text);
+    const m = text.match(/\{[\s\S]*\}/); // Claude encadre parfois le JSON dans ```json … ``` → on extrait l'objet.
+    const parsed = JSON.parse(m ? m[0] : text);
     if (parsed.short && parsed.long) {
       console.log('✨ Posts humanisés via Claude.');
       return parsed;
