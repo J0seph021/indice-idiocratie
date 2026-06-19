@@ -35,7 +35,7 @@
   <link rel="manifest" href="site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
   <script type="application/ld+json">
   {
@@ -51,75 +51,89 @@
   </script>
 </head>
 <body>
-  <div class="satire-bar">
-    <span class="tape-txt">⚠ <span data-i18n="satireTag">SATIRE</span></span> &nbsp; <span data-i18n="satireText">No score is a statement of fact. It's a joke.</span> <a href="about.html#disclaimer" data-i18n="why">Why?</a>
+<div class="page">
+
+  <!-- TOP STRIP -->
+  <div class="strip">
+    <div class="strip-in">
+      <span class="tag">⚠ <span data-i18n="satireTag">SATIRE</span></span>
+      <span class="mid"><span data-i18n="satireText">No score is a statement of fact. It's a joke.</span> <a href="about.html#disclaimer" data-i18n="why">Why?</a></span>
+      <span class="right"><span class="live" data-i18n="live">LIVE</span></span>
+    </div>
   </div>
 
-  <header class="site-header">
-    <a class="brand" href="index.html">
-      <span class="brand-logo">🧠💀</span>
-      <span class="brand-text">The<strong>Idiocracy Index</strong></span>
-      <span class="live-dot" data-i18n="live">LIVE</span>
-    </a>
-    <nav class="nav">
-      <a href="index.html" class="active" data-i18n="navScoreboard">Scoreboard</a>
-      <a href="about.html" data-i18n="navMethodology">Methodology</a>
-      <a href="merch.html" data-i18n="navShop">Shop</a>
-      <select class="lang-switch" id="lang-switch" aria-label="Language"></select>
-    </nav>
+  <!-- NAMEPLATE -->
+  <header class="plate">
+    <div class="motto">Index Stvltitiæ Mvndi · <span data-i18n="motto">The world's observatory of stupidity</span></div>
+    <a href="index.html"><h1>The Idiocracy <span class="red">Index</span></h1></a>
+    <div class="sub">
+      <span>Nº <b id="edition-no">197</b></span>
+      <span data-i18n="edition">Daily edition</span>
+      <span data-i18n="price">Price: free (you pay in dignity)</span>
+      <span>0 – 100</span>
+    </div>
   </header>
 
-  <!-- BREAKING TICKER -->
-  <div class="ticker">
-    <div class="ticker-label">⚡ <span data-i18n="breaking">BREAKING</span></div>
-    <div class="ticker-track-wrap">
-      <div class="ticker-track" id="ticker"></div>
+  <div class="navwrap">
+    <div class="nav-row">
+      <nav class="nav">
+        <a href="index.html" class="active" data-i18n="navScoreboard">Scoreboard</a>
+        <a href="about.html" data-i18n="navMethodology">Methodology</a>
+        <a href="merch.html" data-i18n="navShop">Shop</a>
+      </nav>
+      <select class="lang-switch" id="lang-switch" aria-label="Language"></select>
     </div>
   </div>
 
   <main>
     <!-- HERO -->
-    <section class="hero wrap">
+    <section class="hero">
       <div class="hero-grid">
-        <div>
-          <p class="hero-kicker" data-i18n="heroKicker">Global Civilizational Stupidity Index</p>
-          <h1 class="hero-title" data-i18n-html="heroTitle">How dumb is the planet today?</h1>
+        <div class="hero-left">
+          <div class="eyebrow"><span class="kick"><span class="t">//</span> <span data-i18n="heroKicker">Global Civilizational Stupidity Index</span></span><span class="ln"></span></div>
+          <h2 class="hero-title" data-i18n-html="heroTitle">How dumb is the planet today?</h2>
           <p class="hero-headline" id="world-headline" data-i18n="loadingWorld">Booting up the global stupidity monitor…</p>
-          <div class="hero-meta">
+          <div class="chips">
             <span class="chip"><span data-i18n="updated">Updated</span> <b id="updated-date">…</b></span>
-            <span class="chip"><span data-i18n="scale">Scale</span> <b>0-100</b></span>
+            <span class="chip"><span data-i18n="scale">Scale</span> <b>0–100</b></span>
             <span class="chip" data-i18n-html="line69">the 69 line = critical threshold</span>
           </div>
           <button id="share-hero" class="share-hero" data-i18n="shareHero">📤 Share your country's score</button>
         </div>
-        <div class="gauge-wrap" id="gauge-wrap">
-          <svg class="gauge" id="gauge" viewBox="0 0 240 240" aria-hidden="true"></svg>
-          <div class="gauge-center">
-            <div class="gauge-num" id="world-score">0</div>
-            <div class="gauge-out">/ 100</div>
-            <div class="gauge-trend" id="world-trend"></div>
-            <div class="gauge-label" id="world-label"></div>
+        <div class="hero-right">
+          <div class="instr">
+            <div class="cap"><span data-i18n="instrTitle">World stupidity clock</span><span id="updated-date2">…</span></div>
+            <div class="bigrow">
+              <div class="gauge-num" id="world-score">0</div>
+              <div class="of">/100</div>
+              <div class="gauge-trend" id="world-trend"></div>
+            </div>
+            <div class="dial">
+              <div class="track"><div class="zone"></div><div class="fill" id="world-fill"></div><div class="crit"></div></div>
+              <div class="labs"><span style="left:0%">0</span><span style="left:25%">25</span><span style="left:50%">50</span><span class="c" style="left:69%">69 · <span data-i18n="lineLabel">the line</span></span><span style="left:100%">100</span></div>
+            </div>
+            <p class="verdict" id="world-label"></p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SPOTLIGHT -->
-    <section class="block wrap reveal">
-      <div class="sec-label" data-i18n="secDumbest">Dumbest Move of the Day</div>
-      <div class="spotlight-card" id="spotlight-card"></div>
+    <section class="block">
+      <div class="sec-label"><span class="n">01</span> <span data-i18n="secDumbest">Dumbest Move of the Day</span></div>
+      <div class="spotlight-card spot" id="spotlight-card"></div>
     </section>
 
     <!-- CONTINENTS -->
-    <section class="block wrap reveal">
-      <div class="sec-label" data-i18n="secContinents">Global Breakdown by Continent</div>
+    <section class="block">
+      <div class="sec-label"><span class="n">02</span> <span data-i18n="secContinents">Global Breakdown by Continent</span></div>
       <div class="continent-grid" id="continent-grid"></div>
     </section>
 
     <!-- RANKING -->
-    <section id="rankings" class="block wrap reveal">
+    <section id="rankings" class="block">
       <div class="ranking-head">
-        <div class="sec-label" style="margin:0" data-i18n="secRankings">National Stupidity Rankings</div>
+        <div class="sec-label" style="margin:0;border:0;padding:0"><span class="n">03</span> <span data-i18n="secRankings">National Stupidity Rankings</span></div>
         <div class="ranking-controls">
           <input type="search" id="search" data-i18n-ph="searchPlaceholder" placeholder="Search a country…" aria-label="Search a country" />
           <select id="sort" aria-label="Sort rankings">
@@ -130,36 +144,41 @@
           </select>
         </div>
       </div>
+      <div class="lt-head">
+        <span data-i18n="colRank">Rk</span>
+        <span data-i18n="colNation">Nation &amp; headline</span>
+        <span class="col-bar" data-i18n="colMeasure">Measure 0–100</span>
+        <span class="r col-trend" data-i18n="colTrend">Trend</span>
+        <span class="r" data-i18n="colScore">Score</span>
+      </div>
       <ol class="country-list" id="country-list"></ol>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-cols">
-        <div>
-          <h3>🧠💀 <span data-i18n="footAboutT">The Idiocracy Index</span></h3>
-          <p data-i18n-html="footAbout"></p>
-        </div>
-        <div>
-          <h3 data-i18n="footLinksT">Links</h3>
-          <a href="about.html" data-i18n="footLinkMethod">Methodology & disclaimer</a>
-          <a href="merch.html" data-i18n="footLinkShop">Satirical shop</a>
-          <a href="about.html#sources" data-i18n="footLinkSources">Data sources</a>
-          <a href="privacy.html" data-i18n="footLinkPrivacy">Privacy & cookies</a>
-        </div>
-        <div>
-          <h3 data-i18n="footWordsT">Famous last words</h3>
-          <p class="footer-quote" data-i18n="footQuote">"I'm not a prophet. I was just off by 490 years. - Mike Judge"</p>
-        </div>
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="band">
+      <div class="c1">
+        <h4>🧠💀 <span data-i18n="footAboutT">The Idiocracy Index</span></h4>
+        <p data-i18n-html="footAbout"></p>
       </div>
-      <p class="footer-legal">
-        ⚠ <span data-i18n="footLegal">WORK OF SATIRE. Scores are humorous, hyperbolic exaggerations and are in no way verifiable statements of fact. This site targets no ethnicity, religion, or named person.</span> © <span id="year"></span>.
-      </p>
+      <div class="c2">
+        <h4 data-i18n="footLinksT">Links</h4>
+        <a href="about.html" data-i18n="footLinkMethod">Methodology & disclaimer</a>
+        <a href="merch.html" data-i18n="footLinkShop">Satirical shop</a>
+        <a href="about.html#sources" data-i18n="footLinkSources">Data sources</a>
+        <a href="privacy.html" data-i18n="footLinkPrivacy">Privacy & cookies</a>
+      </div>
+      <div class="c3">
+        <h4 data-i18n="footWordsT">Famous last words</h4>
+        <p class="q" data-i18n="footQuote">"I'm not a prophet. I was just off by 490 years. - Mike Judge"</p>
+      </div>
+      <div class="legal">⚠ <span data-i18n="footLegal">WORK OF SATIRE. Scores are humorous, hyperbolic exaggerations and are in no way verifiable statements of fact. This site targets no ethnicity, religion, or named person.</span> © <span id="year"></span>.</div>
     </div>
   </footer>
 
   <script src="assets/i18n.js"></script>
   <script src="assets/app.js"></script>
+</div>
 </body>
 </html>
