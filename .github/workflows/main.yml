@@ -2,11 +2,11 @@ name: Mise a jour quotidienne de l'Idiocratie
 
 on:
   schedule:
-    # GitHub decale/saute souvent les crons "pile a l'heure" (:00 = creneau le
-    # plus charge). On vise une minute impaire hors :00, + un run de rattrapage
-    # l'apres-midi au cas ou GitHub aurait saute celui du matin.
-    - cron: '23 10 * * *'   # principal — 10h23 UTC = 6h23 a Toronto (ete/EDT ; 5h23 en hiver/EST)
-    - cron: '23 14 * * *'   # rattrapage — 14h23 UTC = 10h23 Toronto (ne republie que s'il y a du neuf)
+    # Un seul passage par jour. Le run de rattrapage de 14h23 UTC a ete
+    # retire : il refaisait le scoring complet des 15 pays sans jamais
+    # publier (bloque par data/.last-social), donc il doublait la facture
+    # API pour rien. En 85 jours, GitHub n'a jamais saute le run du matin.
+    - cron: '23 10 * * *'   # 10h23 UTC = 6h23 a Toronto (ete/EDT ; 5h23 en hiver/EST)
   workflow_dispatch:
     inputs:
       baseline:
@@ -17,7 +17,7 @@ on:
 permissions:
   contents: write
 
-# Empeche deux executions simultanees (principal + rattrapage qui se chevauchent).
+# Empeche deux executions simultanees (ex. le cron et un lancement manuel).
 concurrency:
   group: idiocracy-daily
   cancel-in-progress: false

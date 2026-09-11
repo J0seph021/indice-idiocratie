@@ -2,6 +2,8 @@
 
 Le palmarès mondial **satirique** de la connerie civilisationnelle. Chaque pays, continent et la planète entière est noté sur une échelle de 0 à 100 (la **« ligne des 69 »** = seuil critique). Le site se met à jour **chaque jour** en lisant les actualités du monde entier et en les notant via une IA, dans l'esprit du film *Idiocracy* (2006).
 
+> ⏱️ **Un seul passage par jour**, à 10h23 UTC (6h23 à Toronto l'été). Le run de rattrapage de l'après-midi a été retiré : il refaisait tout le scoring sans jamais publier, donc il doublait la facture API pour rien. Besoin d'un recalcul hors horaire : onglet **Actions** → *Mise a jour quotidienne de l'Idiocratie* → **Run workflow**.
+
 > ⚠️ **Œuvre de satire.** Aucun score n'est une affirmation de fait. On note des *décisions* et des *comportements*, jamais des peuples. Aucun « QI national » pseudo-scientifique n'est utilisé.
 
 ## 🗂️ Structure
@@ -17,7 +19,7 @@ scripts/update.mjs      ⭐ La routine quotidienne : actu GDELT → scoring LLM 
 scripts/build-posts.mjs Brouillons de posts réseaux sociaux (FR/EN) → marketing/social/
 scripts/serve.mjs       Serveur local de test
 scripts/install-windows-task.ps1   Routine quotidienne via Windows
-.github/workflows/daily-update.yml Routine quotidienne via GitHub Actions
+.github/workflows/main.yml          Routine quotidienne via GitHub Actions (1 run/jour)
 ```
 
 ## 🚀 Lancer en local
