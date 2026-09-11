@@ -47,7 +47,7 @@ jobs:
           # meme si le run de rattrapage rafraichit encore les donnees l'apres-midi.
           POST=false
           if [ "$(cat data/.last-social 2>/dev/null)" != "$TODAY" ]; then POST=true; fi
-          git add data/scores.json assets/og.png assets/ig.png assets/og c
+          git add data/scores.json assets/og.png assets/ig.png assets/og c sitemap.xml index.html
           if git diff --staged --quiet; then
             echo "post=false" >> "$GITHUB_OUTPUT"
             echo "Rien de neuf aujourd'hui : pas de commit ni de publication."

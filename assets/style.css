@@ -252,7 +252,7 @@ img{ max-width:100%; display:block; }
 .cp-close{ position:absolute; top:12px; right:16px; background:none; border:0; color:var(--soft); font-size:1.7rem; line-height:1; cursor:pointer; }
 .cp-close:hover{ color:var(--ink); }
 .cp-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:6px; }
-.cp-item{ display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer; text-align:left; }
+.cp-item{ display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer; text-align:left; text-decoration:none; }
 .cp-item:hover{ border-color:var(--ink); }
 .cp-flag{ font-size:1.4rem; line-height:1; }
 .cp-name{ flex:1; min-width:0; font-size:.9rem; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -367,3 +367,25 @@ img{ max-width:100%; display:block; }
     --redzone:rgba(250,59,48,.12);
   }
 }
+/* ---------- INDEX DES PAYS (liens explorables vers c/*.html) ---------- */
+.country-index-grid{
+  list-style:none; margin:0; padding:0;
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+  column-gap:var(--gutter,20px); row-gap:6px;
+}
+.ci-item{
+  display:flex; align-items:center; gap:10px; padding:10px 12px;
+  border:1px solid var(--line); background:var(--card); color:var(--ink);
+  text-decoration:none; font-size:14px;
+}
+.ci-item:hover, .ci-item:focus-visible{ border-color:var(--ink); }
+.ci-flag{ font-size:18px; line-height:1; }
+.ci-name{ font-weight:500; }
+
+/* Lien vers la fiche complete, dans la ligne pays depliee. */
+.country-profile{
+  align-self:flex-start; margin-top:8px;
+  font-family:var(--mono); font-size:11px; letter-spacing:.04em; text-transform:uppercase;
+  color:var(--red); text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:1px;
+}
+.country-profile:hover{ color:var(--red-ink); }

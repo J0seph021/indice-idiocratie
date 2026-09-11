@@ -17,11 +17,14 @@ function trendHTML(t) {
   if (t < 0) return `<span class="trend-down">▼ ${t}</span>`;
   return `<span class="trend-flat">▬ 0</span>`;
 }
+// Nom de fichier d'une fiche pays. Doit rester identique a build-country.mjs
+// et build-sitemap.mjs, sinon les liens pointent dans le vide.
+const slug = (c) => String(c.code || c.name).toLowerCase().replace(/[^a-z0-9]+/g, '-');
 const esc = (s) => String(s).replace(/[&<>"]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
 
 // Share a country's score: native share sheet on mobile, else open its share page.
 function shareCountry(code, name, score) {
-  const url = location.origin + '/c/' + String(code).toLowerCase() + '.html';
+  const url = location.origin + '/c/' + slug({ code }) + '.html';
   const text = `${name} scores ${score}/100 on The Idiocracy Index 🧠💀 (100% satire)`;
   if (navigator.share) navigator.share({ title: 'The Idiocracy Index', text, url }).catch(() => {});
   else window.open(url, '_blank', 'noopener');
@@ -38,11 +41,11 @@ function openCountryPicker() {
       <button class="cp-close" type="button" aria-label="Close">×</button>
       <div class="cp-title">${esc(window.t('pickCountry'))}</div>
       <div class="cp-grid">
-        ${list.map(c => `<button class="cp-item" type="button" data-code="${esc((c.code || '').toLowerCase())}">
+        ${list.map(c => `<a class="cp-item" href="c/${esc(slug(c))}.html">
           <span class="cp-flag">${c.flag || '🏳️'}</span>
           <span class="cp-name">${esc(c.name)}</span>
           <span class="cp-score ${scoreClass(c.score)}">${c.score}</span>
-        </button>`).join('')}
+        </a>`).join('')}
       </div>
     </div>`;
   bd.classList.add('open');
@@ -176,6 +179,7 @@ function renderCountries() {
       <div class="country-articles"><div class="articles-inner"><div class="articles-pad">
         <div class="articles-legend">${esc(window.t('artLegend'))} · <span class="up">${esc(window.t('artRaises'))}</span> · <span class="down">${esc(window.t('artLowers'))}</span></div>
         ${arts.length ? arts.map(articleHTML).join('') : `<p class="no-articles">${esc(window.t('noArticles'))}</p>`}
+        <a class="country-profile" href="c/${esc(slug(c))}.html">${esc(window.t('viewProfile'))} →</a>
         <button class="country-share" data-code="${esc(c.code || '')}" data-name="${esc(c.name)}" data-score="${c.score}">📤 ${esc(window.t('shareScore'))} ${esc(c.name)}</button>
       </div></div></div>
     </li>`; }).join('');
@@ -253,8 +257,6 @@ document.addEventListener('click', (e) => {
   const share = e.target.closest('.country-share');
   if (share) { e.stopPropagation(); shareCountry(share.dataset.code, share.dataset.name, share.dataset.score); return; }
   if (e.target.closest('#share-hero')) { openCountryPicker(); return; }
-  const cpItem = e.target.closest('.cp-item');
-  if (cpItem && cpItem.dataset.code) { location.href = '/c/' + cpItem.dataset.code + '.html'; return; }
   if (e.target.closest('.cp-close') || e.target.id === 'cp-backdrop') { closeCountryPicker(); return; }
   const row = e.target.closest('.country-row');
   if (row) toggleCountry(row);

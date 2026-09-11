@@ -14,6 +14,7 @@
     "publish:x": "node scripts/publish-x.mjs",
     "publish:x:dry": "cross-env DRY_RUN=1 node scripts/publish-x.mjs",
     "country": "node scripts/build-country.mjs",
+    "sitemap": "node scripts/build-sitemap.mjs",
     "icons": "node scripts/build-icons.mjs",
     "serve": "node scripts/serve.mjs"
   },

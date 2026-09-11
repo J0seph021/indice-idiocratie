@@ -460,6 +460,14 @@ async function main() {
     console.warn(`  ⚠️  cartes pays non régénérées : ${e.message}`);
   }
 
+  // Régénère sitemap.xml + l'index des pays dans index.html, pour que les fiches
+  // c/*.html restent découvrables par Google après chaque mise à jour.
+  try {
+    await import('./build-sitemap.mjs');
+  } catch (e) {
+    console.warn(`  ⚠️  sitemap non régénéré : ${e.message}`);
+  }
+
   // Génère les brouillons de posts réseaux sociaux (anglais) → marketing/social/.
   // Tous les posts publiés sont en anglais. (Pour du français : --lang=fr.)
   try {
